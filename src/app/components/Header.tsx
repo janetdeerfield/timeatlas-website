@@ -33,7 +33,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoImage} alt="TimeAtlas" className="h-8" />
+              <img src={logoImage} alt="TimeAtlas Logo" className="h-8" />
               <span 
                 className="text-xs"
                 style={{
@@ -111,7 +111,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
             {/* Top row: Logo */}
             <div className="flex items-center justify-center mb-2">
               <Link to="/" className="hover:opacity-80 transition-opacity">
-                <img src={logoImage} alt="TimeAtlas" className="h-7" />
+                <img src={logoImage} alt="TimeAtlas Logo" className="h-7" />
               </Link>
             </div>
 
