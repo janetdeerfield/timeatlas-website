@@ -1,0 +1,6 @@
+# User-agent: * applies to all search engines
+User-agent: *
+Allow: /
+
+# Sitemaps help search engines find your pages faster
+Sitemap: https://timeatlas.co/sitemap.xml

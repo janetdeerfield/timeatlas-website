@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import logoImage from 'figma:asset/b7e7edd5bbb33aa71f9498a086b95aa107f66f7a.png';
 
 const logoImage = new URL('../assets/timeatlas-logo.png', import.meta.url).href;
+const logoImage = new URL('../../assets/timeatlas-logo.png', import.meta.url).href;
 
 interface HeaderProps {
   use24Hour: boolean;
