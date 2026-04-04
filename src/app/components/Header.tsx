@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
-import logoImage from 'figma:asset/b7e7edd5bbb33aa71f9498a086b95aa107f66f7a.png';
+import logoImage from 'timeatlas-logo.png';
 
 interface HeaderProps {
   use24Hour: boolean;
