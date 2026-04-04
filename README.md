@@ -1,7 +1,7 @@
 
-  # TimeAtlasv2
+  # TimeAtlas
 
-  This is a code bundle for TimeAtlasv2. The original project is available at https://www.figma.com/design/ZKruc0E88EPk8Rn5iYkmZJ/TimeAtlasv2.
+  This is a code bundle for TimeAtlas. The original project is available at https://www.figma.com/design/ZKruc0E88EPk8Rn5iYkmZJ/TimeAtlas.
 
   ## Running the code
 
