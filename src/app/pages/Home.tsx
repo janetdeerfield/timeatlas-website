@@ -10,8 +10,27 @@ interface HomeProps {
   use24Hour: boolean;
 }
 
+// Helper function to check if DST is currently active in the US
+function isDSTActive(): boolean {
+  const now = new Date();
+  const year = now.getFullYear();
+  
+  // DST starts on second Sunday in March at 2:00 AM
+  const marchFirst = new Date(year, 2, 1); // Month is 0-indexed
+  const firstMarchSunday = new Date(year, 2, 1 + (7 - marchFirst.getDay()) % 7);
+  const dstStart = new Date(year, 2, firstMarchSunday.getDate() + 7, 2, 0, 0);
+  
+  // DST ends on first Sunday in November at 2:00 AM
+  const novemberFirst = new Date(year, 10, 1);
+  const firstNovemberSunday = new Date(year, 10, 1 + (7 - novemberFirst.getDay()) % 7);
+  const dstEnd = new Date(year, 10, firstNovemberSunday.getDate(), 2, 0, 0);
+  
+  return now >= dstStart && now < dstEnd;
+}
+
 export function Home({ use24Hour }: HomeProps) {
   const featuredCities = majorCities.slice(0, 5);
+  const dstActive = isDSTActive();
 
   return (
     <>
@@ -133,6 +152,48 @@ export function Home({ use24Hour }: HomeProps) {
                 >
                   U.S. Time Zones
                 </h2>
+                
+                {/* DST Status Banner */}
+                <div 
+                  className="mb-6 p-4 rounded-lg"
+                  style={{
+                    backgroundColor: dstActive ? '#E8F5E9' : '#FFF3E0',
+                    border: `1px solid ${dstActive ? '#A5D6A7' : '#FFE0B2'}`,
+                  }}
+                >
+                  <p 
+                    className="font-semibold mb-2"
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      color: '#080A0C',
+                      fontSize: '15px',
+                    }}
+                  >
+                    Daylight Saving Time (DST) is {dstActive ? 'ACTIVE' : 'INACTIVE'}
+                  </p>
+                  <p 
+                    className="mb-2"
+                    style={{
+                      fontFamily: 'Open Sans, sans-serif',
+                      color: '#364151',
+                      fontSize: '14px',
+                      lineHeight: '1.6',
+                    }}
+                  >
+                    Clocks move forward one hour on the second Sunday in March and back one hour on the first Sunday in November. The switch occurs at 2:00 a.m. local time.
+                  </p>
+                  <p 
+                    style={{
+                      fontFamily: 'Open Sans, sans-serif',
+                      color: '#364151',
+                      fontSize: '14px',
+                      lineHeight: '1.6',
+                    }}
+                  >
+                    <strong>Locations not observing DST:</strong> Hawaii and most of Arizona do not observe DST, along with American Samoa, Guam, Puerto Rico, and the Virgin Islands.
+                  </p>
+                </div>
+                
                 <div className="space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span 
@@ -143,7 +204,7 @@ export function Home({ use24Hour }: HomeProps) {
                         fontSize: '15px',
                       }}
                     >
-                      Eastern Daylight Time:
+                      Eastern {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
                     <span 
                       style={{
@@ -164,7 +225,7 @@ export function Home({ use24Hour }: HomeProps) {
                         fontSize: '15px',
                       }}
                     >
-                      Central Daylight Time:
+                      Central {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
                     <span 
                       style={{
@@ -185,7 +246,7 @@ export function Home({ use24Hour }: HomeProps) {
                         fontSize: '15px',
                       }}
                     >
-                      Mountain Daylight Time:
+                      Mountain {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
                     <span 
                       style={{
@@ -227,7 +288,7 @@ export function Home({ use24Hour }: HomeProps) {
                         fontSize: '15px',
                       }}
                     >
-                      Pacific Daylight Time:
+                      Pacific {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
                     <span 
                       style={{
