@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Users, Clock, Copy, Check } from 'lucide-react';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 import { majorCities, getCurrentTimeInTimezone, getTimezoneDisplayWithDST } from '../utils/time';
 import { copyToClipboard } from '../utils/format';
 
@@ -120,6 +121,11 @@ export function Meet({ use24Hour }: MeetProps) {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F2EFEA' }}>
+      <SEO 
+        title="Meeting Planner – Find Best Time Across Time Zones | TimeAtlas"
+        description="Schedule global meetings effortlessly. Find the best meeting time across multiple time zones. Perfect for remote teams and international collaboration."
+        path="/meet"
+      />
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         {/* Header */}
         <div className="text-center mb-12">

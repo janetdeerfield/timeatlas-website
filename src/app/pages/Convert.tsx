@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeftRight, ChevronDown } from 'lucide-react';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 import {
   majorCities,
   getShortDateInTimezone,
@@ -59,6 +60,11 @@ export function Convert({ use24Hour }: ConvertProps) {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FEFEFE' }}>
+      <SEO
+        title="Time Zone Converter – Convert Time Between Cities | TimeAtlas"
+        description="Convert time between time zones instantly. Compare local times across cities and plan meetings with TimeAtlas."
+        path="/convert"
+      />
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         <div className="text-center mb-12">
           <h1 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { RouterProvider } from 'react-router';
+import { HelmetProvider } from 'react-helmet-async';
 import { createRouter } from './routes';
 
 export default function App() {
@@ -15,5 +16,9 @@ export default function App() {
     setRouter(createRouter({ use24Hour, onToggleFormat: () => setUse24Hour(!use24Hour) }));
   }, [use24Hour]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  );
 }
