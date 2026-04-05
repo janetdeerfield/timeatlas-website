@@ -258,26 +258,50 @@ export function Home({ use24Hour }: HomeProps) {
                       Denver (GMT-6)
                     </span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
-                      style={{
-                        fontFamily: 'Inter, sans-serif',
-                        fontWeight: 600,
-                        color: '#080A0C',
-                        fontSize: '15px',
-                      }}
-                    >
-                      Mountain Standard Time:
-                    </span>
-                    <span 
-                      style={{
-                        fontFamily: 'Open Sans, sans-serif',
-                        color: '#364151',
-                        fontSize: '15px',
-                      }}
-                    >
-                      Phoenix (GMT-7)
-                    </span>
+                  <div className="space-y-1">
+                    <div className="flex flex-wrap items-center gap-1 sm:gap-2">
+                      <span 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 600,
+                          color: '#080A0C',
+                          fontSize: '15px',
+                        }}
+                      >
+                        Mountain Standard Time:
+                      </span>
+                      <span 
+                        style={{
+                          fontFamily: 'Open Sans, sans-serif',
+                          color: '#364151',
+                          fontSize: '15px',
+                        }}
+                      >
+                        Phoenix (GMT-7)
+                      </span>
+                    </div>
+                    <div className="pl-0 sm:pl-0">
+                      <div 
+                        style={{
+                          fontFamily: 'Open Sans, sans-serif',
+                          color: '#6B7280',
+                          fontSize: '13px',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        Daylight Saving: No observed change.
+                      </div>
+                      <div 
+                        style={{
+                          fontFamily: 'Open Sans, sans-serif',
+                          color: '#6B7280',
+                          fontSize: '13px',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        Exceptions: The Navajo Nation within Arizona does observe DST.
+                      </div>
+                    </div>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span 
