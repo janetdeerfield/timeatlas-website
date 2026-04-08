@@ -1,24 +1,32 @@
 import { Link } from 'react-router';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 
 export function About() {
   return (
-    <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <article className="prose prose-lg max-w-none">
-          <h1 
-            style={{ 
-              fontFamily: 'Inter, sans-serif',
-              color: '#0F172A',
-              fontSize: '48px',
-              fontWeight: 500,
-              marginBottom: '32px',
-              lineHeight: 1.2
-            }}
-          >
-            About TimeAtlas
-          </h1>
+    <>
+      <SEO
+        title="Explore the Tools | TimeAtlas"
+        description="Whether you're checking the exact time, converting time zones, or planning meetings across continents, every tool is designed to feel calm, fast, and intuitive."
+        path="/about"
+      />
+
+      <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
+        {/* Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <article className="prose prose-lg max-w-none">
+            <h1
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                color: '#0F172A',
+                fontSize: '48px',
+                fontWeight: 500,
+                marginBottom: '32px',
+                lineHeight: 1.2
+              }}
+            >
+              About TimeAtlas
+            </h1>
 
           <p 
             style={{ 
@@ -211,5 +219,6 @@ export function About() {
       {/* Footer */}
       <Footer />
     </div>
+    </>
   );
 }
