@@ -1,9 +1,12 @@
+// src/app/routes.tsx
 import { createBrowserRouter } from 'react-router';
 import { Home } from './pages/Home';
 import { Convert } from './pages/Convert';
 import { World } from './pages/World';
 import { Meet } from './pages/Meet';
 import { Dev } from './pages/Dev';
+import { PstToEst } from './pages/PstToEst';
+import { EstToPst } from './pages/EstToPst';
 import { About } from './pages/About';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
@@ -39,6 +42,14 @@ export const createRouter = (config: RouteConfig) => {
         {
           path: 'dev',
           element: <Dev />,
+        },
+        {
+          path: 'pst-to-est',
+          element: <PstToEst />,
+        },
+        {
+          path: 'est-to-pst',
+          element: <EstToPst />,
         },
         {
           path: 'about',
