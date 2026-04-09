@@ -129,13 +129,13 @@ export function Convert({ use24Hour }: ConvertProps) {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#005EE9';
-                const icon = e.currentTarget.querySelector('svg');
-                if (icon) (icon as HTMLElement).style.color = 'white';
+                const icon = e.currentTarget.querySelector<SVGSVGElement>('svg');
+                if (icon) icon.style.color = 'white';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = '#F0F9F3';
-                const icon = e.currentTarget.querySelector('svg');
-                if (icon) (icon as HTMLElement).style.color = '#2E45F0';
+                const icon = e.currentTarget.querySelector<SVGSVGElement>('svg');
+                if (icon) icon.style.color = '#2E45F0';
               }}
               title="Swap cities"
             >
