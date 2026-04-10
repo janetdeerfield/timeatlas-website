@@ -126,6 +126,7 @@ export function Meet({ use24Hour }: MeetProps) {
         description="Schedule global meetings effortlessly. Find the best meeting time across multiple time zones. Perfect for remote teams and international collaboration."
         path="/meet"
       />
+      <h1 className="sr-only">Find the Best Meeting Times Across Time Zones</h1>
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         {/* Header */}
         <div className="text-center mb-12">
@@ -135,7 +136,7 @@ export function Meet({ use24Hour }: MeetProps) {
           >
             <Users className="w-8 h-8" style={{ color: '#2E45F0' }} />
           </div>
-          <h1 
+          <h2 
             className="text-5xl font-bold mb-3"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -143,7 +144,7 @@ export function Meet({ use24Hour }: MeetProps) {
             }}
           >
             Meeting Planner
-          </h1>
+          </h2>
           <p 
             className="text-lg"
             style={{
@@ -443,6 +444,29 @@ export function Meet({ use24Hour }: MeetProps) {
         </div>
       </div>
       
+      {/* SEO Content Section */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: 'Inter, sans-serif', color: '#080A0C' }}
+        >
+          Best Meeting Times Between Time Zones
+        </h2>
+        <p
+          className="mb-4"
+          style={{ fontFamily: 'Open Sans, sans-serif', color: '#364151', fontSize: '15px', lineHeight: '1.7' }}
+        >
+          Easily find the best meeting times across time zones. TimeAtlas helps you compare working hours,
+          avoid late-night calls, and schedule meetings between cities like New York, London, and Tokyo.
+        </p>
+        <p
+          style={{ fontFamily: 'Open Sans, sans-serif', color: '#364151', fontSize: '15px', lineHeight: '1.7' }}
+        >
+          Example: A meeting between New York (ET) and Los Angeles (PT) works best between 12 PM – 3 PM ET,
+          when both teams are within standard working hours.
+        </p>
+      </div>
+
       {/* Footer */}
       <Footer />
     </div>
