@@ -62,7 +62,7 @@ export function Convert({ use24Hour }: ConvertProps) {
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FEFEFE' }}>
       <SEO
         title="Time Zone Converter – Compare Time Between Cities | TimeAtlas"
-        description="Convert time between time zones instantly. Compare local times across cities and plan across regions with TimeAtlas."
+        description="Convert time between cities instantly. Compare time zones and plan across regions."
         path="/convert"
       />
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
