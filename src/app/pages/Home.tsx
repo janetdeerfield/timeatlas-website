@@ -477,11 +477,10 @@ export function Home({ use24Hour }: HomeProps) {
               </div>
             </div>
           </section>
-        </div>
 
-        {/* Footer */}
-        <Footer />
+        </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="mt-20" style={{ backgroundColor: '#080A0C', borderTop: '1px solid #1a1f2e' }}>
+    <footer className="mt-0" style={{ backgroundColor: '#080A0C', borderTop: 'none' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pb-24">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
