@@ -37,7 +37,7 @@ export function Dev() {
   return (
     <>
       <SEO
-        title="Developer Tools – Unix, UTC, ISO 8601 Time Formats | TimeAtlas"
+        title="Developer Tools – Unix, UTC & ISO 8601 Converters | TimeAtlas"
         description="Essential time utilities for developers. Convert Unix timestamps, check UTC time, and get ISO 8601 formatted dates. Copy code examples for JavaScript and Python."
         path="/dev"
       />

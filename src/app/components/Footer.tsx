@@ -17,17 +17,28 @@ export function Footer() {
             >
               TimeAtlas
             </h3>
-            <p
-              style={{
-                fontFamily: 'Open Sans, sans-serif',
-                color: '#FFFFFF',
-                fontSize: '14px',
-                lineHeight: '1.6',
-              }}
-            >
-              The Internet's cleanest time zone tools for developers, remote teams, and global
-              travelers.
-            </p>
+            <div className="mt-8 space-y-2">
+              <p
+                className="text-sm italic"
+                style={{
+                  fontFamily: 'Open Sans, sans-serif',
+                  color: '#CBD5E1',
+                  lineHeight: '1.6',
+                }}
+              >
+                TimeAtlas — A time observatory for the internet.
+              </p>
+              <p
+                className="text-sm"
+                style={{
+                  fontFamily: 'Open Sans, sans-serif',
+                  color: '#CBD5E1',
+                  lineHeight: '1.6',
+                }}
+              >
+                Accurate, calm, and reliable time tools for everywhere.
+              </p>
+            </div>
           </div>
 
           {/* Time Tools */}

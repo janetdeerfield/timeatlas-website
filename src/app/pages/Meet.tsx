@@ -127,7 +127,7 @@ export function Meet({ use24Hour }: MeetProps) {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F2EFEA' }}>
       <SEO
-        title="Meeting Planner – Find Best Time Across Time Zones | TimeAtlas"
+          title="Meeting Planner – Find the Best Time Across Time Zones | TimeAtlas"
         description="Schedule global meetings effortlessly. Find the best meeting time across multiple time zones. Perfect for remote teams and international collaboration."
         path="/meet"
       />

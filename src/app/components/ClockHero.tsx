@@ -17,6 +17,13 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
 
   return (
     <div className="py-12 sm:py-16 px-4" style={{ paddingBottom: 'clamp(3rem, 8vw, 4rem)' }}>
+      <p
+        className="text-xs uppercase tracking-wide mb-2 text-center"
+        style={{ color: '#CBD5E1' }}
+      >
+        Current Local Time
+      </p>
+
       {/* LiveClock Component */}
       <LiveClock
         city={city}
@@ -41,7 +48,8 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
           margin: '16px auto 0',
         }}
       >
-        Accurate worldwide time using the official IANA time zone database
+        Accurate local time, powered by the official IANA time zone database. Compare time zones,
+        plan meetings, and coordinate across the world — with TimeAtlas.
       </p>
 
       {/* Action Buttons */}

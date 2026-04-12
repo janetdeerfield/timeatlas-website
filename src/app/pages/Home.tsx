@@ -35,7 +35,7 @@ export function Home({ use24Hour }: HomeProps) {
   return (
     <>
       <SEO
-        title="Time Converter & World Clock – TimeAtlas"
+        title="Time Converter & World Clock | TimeAtlas"
         description="Convert time zones instantly. Compare world times, plan meetings, and view exact time worldwide with TimeAtlas."
         path="/"
       />
