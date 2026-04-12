@@ -127,8 +127,8 @@ export const cityPairs: CityPairPageData[] = [
       'Convert Coordinated Universal Time (UTC) to Eastern Time (EST) instantly. UTC is 5 hours ahead of EST, so 5:00 PM UTC is 12:00 PM EST. Use this converter for international meetings, server time coordination, and global scheduling.',
     tableHeading: 'UTC to EST Conversion Table',
     conversions: [
-      { from: '12:00 AM UTC', to: '7:00 PM EST (prev)' },
-      { from: '1:00 AM UTC', to: '8:00 PM EST (prev)' },
+      { from: '12:00 AM UTC', to: '7:00 PM EST (previous day)' },
+      { from: '1:00 AM UTC', to: '8:00 PM EST (previous day)' },
       { from: '8:00 AM UTC', to: '3:00 AM EST' },
       { from: '12:00 PM UTC', to: '7:00 AM EST' },
       { from: '1:00 PM UTC', to: '8:00 AM EST' },
@@ -176,8 +176,8 @@ export const cityPairs: CityPairPageData[] = [
       'Convert Greenwich Mean Time (GMT) to Eastern Time (EST) instantly. GMT is 5 hours ahead of EST, so 5:00 PM GMT is 12:00 PM EST. Use this converter for UK-US coordination, international business hours, and meeting scheduling.',
     tableHeading: 'GMT to EST Conversion Table',
     conversions: [
-      { from: '12:00 AM GMT', to: '7:00 PM EST (prev)' },
-      { from: '1:00 AM GMT', to: '8:00 PM EST (prev)' },
+      { from: '12:00 AM GMT', to: '7:00 PM EST (previous day)' },
+      { from: '1:00 AM GMT', to: '8:00 PM EST (previous day)' },
       { from: '8:00 AM GMT', to: '3:00 AM EST' },
       { from: '12:00 PM GMT', to: '7:00 AM EST' },
       { from: '1:00 PM GMT', to: '8:00 AM EST' },
