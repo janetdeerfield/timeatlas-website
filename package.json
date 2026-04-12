@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
+    "validate:sitemap": "node scripts/validate-citypairs-sitemap.mjs",
     "format": "prettier --write . --ignore-path .gitignore",
     "format:check": "prettier --check . --ignore-path .gitignore",
     "lint": "eslint . --ext .ts,.tsx",
@@ -74,6 +75,8 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@types/node": "^20.19.39",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "4.7.0",
     "eslint": "^8.0.0",
     "husky": "^9.0.0",
@@ -81,7 +84,7 @@
     "stylelint": "^17.6.0",
     "stylelint-config-standard": "^40.0.0",
     "tailwindcss": "4.1.12",
-    "typescript": "^5.0.0",
+    "typescript": "^5.9.3",
     "vite": "6.3.5"
   },
   "peerDependencies": {
