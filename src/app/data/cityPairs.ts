@@ -61,7 +61,7 @@ export const cityPairs: CityPairPageData[] = [
       { href: '/est-to-pst', label: 'EST to PST' },
       { href: '/utc-to-est', label: 'UTC to EST' },
       { href: '/gmt-to-est', label: 'GMT to EST' },
-      { href: '/convert', label: 'Full Time Zone Converter' },
+      { href: '/convert', label: 'Smart Time Converter' },
     ],
   },
   {
@@ -110,7 +110,7 @@ export const cityPairs: CityPairPageData[] = [
     related: [
       { href: '/pst-to-est', label: 'PST to EST' },
       { href: '/gmt-to-est', label: 'GMT to EST' },
-      { href: '/convert', label: 'Full Time Zone Converter' },
+      { href: '/convert', label: 'Smart Time Converter' },
       { href: '/meet', label: 'Meeting Planner' },
     ],
   },
@@ -159,7 +159,7 @@ export const cityPairs: CityPairPageData[] = [
     related: [
       { href: '/gmt-to-est', label: 'GMT to EST' },
       { href: '/pst-to-est', label: 'PST to EST' },
-      { href: '/convert', label: 'Full Time Zone Converter' },
+      { href: '/convert', label: 'Smart Time Converter' },
       { href: '/dev', label: 'Developer Tools' },
     ],
   },
@@ -208,7 +208,7 @@ export const cityPairs: CityPairPageData[] = [
     related: [
       { href: '/utc-to-est', label: 'UTC to EST' },
       { href: '/est-to-pst', label: 'EST to PST' },
-      { href: '/convert', label: 'Full Time Zone Converter' },
+      { href: '/convert', label: 'Smart Time Converter' },
       { href: '/meet', label: 'Meeting Planner' },
     ],
   },
