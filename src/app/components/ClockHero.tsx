@@ -17,10 +17,7 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
 
   return (
     <div className="py-12 sm:py-16 px-4" style={{ paddingBottom: 'clamp(3rem, 8vw, 4rem)' }}>
-      <p
-        className="text-xs uppercase tracking-wide mb-2 text-center"
-        style={{ color: '#CBD5E1' }}
-      >
+      <p className="text-xs uppercase tracking-wide mb-2 text-center" style={{ color: '#CBD5E1' }}>
         Current Local Time
       </p>
 
