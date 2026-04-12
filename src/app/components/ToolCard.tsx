@@ -10,7 +10,14 @@ interface ToolCardProps {
   textColor?: string;
 }
 
-export function ToolCard({ title, description, icon: Icon, href, backgroundColor, textColor }: ToolCardProps) {
+export function ToolCard({
+  title,
+  description,
+  icon: Icon,
+  href,
+  backgroundColor,
+  textColor,
+}: ToolCardProps) {
   return (
     <Link
       to={href}
@@ -29,7 +36,7 @@ export function ToolCard({ title, description, icon: Icon, href, backgroundColor
       }}
     >
       <div className="flex flex-col items-center">
-        <div 
+        <div
           className="px-6 py-3 rounded-full font-semibold mb-3"
           style={{
             fontFamily: 'Inter, sans-serif',
@@ -41,7 +48,7 @@ export function ToolCard({ title, description, icon: Icon, href, backgroundColor
         >
           {title}
         </div>
-        <p 
+        <p
           className="text-sm"
           style={{
             fontFamily: 'Open Sans, sans-serif',

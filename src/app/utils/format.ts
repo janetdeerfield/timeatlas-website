@@ -4,11 +4,11 @@ export function formatTimeDifference(hours: number, minutes: number): string {
   const absHours = Math.abs(hours);
   const absMinutes = Math.abs(minutes);
   const sign = hours >= 0 ? '+' : '-';
-  
+
   if (absMinutes === 0) {
     return `${sign}${absHours} hour${absHours !== 1 ? 's' : ''}`;
   }
-  
+
   return `${sign}${absHours}:${String(absMinutes).padStart(2, '0')} hours`;
 }
 
@@ -27,7 +27,7 @@ export function copyToClipboard(text: string): Promise<void> {
       return fallbackCopyToClipboard(text);
     });
   }
-  
+
   // Use fallback method if Clipboard API is not available
   return fallbackCopyToClipboard(text);
 }
@@ -42,7 +42,7 @@ function fallbackCopyToClipboard(text: string): Promise<void> {
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-    
+
     try {
       const successful = document.execCommand('copy');
       document.body.removeChild(textArea);

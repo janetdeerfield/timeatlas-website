@@ -45,13 +45,13 @@ export function Dev() {
         <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
           {/* Header */}
           <div className="text-center mb-12">
-            <div 
+            <div
               className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
               style={{ backgroundColor: '#F0F9F3' }}
             >
               <Code className="w-8 h-8" style={{ color: '#2E45F0' }} />
             </div>
-            <h1 
+            <h1
               className="text-5xl font-bold mb-3"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -60,7 +60,7 @@ export function Dev() {
             >
               Developer Tools
             </h1>
-            <p 
+            <p
               className="text-lg"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
@@ -72,8 +72,11 @@ export function Dev() {
           </div>
 
           {/* Current Time Formats */}
-          <div className="bg-white rounded-xl shadow-sm p-6 mb-6" style={{ border: '1px solid #E6E9EE' }}>
-            <h2 
+          <div
+            className="bg-white rounded-xl shadow-sm p-6 mb-6"
+            style={{ border: '1px solid #E6E9EE' }}
+          >
+            <h2
               className="text-xl font-semibold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -86,7 +89,7 @@ export function Dev() {
               {/* UTC Time */}
               <div className="p-4 rounded-lg" style={{ backgroundColor: '#F2EFEA' }}>
                 <div className="flex items-center justify-between mb-2">
-                  <h3 
+                  <h3
                     className="font-medium"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -113,7 +116,7 @@ export function Dev() {
                     )}
                   </button>
                 </div>
-                <code 
+                <code
                   className="text-2xl font-mono font-bold"
                   style={{
                     fontFamily: 'Monaco, Consolas, monospace',
@@ -122,7 +125,7 @@ export function Dev() {
                 >
                   {currentUTC}
                 </code>
-                <p 
+                <p
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
@@ -136,7 +139,7 @@ export function Dev() {
               {/* Unix Timestamp */}
               <div className="p-4 rounded-lg" style={{ backgroundColor: '#F2EFEA' }}>
                 <div className="flex items-center justify-between mb-2">
-                  <h3 
+                  <h3
                     className="font-medium"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -163,7 +166,7 @@ export function Dev() {
                     )}
                   </button>
                 </div>
-                <code 
+                <code
                   className="text-2xl font-mono font-bold"
                   style={{
                     fontFamily: 'Monaco, Consolas, monospace',
@@ -172,7 +175,7 @@ export function Dev() {
                 >
                   {currentUnix}
                 </code>
-                <p 
+                <p
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
@@ -186,7 +189,7 @@ export function Dev() {
               {/* ISO 8601 */}
               <div className="p-4 rounded-lg" style={{ backgroundColor: '#F2EFEA' }}>
                 <div className="flex items-center justify-between mb-2">
-                  <h3 
+                  <h3
                     className="font-medium"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -213,7 +216,7 @@ export function Dev() {
                     )}
                   </button>
                 </div>
-                <code 
+                <code
                   className="text-lg font-mono font-bold break-all"
                   style={{
                     fontFamily: 'Monaco, Consolas, monospace',
@@ -222,7 +225,7 @@ export function Dev() {
                 >
                   {currentISO}
                 </code>
-                <p 
+                <p
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
@@ -236,7 +239,7 @@ export function Dev() {
               {/* Timezone */}
               <div className="p-4 rounded-lg" style={{ backgroundColor: '#F2EFEA' }}>
                 <div className="flex items-center justify-between mb-2">
-                  <h3 
+                  <h3
                     className="font-medium"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -263,7 +266,7 @@ export function Dev() {
                     )}
                   </button>
                 </div>
-                <code 
+                <code
                   className="text-xl font-mono font-bold"
                   style={{
                     fontFamily: 'Monaco, Consolas, monospace',
@@ -272,7 +275,7 @@ export function Dev() {
                 >
                   {timezone}
                 </code>
-                <p 
+                <p
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
@@ -286,8 +289,11 @@ export function Dev() {
           </div>
 
           {/* Unix Timestamp Converter */}
-          <div className="bg-white rounded-xl shadow-sm p-6 mb-6" style={{ border: '1px solid #E6E9EE' }}>
-            <h2 
+          <div
+            className="bg-white rounded-xl shadow-sm p-6 mb-6"
+            style={{ border: '1px solid #E6E9EE' }}
+          >
+            <h2
               className="text-xl font-semibold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -298,7 +304,7 @@ export function Dev() {
             </h2>
             <div className="space-y-4">
               <div>
-                <label 
+                <label
                   className="block text-sm font-medium mb-2"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -340,8 +346,11 @@ export function Dev() {
                 </div>
               </div>
               {convertedTime && (
-                <div className="p-4 rounded-lg" style={{ backgroundColor: '#F0F9F3', border: '1px solid #D9DEE6' }}>
-                  <h3 
+                <div
+                  className="p-4 rounded-lg"
+                  style={{ backgroundColor: '#F0F9F3', border: '1px solid #D9DEE6' }}
+                >
+                  <h3
                     className="font-medium mb-1"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -350,7 +359,7 @@ export function Dev() {
                   >
                     Converted Time
                   </h3>
-                  <p 
+                  <p
                     className="text-lg font-semibold"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -365,8 +374,11 @@ export function Dev() {
           </div>
 
           {/* Code Examples */}
-          <div className="bg-white rounded-xl shadow-sm p-6" style={{ border: '1px solid #E6E9EE' }}>
-            <h2 
+          <div
+            className="bg-white rounded-xl shadow-sm p-6"
+            style={{ border: '1px solid #E6E9EE' }}
+          >
+            <h2
               className="text-xl font-semibold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -377,7 +389,7 @@ export function Dev() {
             </h2>
             <div className="space-y-4">
               <div>
-                <h3 
+                <h3
                   className="font-medium mb-2"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -386,14 +398,16 @@ export function Dev() {
                 >
                   JavaScript
                 </h3>
-                <pre 
+                <pre
                   className="p-4 rounded-lg overflow-x-auto text-sm"
                   style={{
                     backgroundColor: '#080A0C',
                     color: '#F0F9F3',
                   }}
                 >
-                  <code style={{ fontFamily: 'Monaco, Consolas, monospace' }}>{`// Get current Unix timestamp
+                  <code
+                    style={{ fontFamily: 'Monaco, Consolas, monospace' }}
+                  >{`// Get current Unix timestamp
 const timestamp = Math.floor(Date.now() / 1000);
 
 // Convert Unix timestamp to Date
@@ -404,7 +418,7 @@ const iso = new Date().toISOString();`}</code>
                 </pre>
               </div>
               <div>
-                <h3 
+                <h3
                   className="font-medium mb-2"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -413,7 +427,7 @@ const iso = new Date().toISOString();`}</code>
                 >
                   Python
                 </h3>
-                <pre 
+                <pre
                   className="p-4 rounded-lg overflow-x-auto text-sm"
                   style={{
                     backgroundColor: '#080A0C',
@@ -436,7 +450,7 @@ iso = datetime.now().isoformat()`}</code>
             </div>
           </div>
         </div>
-        
+
         {/* Footer */}
         <Footer />
       </div>

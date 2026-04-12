@@ -3,18 +3,21 @@
 ## Branch Strategy (GitFlow)
 
 ### Main Branches
+
 - **main**: Production-ready code. Every commit is tagged as a release.
 - **develop**: Integration branch for features. Stable but pre-release.
 
 ### Supporting Branches
-- **feature/***: Feature development (branch from `develop`)
-- **bugfix/***: Bug fixes (branch from `develop`)
-- **hotfix/***: Production hotfixes (branch from `main`)
-- **release/***: Release preparation (branch from `develop`)
+
+- **feature/\***: Feature development (branch from `develop`)
+- **bugfix/\***: Bug fixes (branch from `develop`)
+- **hotfix/\***: Production hotfixes (branch from `main`)
+- **release/\***: Release preparation (branch from `develop`)
 
 ## Workflow
 
 ### Starting a Feature
+
 ```bash
 git checkout develop
 git pull origin develop
@@ -22,7 +25,9 @@ git checkout -b feature/your-feature-name
 ```
 
 ### Committing Code
+
 Use conventional commits:
+
 ```
 feat: add timezone converter
 fix: correct clock display lag
@@ -32,6 +37,7 @@ chore: update dependencies
 ```
 
 ### Pull Requests
+
 1. Push your branch: `git push origin feature/your-feature-name`
 2. Create a PR against `develop`
 3. Code review required
@@ -39,6 +45,7 @@ chore: update dependencies
 5. Squash and merge when approved
 
 ### Releasing to Production
+
 1. Create release branch: `git checkout -b release/v2.1.0`
 2. Update version in package.json
 3. Merge to `main`: `git checkout main && git merge --no-ff release/v2.1.0`
@@ -47,6 +54,7 @@ chore: update dependencies
 6. Delete release branch
 
 ### Hotfixes
+
 ```bash
 git checkout main
 git checkout -b hotfix/critical-bug-fix
@@ -75,6 +83,7 @@ git merge --no-ff hotfix/critical-bug-fix
 - **footer**: reference issues: "Fixes #123"
 
 Example:
+
 ```
 feat(components): add dark mode toggle
 
@@ -87,6 +96,7 @@ Fixes #456
 ## Pre-Commit Hooks
 
 Before committing:
+
 1. ✓ Type check: `npx tsc --noEmit`
 2. ✓ Format check: `npm run format:check`
 3. ✓ Lint: `npm run lint`

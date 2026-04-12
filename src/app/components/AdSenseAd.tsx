@@ -15,7 +15,7 @@ interface AdSenseProps {
 /**
  * AdSense Ad Component
  * Displays a Google AdSense ad banner
- * 
+ *
  * @example
  * <AdSenseAd adSlot="1234567890" adFormat="rectangular" />
  */

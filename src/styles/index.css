@@ -3,7 +3,8 @@
 @import './theme.css';
 
 /* Sticky Footer Layout */
-html, body {
+html,
+body {
   height: 100%;
 }
 

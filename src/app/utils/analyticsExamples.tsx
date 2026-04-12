@@ -3,12 +3,7 @@
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
-import {
-  trackPageView,
-  trackTimezoneConversion,
-  trackToolUsage,
-  trackEvent,
-} from './analytics';
+import { trackPageView, trackTimezoneConversion, trackToolUsage, trackEvent } from './analytics';
 
 /**
  * Hook to track page views on route changes
@@ -50,9 +45,7 @@ export const ConverterPageExample = () => {
 
   return (
     <div>
-      <button onClick={() => handleConversion('America/New_York', 'Europe/London')}>
-        Convert
-      </button>
+      <button onClick={() => handleConversion('America/New_York', 'Europe/London')}>Convert</button>
     </div>
   );
 };

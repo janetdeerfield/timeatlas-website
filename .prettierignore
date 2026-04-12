@@ -1,0 +1,8 @@
+# Raw pasted reference snippets (not valid standalone CSS/JSX)
+src/imports/pasted_text/**
+
+# Generated build output
+dist/**
+
+# External sample workspace
+notebook-renderer-react-sample/**

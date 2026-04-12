@@ -21,7 +21,7 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
       <LiveClock
         city={city}
         timeZone={timezone}
-        format={use24Hour ? "24h" : "12h"}
+        format={use24Hour ? '24h' : '12h'}
         showSeconds={true}
         showMilliseconds={false}
         showDate={true}
@@ -31,7 +31,7 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
       />
 
       {/* Authority Line */}
-      <p 
+      <p
         className="text-center mt-4 px-4"
         style={{
           fontFamily: 'Open Sans, sans-serif',

@@ -12,11 +12,11 @@ interface CityCardProps {
 }
 
 export function CityCard({ name, timezone, utcOffset, country, use24Hour }: CityCardProps) {
-  const timeData = useTime({ 
-    timeZone: timezone, 
-    format: use24Hour ? "24h" : "12h",
+  const timeData = useTime({
+    timeZone: timezone,
+    format: use24Hour ? '24h' : '12h',
     showSeconds: true,
-    showMilliseconds: false
+    showMilliseconds: false,
   });
 
   const [date, setDate] = useState('');
@@ -36,7 +36,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
   };
 
   return (
-    <div 
+    <div
       className="p-5 bg-white rounded-xl transition-all"
       style={{
         border: '1px solid #E6E9EE',
@@ -52,7 +52,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
     >
       <div className="flex items-start justify-between mb-3">
         <div>
-          <h3 
+          <h3
             className="text-lg font-semibold"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -62,7 +62,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
             {name}
           </h3>
           {country && (
-            <p 
+            <p
               className="text-sm"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
@@ -90,9 +90,9 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
           <Volume2 className="w-4 h-4" style={{ color: '#364151' }} />
         </button>
       </div>
-      
+
       <div className="space-y-1">
-        <div 
+        <div
           className="text-3xl font-bold tabular-nums whitespace-nowrap"
           style={{
             fontFamily: 'Inter, sans-serif',
@@ -102,7 +102,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
         >
           {timeData.formattedTime}
         </div>
-        <div 
+        <div
           className="text-sm"
           style={{
             fontFamily: 'Open Sans, sans-serif',
@@ -111,7 +111,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
         >
           {date}
         </div>
-        <div 
+        <div
           className="text-xs"
           style={{
             fontFamily: 'Open Sans, sans-serif',

@@ -10,8 +10,8 @@ Example:
 
 padding-bottom: 80px
 
-	•	✅ Sticky footer layout
-	•	✅ Hero spacing: Hero → 64px → Content → 80px → Footer
+    •	✅ Sticky footer layout
+    •	✅ Hero spacing: Hero → 64px → Content → 80px → Footer
 
 Sticky Footer
 This is the standard solution used by Apple, Stripe, GitHub, etc.
@@ -22,31 +22,29 @@ If content is long → footer moves naturally below content
 
 So the footer always feels consistent, without fake padding.
 
-
 html, body {
-  height: 100%;
+height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
 }
 
 main {
-  flex: 1;
+flex: 1;
 }
 
-
 Hero Section
-	•	✅ Big clock with fading seconds - Fade the 2 seconds digits to grey 
-	•	✅ Add authority line:
+• ✅ Big clock with fading seconds - Fade the 2 seconds digits to grey
+• ✅ Add authority line:
 
 Accurate worldwide time using the official IANA time zone database
 
 A small search icon in the header.
 
-[logo + tagline]     Now Convert World Meet Dev     ⌕ Search     12h / 24h
+[logo + tagline] Now Convert World Meet Dev ⌕ Search 12h / 24h
 
 ⌕ Search
 
@@ -88,15 +86,15 @@ Open Unix Timestamp Converter
 Open Meeting Planner
 
 const items = [
-  "New York",
-  "London",
-  "Tokyo",
-  "Time Converter",
-  "World Time",
-  "Meeting Planner",
-  "UTC Time",
-  "Unix Timestamp",
-  "ISO 8601"
+"New York",
+"London",
+"Tokyo",
+"Time Converter",
+"World Time",
+"Meeting Planner",
+"UTC Time",
+"Unix Timestamp",
+"ISO 8601"
 ];
 
 Add a small status indicator.
@@ -110,8 +108,6 @@ or
 
 This makes the product feel like infrastructure.
 
-
-
 Header:
 
 Logo:
@@ -123,7 +119,7 @@ The Internet’s Cleanest Time Tools
 
 Navigation:
 
-[logo + tagline]     Now Convert World Meet Dev     ⌕ Search     12h / 24h
+[logo + tagline] Now Convert World Meet Dev ⌕ Search 12h / 24h
 
 Pages:
 
@@ -132,7 +128,6 @@ Convert
 World
 Meet
 Dev
-
 
 Now
 
@@ -220,8 +215,8 @@ London, Ohio
 Select → clock temporarily switches.
 
 6. Even cleaner option (my favorite)
-Instead of permanent change, allow preview mode.
-Click city → clock animates to:
+   Instead of permanent change, allow preview mode.
+   Click city → clock animates to:
 
 Paris
 2:46 AM
@@ -232,7 +227,6 @@ Then show:
 Return to local time
 
 This feels very elegant.
-
 
 Fun with Time
 No changes
@@ -277,7 +271,7 @@ About
 
 About TimeAtlas
 
-TimeAtlas is a collection of clean, accurate time tools designed to make global time simple. 
+TimeAtlas is a collection of clean, accurate time tools designed to make global time simple.
 It provides real-time clocks, time zone conversion, meeting planning tools, and developer time formats in a fast, distraction-free interface.
 
 How accurate is TimeAtlas?
@@ -317,7 +311,6 @@ PST → PDT
 
 Arizona and Hawaii do not observe DST.
 
-
 Footer
 
 TimeAtlas - The Internet’s Cleanest Time Tools
@@ -325,4 +318,4 @@ TimeAtlas - The Internet’s Cleanest Time Tools
 About
 Privacy
 Terms
-Contact   
+Contact

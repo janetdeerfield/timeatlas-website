@@ -9,6 +9,7 @@ The Internet's cleanest time tools platform. A modern, responsive web applicatio
 ## Quick Start
 
 ### Prerequisites
+
 - Node.js 20+
 - npm (or pnpm/yarn)
 
@@ -48,6 +49,7 @@ npm run preview
 This project follows a structured, code-first development workflow designed for stability and maintainability.
 
 ### 📋 Key Documents
+
 - **[Git Workflow](.github/GIT_WORKFLOW.md)** - Branching strategy, commit conventions, PR process
 - **[Deployment Guide](.github/DEPLOYMENT.md)** - Production deployment steps and verification
 - **[Contributing Guidelines](.github/CONTRIBUTING.md)** - Code standards and best practices
@@ -55,6 +57,7 @@ This project follows a structured, code-first development workflow designed for 
 ### 🔄 Development Flow
 
 1. **Create Feature Branch**
+
    ```bash
    git checkout develop
    git pull origin develop
@@ -65,14 +68,17 @@ This project follows a structured, code-first development workflow designed for 
    - Write code following project conventions
    - Pre-commit hooks run automatically (type-check, formatting)
    - Use [Conventional Commits](.github/GIT_WORKFLOW.md#commit-message-format)
+
    ```bash
    git commit -m "feat(components): add new feature"
    ```
 
 3. **Push & Create PR**
+
    ```bash
    git push origin feature/description-of-feature
    ```
+
    - Create PR against `develop` branch
    - CI/CD pipeline runs automatically
    - Request code review
@@ -90,6 +96,7 @@ This project follows a structured, code-first development workflow designed for 
 ### 📦 CI/CD Pipeline
 
 **Automated on every push/PR:**
+
 - ✓ TypeScript type checking
 - ✓ Build verification
 - ✓ Code formatting validation
@@ -173,6 +180,7 @@ Edit `.env.local` with your values. This file is never committed to git.
 - **Lighthouse Targets**: 90+ (Performance, Accessibility, Best Practices, SEO)
 
 Monitor with:
+
 ```bash
 npm run build  # Check dist/ sizes
 ```
@@ -182,6 +190,7 @@ npm run build  # Check dist/ sizes
 ## Troubleshooting
 
 ### Git diverged from origin
+
 ```bash
 git fetch origin
 git merge origin/main
@@ -190,12 +199,14 @@ git rebase origin/main
 ```
 
 ### Pre-commit hooks not running
+
 ```bash
 npm run prepare  # Reinstall husky hooks
 chmod +x .husky/pre-commit
 ```
 
 ### Build errors
+
 ```bash
 rm -rf node_modules
 npm install
@@ -220,4 +231,3 @@ See LICENSE file for details.
 
 **Last Updated**: April 2026
 **Maintained By**: TimeAtlas Team
-  

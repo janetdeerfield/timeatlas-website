@@ -5,12 +5,14 @@ Welcome! These guidelines help maintain code quality and a smooth collaboration 
 ## Getting Started
 
 1. **Fork & Clone**
+
    ```bash
    git clone https://github.com/janetdeerfield/TimeAtlasV2.git
    cd TimeAtlasV2
    ```
 
 2. **Setup**
+
    ```bash
    npm install
    npm run prepare  # Setup git hooks
@@ -25,17 +27,20 @@ Welcome! These guidelines help maintain code quality and a smooth collaboration 
 ## Code Standards
 
 ### TypeScript
+
 - All code must be properly typed
 - No `any` types without justification
 - Use strict mode: `tsconfig.json` has `strict: true`
 
 ### React Components
+
 - Functional components with hooks
 - Proper TypeScript interfaces for props
 - Meaningful component names
 - Extract reusable logic into hooks
 
 **Example:**
+
 ```typescript
 interface ButtonProps {
   onClick: () => void;
@@ -57,12 +62,14 @@ export const Button: React.FC<ButtonProps> = ({
 ```
 
 ### Styling
+
 - Use Tailwind CSS classes for styling
 - Keep component logic separate from styles
 - Prefer utility classes over CSS-in-JS when possible
 - Use the design system from `tailwind.config` for consistency
 
 ### File Organization
+
 ```
 ComponentName/
   ├── ComponentName.tsx        # Main component
@@ -72,6 +79,7 @@ ComponentName/
 ```
 
 ### Naming Conventions
+
 - **Components**: PascalCase (`UserCard.tsx`)
 - **Hooks**: camelCase, prefix with `use` (`useTime.ts`)
 - **Utils**: camelCase (`formatTime.ts`)
@@ -91,6 +99,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 **Types:**
+
 - `feat` - New feature
 - `fix` - Bug fix
 - `docs` - Documentation only
@@ -101,6 +110,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 - `chore` - Build, dependencies, etc.
 
 **Examples:**
+
 ```bash
 git commit -m "feat(components): add dark mode toggle"
 git commit -m "fix(hooks): useTime hook not updating"
@@ -131,6 +141,7 @@ All of these run automatically in pre-commit hooks. If they fail, the commit is 
 ## Pull Request Process
 
 1. **Push Your Branch**
+
    ```bash
    git push origin feature/your-feature
    ```
@@ -141,20 +152,25 @@ All of these run automatically in pre-commit hooks. If they fail, the commit is 
    - Description: Explain what and why, reference any related issues
 
 3. **PR Template**
+
    ```markdown
    ## Description
+
    Brief description of changes
 
    ## Type of Change
+
    - [ ] New feature
    - [ ] Bug fix
    - [ ] Breaking change
    - [ ] Documentation
 
    ## Testing
+
    How was this tested?
 
    ## Checklist
+
    - [ ] Code follows style guidelines
    - [ ] Tests pass
    - [ ] No lint warnings
@@ -188,6 +204,7 @@ While formal unit tests aren't required yet, test your changes manually:
 - Document configuration changes in `.env.example`
 
 **JSDoc Example:**
+
 ```typescript
 /**
  * Converts a date to the user's local timezone

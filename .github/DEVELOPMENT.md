@@ -31,6 +31,7 @@ pnpm install
 ```
 
 This installs:
+
 - React 18.3.1 and ReactDOM
 - TypeScript 5+
 - Vite 6.3.5 and plugins
@@ -47,11 +48,13 @@ npx husky install
 ```
 
 This enables pre-commit hooks that run:
+
 - TypeScript type checking
 - Code formatting with Prettier
 - Linting with ESLint (optional)
 
 Make hooks executable:
+
 ```bash
 chmod +x .husky/pre-commit
 ```
@@ -75,6 +78,7 @@ npm run dev
 Server runs at `http://localhost:5173`
 
 **Features:**
+
 - Hot module replacement (HMR)
 - TypeScript type-aware
 - Tailwind CSS watch mode
@@ -223,6 +227,7 @@ Start dev server, then press F5 to debug.
 ### Common Issues
 
 **1. Pre-commit hook fails**
+
 ```bash
 # Hooks not executable
 chmod +x .husky/pre-commit
@@ -235,6 +240,7 @@ git commit --no-verify
 ```
 
 **2. Types errors but code works**
+
 ```bash
 # Restart TypeScript server
 Cmd+K Cmd+J (Mac) / Ctrl+K Ctrl+J (Linux/Windows)
@@ -243,6 +249,7 @@ Cmd+K Cmd+J (Mac) / Ctrl+K Ctrl+J (Linux/Windows)
 ```
 
 **3. HMR not updating**
+
 ```bash
 # Restart dev server
 npm run dev
@@ -252,6 +259,7 @@ npm run type-check
 ```
 
 **4. Build fails with "Cannot find module"**
+
 ```bash
 # Clear node_modules and reinstall
 rm -rf node_modules
@@ -263,6 +271,7 @@ npm run build
 ```
 
 **5. Huge bundle size**
+
 ```bash
 # Analyze bundle
 npm run build
@@ -274,18 +283,21 @@ ls -lah dist/assets/
 ## Performance Debugging
 
 ### Lighthouse Audit
+
 1. Run production build: `npm run build`
 2. Preview: `npm run preview`
 3. Chrome DevTools > Lighthouse tab
 4. Generate report
 
 ### React Profiler
+
 1. Install [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools) extension
 2. Open in Chrome DevTools: Components tab
 3. Highlight renders on update
 4. Check why components re-render
 
 ### Network Performance
+
 1. Chrome DevTools > Network tab
 2. Throttle to Fast 3G / Slow 4G
 3. Check critical path (CSS, JS that blocks render)
@@ -304,12 +316,14 @@ Create test file alongside component: `ComponentName.test.tsx`
 ## Deployment for Development
 
 ### Local Preview
+
 ```bash
 npm run build
 npm run preview
 ```
 
 ### Deploy to GitHub Pages
+
 ```bash
 # Project must be public repository
 # GitHub Pages settings: enable, source = GitHub Actions
@@ -319,6 +333,7 @@ git push origin main
 ```
 
 ### Deploy to Vercel (Easy)
+
 ```bash
 # Login to Vercel
 npm i -g vercel
@@ -328,6 +343,7 @@ vercel
 ```
 
 ### Deploy to Netlify
+
 ```bash
 npm i -g netlify-cli
 netlify deploy

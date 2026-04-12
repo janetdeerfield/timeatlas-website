@@ -60,9 +60,9 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-start justify-center px-4"
-      style={{ 
+      style={{
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        paddingTop: 'calc(64px + 16px)' // Header height + buffer
+        paddingTop: 'calc(64px + 16px)', // Header height + buffer
       }}
       onClick={onClose}
     >
@@ -76,7 +76,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Subtle top fade for depth */}
-        <div 
+        <div
           className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
           style={{
             background: 'linear-gradient(to bottom, rgba(0,0,0,0.04), transparent)',
@@ -101,8 +101,8 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             }}
           />
           {/* Close icon - visible on all devices, subtle styling */}
-          <button 
-            onClick={onClose} 
+          <button
+            onClick={onClose}
             className="p-1 hover:opacity-70 transition-opacity"
             aria-label="Close search"
           >
@@ -133,7 +133,10 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               </button>
             ))
           ) : (
-            <div className="p-8 text-center" style={{ color: '#6B7280', fontFamily: 'Open Sans, sans-serif' }}>
+            <div
+              className="p-8 text-center"
+              style={{ color: '#6B7280', fontFamily: 'Open Sans, sans-serif' }}
+            >
               No results found
             </div>
           )}
@@ -149,7 +152,14 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             color: '#6B7280',
           }}
         >
-          Press <kbd className="px-2 py-1 rounded" style={{ backgroundColor: '#FFFFFF', border: '1px solid #D9DEE6' }}>ESC</kbd> to close
+          Press{' '}
+          <kbd
+            className="px-2 py-1 rounded"
+            style={{ backgroundColor: '#FFFFFF', border: '1px solid #D9DEE6' }}
+          >
+            ESC
+          </kbd>{' '}
+          to close
         </div>
       </div>
     </div>

@@ -9,7 +9,9 @@ export default function App() {
     return saved ? JSON.parse(saved) : false;
   });
 
-  const [router, setRouter] = useState(() => createRouter({ use24Hour, onToggleFormat: () => setUse24Hour(!use24Hour) }));
+  const [router, setRouter] = useState(() =>
+    createRouter({ use24Hour, onToggleFormat: () => setUse24Hour(!use24Hour) })
+  );
 
   useEffect(() => {
     localStorage.setItem('use24Hour', JSON.stringify(use24Hour));

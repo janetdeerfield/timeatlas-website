@@ -3,6 +3,7 @@
 ## Google Analytics 4 (GA4)
 
 ### Current Configuration
+
 - **Tracking ID**: G-B310VMS98Q
 - **Property**: TimeAtlas
 - **Status**: Active
@@ -65,20 +66,21 @@ trackEvent('meeting_time_found', {
 
 ### Custom Events Predefined
 
-| Event | Trigger | Data Captured |
-|-------|---------|----------------|
-| `timezone_converted` | User converts timezone | from/to timezone |
-| `tool_used` | Any tool accessed | tool name |
+| Event                | Trigger                 | Data Captured                |
+| -------------------- | ----------------------- | ---------------------------- |
+| `timezone_converted` | User converts timezone  | from/to timezone             |
+| `tool_used`          | Any tool accessed       | tool name                    |
 | `meeting_time_found` | Meeting time calculated | participants, timezone count |
-| `search_performed` | User searches | search query, result count |
-| `page_visited` | Page navigation | page path, title |
-| `time_learned` | Educational content | content type |
+| `search_performed`   | User searches           | search query, result count   |
+| `page_visited`       | Page navigation         | page path, title             |
+| `time_learned`       | Educational content     | content type                 |
 
 ---
 
 ## Google AdSense
 
 ### Current Configuration
+
 - **Status**: Configured for local development
 - **Publisher ID**: Not yet configured (update when live)
 
@@ -107,17 +109,17 @@ export function MyPage() {
   return (
     <div>
       <h1>Page Title</h1>
-      
+
       {/* Header Ad - Rectangular */}
       <AdSenseAd
         adSlot="1234567890"
         adFormat="rectangular"
         className="my-4"
       />
-      
+
       {/* Content */}
       <p>Main content here...</p>
-      
+
       {/* Sidebar Ad - Vertical */}
       <AdSenseAd
         adSlot="2345678901"
@@ -141,6 +143,7 @@ Create ad slots in AdSense dashboard:
 ### Ad Placement Strategy
 
 Recommended placements:
+
 - **Header**: Above the fold, 728x90 or 300x250
 - **Content**: Between sections, 300x250 or 300x600
 - **Sidebar**: Vertical format, 300x600 or 160x600
@@ -161,6 +164,7 @@ Use `fullWidth` prop for responsive ads that adapt to screen size:
 ### Ad Performance Monitoring
 
 Track ad metrics:
+
 1. AdSense Dashboard → **Performance** reports
 2. Monitor CTR, CPM, RPM
 3. Adjust placements based on performance
@@ -201,6 +205,7 @@ Optimize content & ad placements
 ## Implementation Checklist
 
 ### Local Development
+
 - [x] GA4 tracking ID added to index.html
 - [x] Analytics utility module created
 - [x] AdSense component created
@@ -208,6 +213,7 @@ Optimize content & ad placements
 - [x] `.env.local` with GA ID
 
 ### Before Production
+
 - [ ] Verify GA4 events firing correctly
 - [ ] Get AdSense publisher ID (if monetizing)
 - [ ] Add AdSense ID to `.env.local`
@@ -219,6 +225,7 @@ Optimize content & ad placements
 - [ ] Add analytics script to production `.env`
 
 ### Ongoing Maintenance
+
 - [ ] Monitor GA4 real-time events
 - [ ] Review AdSense performance weekly
 - [ ] Check for policy violations

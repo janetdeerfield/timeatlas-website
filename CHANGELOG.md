@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Code-first workflow infrastructure
 - CI/CD pipeline with GitHub Actions
 - TypeScript strict mode and type checking
@@ -17,11 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Environment variable management
 
 ### Changed
+
 - Updated package.json with development scripts
 - Enhanced .gitignore for better local development
 - Improved README with workflow documentation
 
 ### Fixed
+
 - Git branch synchronization
 - Build consistency and reproducibility
 
@@ -30,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] - 2026-04-07
 
 ### Added
+
 - Full Vite-based React TypeScript rewrite
 - TimeAtlas V2 design system
 - Core time tools: Converter, World Clock, Meeting Planner
@@ -42,10 +46,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dark mode support with next-themes
 
 ### Changed
+
 - Complete redesign from V1
 - Migration from legacy framework to modern stack
 
 ### Deprecated
+
 - V1 codebase no longer maintained
 
 ---
@@ -53,11 +59,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Release Notes Guide
 
 ### When to Release
+
 - **Patch (x.x.X)**: Bug fixes, security patches, minor improvements
 - **Minor (x.X.0)**: New features, non-breaking changes
 - **Major (X.0.0)**: Breaking changes, major refactoring
 
 ### Release Process
+
 1. Update version in package.json: `npm version <patch|minor|major>`
 2. Update this CHANGELOG
 3. Create release PR
@@ -70,21 +78,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [X.Y.Z] - YYYY-MM-DD
 
 ### Added
+
 - New features
 
 ### Changed
+
 - Updated features
 
 ### Fixed
+
 - Bug fixes
 
 ### Security
+
 - Security updates
 
 ### Deprecated
+
 - Features being deprecated
 
 ### Removed
+
 - Removed features
 ```
 
@@ -93,6 +107,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Legacy Releases
 
 ### [1.0.0] - Original TimeAtlas
+
 - Initial TimeAtlas implementation
 - Basic time tools and timezone support
 - Archived - see git history for details

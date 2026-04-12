@@ -39,9 +39,11 @@ export function Meet({ use24Hour }: MeetProps) {
   const updateMeetingTimes = () => {
     const times = selectedCities.map((city) => {
       const now = new Date();
-      const baseTime = new Date(now.toLocaleString('en-US', { timeZone: selectedCities[0].timezone }));
+      const baseTime = new Date(
+        now.toLocaleString('en-US', { timeZone: selectedCities[0].timezone })
+      );
       baseTime.setHours(selectedHour, 0, 0, 0);
-      
+
       const localTime = new Date(baseTime.toLocaleString('en-US', { timeZone: city.timezone }));
       const hour = localTime.getHours();
       const isWorkHours = hour >= 9 && hour < 17;
@@ -56,7 +58,7 @@ export function Meet({ use24Hour }: MeetProps) {
         const period = hour >= 12 ? 'PM' : 'AM';
         displayTime = `${displayHour}:00 ${period}`;
       }
-      
+
       return {
         city: city.name,
         timezone: city.timezone,
@@ -71,12 +73,15 @@ export function Meet({ use24Hour }: MeetProps) {
 
     setMeetingTimes(times);
   };
-  
+
   const handleCopy = async () => {
     const copyText = meetingTimes
-      .map((time) => `${time.city} — ${time.time} (${selectedCities.find(c => c.name === time.city)?.timezoneAbbrev || ''})`)
+      .map(
+        (time) =>
+          `${time.city} — ${time.time} (${selectedCities.find((c) => c.name === time.city)?.timezoneAbbrev || ''})`
+      )
       .join('\n');
-    
+
     try {
       await copyToClipboard(copyText);
       setCopied(true);
@@ -121,7 +126,7 @@ export function Meet({ use24Hour }: MeetProps) {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F2EFEA' }}>
-      <SEO 
+      <SEO
         title="Meeting Planner – Find Best Time Across Time Zones | TimeAtlas"
         description="Schedule global meetings effortlessly. Find the best meeting time across multiple time zones. Perfect for remote teams and international collaboration."
         path="/meet"
@@ -130,13 +135,13 @@ export function Meet({ use24Hour }: MeetProps) {
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         {/* Header */}
         <div className="text-center mb-12">
-          <div 
+          <div
             className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
             style={{ backgroundColor: '#F0F9F3' }}
           >
             <Users className="w-8 h-8" style={{ color: '#2E45F0' }} />
           </div>
-          <h2 
+          <h2
             className="text-5xl font-bold mb-3"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -145,7 +150,7 @@ export function Meet({ use24Hour }: MeetProps) {
           >
             Meeting Planner
           </h2>
-          <p 
+          <p
             className="text-lg"
             style={{
               fontFamily: 'Open Sans, sans-serif',
@@ -157,8 +162,11 @@ export function Meet({ use24Hour }: MeetProps) {
         </div>
 
         {/* City Selection */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-6" style={{ border: '1px solid #E6E9EE' }}>
-          <h2 
+        <div
+          className="bg-white rounded-xl shadow-sm p-6 mb-6"
+          style={{ border: '1px solid #E6E9EE' }}
+        >
+          <h2
             className="text-lg font-semibold mb-4"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -230,8 +238,11 @@ export function Meet({ use24Hour }: MeetProps) {
         </div>
 
         {/* Meeting Time Selector */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-6" style={{ border: '1px solid #E6E9EE' }}>
-          <h2 
+        <div
+          className="bg-white rounded-xl shadow-sm p-6 mb-6"
+          style={{ border: '1px solid #E6E9EE' }}
+        >
+          <h2
             className="text-lg font-semibold mb-4"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -251,7 +262,7 @@ export function Meet({ use24Hour }: MeetProps) {
               accentColor: '#2E45F0',
             }}
           />
-          <div 
+          <div
             className="text-center mt-2 text-2xl font-bold"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -265,11 +276,14 @@ export function Meet({ use24Hour }: MeetProps) {
         </div>
 
         {/* Meeting Times Display */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-6" style={{ border: '1px solid #E6E9EE' }}>
+        <div
+          className="bg-white rounded-xl shadow-sm p-6 mb-6"
+          style={{ border: '1px solid #E6E9EE' }}
+        >
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5" style={{ color: '#364151' }} />
-              <h2 
+              <h2
                 className="text-lg font-semibold"
                 style={{
                   fontFamily: 'Inter, sans-serif',
@@ -311,29 +325,71 @@ export function Meet({ use24Hour }: MeetProps) {
               )}
             </button>
           </div>
-          
+
           {/* Legend */}
-          <div className="flex flex-wrap items-center gap-4 mb-6 p-3 rounded-lg" style={{ backgroundColor: '#F2EFEA' }}>
+          <div
+            className="flex flex-wrap items-center gap-4 mb-6 p-3 rounded-lg"
+            style={{ backgroundColor: '#F2EFEA' }}
+          >
             <div className="flex items-center gap-2">
-              <div style={{ width: '16px', height: '16px', borderRadius: '4px', backgroundColor: '#10b981' }} />
-              <span style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.875rem', color: '#364151' }}>
+              <div
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  backgroundColor: '#10b981',
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: 'Open Sans, sans-serif',
+                  fontSize: '0.875rem',
+                  color: '#364151',
+                }}
+              >
                 🟢 Best (9 AM–5 PM)
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <div style={{ width: '16px', height: '16px', borderRadius: '4px', backgroundColor: '#f59e0b' }} />
-              <span style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.875rem', color: '#364151' }}>
+              <div
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  backgroundColor: '#f59e0b',
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: 'Open Sans, sans-serif',
+                  fontSize: '0.875rem',
+                  color: '#364151',
+                }}
+              >
                 🟡 Acceptable (6–9 AM / 5–9 PM)
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <div style={{ width: '16px', height: '16px', borderRadius: '4px', backgroundColor: '#ef4444' }} />
-              <span style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.875rem', color: '#364151' }}>
+              <div
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  backgroundColor: '#ef4444',
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: 'Open Sans, sans-serif',
+                  fontSize: '0.875rem',
+                  color: '#364151',
+                }}
+              >
                 🔴 Avoid (9 PM–6 AM)
               </span>
             </div>
           </div>
-          
+
           <div className="space-y-4">
             {meetingTimes.map((time, index) => {
               const zoneColors = {
@@ -341,14 +397,14 @@ export function Meet({ use24Hour }: MeetProps) {
                 acceptable: { border: '#f59e0b', bg: '#fffbeb', text: '#f59e0b' },
                 avoid: { border: '#ef4444', bg: '#fef2f2', text: '#ef4444' },
               };
-              
+
               const colors = zoneColors[time.zone];
               const zoneLabels = {
                 best: '🟢 Best',
                 acceptable: '🟡 Acceptable',
                 avoid: '🔴 Avoid',
               };
-              
+
               return (
                 <div
                   key={index}
@@ -360,7 +416,7 @@ export function Meet({ use24Hour }: MeetProps) {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 
+                      <h3
                         className="font-semibold"
                         style={{
                           fontFamily: 'Inter, sans-serif',
@@ -369,7 +425,7 @@ export function Meet({ use24Hour }: MeetProps) {
                       >
                         {time.city}
                       </h3>
-                      <p 
+                      <p
                         className="text-sm"
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
@@ -383,7 +439,7 @@ export function Meet({ use24Hour }: MeetProps) {
                       </p>
                     </div>
                     <div className="text-right">
-                      <div 
+                      <div
                         className="text-2xl font-bold"
                         style={{
                           fontFamily: 'Inter, sans-serif',
@@ -420,7 +476,7 @@ export function Meet({ use24Hour }: MeetProps) {
           }}
         >
           <div className="text-center">
-            <p 
+            <p
               className="text-lg font-semibold"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -431,7 +487,7 @@ export function Meet({ use24Hour }: MeetProps) {
                 ? '✓ This time works for everyone during work hours!'
                 : '⚠ Some participants will be outside typical work hours'}
             </p>
-            <p 
+            <p
               className="text-sm mt-2"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
@@ -443,7 +499,7 @@ export function Meet({ use24Hour }: MeetProps) {
           </div>
         </div>
       </div>
-      
+
       {/* SEO Content Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         <h2
@@ -454,16 +510,27 @@ export function Meet({ use24Hour }: MeetProps) {
         </h2>
         <p
           className="mb-4"
-          style={{ fontFamily: 'Open Sans, sans-serif', color: '#364151', fontSize: '15px', lineHeight: '1.7' }}
+          style={{
+            fontFamily: 'Open Sans, sans-serif',
+            color: '#364151',
+            fontSize: '15px',
+            lineHeight: '1.7',
+          }}
         >
-          Easily find the best meeting times across time zones. TimeAtlas helps you compare working hours,
-          avoid late-night calls, and schedule meetings between cities like New York, London, and Tokyo.
+          Easily find the best meeting times across time zones. TimeAtlas helps you compare working
+          hours, avoid late-night calls, and schedule meetings between cities like New York, London,
+          and Tokyo.
         </p>
         <p
-          style={{ fontFamily: 'Open Sans, sans-serif', color: '#364151', fontSize: '15px', lineHeight: '1.7' }}
+          style={{
+            fontFamily: 'Open Sans, sans-serif',
+            color: '#364151',
+            fontSize: '15px',
+            lineHeight: '1.7',
+          }}
         >
-          Example: A meeting between New York (ET) and Los Angeles (PT) works best between 12 PM – 3 PM ET,
-          when both teams are within standard working hours.
+          Example: A meeting between New York (ET) and Los Angeles (PT) works best between 12 PM – 3
+          PM ET, when both teams are within standard working hours.
         </p>
       </div>
 

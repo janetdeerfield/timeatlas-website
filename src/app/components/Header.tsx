@@ -35,7 +35,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <img src={logoImage} alt="TimeAtlas Logo" className="h-8" />
-              <span 
+              <span
                 className="text-xs"
                 style={{
                   fontFamily: 'Open Sans, sans-serif',
@@ -118,7 +118,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
 
             {/* Second row: Tagline */}
             <div className="text-center mb-3">
-              <span 
+              <span
                 className="text-xs"
                 style={{
                   fontFamily: 'Open Sans, sans-serif',
@@ -160,7 +160,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   24h
                 </button>
               </div>
-              
+
               {/* Hamburger Menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -177,10 +177,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
 
             {/* Mobile Menu Dropdown */}
             {isMobileMenuOpen && (
-              <div 
-                className="mt-4 py-3 border-t"
-                style={{ borderColor: '#D9DEE6' }}
-              >
+              <div className="mt-4 py-3 border-t" style={{ borderColor: '#D9DEE6' }}>
                 <nav className="flex flex-col gap-1">
                   {navItems.map((item) => (
                     <Link
@@ -190,7 +187,8 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         color: location.pathname === item.path ? '#2E45F0' : '#364151',
-                        backgroundColor: location.pathname === item.path ? '#E7EDFF' : 'transparent',
+                        backgroundColor:
+                          location.pathname === item.path ? '#E7EDFF' : 'transparent',
                         borderRadius: '8px',
                       }}
                     >

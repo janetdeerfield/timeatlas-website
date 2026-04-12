@@ -39,12 +39,14 @@ npm run build
 ### 3. Deploy Options
 
 #### Option A: GitHub Pages
+
 ```bash
 # Enable in repository settings
 # Pages will auto-deploy from main branch
 ```
 
 #### Option B: Vercel
+
 ```bash
 # Connect repository to Vercel
 # Auto-deploys on push to main
@@ -52,6 +54,7 @@ npm run build  # Local verification
 ```
 
 #### Option C: Netlify
+
 ```bash
 # Connect repository to Netlify
 # Configure build command: npm run build
@@ -59,6 +62,7 @@ npm run build  # Local verification
 ```
 
 #### Option D: Custom Server (SSH/SFTP)
+
 ```bash
 # Build locally
 npm run build
@@ -102,16 +106,19 @@ npm run build
 ## Performance Optimization
 
 ### Build Size
+
 - Current: 345 KB JavaScript (100 KB gzip)
 - Target: Keep < 150 KB gzip
 
 ### Monitor with:
+
 ```bash
 npm run build --analyze  # (if configured)
 # Or use: npm install --save-dev rollup-plugin-visualizer
 ```
 
 ### Optimization Tips
+
 - Lazy load pages with React.lazy()
 - Code splitting by route
 - Image optimization with next/image or manual compression
@@ -121,6 +128,7 @@ npm run build --analyze  # (if configured)
 ## Environment Configuration
 
 Production environment (.env.production):
+
 ```
 VITE_APP_NAME=TimeAtlas
 VITE_DEPLOYMENT_ENV=production
@@ -132,6 +140,7 @@ VITE_GA_ID=[your-ga-id]
 ## Monitoring & Alerts
 
 Setup monitoring for:
+
 - [ ] Site uptime (UptimeRobot, Statuspage)
 - [ ] Error tracking (Sentry, LogRocket)
 - [ ] Performance (Web Vitals, Lighthouse CI)
@@ -140,6 +149,7 @@ Setup monitoring for:
 ## Emergency Contacts & Runbook
 
 Document:
+
 - Who can deploy
 - Escalation contacts
 - Common issues and fixes

@@ -23,9 +23,9 @@ echo -e "${GREEN}✓ TypeScript check passed${NC}"
 
 # Check formatting
 echo -e "${YELLOW}Checking code formatting...${NC}"
-if ! npx prettier --check . --ignore-path .gitignore 2>/dev/null; then
+if ! npx prettier --check . --ignore-path .prettierignore 2>/dev/null; then
   echo -e "${YELLOW}Some files need formatting. Running prettier...${NC}"
-  npx prettier --write . --ignore-path .gitignore 2>/dev/null
+  npx prettier --write . --ignore-path .prettierignore 2>/dev/null
   echo -e "${GREEN}✓ Formatting fixed${NC}"
 fi
 

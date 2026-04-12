@@ -193,7 +193,7 @@ Header height
 
 Layout
 
-[logo] TimeAtlas      Now Convert World Meet Learn Dev      12h/24h
+[logo] TimeAtlas Now Convert World Meet Learn Dev 12h/24h
 
 Nav text color
 

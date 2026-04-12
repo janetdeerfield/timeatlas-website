@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 
+            <h3
               className="text-lg font-bold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -17,7 +17,7 @@ export function Footer() {
             >
               TimeAtlas
             </h3>
-            <p 
+            <p
               style={{
                 fontFamily: 'Open Sans, sans-serif',
                 color: '#FFFFFF',
@@ -25,13 +25,14 @@ export function Footer() {
                 lineHeight: '1.6',
               }}
             >
-              The Internet's cleanest time zone tools for developers, remote teams, and global travelers.
+              The Internet's cleanest time zone tools for developers, remote teams, and global
+              travelers.
             </p>
           </div>
 
           {/* Time Tools */}
           <div>
-            <h4 
+            <h4
               className="font-semibold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -48,9 +49,9 @@ export function Footer() {
                 { label: 'World Clock', href: '/world' },
                 { label: 'Meeting Planner', href: '/meet' },
                 { label: 'Developer Tools', href: '/dev' },
-              ].map(item => (
+              ].map((item) => (
                 <li key={item.href}>
-                  <a 
+                  <a
                     href={item.href}
                     className="transition-colors"
                     style={{
@@ -59,8 +60,8 @@ export function Footer() {
                       fontSize: '14px',
                       textDecoration: 'none',
                     }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#8495CB')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#8495CB')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                   >
                     {item.label} →
                   </a>
@@ -71,7 +72,7 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 
+            <h4
               className="font-semibold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -86,9 +87,9 @@ export function Footer() {
                 { label: 'About', href: '/about' },
                 { label: 'Privacy', href: '/privacy' },
                 { label: 'Terms', href: '/terms' },
-              ].map(item => (
+              ].map((item) => (
                 <li key={item.href}>
-                  <a 
+                  <a
                     href={item.href}
                     className="transition-colors"
                     style={{
@@ -97,8 +98,8 @@ export function Footer() {
                       fontSize: '14px',
                       textDecoration: 'none',
                     }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#8495CB')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#8495CB')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                   >
                     {item.label}
                   </a>
@@ -109,7 +110,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h4 
+            <h4
               className="font-semibold mb-4"
               style={{
                 fontFamily: 'Inter, sans-serif',
@@ -120,21 +121,40 @@ export function Footer() {
               Connect
             </h4>
             <div className="flex gap-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-                onMouseEnter={e => (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')}
-                onMouseLeave={e => (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')}
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={(e) =>
+                  (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')
+                }
               >
                 <Github size={20} style={{ color: '#FFFFFF', transition: 'color 0.2s' }} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                onMouseEnter={e => (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')}
-                onMouseLeave={e => (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={(e) =>
+                  (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')
+                }
               >
                 <Linkedin size={20} style={{ color: '#FFFFFF', transition: 'color 0.2s' }} />
               </a>
-              <a href="mailto:hello@timeatlas.co"
-                onMouseEnter={e => (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')}
-                onMouseLeave={e => (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')}
+              <a
+                href="mailto:hello@timeatlas.co"
+                onMouseEnter={(e) =>
+                  (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')
+                }
               >
                 <Mail size={20} style={{ color: '#FFFFFF', transition: 'color 0.2s' }} />
               </a>
@@ -143,7 +163,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div 
+        <div
           className="border-t pt-8 text-center"
           style={{
             borderColor: '#1a1f2e',

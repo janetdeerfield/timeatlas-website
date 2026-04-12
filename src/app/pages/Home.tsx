@@ -14,17 +14,17 @@ interface HomeProps {
 function isDSTActive(): boolean {
   const now = new Date();
   const year = now.getFullYear();
-  
+
   // DST starts on second Sunday in March at 2:00 AM
   const marchFirst = new Date(year, 2, 1); // Month is 0-indexed
-  const firstMarchSunday = new Date(year, 2, 1 + (7 - marchFirst.getDay()) % 7);
+  const firstMarchSunday = new Date(year, 2, 1 + ((7 - marchFirst.getDay()) % 7));
   const dstStart = new Date(year, 2, firstMarchSunday.getDate() + 7, 2, 0, 0);
-  
+
   // DST ends on first Sunday in November at 2:00 AM
   const novemberFirst = new Date(year, 10, 1);
-  const firstNovemberSunday = new Date(year, 10, 1 + (7 - novemberFirst.getDay()) % 7);
+  const firstNovemberSunday = new Date(year, 10, 1 + ((7 - novemberFirst.getDay()) % 7));
   const dstEnd = new Date(year, 10, firstNovemberSunday.getDate(), 2, 0, 0);
-  
+
   return now >= dstStart && now < dstEnd;
 }
 
@@ -34,7 +34,7 @@ export function Home({ use24Hour }: HomeProps) {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Time Converter & World Clock – TimeAtlas"
         description="Convert time zones instantly. Compare world times, plan meetings, and view exact time worldwide with TimeAtlas."
         path="/"
@@ -45,9 +45,9 @@ export function Home({ use24Hour }: HomeProps) {
           <section className="bg-white pb-2 sm:pb-8" style={{ backgroundColor: '#FEFEFE' }}>
             <h1 className="sr-only">Time Converter &amp; World Clock</h1>
             <ClockHero use24Hour={use24Hour} />
-            
+
             {/* Horizontal Divider */}
-            <div 
+            <div
               style={{
                 height: '1px',
                 background: '#ECEFF4',
@@ -60,9 +60,13 @@ export function Home({ use24Hour }: HomeProps) {
           </section>
 
           {/* Tools Grid */}
-          <section id="time-tools" className="pt-8 pb-8 sm:pt-8 sm:pb-16" style={{ backgroundColor: '#F1F3F5' }}>
+          <section
+            id="time-tools"
+            className="pt-8 pb-8 sm:pt-8 sm:pb-16"
+            style={{ backgroundColor: '#F1F3F5' }}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 
+              <h2
                 className="text-3xl font-bold mb-8 text-center"
                 style={{
                   fontFamily: 'Inter, sans-serif',
@@ -109,9 +113,12 @@ export function Home({ use24Hour }: HomeProps) {
           </section>
 
           {/* World Clock Strip */}
-          <section className="bg-white py-16" style={{ borderTop: '1px solid #D9DEE6', borderBottom: '1px solid #D9DEE6' }}>
+          <section
+            className="bg-white py-16"
+            style={{ borderTop: '1px solid #D9DEE6', borderBottom: '1px solid #D9DEE6' }}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 
+              <h2
                 className="text-3xl font-bold mb-8"
                 style={{
                   fontFamily: 'Inter, sans-serif',
@@ -138,13 +145,13 @@ export function Home({ use24Hour }: HomeProps) {
           {/* U.S. Time Zones Section */}
           <section className="py-16" style={{ backgroundColor: '#F2EFEA' }}>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div 
+              <div
                 className="bg-white rounded-2xl p-8 sm:p-10"
                 style={{
                   border: '1px solid #E6E9EE',
                 }}
               >
-                <h2 
+                <h2
                   className="text-2xl font-bold mb-6"
                   style={{
                     fontFamily: 'Inter, sans-serif',
@@ -153,16 +160,16 @@ export function Home({ use24Hour }: HomeProps) {
                 >
                   U.S. Time Zones
                 </h2>
-                
+
                 {/* DST Status Banner */}
-                <div 
+                <div
                   className="mb-6 p-4 rounded-lg"
                   style={{
                     backgroundColor: dstActive ? '#E8F5E9' : '#FFF3E0',
                     border: `1px solid ${dstActive ? '#A5D6A7' : '#FFE0B2'}`,
                   }}
                 >
-                  <p 
+                  <p
                     className="font-semibold mb-2"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -172,7 +179,7 @@ export function Home({ use24Hour }: HomeProps) {
                   >
                     Daylight Saving Time (DST) is {dstActive ? 'ACTIVE' : 'INACTIVE'}
                   </p>
-                  <p 
+                  <p
                     className="mb-2"
                     style={{
                       fontFamily: 'Open Sans, sans-serif',
@@ -181,9 +188,10 @@ export function Home({ use24Hour }: HomeProps) {
                       lineHeight: '1.6',
                     }}
                   >
-                    Clocks move forward one hour on the second Sunday in March and back one hour on the first Sunday in November. The switch occurs at 2:00 a.m. local time.
+                    Clocks move forward one hour on the second Sunday in March and back one hour on
+                    the first Sunday in November. The switch occurs at 2:00 a.m. local time.
                   </p>
-                  <p 
+                  <p
                     style={{
                       fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
@@ -191,13 +199,15 @@ export function Home({ use24Hour }: HomeProps) {
                       lineHeight: '1.6',
                     }}
                   >
-                    <strong>Locations not observing DST:</strong> Hawaii and most of Arizona do not observe DST, along with American Samoa, Guam, Puerto Rico, and the Virgin Islands.
+                    <strong>Locations not observing DST:</strong> Hawaii and most of Arizona do not
+                    observe DST, along with American Samoa, Guam, Puerto Rico, and the Virgin
+                    Islands.
                   </p>
                 </div>
-                
+
                 <div className="space-y-3">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
@@ -207,7 +217,7 @@ export function Home({ use24Hour }: HomeProps) {
                     >
                       Eastern {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
@@ -218,7 +228,7 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
@@ -228,7 +238,7 @@ export function Home({ use24Hour }: HomeProps) {
                     >
                       Central {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
@@ -239,7 +249,7 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
@@ -249,7 +259,7 @@ export function Home({ use24Hour }: HomeProps) {
                     >
                       Mountain {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
@@ -261,7 +271,7 @@ export function Home({ use24Hour }: HomeProps) {
                   </div>
                   <div className="space-y-1">
                     <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-                      <span 
+                      <span
                         style={{
                           fontFamily: 'Inter, sans-serif',
                           fontWeight: 600,
@@ -271,7 +281,7 @@ export function Home({ use24Hour }: HomeProps) {
                       >
                         Mountain Standard Time:
                       </span>
-                      <span 
+                      <span
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
                           color: '#364151',
@@ -282,7 +292,7 @@ export function Home({ use24Hour }: HomeProps) {
                       </span>
                     </div>
                     <div className="pl-0 sm:pl-0">
-                      <div 
+                      <div
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
                           color: '#6B7280',
@@ -292,7 +302,7 @@ export function Home({ use24Hour }: HomeProps) {
                       >
                         Daylight Saving: No observed change.
                       </div>
-                      <div 
+                      <div
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
                           color: '#6B7280',
@@ -305,7 +315,7 @@ export function Home({ use24Hour }: HomeProps) {
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
@@ -315,7 +325,7 @@ export function Home({ use24Hour }: HomeProps) {
                     >
                       Pacific {dstActive ? 'Daylight' : 'Standard'} Time:
                     </span>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
@@ -326,7 +336,7 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
@@ -336,7 +346,7 @@ export function Home({ use24Hour }: HomeProps) {
                     >
                       Alaska Daylight Time:
                     </span>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
@@ -347,7 +357,7 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
@@ -357,7 +367,7 @@ export function Home({ use24Hour }: HomeProps) {
                     >
                       Hawaii-Aleutian Standard Time:
                     </span>
-                    <span 
+                    <span
                       style={{
                         fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
@@ -373,14 +383,14 @@ export function Home({ use24Hour }: HomeProps) {
           </section>
 
           {/* Fun with Time Section */}
-          <section 
-            className="py-16 pb-20" 
-            style={{ 
-              background: 'linear-gradient(135deg, #8495CB 0%, #3A5FB8 50%, #06B6D4 100%)'
+          <section
+            className="py-16 pb-20"
+            style={{
+              background: 'linear-gradient(135deg, #8495CB 0%, #3A5FB8 50%, #06B6D4 100%)',
             }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 
+              <h2
                 className="text-3xl font-bold mb-8"
                 style={{
                   fontFamily: 'Inter, sans-serif',
@@ -400,10 +410,7 @@ export function Home({ use24Hour }: HomeProps) {
                   }}
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Lightbulb 
-                      className="w-5 h-5" 
-                      style={{ color: '#0A84D0' }}
-                    />
+                    <Lightbulb className="w-5 h-5" style={{ color: '#0A84D0' }} />
                     <h3
                       className="font-semibold uppercase tracking-wide text-sm"
                       style={{
@@ -423,7 +430,8 @@ export function Home({ use24Hour }: HomeProps) {
                       color: '#364151',
                     }}
                   >
-                    The shortest unit of time that has been measured is the attosecond (10⁻¹⁸ seconds).
+                    The shortest unit of time that has been measured is the attosecond (10⁻¹⁸
+                    seconds).
                   </p>
                 </div>
 
@@ -437,10 +445,7 @@ export function Home({ use24Hour }: HomeProps) {
                   }}
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Quote 
-                      className="w-5 h-5" 
-                      style={{ color: '#2E7D32' }}
-                    />
+                    <Quote className="w-5 h-5" style={{ color: '#2E7D32' }} />
                     <h3
                       className="font-semibold uppercase tracking-wide text-sm"
                       style={{
@@ -477,7 +482,6 @@ export function Home({ use24Hour }: HomeProps) {
               </div>
             </div>
           </section>
-
         </div>
       </div>
       <Footer />

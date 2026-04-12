@@ -2,18 +2,18 @@
 
 :root {
   /* TimeAtlas Color System */
-  --color-primary-indigo: #2E45F0;
-  --color-laser-blue: #005EE9;
-  --color-steel-blue: #0A84D0;
-  --color-wisteria-blue: #8495CB;
-  --color-onyx: #080A0C;
+  --color-primary-indigo: #2e45f0;
+  --color-laser-blue: #005ee9;
+  --color-steel-blue: #0a84d0;
+  --color-wisteria-blue: #8495cb;
+  --color-onyx: #080a0c;
   --color-charcoal-blue: #364151;
-  --color-border: #D9DEE6;
-  --color-border-light: #E6E9EE;
-  --color-panel: #F2EFEA;
-  --color-soft-mint: #F0F9F3;
-  --color-page-bg: #FEFEFE;
-  
+  --color-border: #d9dee6;
+  --color-border-light: #e6e9ee;
+  --color-panel: #f2efea;
+  --color-soft-mint: #f0f9f3;
+  --color-page-bg: #fefefe;
+
   /* Font System */
   --font-display: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
   --font-body: 'Open Sans', -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
@@ -94,7 +94,12 @@
     font-size: var(--font-size);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 
@@ -137,7 +142,9 @@
     line-height: 1.5;
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: var(--font-weight-normal);
@@ -147,12 +154,7 @@
 
 /* Clock Seconds Gradient Animation - "Moving Time Trail" Effect */
 .clock-seconds {
-  background: linear-gradient(
-    90deg,
-    #080A0C,
-    #6B7280,
-    #D1D5DB
-  );
+  background: linear-gradient(90deg, #080a0c, #6b7280, #d1d5db);
   background-size: 200% 100%;
   background-position: 0% 0%;
   background-clip: text;

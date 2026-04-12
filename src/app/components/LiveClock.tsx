@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from "react";
-import { CopyButton } from "./CopyButton";
-import { copyToClipboard } from "../utils/format";
+import { useState, useEffect, useMemo } from 'react';
+import { CopyButton } from './CopyButton';
+import { copyToClipboard } from '../utils/format';
 
 /**
  * Format a timezone offset like -300 minutes into "UTC−5"
@@ -10,7 +10,7 @@ function formatUtcOffset(offsetMinutes: number): string {
   const hours = offsetMinutes / 60;
   // Round to nearest integer for clean display
   const roundedHours = Math.round(hours);
-  const sign = roundedHours >= 0 ? "+" : "−"; // Using minus sign (U+2212)
+  const sign = roundedHours >= 0 ? '+' : '−'; // Using minus sign (U+2212)
   return `UTC${sign}${Math.abs(roundedHours)}`;
 }
 
@@ -19,10 +19,23 @@ function formatUtcOffset(offsetMinutes: number): string {
  */
 function formatUtcString(date: Date): string {
   const pad = (n: number) => String(n).padStart(2, '0');
-  
+
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
   const dayName = days[date.getUTCDay()];
   const day = pad(date.getUTCDate());
   const month = months[date.getUTCMonth()];
@@ -30,7 +43,7 @@ function formatUtcString(date: Date): string {
   const hours = pad(date.getUTCHours());
   const minutes = pad(date.getUTCMinutes());
   const seconds = pad(date.getUTCSeconds());
-  
+
   return `${dayName}, ${day} ${month} ${year} ${hours}:${minutes}:${seconds} UTC`;
 }
 
@@ -39,15 +52,15 @@ function formatUtcString(date: Date): string {
  * This compares the timezone-local parts to the UTC timestamp.
  */
 function getTimeZoneOffsetMinutes(date: Date, timeZone: string): number {
-  const formatter = new Intl.DateTimeFormat("en-US", {
+  const formatter = new Intl.DateTimeFormat('en-US', {
     timeZone,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hourCycle: "h23",
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hourCycle: 'h23',
   });
 
   const parts = formatter.formatToParts(date);
@@ -92,7 +105,7 @@ function getCountryFromTimezone(timeZone: string): string {
     'America/Toronto': 'Canada',
     'America/Vancouver': 'Canada',
   };
-  
+
   return timezoneToCountry[timeZone] || '';
 }
 
@@ -100,27 +113,27 @@ function getCountryFromTimezone(timeZone: string): string {
  * Get timezone name with abbreviation
  */
 function getTimezoneName(date: Date, timeZone: string): string {
-  const longFormatter = new Intl.DateTimeFormat("en-US", {
+  const longFormatter = new Intl.DateTimeFormat('en-US', {
     timeZone,
-    timeZoneName: "long",
+    timeZoneName: 'long',
   });
-  
-  const shortFormatter = new Intl.DateTimeFormat("en-US", {
+
+  const shortFormatter = new Intl.DateTimeFormat('en-US', {
     timeZone,
-    timeZoneName: "short",
+    timeZoneName: 'short',
   });
-  
+
   const longParts = longFormatter.formatToParts(date);
   const shortParts = shortFormatter.formatToParts(date);
-  
-  const longName = longParts.find((p) => p.type === "timeZoneName")?.value || "";
-  const shortName = shortParts.find((p) => p.type === "timeZoneName")?.value || "";
-  
+
+  const longName = longParts.find((p) => p.type === 'timeZoneName')?.value || '';
+  const shortName = shortParts.find((p) => p.type === 'timeZoneName')?.value || '';
+
   // Return format like "Eastern Daylight Time (EDT)"
   if (longName && shortName) {
     return `${longName} (${shortName})`;
   }
-  
+
   return longName || shortName || timeZone;
 }
 
@@ -130,11 +143,11 @@ function getTimezoneName(date: Date, timeZone: string): string {
 function isDST(date: Date, timeZone: string): boolean {
   const january = new Date(date.getFullYear(), 0, 1);
   const july = new Date(date.getFullYear(), 6, 1);
-  
+
   const janOffset = getTimeZoneOffsetMinutes(january, timeZone);
   const julOffset = getTimeZoneOffsetMinutes(july, timeZone);
   const currentOffset = getTimeZoneOffsetMinutes(date, timeZone);
-  
+
   // DST is active when the offset is different from standard time
   return currentOffset !== Math.max(janOffset, julOffset);
 }
@@ -142,7 +155,7 @@ function isDST(date: Date, timeZone: string): boolean {
 interface LiveClockProps {
   city?: string;
   timeZone?: string;
-  format?: "12h" | "24h";
+  format?: '12h' | '24h';
   showSeconds?: boolean;
   showMilliseconds?: boolean;
   showDate?: boolean;
@@ -152,9 +165,9 @@ interface LiveClockProps {
 }
 
 export default function LiveClock({
-  city = "New York",
-  timeZone = "America/New_York",
-  format = "12h",
+  city = 'New York',
+  timeZone = 'America/New_York',
+  format = '12h',
   showSeconds = true,
   showMilliseconds = false,
   showDate = true,
@@ -165,42 +178,45 @@ export default function LiveClock({
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setNow(new Date());
-    }, showMilliseconds ? 100 : 1000);
+    const interval = setInterval(
+      () => {
+        setNow(new Date());
+      },
+      showMilliseconds ? 100 : 1000
+    );
 
     return () => clearInterval(interval);
   }, [showMilliseconds]);
 
-  const hour12 = format === "12h";
+  const hour12 = format === '12h';
 
   const timeFormatter = useMemo(() => {
-    return new Intl.DateTimeFormat("en-US", {
+    return new Intl.DateTimeFormat('en-US', {
       timeZone,
-      hour: "numeric",
-      minute: "2-digit",
-      second: showSeconds ? "2-digit" : undefined,
+      hour: 'numeric',
+      minute: '2-digit',
+      second: showSeconds ? '2-digit' : undefined,
       hour12,
     });
   }, [timeZone, showSeconds, hour12]);
 
   const dateFormatter = useMemo(() => {
-    return new Intl.DateTimeFormat("en-US", {
+    return new Intl.DateTimeFormat('en-US', {
       timeZone,
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      year: "numeric",
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
     });
   }, [timeZone]);
 
   const parts = timeFormatter.formatToParts(now);
-  const getPart = (type: string) => parts.find((p) => p.type === type)?.value || "";
+  const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';
 
-  const hour = getPart("hour");
-  const minute = getPart("minute");
-  const second = getPart("second");
-  const dayPeriod = getPart("dayPeriod");
+  const hour = getPart('hour');
+  const minute = getPart('minute');
+  const second = getPart('second');
+  const dayPeriod = getPart('dayPeriod');
 
   const offsetMinutes = getTimeZoneOffsetMinutes(now, timeZone);
   const utcOffset = formatUtcOffset(offsetMinutes);
@@ -213,88 +229,89 @@ export default function LiveClock({
   const secondsDigits = second ? second.split('') : ['0', '0'];
   const secondLeft = secondsDigits[0] || '0';
   const secondRight = secondsDigits[1] || '0';
-  
+
   // Get additional timezone info
   const country = getCountryFromTimezone(timeZone);
   const timezoneName = getTimezoneName(now, timeZone);
   const dstActive = isDST(now, timeZone);
-  const dstText = dstActive ? "DST active" : "Standard time";
-  
+  const dstText = dstActive ? 'DST active' : 'Standard time';
+
   // Strip country from city name if it's already included (e.g., "New York, USA" -> "New York")
   const cityName = city.includes(',') ? city.split(',')[0].trim() : city;
 
   return (
     <div
       style={{
-        background: compact ? "transparent" : "#FFFFFF",
-        border: compact ? "none" : "1px solid #E6E9EE",
+        background: compact ? 'transparent' : '#FFFFFF',
+        border: compact ? 'none' : '1px solid #E6E9EE',
         borderRadius: compact ? 0 : 16,
-        boxShadow: compact ? "none" : "0 10px 25px rgba(0,0,0,0.04)",
-        padding: compact ? 0 : "clamp(1rem, 4vw, 2rem)",
-        textAlign: "center",
-        maxWidth: compact ? "auto" : 900,
-        margin: compact ? 0 : "0 auto",
+        boxShadow: compact ? 'none' : '0 10px 25px rgba(0,0,0,0.04)',
+        padding: compact ? 0 : 'clamp(1rem, 4vw, 2rem)',
+        textAlign: 'center',
+        maxWidth: compact ? 'auto' : 900,
+        margin: compact ? 0 : '0 auto',
       }}
     >
       {/* City (Country) */}
       <div
         style={{
-          fontFamily: "Inter, sans-serif",
+          fontFamily: 'Inter, sans-serif',
           fontWeight: 600,
           fontSize: compact ? 16 : 18,
-          color: "#364151",
+          color: '#364151',
           marginBottom: 12,
         }}
       >
-        {cityName}{country && ` (${country})`}
+        {cityName}
+        {country && ` (${country})`}
       </div>
 
       {/* Main Time Display */}
       <div
         style={{
-          fontFamily: "Inter, sans-serif",
+          fontFamily: 'Inter, sans-serif',
           fontWeight: 800,
-          fontSize: compact ? 44 : "clamp(3rem, 15vw, 7.5rem)",
+          fontSize: compact ? 44 : 'clamp(3rem, 15vw, 7.5rem)',
           lineHeight: 1,
-          letterSpacing: "-0.02em",
-          fontVariantNumeric: "tabular-nums",
-          color: "#0f172a", // TimeAtlas signature: main time color
+          letterSpacing: '-0.02em',
+          fontVariantNumeric: 'tabular-nums',
+          color: '#0f172a', // TimeAtlas signature: main time color
         }}
       >
         {hour}:{minute}
         {showSeconds && (
-          <span style={{ letterSpacing: "0" }}>
+          <span style={{ letterSpacing: '0' }}>
             <span
               style={{
-                color: "#475569", // TimeAtlas signature: second colon color
+                color: '#475569', // TimeAtlas signature: second colon color
               }}
             >
               :
             </span>
             <span
               style={{
-                color: "#475569", // TimeAtlas signature: first seconds digit
+                color: '#475569', // TimeAtlas signature: first seconds digit
               }}
             >
               {secondLeft}
             </span>
             <span
               style={{
-                color: "#94a3b8", // TimeAtlas signature: second seconds digit (fading)
+                color: '#94a3b8', // TimeAtlas signature: second seconds digit (fading)
               }}
             >
               {secondRight}
             </span>
           </span>
         )}
-        {format === "12h" && (
+        {format === '12h' && (
           <span
             style={{
-              fontSize: compact ? 18 : "clamp(1.25rem, 4vw, 2rem)",
+              fontSize: compact ? 18 : 'clamp(1.25rem, 4vw, 2rem)',
               fontWeight: 600,
               marginLeft: 8,
-              letterSpacing: "0.1em",
-              color: "#6B7280",
+              letterSpacing: '0.1em',
+              color: '#6B7280',
             }}
           >
             {dayPeriod}
@@ -306,9 +323,9 @@ export default function LiveClock({
       {showTimeZoneName && (
         <div
           style={{
-            fontFamily: "Open Sans, sans-serif",
+            fontFamily: 'Open Sans, sans-serif',
             fontSize: compact ? 14 : 16,
-            color: "#6B7280",
+            color: '#6B7280',
             marginTop: 12,
           }}
         >
@@ -319,14 +336,14 @@ export default function LiveClock({
       {showMilliseconds && (
         <div
           style={{
-            fontFamily: "Open Sans, sans-serif",
+            fontFamily: 'Open Sans, sans-serif',
             fontSize: 14,
-            color: "#9AA3AF",
+            color: '#9AA3AF',
             marginTop: 6,
-            fontVariantNumeric: "tabular-nums",
+            fontVariantNumeric: 'tabular-nums',
           }}
         >
-          .{String(now.getMilliseconds()).padStart(3, "0")}
+          .{String(now.getMilliseconds()).padStart(3, '0')}
         </div>
       )}
 
@@ -334,9 +351,9 @@ export default function LiveClock({
       {showDate && (
         <div
           style={{
-            fontFamily: "Open Sans, sans-serif",
+            fontFamily: 'Open Sans, sans-serif',
             fontSize: compact ? 14 : 20,
-            color: "#364151",
+            color: '#364151',
             marginTop: 12,
           }}
         >
@@ -348,9 +365,9 @@ export default function LiveClock({
       {showUtcOffset && (
         <div
           style={{
-            fontFamily: "Open Sans, sans-serif",
+            fontFamily: 'Open Sans, sans-serif',
             fontSize: compact ? 12 : 16,
-            color: "#6B7280",
+            color: '#6B7280',
             marginTop: 8,
           }}
         >
@@ -361,27 +378,18 @@ export default function LiveClock({
       {!compact && (
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
+            display: 'flex',
+            justifyContent: 'center',
             gap: 24,
             marginTop: 24,
-            flexWrap: "wrap",
-            fontFamily: "Open Sans, sans-serif",
+            flexWrap: 'wrap',
+            fontFamily: 'Open Sans, sans-serif',
             fontSize: 15,
           }}
         >
-          <CopyButton
-            label="ISO 8601"
-            text={isoString}
-          />
-          <CopyButton
-            label="UTC"
-            text={utcString}
-          />
-          <CopyButton
-            label="Unix"
-            text={String(unixTimestamp)}
-          />
+          <CopyButton label="ISO 8601" text={isoString} />
+          <CopyButton label="UTC" text={utcString} />
+          <CopyButton label="Unix" text={String(unixTimestamp)} />
         </div>
       )}
     </div>
