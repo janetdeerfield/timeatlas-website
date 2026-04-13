@@ -17,19 +17,6 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
 
   return (
     <div className="py-12 sm:py-16 px-4" style={{ paddingBottom: 'clamp(3rem, 8vw, 4rem)' }}>
-      <p
-        className="text-center px-4"
-        style={{
-          fontFamily: 'Open Sans, sans-serif',
-          fontSize: '14px',
-          color: '#9AA3AF',
-          maxWidth: '900px',
-          margin: '0 auto 16px',
-        }}
-      >
-        Current Local Time
-      </p>
-
       {/* LiveClock Component */}
       <LiveClock
         city={city}
