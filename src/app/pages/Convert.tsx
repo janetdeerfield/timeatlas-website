@@ -1593,31 +1593,31 @@ export function Convert({ use24Hour }: ConvertProps) {
 
           <div className="grid gap-3 sm:grid-cols-2">
             <a
-              href="/pst-to-est"
+              href="/pt-to-et"
               className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
             >
-              PST to EST
+              PT → ET
             </a>
 
             <a
-              href="/est-to-pst"
+              href="/et-to-pt"
               className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
             >
-              EST to PST
+              ET → PT
             </a>
 
             <a
-              href="/utc-to-est"
+              href="/utc-to-et"
               className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
             >
-              UTC to EST
+              UTC → ET
             </a>
 
             <a
-              href="/gmt-to-est"
+              href="/gmt-uk-to-et"
               className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
             >
-              GMT to EST
+              GMT → ET
             </a>
           </div>
         </section>
