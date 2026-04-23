@@ -337,7 +337,7 @@ export function Convert({ use24Hour }: ConvertProps) {
 
         {/* Educational Sections */}
         {/* Key Capital Time Zones */}
-        <section className="mb-12">
+        <section className="pt-6 mb-12">
           <h2
             className="text-3xl font-bold mb-6"
             style={{
