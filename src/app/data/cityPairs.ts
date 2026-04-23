@@ -395,7 +395,7 @@ function buildConversions(from: ZoneConfig, to: ZoneConfig): Array<{ from: strin
     const dayNote = target >= 24 ? ' (next day)' : target < 0 ? ' (previous day)' : '';
     return {
       from: `${formatDecimalHour(h)} ${from.abbr}`,
-      to: `${formatDecimalHour(target)}${dayNote} ${to.abbr}`,
+      to: `${formatDecimalHour(target)} ${to.abbr}${dayNote}`,
     };
   });
 }
