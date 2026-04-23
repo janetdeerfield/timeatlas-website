@@ -34,7 +34,7 @@ function ExpandedDestinations({
   return (
     <div className="rounded-xl border border-indigo-100 bg-indigo-50/40 px-4 py-4">
       <p className="text-xs font-semibold font-inter text-indigo-500 uppercase tracking-wider mb-3">
-        {sourceAbbr} · {sourceCity} → convert to:
+        {sourceAbbr} · {sourceCity} →
       </p>
       <div className="flex flex-wrap gap-2">
         {destinations.map((dest) => (
@@ -78,7 +78,7 @@ export function ConversionGrid() {
       </p>
 
       {/* Top-level source pills */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-3">
         {ZONE_LIST.map((zone) => {
           const isExpanded = expandedAbbr === zone.abbr;
           return (
