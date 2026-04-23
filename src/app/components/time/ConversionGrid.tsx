@@ -73,7 +73,7 @@ export function ConversionGrid() {
 
   return (
     <div className="space-y-4">
-      <p className="text-sm font-open-sans text-slate-500">
+      <p className="text-[15px] font-open-sans text-slate-500">
         Select a time zone to explore all conversions.
       </p>
 
@@ -86,7 +86,7 @@ export function ConversionGrid() {
               key={zone.abbr}
               onClick={() => toggleZone(zone.abbr)}
               aria-expanded={isExpanded}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold font-inter transition-colors cursor-pointer ${
+              className={`w-14 rounded-full border px-3 py-1.5 text-xs font-semibold font-inter transition-colors cursor-pointer flex items-center justify-center ${
                 isExpanded
                   ? 'border-indigo-400 bg-indigo-600 text-white shadow'
                   : 'border-slate-200 bg-white text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50'

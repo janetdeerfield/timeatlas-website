@@ -304,7 +304,7 @@ export function Convert({ use24Hour }: ConvertProps) {
 
         {/* ── Common Time Conversions ──────────────────────────────── */}
         <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold font-inter text-slate-900 mb-4">
             Common Time Conversions
           </h2>
           <ConversionGrid />
@@ -312,7 +312,7 @@ export function Convert({ use24Hour }: ConvertProps) {
 
         {/* ── How Time Zone Conversion Works ──────────────────────── */}
         <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold font-inter text-slate-900 mb-4">
             How Time Zone Conversion Works
           </h2>
           <div className="space-y-4 font-open-sans text-slate-700 leading-relaxed">
@@ -337,7 +337,7 @@ export function Convert({ use24Hour }: ConvertProps) {
 
         {/* Educational Sections */}
         {/* Key Capital Time Zones */}
-        <section className="pt-6 mb-12">
+        <section className="mb-12">
           <h2
             className="text-3xl font-bold mb-6"
             style={{
@@ -542,7 +542,7 @@ export function Convert({ use24Hour }: ConvertProps) {
             style={{ border: '1px solid #E6E9EE' }}
           >
             <div className="grid sm:grid-cols-2 gap-x-8">
-              {/* Left Column - UTC-12 to UTC-3 */}
+              {/* Left Column - UTC-12 to UTC+1 */}
               <div className="space-y-3">
                 <div className="flex gap-2">
                   <span
@@ -742,10 +742,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                     Buenos Aires, Rio de Janeiro, São Paulo
                   </span>
                 </div>
-              </div>
-
-              {/* Right Column - UTC+0 to UTC+12 */}
-              <div className="space-y-3">
                 <div className="flex gap-2">
                   <span
                     className="font-semibold"
@@ -790,6 +786,10 @@ export function Convert({ use24Hour }: ConvertProps) {
                     Paris, Berlin, Rome, Madrid, Warsaw, Lagos
                   </span>
                 </div>
+              </div>
+
+              {/* Right Column - UTC+2 to UTC+12 */}
+              <div className="space-y-3">
                 <div className="flex gap-2">
                   <span
                     className="font-semibold"
@@ -1038,7 +1038,7 @@ export function Convert({ use24Hour }: ConvertProps) {
         </section>
 
         {/* Time Explained FAQ Accordion */}
-        <section className="mb-12">
+        <section className="pt-6 mb-12">
           <h2
             className="text-3xl font-bold mb-6"
             style={{
