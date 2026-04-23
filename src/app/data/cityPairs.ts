@@ -13,7 +13,8 @@ export interface CityPairPageData {
   related: Array<{ href: string; label: string }>;
 }
 
-export const cityPairs: CityPairPageData[] = [
+// ─── Static pages (legacy format, kept for backwards-compatibility) ───────────
+const staticCityPairs: CityPairPageData[] = [
   {
     slug: 'pst-to-est',
     title: 'PST to EST Converter – Pacific to Eastern Time | TimeAtlas',
@@ -214,6 +215,302 @@ export const cityPairs: CityPairPageData[] = [
   },
 ];
 
+// ─── New-format city pair page generator ─────────────────────────────────────
+
+interface ZoneConfig {
+  /** Short abbreviation used in H1, table, and FAQ (e.g. "ET", "GMT", "IST") */
+  abbr: string;
+  /**
+   * Display name used in H1 heading when this zone is the destination.
+   * Differs from abbr only for the GMT/UK zone ("UK Time").
+   */
+  h1Name: string;
+  /** Full descriptive name for titles and intro text (e.g. "Eastern Time") */
+  fullName: string;
+  /** URL slug fragment (e.g. "et", "gmt-uk", "akt") */
+  slugPart: string;
+  /** Standard-time UTC offset in decimal hours (e.g. -5, 5.5) */
+  utcOffset: number;
+  /** Standard-time abbreviation shown in conversion table (e.g. "EST") */
+  stdAbbr: string;
+  /** Daylight-saving abbreviation; empty string when zone has no DST */
+  dstAbbr: string;
+  /** One-sentence zone description used in page intro */
+  zoneDesc: string;
+}
+
+const ZONE_CONFIGS: ZoneConfig[] = [
+  {
+    abbr: 'ET',
+    h1Name: 'ET',
+    fullName: 'Eastern Time',
+    slugPart: 'et',
+    utcOffset: -5,
+    stdAbbr: 'EST',
+    dstAbbr: 'EDT',
+    zoneDesc:
+      'Eastern Time (ET) includes both Eastern Standard Time (EST) and Eastern Daylight Time (EDT).',
+  },
+  {
+    abbr: 'CT',
+    h1Name: 'CT',
+    fullName: 'Central Time',
+    slugPart: 'ct',
+    utcOffset: -6,
+    stdAbbr: 'CST',
+    dstAbbr: 'CDT',
+    zoneDesc:
+      'Central Time (CT) includes both Central Standard Time (CST) and Central Daylight Time (CDT).',
+  },
+  {
+    abbr: 'MT',
+    h1Name: 'MT',
+    fullName: 'Mountain Time',
+    slugPart: 'mt',
+    utcOffset: -7,
+    stdAbbr: 'MST',
+    dstAbbr: 'MDT',
+    zoneDesc:
+      'Mountain Time (MT) includes both Mountain Standard Time (MST) and Mountain Daylight Time (MDT).',
+  },
+  {
+    abbr: 'PT',
+    h1Name: 'PT',
+    fullName: 'Pacific Time',
+    slugPart: 'pt',
+    utcOffset: -8,
+    stdAbbr: 'PST',
+    dstAbbr: 'PDT',
+    zoneDesc:
+      'Pacific Time (PT) includes both Pacific Standard Time (PST) and Pacific Daylight Time (PDT).',
+  },
+  {
+    abbr: 'AKT',
+    h1Name: 'AKT',
+    fullName: 'Alaska Time',
+    slugPart: 'akt',
+    utcOffset: -9,
+    stdAbbr: 'AKST',
+    dstAbbr: 'AKDT',
+    zoneDesc:
+      'Alaska Time (AKT) includes both Alaska Standard Time (AKST) and Alaska Daylight Time (AKDT).',
+  },
+  {
+    abbr: 'HT',
+    h1Name: 'HT',
+    fullName: 'Hawaii Time',
+    slugPart: 'ht',
+    utcOffset: -10,
+    stdAbbr: 'HST',
+    dstAbbr: '',
+    zoneDesc:
+      'Hawaii Time (HT) uses Hawaii Standard Time (HST). Daylight saving time is not observed in Hawaii.',
+  },
+  {
+    abbr: 'UTC',
+    h1Name: 'UTC',
+    fullName: 'Coordinated Universal Time',
+    slugPart: 'utc',
+    utcOffset: 0,
+    stdAbbr: 'UTC',
+    dstAbbr: '',
+    zoneDesc:
+      'Coordinated Universal Time (UTC) is the primary global time standard. It does not observe daylight saving time.',
+  },
+  {
+    abbr: 'GMT',
+    h1Name: 'UK Time',
+    fullName: 'UK Time',
+    slugPart: 'gmt-uk',
+    utcOffset: 0,
+    stdAbbr: 'GMT',
+    dstAbbr: 'BST',
+    zoneDesc:
+      'UK Time uses Greenwich Mean Time (GMT, UTC+0) in winter and British Summer Time (BST, UTC+1) in summer.',
+  },
+  {
+    abbr: 'IST',
+    h1Name: 'IST',
+    fullName: 'India Standard Time',
+    slugPart: 'ist',
+    utcOffset: 5.5,
+    stdAbbr: 'IST',
+    dstAbbr: '',
+    zoneDesc:
+      'India Standard Time (IST) is UTC+5:30. India does not observe daylight saving time.',
+  },
+  {
+    abbr: 'CET',
+    h1Name: 'CET',
+    fullName: 'Central European Time',
+    slugPart: 'cet',
+    utcOffset: 1,
+    stdAbbr: 'CET',
+    dstAbbr: 'CEST',
+    zoneDesc:
+      'Central European Time (CET) is UTC+1. During summer, Central European Summer Time (CEST, UTC+2) is observed.',
+  },
+  {
+    abbr: 'JST',
+    h1Name: 'JST',
+    fullName: 'Japan Standard Time',
+    slugPart: 'jst',
+    utcOffset: 9,
+    stdAbbr: 'JST',
+    dstAbbr: '',
+    zoneDesc:
+      'Japan Standard Time (JST) is UTC+9. Japan does not observe daylight saving time.',
+  },
+];
+
+/** Format a decimal hour value (may be negative or ≥ 24) as "H:MM AM/PM". */
+function formatDecimalHour(h: number): string {
+  // Normalise to 0–1439 minute range, preserving fractional minutes
+  const rawMins = Math.round(((h % 24) + 24) % 24 * 60);
+  const hour24 = Math.floor(rawMins / 60) % 24;
+  const mins = rawMins % 60;
+  const period = hour24 < 12 ? 'AM' : 'PM';
+  const hour12 = hour24 === 0 ? 12 : hour24 > 12 ? hour24 - 12 : hour24;
+  const minsStr = mins === 0 ? '00' : String(mins).padStart(2, '0');
+  return `${hour12}:${minsStr} ${period}`;
+}
+
+/** Human-readable form of an hour offset, e.g. "3 hours", "30 minutes", "5 hours and 30 minutes". */
+function diffLabel(diffHours: number): string {
+  const abs = Math.abs(diffHours);
+  const h = Math.floor(abs);
+  const m = Math.round((abs - h) * 60);
+  if (m === 0) return `${h} hour${h === 1 ? '' : 's'}`;
+  if (h === 0) return `${m} minute${m === 1 ? '' : 's'}`;
+  return `${h} hour${h === 1 ? '' : 's'} and ${m} minute${m === 1 ? '' : 's'}`;
+}
+
+function buildConversions(
+  from: ZoneConfig,
+  to: ZoneConfig,
+): Array<{ from: string; to: string }> {
+  const diff = to.utcOffset - from.utcOffset;
+  // For IST (UTC+5:30) as source, start at :30 so target times land on round hours.
+  const startOffset = from.utcOffset % 1 !== 0 ? 0.5 : 0;
+  // 12 sample times spaced 2 hours apart across the day
+  const sourceTimes = Array.from({ length: 12 }, (_, i) => startOffset + i * 2);
+
+  return sourceTimes.map((h) => {
+    const target = h + diff;
+    const dayNote = target >= 24 ? ' (next day)' : target < 0 ? ' (previous day)' : '';
+    return {
+      from: `${formatDecimalHour(h)} ${from.abbr}`,
+      to: `${formatDecimalHour(target)}${dayNote} ${to.abbr}`,
+    };
+  });
+}
+
+function buildDstAnswer(from: ZoneConfig, to: ZoneConfig): string {
+  const fromHasDst = !!from.dstAbbr;
+  const toHasDst = !!to.dstAbbr;
+  const diff = diffLabel(Math.abs(to.utcOffset - from.utcOffset));
+
+  if (!fromHasDst && !toHasDst) {
+    return `Neither ${from.fullName} nor ${to.fullName} observes daylight saving time, so the time difference remains constant throughout the year.`;
+  }
+  if (fromHasDst && toHasDst) {
+    return `Both ${from.fullName} and ${to.fullName} observe daylight saving time. When both zones switch simultaneously, the ${diff} difference stays the same. During transition periods when only one zone has switched, the offset may temporarily differ by 1 hour.`;
+  }
+  if (fromHasDst) {
+    return `${from.fullName} observes daylight saving time (switching between ${from.stdAbbr} and ${from.dstAbbr}), while ${to.fullName} does not. The time difference may vary by 1 hour depending on the season.`;
+  }
+  return `${to.fullName} observes daylight saving time (switching between ${to.stdAbbr} and ${to.dstAbbr}), while ${from.fullName} does not. The time difference may vary by 1 hour depending on the season.`;
+}
+
+function buildRelated(
+  from: ZoneConfig,
+  to: ZoneConfig,
+): Array<{ href: string; label: string }> {
+  // Reverse pair
+  const reverse = {
+    href: `/${to.slugPart}-to-${from.slugPart}`,
+    label: `${to.abbr} → ${from.abbr}`,
+  };
+
+  // Two other zones that the "from" zone pairs well with (skip from and to)
+  const others = ZONE_CONFIGS.filter((z) => z !== from && z !== to).slice(0, 2).map((z) => ({
+    href: `/${from.slugPart}-to-${z.slugPart}`,
+    label: `${from.abbr} → ${z.abbr}`,
+  }));
+
+  return [reverse, ...others, { href: '/convert', label: 'Smart Time Converter' }];
+}
+
+function buildPage(from: ZoneConfig, to: ZoneConfig): CityPairPageData {
+  const diff = to.utcOffset - from.utcOffset;
+  const slug = `${from.slugPart}-to-${to.slugPart}`;
+
+  const timeDifference =
+    diff === 0
+      ? `${from.fullName} and ${to.fullName} share the same UTC offset`
+      : `${to.fullName} is ${diffLabel(diff)} ${diff > 0 ? 'ahead of' : 'behind'} ${from.fullName}`;
+
+  const h1 = `${from.abbr} → ${to.h1Name} Converter (${from.abbr} to ${to.abbr})`;
+
+  const title = `${from.fullName} → ${to.fullName} Converter (${from.abbr} to ${to.abbr}) | TimeAtlas`;
+
+  const description = `Convert ${from.fullName} (${from.abbr}) to ${to.fullName} (${to.abbr}) instantly. ${timeDifference}. Use this converter for scheduling meetings, remote work, and global coordination.`;
+
+  const intro = `Convert ${from.fullName} (${from.abbr}) to ${to.fullName} (${to.abbr}) instantly. ${timeDifference}. ${from.zoneDesc} ${to.zoneDesc}`;
+
+  // Example conversion at noon source time for FAQ answer
+  const noonTarget = 12 + diff;
+  const noonTargetStr =
+    `${formatDecimalHour(noonTarget)} ${to.abbr}` +
+    (noonTarget >= 24 ? ' (next day)' : noonTarget < 0 ? ' (previous day)' : '');
+
+  const faq = [
+    {
+      question: `What is the time difference between ${from.abbr} and ${to.abbr}?`,
+      answer:
+        diff === 0
+          ? `${from.fullName} and ${to.fullName} share the same UTC offset, so there is no time difference between them.`
+          : `${to.fullName} is ${diffLabel(Math.abs(diff))} ${diff > 0 ? 'ahead of' : 'behind'} ${from.fullName} during standard time.`,
+    },
+    {
+      question: `How do I convert ${from.abbr} to ${to.abbr}?`,
+      answer:
+        diff === 0
+          ? `${from.abbr} and ${to.abbr} share the same UTC offset, so no conversion is needed.`
+          : `${diff > 0 ? 'Add' : 'Subtract'} ${diffLabel(Math.abs(diff))} ${diff > 0 ? 'to' : 'from'} the ${from.abbr} time to get ${to.abbr}. For example, 12:00 PM ${from.abbr} is ${noonTargetStr}.`,
+    },
+    {
+      question: `Does daylight saving time affect the ${from.abbr} to ${to.abbr} conversion?`,
+      answer: buildDstAnswer(from, to),
+    },
+  ];
+
+  return {
+    slug,
+    title,
+    fromZone: from.abbr,
+    toZone: to.abbr,
+    timeDifference,
+    description,
+    h1,
+    intro,
+    tableHeading: `${from.abbr} to ${to.abbr} Conversion Table`,
+    conversions: buildConversions(from, to),
+    faq,
+    related: buildRelated(from, to),
+  };
+}
+
+const generatedCityPairs: CityPairPageData[] = ZONE_CONFIGS.flatMap((from) =>
+  ZONE_CONFIGS.filter((z) => z !== from).map((to) => buildPage(from, to)),
+);
+
+export const cityPairs: CityPairPageData[] = [...staticCityPairs, ...generatedCityPairs];
+
 export function getCityPairBySlug(slug: string) {
   return cityPairs.find((item) => item.slug === slug);
 }
+
+/** All slug parts used in the generated zone config, for use by build tooling. */
+export const GENERATED_ZONE_SLUG_PARTS: string[] = ZONE_CONFIGS.map((z) => z.slugPart);
+
