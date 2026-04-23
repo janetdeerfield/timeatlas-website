@@ -5,11 +5,7 @@
 
 // GA4 event types
 export type GAEventCategory = 'engagement' | 'conversion' | 'error' | 'page_view';
-export type GAEventName =
-  | 'tool_used'
-  | 'page_view'
-  | 'time_conversion'
-  | 'conversion_click';
+export type GAEventName = 'tool_used' | 'page_view' | 'time_conversion' | 'conversion_click';
 
 interface GAEventPayload {
   event: GAEventName;
