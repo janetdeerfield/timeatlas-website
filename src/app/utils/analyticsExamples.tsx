@@ -3,7 +3,12 @@
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
-import { trackPageView, trackTimezoneConversion, trackToolUsage, trackEvent } from './analytics';
+import {
+  trackPageView,
+  trackTimeConversion,
+  trackToolUsage,
+  trackConversionClick,
+} from './analytics';
 
 /**
  * Hook to track page views on route changes
@@ -14,8 +19,7 @@ export const useAnalyticsTracking = () => {
 
   useEffect(() => {
     // Track page view when route changes
-    const pageName = location.pathname === '/' ? 'Home' : location.pathname.slice(1);
-    trackPageView(location.pathname, `TimeAtlas - ${pageName}`);
+    trackPageView(location.pathname);
   }, [location.pathname]);
 };
 
@@ -40,7 +44,7 @@ export const HomePageExample = () => {
 export const ConverterPageExample = () => {
   const handleConversion = (from: string, to: string) => {
     // User converts timezone
-    trackTimezoneConversion(from, to);
+    trackTimeConversion(from, to);
   };
 
   return (
@@ -66,11 +70,7 @@ export const WorldClockPageExample = () => {
  */
 export const MeetingPlannerPageExample = () => {
   const handlePlanMeeting = (participants: number, timezones: number) => {
-    trackEvent('meeting_time_found', {
-      category: 'conversion',
-      participants,
-      timezone_count: timezones,
-    });
+    trackToolUsage(`meeting-planner-${participants}-${timezones}`);
   };
 
   return (
@@ -85,10 +85,7 @@ export const MeetingPlannerPageExample = () => {
  */
 export const SearchPageExample = () => {
   const handleSearch = (query: string) => {
-    trackEvent('search_performed', {
-      search_query: query,
-      page: 'about-time',
-    });
+    trackConversionClick('search', query);
   };
 
   return (

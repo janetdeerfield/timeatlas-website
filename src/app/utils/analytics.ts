@@ -6,12 +6,10 @@
 // GA4 event types
 export type GAEventCategory = 'engagement' | 'conversion' | 'error' | 'page_view';
 export type GAEventName =
-  | 'timezone_converted'
-  | 'meeting_time_found'
   | 'tool_used'
-  | 'page_visited'
-  | 'search_performed'
-  | 'time_learned';
+  | 'page_view'
+  | 'time_conversion'
+  | 'conversion_click';
 
 interface GAEventPayload {
   event: GAEventName;
@@ -51,67 +49,44 @@ export const trackEvent = (eventName: GAEventName, eventData?: Record<string, an
 /**
  * Track page view
  * @param pagePath - The page path being viewed
- * @param pageTitle - The page title
  */
-export const trackPageView = (pagePath: string, pageTitle: string) => {
+export const trackPageView = (pagePath: string) => {
   if (!isAnalyticsEnabled()) return;
 
   const gtag = (window as any).gtag;
   if (gtag) {
-    gtag('pageview', {
+    gtag('event', 'page_view', {
       page_path: pagePath,
-      page_title: pageTitle,
     });
   }
 };
 
 /**
- * Track timezone conversion
- * @param fromTimezone - Source timezone
- * @param toTimezone - Target timezone
+ * Track conversion interaction in the main converter
  */
-export const trackTimezoneConversion = (fromTimezone: string, toTimezone: string) => {
-  trackEvent('timezone_converted', {
-    from_timezone: fromTimezone,
-    to_timezone: toTimezone,
-    label: `${fromTimezone} → ${toTimezone}`,
+export const trackTimeConversion = (from: string, to: string) => {
+  trackEvent('time_conversion', {
+    from,
+    to,
+  });
+};
+
+/**
+ * Track click-through on conversion navigation pills
+ */
+export const trackConversionClick = (from: string, to: string) => {
+  trackEvent('conversion_click', {
+    from,
+    to,
   });
 };
 
 /**
  * Track tool usage
- * @param toolName - Name of the tool used
+ * @param tool - Name of the tool used
  */
-export const trackToolUsage = (toolName: string) => {
+export const trackToolUsage = (tool: string) => {
   trackEvent('tool_used', {
-    tool_name: toolName,
-    label: toolName,
-  });
-};
-
-/**
- * Track search
- * @param searchQuery - What was searched
- * @param resultsCount - Number of results
- */
-export const trackSearch = (searchQuery: string, resultsCount?: number) => {
-  trackEvent('search_performed', {
-    search_query: searchQuery,
-    results_count: resultsCount || 0,
-    label: searchQuery,
-  });
-};
-
-/**
- * Track error
- * @param errorMessage - Error description
- * @param errorCode - Optional error code
- */
-export const trackError = (errorMessage: string, errorCode?: string) => {
-  trackEvent('error' as GAEventName, {
-    category: 'error',
-    error_message: errorMessage,
-    error_code: errorCode || 'unknown',
-    label: errorMessage,
+    tool,
   });
 };

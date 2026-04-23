@@ -6,6 +6,7 @@ import { majorCities, getShortDateInTimezone, getTimeDifference } from '../utils
 import { formatTimeDifference, formatDayDifference } from '../utils/format';
 import { useTime } from '../hooks/useTime';
 import { ConversionGrid } from '../components/time';
+import { trackTimeConversion, trackToolUsage } from '../utils/analytics';
 
 interface ConvertProps {
   use24Hour: boolean;
@@ -45,7 +46,20 @@ export function Convert({ use24Hour }: ConvertProps) {
   const timeDiff = getTimeDifference(fromCity.timezone, toCity.timezone);
   const isAhead = timeDiff.hours > 0 || (timeDiff.hours === 0 && timeDiff.minutes > 0);
 
+  const getAnalyticsZoneLabel = (abbreviation: string | undefined, cityName: string) => {
+    return abbreviation ?? cityName;
+  };
+
+  const trackConverterUsage = (from: string, to: string) => {
+    trackToolUsage('converter');
+    trackTimeConversion(from, to);
+  };
+
   const handleSwap = () => {
+    trackConverterUsage(
+      getAnalyticsZoneLabel(toCity.timezoneAbbrev, toCity.name),
+      getAnalyticsZoneLabel(fromCity.timezoneAbbrev, fromCity.name)
+    );
     const temp = fromCity;
     setFromCity(toCity);
     setToCity(temp);
@@ -104,7 +118,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 value={fromCity.name}
                 onChange={(e) => {
                   const city = majorCities.find((c) => c.name === e.target.value);
-                  if (city) setFromCity(city);
+                  if (city) {
+                    setFromCity(city);
+                    trackConverterUsage(
+                      getAnalyticsZoneLabel(city.timezoneAbbrev, city.name),
+                      getAnalyticsZoneLabel(toCity.timezoneAbbrev, toCity.name)
+                    );
+                  }
                 }}
                 className="w-full px-4 py-3 rounded-lg"
                 style={{
@@ -156,7 +176,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 value={toCity.name}
                 onChange={(e) => {
                   const city = majorCities.find((c) => c.name === e.target.value);
-                  if (city) setToCity(city);
+                  if (city) {
+                    setToCity(city);
+                    trackConverterUsage(
+                      getAnalyticsZoneLabel(fromCity.timezoneAbbrev, fromCity.name),
+                      getAnalyticsZoneLabel(city.timezoneAbbrev, city.name)
+                    );
+                  }
                 }}
                 className="w-full px-4 py-3 rounded-lg"
                 style={{

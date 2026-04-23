@@ -1,13 +1,23 @@
 import { useState } from 'react';
 import { ZONE_LIST } from '../../data/zones';
+import { trackConversionClick } from '../../utils/analytics';
 
 /**
  * A single conversion link pill shown in the expanded state.
  */
-function DestinationPill({ href, label }: { href: string; label: string }) {
+function DestinationPill({
+  href,
+  label,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  onClick: () => void;
+}) {
   return (
     <a
       href={href}
+      onClick={onClick}
       className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold font-inter text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-colors shadow-sm"
     >
       {label}
@@ -42,6 +52,7 @@ function ExpandedDestinations({
             key={dest.abbr}
             href={`/${sourceSlugPart}-to-${dest.slugPart}`}
             label={`${sourceAbbr} → ${dest.abbr}`}
+            onClick={() => trackConversionClick(sourceAbbr, dest.abbr)}
           />
         ))}
       </div>
