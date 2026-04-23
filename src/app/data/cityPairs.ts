@@ -336,8 +336,7 @@ const ZONE_CONFIGS: ZoneConfig[] = [
     utcOffset: 5.5,
     stdAbbr: 'IST',
     dstAbbr: '',
-    zoneDesc:
-      'India Standard Time (IST) is UTC+5:30. India does not observe daylight saving time.',
+    zoneDesc: 'India Standard Time (IST) is UTC+5:30. India does not observe daylight saving time.',
   },
   {
     abbr: 'CET',
@@ -358,15 +357,14 @@ const ZONE_CONFIGS: ZoneConfig[] = [
     utcOffset: 9,
     stdAbbr: 'JST',
     dstAbbr: '',
-    zoneDesc:
-      'Japan Standard Time (JST) is UTC+9. Japan does not observe daylight saving time.',
+    zoneDesc: 'Japan Standard Time (JST) is UTC+9. Japan does not observe daylight saving time.',
   },
 ];
 
 /** Format a decimal hour value (may be negative or ≥ 24) as "H:MM AM/PM". */
 function formatDecimalHour(h: number): string {
   // Normalise to 0–1439 minute range, preserving fractional minutes
-  const rawMins = Math.round(((h % 24) + 24) % 24 * 60);
+  const rawMins = Math.round((((h % 24) + 24) % 24) * 60);
   const hour24 = Math.floor(rawMins / 60) % 24;
   const mins = rawMins % 60;
   const period = hour24 < 12 ? 'AM' : 'PM';
@@ -385,10 +383,7 @@ function diffLabel(diffHours: number): string {
   return `${h} hour${h === 1 ? '' : 's'} and ${m} minute${m === 1 ? '' : 's'}`;
 }
 
-function buildConversions(
-  from: ZoneConfig,
-  to: ZoneConfig,
-): Array<{ from: string; to: string }> {
+function buildConversions(from: ZoneConfig, to: ZoneConfig): Array<{ from: string; to: string }> {
   const diff = to.utcOffset - from.utcOffset;
   // For IST (UTC+5:30) as source, start at :30 so target times land on round hours.
   const startOffset = from.utcOffset % 1 !== 0 ? 0.5 : 0;
@@ -422,10 +417,7 @@ function buildDstAnswer(from: ZoneConfig, to: ZoneConfig): string {
   return `${to.fullName} observes daylight saving time (switching between ${to.stdAbbr} and ${to.dstAbbr}), while ${from.fullName} does not. The time difference may vary by 1 hour depending on the season.`;
 }
 
-function buildRelated(
-  from: ZoneConfig,
-  to: ZoneConfig,
-): Array<{ href: string; label: string }> {
+function buildRelated(from: ZoneConfig, to: ZoneConfig): Array<{ href: string; label: string }> {
   // Reverse pair
   const reverse = {
     href: `/${to.slugPart}-to-${from.slugPart}`,
@@ -433,10 +425,12 @@ function buildRelated(
   };
 
   // Two other zones that the "from" zone pairs well with (skip from and to)
-  const others = ZONE_CONFIGS.filter((z) => z !== from && z !== to).slice(0, 2).map((z) => ({
-    href: `/${from.slugPart}-to-${z.slugPart}`,
-    label: `${from.abbr} → ${z.abbr}`,
-  }));
+  const others = ZONE_CONFIGS.filter((z) => z !== from && z !== to)
+    .slice(0, 2)
+    .map((z) => ({
+      href: `/${from.slugPart}-to-${z.slugPart}`,
+      label: `${from.abbr} → ${z.abbr}`,
+    }));
 
   return [reverse, ...others, { href: '/convert', label: 'Smart Time Converter' }];
 }
@@ -502,7 +496,7 @@ function buildPage(from: ZoneConfig, to: ZoneConfig): CityPairPageData {
 }
 
 const generatedCityPairs: CityPairPageData[] = ZONE_CONFIGS.flatMap((from) =>
-  ZONE_CONFIGS.filter((z) => z !== from).map((to) => buildPage(from, to)),
+  ZONE_CONFIGS.filter((z) => z !== from).map((to) => buildPage(from, to))
 );
 
 export const cityPairs: CityPairPageData[] = [...staticCityPairs, ...generatedCityPairs];
@@ -513,4 +507,3 @@ export function getCityPairBySlug(slug: string) {
 
 /** All slug parts used in the generated zone config, for use by build tooling. */
 export const GENERATED_ZONE_SLUG_PARTS: string[] = ZONE_CONFIGS.map((z) => z.slugPart);
-
