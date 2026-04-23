@@ -32,9 +32,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         </div>
 
         {/* H1 */}
-        <h1 className="text-4xl sm:text-5xl font-bold font-inter mb-4 text-slate-900">
-          {page.h1}
-        </h1>
+        <h1 className="text-4xl sm:text-5xl font-bold font-inter mb-4 text-slate-900">{page.h1}</h1>
 
         {/* Intro */}
         <p className="text-lg font-open-sans text-slate-700 mb-8 leading-relaxed">{page.intro}</p>
@@ -92,7 +90,11 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         <Section title="Key Capital Time Zones">
           <div className="space-y-3 font-open-sans text-slate-700 text-sm leading-relaxed">
             {[
-              { region: 'North America', detail: 'New York (ET/UTC−5), Chicago (CT/UTC−6), Denver (MT/UTC−7), Los Angeles (PT/UTC−8), Anchorage (AKT/UTC−9), Honolulu (HT/UTC−10)' },
+              {
+                region: 'North America',
+                detail:
+                  'New York (ET/UTC−5), Chicago (CT/UTC−6), Denver (MT/UTC−7), Los Angeles (PT/UTC−8), Anchorage (AKT/UTC−9), Honolulu (HT/UTC−10)',
+              },
               { region: 'Europe (GMT/UTC±0)', detail: 'London, Dublin, Lisbon' },
               { region: 'Europe (CET/UTC+1)', detail: 'Paris, Berlin, Rome, Madrid' },
               { region: 'Asia (IST/UTC+5:30)', detail: 'New Delhi, Mumbai, Kolkata' },
@@ -110,8 +112,8 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         <Section title="UTC — The Global Time Standard">
           <p className="font-open-sans text-slate-700 leading-relaxed">
             Coordinated Universal Time (UTC) is the primary time standard by which the world
-            regulates clocks and time. It is not adjusted for daylight saving time and serves as
-            the baseline for all time zone offsets worldwide.{' '}
+            regulates clocks and time. It is not adjusted for daylight saving time and serves as the
+            baseline for all time zone offsets worldwide.{' '}
             {fromZone && (
               <>
                 {page.fromZone} is {formatUtcOffsetLabel(fromZone.utcOffset)}.{' '}

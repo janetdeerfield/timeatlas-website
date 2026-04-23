@@ -24,7 +24,11 @@ interface ExpandedDestinationsProps {
 /**
  * Expanded panel showing all 10 destination links for a given source zone.
  */
-function ExpandedDestinations({ sourceAbbr, sourceCity, sourceSlugPart }: ExpandedDestinationsProps) {
+function ExpandedDestinations({
+  sourceAbbr,
+  sourceCity,
+  sourceSlugPart,
+}: ExpandedDestinationsProps) {
   const destinations = ZONE_LIST.filter((z) => z.abbr !== sourceAbbr);
 
   return (
