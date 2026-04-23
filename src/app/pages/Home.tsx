@@ -53,9 +53,8 @@ export function Home({ use24Hour }: HomeProps) {
                 background: '#ECEFF4',
                 width: '900px',
                 maxWidth: '90%',
-                margin: '16px auto',
+                margin: '8px auto 16px',
               }}
-              className="sm:!my-8"
             />
           </section>
 

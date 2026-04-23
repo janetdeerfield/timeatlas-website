@@ -16,7 +16,7 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
   };
 
   return (
-    <div className="py-12 sm:py-16 px-4" style={{ paddingBottom: 'clamp(3rem, 8vw, 4rem)' }}>
+    <div className="py-12 sm:py-16 px-4" style={{ paddingBottom: 'clamp(1.5rem, 4vw, 2rem)' }}>
       {/* LiveClock Component */}
       <LiveClock
         city={city}
