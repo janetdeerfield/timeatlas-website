@@ -5,6 +5,7 @@ import { SEO } from '../components/SEO';
 import { majorCities, getShortDateInTimezone, getTimeDifference } from '../utils/time';
 import { formatTimeDifference, formatDayDifference } from '../utils/format';
 import { useTime } from '../hooks/useTime';
+import { ConversionGrid } from '../components/time';
 
 interface ConvertProps {
   use24Hour: boolean;
@@ -300,6 +301,39 @@ export function Convert({ use24Hour }: ConvertProps) {
             </p>
           </div>
         </div>
+
+        {/* ── Common Time Conversions ──────────────────────────────── */}
+        <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
+            Common Time Conversions
+          </h2>
+          <ConversionGrid />
+        </section>
+
+        {/* ── How Time Zone Conversion Works ──────────────────────── */}
+        <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
+            How Time Zone Conversion Works
+          </h2>
+          <div className="space-y-4 font-open-sans text-slate-700 leading-relaxed">
+            <p>
+              Time zone conversion works by comparing the UTC offset of one location to another.
+              Every city or region is measured relative to Coordinated Universal Time (UTC), which
+              acts as the global reference point for civil time.
+            </p>
+            <p>
+              For example, Pacific Time is typically three hours behind Eastern Time, so a meeting
+              at 9:00 AM in Los Angeles would be 12:00 PM in New York. The exact abbreviation may
+              change during daylight saving time, but the relative difference between the two zones
+              often stays the same.
+            </p>
+            <p>
+              TimeAtlas uses modern browser time zone data to help you compare cities accurately,
+              reduce scheduling confusion, and quickly understand time differences for meetings,
+              travel, and remote collaboration.
+            </p>
+          </div>
+        </section>
 
         {/* Educational Sections */}
         {/* Key Capital Time Zones */}
@@ -1578,75 +1612,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </div>
               )}
             </div>
-          </div>
-        </section>
-
-        {/* Common Time Conversions Section */}
-        <section className="mt-12 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
-            Common Time Conversions
-          </h2>
-
-          <p className="text-slate-600 mb-5 font-open-sans">
-            Jump to popular time conversions and compare common time zones more quickly.
-          </p>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            <a
-              href="/pt-to-et"
-              className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
-            >
-              PT → ET
-            </a>
-
-            <a
-              href="/et-to-pt"
-              className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
-            >
-              ET → PT
-            </a>
-
-            <a
-              href="/utc-to-et"
-              className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
-            >
-              UTC → ET
-            </a>
-
-            <a
-              href="/gmt-uk-to-et"
-              className="rounded-lg border border-slate-200 px-4 py-3 text-slate-900 font-open-sans hover:border-indigo-300 hover:text-indigo-600 transition-colors"
-            >
-              GMT → ET
-            </a>
-          </div>
-        </section>
-
-        {/* How Time Zone Conversion Works Section */}
-        <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
-            How Time Zone Conversion Works
-          </h2>
-
-          <div className="space-y-4 font-open-sans text-slate-700 leading-relaxed">
-            <p>
-              Time zone conversion works by comparing the UTC offset of one location to another.
-              Every city or region is measured relative to Coordinated Universal Time (UTC), which
-              acts as the global reference point for civil time.
-            </p>
-
-            <p>
-              For example, Pacific Time is typically three hours behind Eastern Time, so a meeting
-              at 9:00 AM in Los Angeles would be 12:00 PM in New York. The exact abbreviation may
-              change during daylight saving time, but the relative difference between the two zones
-              often stays the same.
-            </p>
-
-            <p>
-              TimeAtlas uses modern browser time zone data to help you compare cities accurately,
-              reduce scheduling confusion, and quickly understand time differences for meetings,
-              travel, and remote collaboration.
-            </p>
           </div>
         </section>
       </div>

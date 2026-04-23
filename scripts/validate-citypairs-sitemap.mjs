@@ -17,7 +17,7 @@ const slugPartMatches = [...cityPairsContent.matchAll(/slugPart:\s*'([^']+)'/g)]
 const slugParts = [...new Set(slugPartMatches.map((m) => m[1]))];
 
 const generatedSlugs = slugParts.flatMap((from) =>
-  slugParts.filter((to) => to !== from).map((to) => `${from}-to-${to}`),
+  slugParts.filter((to) => to !== from).map((to) => `${from}-to-${to}`)
 );
 
 const slugs = [...new Set([...staticSlugs, ...generatedSlugs])];
@@ -28,7 +28,7 @@ if (slugs.length === 0) {
 }
 
 const missing = slugs.filter(
-  (slug) => !sitemapContent.includes(`<loc>https://timeatlas.co/${slug}</loc>`),
+  (slug) => !sitemapContent.includes(`<loc>https://timeatlas.co/${slug}</loc>`)
 );
 
 if (missing.length > 0) {
