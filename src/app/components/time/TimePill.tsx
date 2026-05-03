@@ -1,7 +1,7 @@
 import { useTime } from '../../hooks/useTime';
 
 interface TimePillProps {
-  /** Zone abbreviation shown as the label prefix, e.g. "ET" */
+  /** Zone abbreviation shown as the label prefix, e.g. "EST" */
   zoneAbbr: string;
   /** City name shown after the dot, e.g. "New York" */
   city: string;

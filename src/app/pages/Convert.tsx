@@ -1472,7 +1472,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               )}
             </div>
 
-            {/* ET EST EDT */}
+            {/* EST EDT */}
             <div
               className="bg-white rounded-xl shadow-sm overflow-hidden"
               style={{ border: '1px solid #E6E9EE' }}
@@ -1491,7 +1491,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                     fontSize: '16px',
                   }}
                 >
-                  ET, EST, and EDT; what's the difference?
+                  EST and EDT; what's the difference?
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'et-diff' ? 'rotate-180' : ''}`}
@@ -1508,9 +1508,9 @@ export function Convert({ use24Hour }: ConvertProps) {
                     lineHeight: '1.6',
                   }}
                 >
-                  ET (Eastern Time) is the general term for the time zone. EST (Eastern Standard
-                  Time) is used during the winter months (UTC-5), while EDT (Eastern Daylight Time)
-                  is used during the summer months when clocks are moved forward one hour (UTC-4).
+                  EST (Eastern Standard Time) is used during the winter months (UTC-5), while EDT
+                  (Eastern Daylight Time) is used during the summer months when clocks are moved
+                  forward one hour (UTC-4).
                 </div>
               )}
             </div>

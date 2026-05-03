@@ -67,8 +67,8 @@ function ExpandedDestinations({
  * - Clicking a source pill expands all 10 destination links for that source directly below it.
  * - Only one source can be expanded at a time.
  *
- * Zone abbreviations follow the TimeAtlas spec: ET, CT, MT, PT, AKT, HI (Hawaii), UTC, GMT,
- * IST, CET, JST. The "HI" label is used per spec; slugs use "ht" (matching city-pair routes).
+ * Zone abbreviations follow the canonical TimeAtlas route spec: EST, CST, MST, PST, AKST, HST,
+ * UTC, GMT, IST, CET, JST.
  *
  * By rendering destinations only when expanded (conditional render), search engines see no
  * hidden links, keeping on-page outbound links within a focused range.

@@ -529,8 +529,8 @@ export function Meet({ use24Hour }: MeetProps) {
             lineHeight: '1.7',
           }}
         >
-          Example: A meeting between New York (ET) and Los Angeles (PT) works best between 12 PM – 3
-          PM ET, when both teams are within standard working hours.
+          Example: A meeting between New York (EST) and Los Angeles (PST) works best between 12 PM –
+          3 PM EST, when both teams are within standard working hours.
         </p>
       </div>
 

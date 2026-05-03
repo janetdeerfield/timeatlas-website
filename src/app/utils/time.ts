@@ -4,8 +4,8 @@ export interface CityTime {
   timezone: string;
   utcOffset: string;
   country?: string;
-  timezoneDisplay?: string; // e.g., "Eastern Time (ET) · UTC−5"
-  timezoneAbbrev?: string; // e.g., "ET", "PT", "GMT"
+  timezoneDisplay?: string; // e.g., "Eastern Time (EST) · UTC−5"
+  timezoneAbbrev?: string; // e.g., "EST", "PST", "GMT"
 }
 
 export const majorCities: CityTime[] = [
@@ -22,40 +22,40 @@ export const majorCities: CityTime[] = [
     timezone: 'America/Los_Angeles',
     utcOffset: 'UTC−8',
     country: 'USA',
-    timezoneDisplay: 'PT (UTC−8)',
-    timezoneAbbrev: 'PT',
+    timezoneDisplay: 'PST (UTC−8)',
+    timezoneAbbrev: 'PST',
   },
   {
     name: 'Denver',
     timezone: 'America/Denver',
     utcOffset: 'UTC−7',
     country: 'USA',
-    timezoneDisplay: 'MT (UTC−7)',
-    timezoneAbbrev: 'MT',
+    timezoneDisplay: 'MST (UTC−7)',
+    timezoneAbbrev: 'MST',
   },
   {
     name: 'Chicago',
     timezone: 'America/Chicago',
     utcOffset: 'UTC−6',
     country: 'USA',
-    timezoneDisplay: 'CT (UTC−6)',
-    timezoneAbbrev: 'CT',
+    timezoneDisplay: 'CST (UTC−6)',
+    timezoneAbbrev: 'CST',
   },
   {
     name: 'Mexico City',
     timezone: 'America/Mexico_City',
     utcOffset: 'UTC−6',
     country: 'Mexico',
-    timezoneDisplay: 'CT (UTC−6)',
-    timezoneAbbrev: 'CT',
+    timezoneDisplay: 'CST (UTC−6)',
+    timezoneAbbrev: 'CST',
   },
   {
     name: 'New York',
     timezone: 'America/New_York',
     utcOffset: 'UTC−5',
     country: 'USA',
-    timezoneDisplay: 'ET (UTC−5)',
-    timezoneAbbrev: 'ET',
+    timezoneDisplay: 'EST (UTC−5)',
+    timezoneAbbrev: 'EST',
   },
   {
     name: 'Santiago',
@@ -279,7 +279,7 @@ export function getCurrentUTCOffset(timezone: string): string {
   return formatted;
 }
 
-// Get timezone display - simplified format: "ET (UTC−5)"
+// Get timezone display - simplified format: "EST (UTC−5)"
 export function getTimezoneDisplayWithDST(city: CityTime): string {
   const currentOffset = getCurrentUTCOffset(city.timezone);
   // Use proper minus sign (U+2212) instead of hyphen

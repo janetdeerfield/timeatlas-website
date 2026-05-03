@@ -218,7 +218,7 @@ const staticCityPairs: CityPairPageData[] = [
 // ─── New-format city pair page generator ─────────────────────────────────────
 
 interface ZoneConfig {
-  /** Short abbreviation used in H1, table, and FAQ (e.g. "ET", "GMT", "IST") */
+  /** Short abbreviation used in H1, table, and FAQ (e.g. "EST", "GMT", "IST") */
   abbr: string;
   /**
    * Display name used in H1 heading when this zone is the destination.
@@ -227,7 +227,7 @@ interface ZoneConfig {
   h1Name: string;
   /** Full descriptive name for titles and intro text (e.g. "Eastern Time") */
   fullName: string;
-  /** URL slug fragment (e.g. "et", "gmt-uk", "akt") */
+  /** URL slug fragment (e.g. "est", "gmt", "akst") */
   slugPart: string;
   /** Standard-time UTC offset in decimal hours (e.g. -5, 5.5) */
   utcOffset: number;
@@ -241,70 +241,70 @@ interface ZoneConfig {
 
 const ZONE_CONFIGS: ZoneConfig[] = [
   {
-    abbr: 'ET',
-    h1Name: 'ET',
+    abbr: 'EST',
+    h1Name: 'EST',
     fullName: 'Eastern Time',
-    slugPart: 'et',
+    slugPart: 'est',
     utcOffset: -5,
     stdAbbr: 'EST',
     dstAbbr: 'EDT',
     zoneDesc:
-      'Eastern Time (ET) includes both Eastern Standard Time (EST) and Eastern Daylight Time (EDT).',
+      'Eastern Time is commonly searched as Eastern Standard Time (EST) and observes Eastern Daylight Time (EDT) during daylight saving time.',
   },
   {
-    abbr: 'CT',
-    h1Name: 'CT',
+    abbr: 'CST',
+    h1Name: 'CST',
     fullName: 'Central Time',
-    slugPart: 'ct',
+    slugPart: 'cst',
     utcOffset: -6,
     stdAbbr: 'CST',
     dstAbbr: 'CDT',
     zoneDesc:
-      'Central Time (CT) includes both Central Standard Time (CST) and Central Daylight Time (CDT).',
+      'Central Time is commonly searched as Central Standard Time (CST) and observes Central Daylight Time (CDT) during daylight saving time.',
   },
   {
-    abbr: 'MT',
-    h1Name: 'MT',
+    abbr: 'MST',
+    h1Name: 'MST',
     fullName: 'Mountain Time',
-    slugPart: 'mt',
+    slugPart: 'mst',
     utcOffset: -7,
     stdAbbr: 'MST',
     dstAbbr: 'MDT',
     zoneDesc:
-      'Mountain Time (MT) includes both Mountain Standard Time (MST) and Mountain Daylight Time (MDT).',
+      'Mountain Time is commonly searched as Mountain Standard Time (MST) and observes Mountain Daylight Time (MDT) during daylight saving time.',
   },
   {
-    abbr: 'PT',
-    h1Name: 'PT',
+    abbr: 'PST',
+    h1Name: 'PST',
     fullName: 'Pacific Time',
-    slugPart: 'pt',
+    slugPart: 'pst',
     utcOffset: -8,
     stdAbbr: 'PST',
     dstAbbr: 'PDT',
     zoneDesc:
-      'Pacific Time (PT) includes both Pacific Standard Time (PST) and Pacific Daylight Time (PDT).',
+      'Pacific Time is commonly searched as Pacific Standard Time (PST) and observes Pacific Daylight Time (PDT) during daylight saving time.',
   },
   {
-    abbr: 'AKT',
-    h1Name: 'AKT',
+    abbr: 'AKST',
+    h1Name: 'AKST',
     fullName: 'Alaska Time',
-    slugPart: 'akt',
+    slugPart: 'akst',
     utcOffset: -9,
     stdAbbr: 'AKST',
     dstAbbr: 'AKDT',
     zoneDesc:
-      'Alaska Time (AKT) includes both Alaska Standard Time (AKST) and Alaska Daylight Time (AKDT).',
+      'Alaska Time is commonly searched as Alaska Standard Time (AKST) and observes Alaska Daylight Time (AKDT) during daylight saving time.',
   },
   {
-    abbr: 'HT',
-    h1Name: 'HT',
+    abbr: 'HST',
+    h1Name: 'HST',
     fullName: 'Hawaii Time',
-    slugPart: 'ht',
+    slugPart: 'hst',
     utcOffset: -10,
     stdAbbr: 'HST',
     dstAbbr: '',
     zoneDesc:
-      'Hawaii Time (HT) uses Hawaii Standard Time (HST). Daylight saving time is not observed in Hawaii.',
+      'Hawaii Time uses Hawaii Standard Time (HST). Daylight saving time is not observed in Hawaii.',
   },
   {
     abbr: 'UTC',
@@ -321,7 +321,7 @@ const ZONE_CONFIGS: ZoneConfig[] = [
     abbr: 'GMT',
     h1Name: 'UK Time',
     fullName: 'UK Time',
-    slugPart: 'gmt-uk',
+    slugPart: 'gmt',
     utcOffset: 0,
     stdAbbr: 'GMT',
     dstAbbr: 'BST',
@@ -495,9 +495,11 @@ function buildPage(from: ZoneConfig, to: ZoneConfig): CityPairPageData {
   };
 }
 
+const LEGACY_CANONICAL_SLUGS = new Set(['pst-to-est', 'est-to-pst', 'utc-to-est', 'gmt-to-est']);
+
 const generatedCityPairs: CityPairPageData[] = ZONE_CONFIGS.flatMap((from) =>
   ZONE_CONFIGS.filter((z) => z !== from).map((to) => buildPage(from, to))
-);
+).filter((page) => !LEGACY_CANONICAL_SLUGS.has(page.slug));
 
 export const cityPairs: CityPairPageData[] = [...staticCityPairs, ...generatedCityPairs];
 

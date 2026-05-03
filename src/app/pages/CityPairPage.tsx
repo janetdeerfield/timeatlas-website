@@ -93,7 +93,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
               {
                 region: 'North America',
                 detail:
-                  'New York (ET/UTC−5), Chicago (CT/UTC−6), Denver (MT/UTC−7), Los Angeles (PT/UTC−8), Anchorage (AKT/UTC−9), Honolulu (HT/UTC−10)',
+                  'New York (EST/UTC−5), Chicago (CST/UTC−6), Denver (MST/UTC−7), Los Angeles (PST/UTC−8), Anchorage (AKST/UTC−9), Honolulu (HST/UTC−10)',
               },
               { region: 'Europe (GMT/UTC±0)', detail: 'London, Dublin, Lisbon' },
               { region: 'Europe (CET/UTC+1)', detail: 'Paris, Berlin, Rome, Madrid' },
@@ -139,7 +139,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
             <p>
               <strong className="font-inter text-slate-900">What is Daylight Saving Time?</strong>{' '}
               DST advances clocks by one hour during summer months to extend evening daylight. Not
-              all time zones observe it — Hawaii (HT), Japan (JST), and India (IST) do not.
+              all time zones observe it — Hawaii (HST), Japan (JST), and India (IST) do not.
             </p>
           </div>
         </Section>
