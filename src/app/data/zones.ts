@@ -1,10 +1,10 @@
 /**
  * Shared zone configuration for the TimeAtlas Component System.
- * Provides IANA timezone identifiers and display metadata for all 11 supported zones.
+ * Provides IANA timezone identifiers and display metadata for all supported zones.
  */
 
 export interface ZoneInfo {
-  /** Short display abbreviation used in pill labels, e.g. "ET", "GMT" */
+  /** Short display abbreviation used in pill labels, e.g. "EST", "GMT" */
   abbr: string;
   /** Full descriptive name, e.g. "Eastern Time" */
   fullName: string;
@@ -12,7 +12,7 @@ export interface ZoneInfo {
   ianaTimezone: string;
   /** Representative city name shown in pills, e.g. "New York" */
   city: string;
-  /** URL slug fragment used in city-pair routes, e.g. "et", "gmt-uk" */
+  /** URL slug fragment used in city-pair routes, e.g. "est", "gmt" */
   slugPart: string;
   /** Standard-time UTC offset in decimal hours (e.g. -5, 5.5, 0) */
   utcOffset: number;
@@ -20,51 +20,51 @@ export interface ZoneInfo {
 
 export const ZONE_LIST: ZoneInfo[] = [
   {
-    abbr: 'ET',
+    abbr: 'EST',
     fullName: 'Eastern Time',
     ianaTimezone: 'America/New_York',
     city: 'New York',
-    slugPart: 'et',
+    slugPart: 'est',
     utcOffset: -5,
   },
   {
-    abbr: 'CT',
+    abbr: 'CST',
     fullName: 'Central Time',
     ianaTimezone: 'America/Chicago',
     city: 'Chicago',
-    slugPart: 'ct',
+    slugPart: 'cst',
     utcOffset: -6,
   },
   {
-    abbr: 'MT',
+    abbr: 'MST',
     fullName: 'Mountain Time',
     ianaTimezone: 'America/Denver',
     city: 'Denver',
-    slugPart: 'mt',
+    slugPart: 'mst',
     utcOffset: -7,
   },
   {
-    abbr: 'PT',
+    abbr: 'PST',
     fullName: 'Pacific Time',
     ianaTimezone: 'America/Los_Angeles',
     city: 'Los Angeles',
-    slugPart: 'pt',
+    slugPart: 'pst',
     utcOffset: -8,
   },
   {
-    abbr: 'AKT',
+    abbr: 'AKST',
     fullName: 'Alaska Time',
     ianaTimezone: 'America/Anchorage',
     city: 'Anchorage',
-    slugPart: 'akt',
+    slugPart: 'akst',
     utcOffset: -9,
   },
   {
-    abbr: 'HI',
+    abbr: 'HST',
     fullName: 'Hawaii Time',
     ianaTimezone: 'Pacific/Honolulu',
     city: 'Honolulu',
-    slugPart: 'ht',
+    slugPart: 'hst',
     utcOffset: -10,
   },
   {
@@ -80,7 +80,7 @@ export const ZONE_LIST: ZoneInfo[] = [
     fullName: 'UK Time',
     ianaTimezone: 'Europe/London',
     city: 'London',
-    slugPart: 'gmt-uk',
+    slugPart: 'gmt',
     utcOffset: 0,
   },
   {
@@ -111,22 +111,23 @@ export const ZONE_LIST: ZoneInfo[] = [
 
 /**
  * Lookup map from abbreviation → ZoneInfo.
- * Also handles legacy abbreviations (PST, EST, CST, MST, HST) used in static city-pair pages.
+ * Also handles former non-standard abbreviations used in early city-pair pages.
  */
 export const ZONE_MAP: Record<string, ZoneInfo> = {
   ...Object.fromEntries(ZONE_LIST.map((z) => [z.abbr, z])),
-  // Legacy / standard-time abbreviations used in static pages
-  EST: ZONE_LIST[0], // ET
+  // Former non-standard abbreviations
+  ET: ZONE_LIST[0],
   EDT: ZONE_LIST[0],
-  PST: ZONE_LIST[3], // PT
-  PDT: ZONE_LIST[3],
-  CST: ZONE_LIST[1], // CT
+  CT: ZONE_LIST[1],
   CDT: ZONE_LIST[1],
-  MST: ZONE_LIST[2], // MT
+  MT: ZONE_LIST[2],
   MDT: ZONE_LIST[2],
-  AKST: ZONE_LIST[4],
+  PT: ZONE_LIST[3],
+  PDT: ZONE_LIST[3],
+  AKT: ZONE_LIST[4],
   AKDT: ZONE_LIST[4],
-  HST: ZONE_LIST[5], // HI
+  HT: ZONE_LIST[5],
+  HI: ZONE_LIST[5],
   // GMT and UTC aliases
   'GMT-UK': ZONE_LIST[7],
   BST: ZONE_LIST[7],
