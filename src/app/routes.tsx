@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, type RouteObject } from 'react-router';
 import { Home } from './pages/Home';
 import { Convert } from './pages/Convert';
 import { World } from './pages/World';
@@ -16,51 +16,53 @@ interface RouteConfig {
   onToggleFormat: () => void;
 }
 
-export const createRouter = (config: RouteConfig) => {
-  return createBrowserRouter([
-    {
-      path: '/',
-      element: <RootLayout use24Hour={config.use24Hour} onToggleFormat={config.onToggleFormat} />,
-      children: [
-        {
-          index: true,
-          element: <Home use24Hour={config.use24Hour} />,
-        },
-        {
-          path: 'convert',
-          element: <Convert use24Hour={config.use24Hour} />,
-        },
-        {
-          path: 'world',
-          element: <World use24Hour={config.use24Hour} />,
-        },
-        {
-          path: 'meet',
-          element: <Meet use24Hour={config.use24Hour} />,
-        },
-        {
-          path: 'dev',
-          element: <Dev />,
-        },
-        {
-          path: 'about',
-          element: <About />,
-        },
-        {
-          path: 'privacy',
-          element: <Privacy />,
-        },
-        {
-          path: 'terms',
-          element: <Terms />,
-        },
+export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
+  {
+    path: '/',
+    element: <RootLayout use24Hour={config.use24Hour} onToggleFormat={config.onToggleFormat} />,
+    children: [
+      {
+        index: true,
+        element: <Home use24Hour={config.use24Hour} />,
+      },
+      {
+        path: 'convert',
+        element: <Convert use24Hour={config.use24Hour} />,
+      },
+      {
+        path: 'world',
+        element: <World use24Hour={config.use24Hour} />,
+      },
+      {
+        path: 'meet',
+        element: <Meet use24Hour={config.use24Hour} />,
+      },
+      {
+        path: 'dev',
+        element: <Dev />,
+      },
+      {
+        path: 'about',
+        element: <About />,
+      },
+      {
+        path: 'privacy',
+        element: <Privacy />,
+      },
+      {
+        path: 'terms',
+        element: <Terms />,
+      },
 
-        // Dynamic city pair routes generated from data
-        ...cityPairs.map((pair) => ({
-          path: pair.slug,
-          element: <CityPairPage page={pair} />,
-        })),
-      ],
-    },
-  ]);
+      // Dynamic city pair routes generated from data
+      ...cityPairs.map((pair) => ({
+        path: pair.slug,
+        element: <CityPairPage page={pair} />,
+      })),
+    ],
+  },
+];
+
+export const createRouter = (config: RouteConfig) => {
+  return createBrowserRouter(createRouteObjects(config));
 };

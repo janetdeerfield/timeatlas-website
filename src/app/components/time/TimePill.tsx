@@ -29,10 +29,15 @@ export function TimePill({ zoneAbbr, city, ianaTimezone, use24Hour = false }: Ti
         <span className="mx-1 font-normal">·</span>
         {city}
       </p>
-      <p className="text-4xl font-bold font-inter text-slate-900 tabular-nums leading-none">
+      <p
+        className="text-4xl font-bold font-inter text-slate-900 tabular-nums leading-none"
+        suppressHydrationWarning
+      >
         {timeData.formattedTime}
       </p>
-      <p className="text-xs font-open-sans text-slate-400">{timeData.formattedDate}</p>
+      <p className="text-xs font-open-sans text-slate-400" suppressHydrationWarning>
+        {timeData.formattedDate}
+      </p>
     </div>
   );
 }
