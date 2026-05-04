@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/prerender.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "validate:sitemap": "node scripts/validate-citypairs-sitemap.mjs",
@@ -13,7 +13,8 @@
     "format:check": "prettier --check . --ignore-path .gitignore",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "prepare": "husky install || true"
+    "prepare": "husky install || true",
+    "build:client": "vite build"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

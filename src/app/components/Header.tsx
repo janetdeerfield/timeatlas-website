@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 
-const logoImage = new URL('../../assets/timeatlas-logo.png', import.meta.url).href;
+const logoImage = '/timeatlas-logo.png';
 
 interface HeaderProps {
   use24Hour: boolean;

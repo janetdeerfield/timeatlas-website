@@ -36,11 +36,17 @@ export function TimeHeader({ fromZone, toZone, use24Hour = false }: TimeHeaderPr
 
       {/* Live conversion answer */}
       <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
-        <span className="text-3xl sm:text-4xl font-bold font-inter text-slate-900 tabular-nums">
+        <span
+          className="text-3xl sm:text-4xl font-bold font-inter text-slate-900 tabular-nums"
+          suppressHydrationWarning
+        >
           {fromTime.formattedTime}
         </span>
         <span className="text-xl font-semibold text-slate-400">=</span>
-        <span className="text-3xl sm:text-4xl font-bold font-inter text-indigo-600 tabular-nums">
+        <span
+          className="text-3xl sm:text-4xl font-bold font-inter text-indigo-600 tabular-nums"
+          suppressHydrationWarning
+        >
           {toTime.formattedTime}
         </span>
       </div>
