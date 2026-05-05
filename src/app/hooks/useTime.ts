@@ -22,6 +22,15 @@ interface TimeData {
   utcString: string;
 }
 
+function getInitialNow(): Date {
+  const prerenderNow =
+    typeof document === 'undefined'
+      ? (globalThis as { __TIMEATLAS_PRERENDER_NOW?: string }).__TIMEATLAS_PRERENDER_NOW
+      : document.documentElement.dataset.prerenderNow;
+
+  return prerenderNow ? new Date(prerenderNow) : new Date();
+}
+
 /**
  * Format a timezone offset like -300 minutes into "UTC-5"
  */
@@ -67,9 +76,11 @@ export function useTime({
   showSeconds = true,
   showMilliseconds = false,
 }: UseTimeOptions): TimeData {
-  const [now, setNow] = useState(new Date());
+  const [now, setNow] = useState(getInitialNow);
 
   useEffect(() => {
+    setNow(new Date());
+
     const interval = setInterval(
       () => {
         setNow(new Date());

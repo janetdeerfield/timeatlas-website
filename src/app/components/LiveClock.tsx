@@ -164,6 +164,15 @@ interface LiveClockProps {
   compact?: boolean;
 }
 
+function getInitialNow(): Date {
+  const prerenderNow =
+    typeof document === 'undefined'
+      ? (globalThis as { __TIMEATLAS_PRERENDER_NOW?: string }).__TIMEATLAS_PRERENDER_NOW
+      : document.documentElement.dataset.prerenderNow;
+
+  return prerenderNow ? new Date(prerenderNow) : new Date();
+}
+
 export default function LiveClock({
   city = 'New York',
   timeZone = 'America/New_York',
@@ -175,9 +184,11 @@ export default function LiveClock({
   showUtcOffset = true,
   compact = false,
 }: LiveClockProps) {
-  const [now, setNow] = useState(new Date());
+  const [now, setNow] = useState(getInitialNow);
 
   useEffect(() => {
+    setNow(new Date());
+
     const interval = setInterval(
       () => {
         setNow(new Date());

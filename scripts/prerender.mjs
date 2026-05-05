@@ -6,6 +6,9 @@ const distDir = join(repoRoot, 'dist');
 const ssrDir = join(repoRoot, 'dist-ssr');
 const templatePath = join(distDir, 'index.html');
 const { prerenderRoutes, renderPath } = await import('../dist-ssr/prerender.js');
+const prerenderNow = new Date().toISOString();
+
+globalThis.__TIMEATLAS_PRERENDER_NOW = prerenderNow;
 
 function stripBaseSeo(html) {
   return html
@@ -27,7 +30,7 @@ function routeToFiles(route) {
 function withRenderedApp(template, routeHead, appHtml) {
   const html = stripBaseSeo(template).replace(
     '<html lang="en">',
-    '<html lang="en" data-prerendered="true">'
+    `<html lang="en" data-prerendered="true" data-prerender-now="${prerenderNow}">`
   );
 
   return html
