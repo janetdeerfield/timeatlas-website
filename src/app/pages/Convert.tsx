@@ -234,7 +234,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   fontWeight: 800,
                   color: '#080A0C',
                 }}
-                suppressHydrationWarning
               >
                 {fromTimeData.formattedTime}
               </div>
@@ -244,7 +243,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                 }}
-                suppressHydrationWarning
               >
                 {fromDate}
               </div>
@@ -282,7 +280,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   fontWeight: 800,
                   color: '#080A0C',
                 }}
-                suppressHydrationWarning
               >
                 {toTimeData.formattedTime}
               </div>
@@ -292,7 +289,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                 }}
-                suppressHydrationWarning
               >
                 {toDate}
               </div>

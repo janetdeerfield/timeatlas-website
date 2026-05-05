@@ -22,25 +22,6 @@ interface TimeData {
   utcString: string;
 }
 
-const PLACEHOLDER_TIME: TimeData = {
-  hour: '--',
-  minute: '--',
-  second: '--',
-  dayPeriod: '',
-  formattedTime: '--:--',
-  formattedDate: '',
-  milliseconds: '000',
-  offsetMinutes: 0,
-  utcOffset: 'UTC',
-  isoString: '',
-  unixTimestamp: 0,
-  utcString: '',
-};
-
-function shouldUseStableInitialTime(): boolean {
-  return typeof document === 'undefined' || document.documentElement.dataset.prerendered === 'true';
-}
-
 /**
  * Format a timezone offset like -300 minutes into "UTC-5"
  */
@@ -86,13 +67,9 @@ export function useTime({
   showSeconds = true,
   showMilliseconds = false,
 }: UseTimeOptions): TimeData {
-  const [now, setNow] = useState<Date | null>(() =>
-    shouldUseStableInitialTime() ? null : new Date()
-  );
+  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
-    setNow(new Date());
-
     const interval = setInterval(
       () => {
         setNow(new Date());
@@ -102,15 +79,6 @@ export function useTime({
 
     return () => clearInterval(interval);
   }, [showMilliseconds]);
-
-  const placeholderTime = useMemo(() => {
-    const formattedTime = showSeconds ? '--:--:--' : '--:--';
-
-    return {
-      ...PLACEHOLDER_TIME,
-      formattedTime,
-    };
-  }, [showSeconds]);
 
   const hour12 = format === '12h';
 
@@ -133,8 +101,6 @@ export function useTime({
       year: 'numeric',
     });
   }, [timeZone]);
-
-  if (!now) return placeholderTime;
 
   const parts = timeFormatter.formatToParts(now);
   const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';

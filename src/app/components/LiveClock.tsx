@@ -164,10 +164,6 @@ interface LiveClockProps {
   compact?: boolean;
 }
 
-function shouldUseStableInitialTime(): boolean {
-  return typeof document === 'undefined' || document.documentElement.dataset.prerendered === 'true';
-}
-
 export default function LiveClock({
   city = 'New York',
   timeZone = 'America/New_York',
@@ -179,13 +175,9 @@ export default function LiveClock({
   showUtcOffset = true,
   compact = false,
 }: LiveClockProps) {
-  const [now, setNow] = useState<Date | null>(() =>
-    shouldUseStableInitialTime() ? null : new Date()
-  );
+  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
-    setNow(new Date());
-
     const interval = setInterval(
       () => {
         setNow(new Date());
@@ -218,20 +210,20 @@ export default function LiveClock({
     });
   }, [timeZone]);
 
-  const parts = now ? timeFormatter.formatToParts(now) : [];
+  const parts = timeFormatter.formatToParts(now);
   const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';
 
-  const hour = getPart('hour') || '--';
-  const minute = getPart('minute') || '--';
-  const second = getPart('second') || '--';
+  const hour = getPart('hour');
+  const minute = getPart('minute');
+  const second = getPart('second');
   const dayPeriod = getPart('dayPeriod');
 
-  const offsetMinutes = now ? getTimeZoneOffsetMinutes(now, timeZone) : 0;
-  const utcOffset = now ? formatUtcOffset(offsetMinutes) : 'UTC';
+  const offsetMinutes = getTimeZoneOffsetMinutes(now, timeZone);
+  const utcOffset = formatUtcOffset(offsetMinutes);
 
-  const isoString = now ? now.toISOString() : '';
-  const unixTimestamp = now ? Math.floor(now.getTime() / 1000) : 0;
-  const utcString = now ? formatUtcString(now) : '';
+  const isoString = now.toISOString();
+  const unixTimestamp = Math.floor(now.getTime() / 1000);
+  const utcString = formatUtcString(now);
 
   // Split seconds into individual digits for signature color design
   const secondsDigits = second ? second.split('') : ['0', '0'];
@@ -240,9 +232,9 @@ export default function LiveClock({
 
   // Get additional timezone info
   const country = getCountryFromTimezone(timeZone);
-  const timezoneName = now ? getTimezoneName(now, timeZone) : '';
-  const dstActive = now ? isDST(now, timeZone) : false;
-  const dstText = now ? (dstActive ? 'DST active' : 'Standard time') : 'Loading time';
+  const timezoneName = getTimezoneName(now, timeZone);
+  const dstActive = isDST(now, timeZone);
+  const dstText = dstActive ? 'DST active' : 'Standard time';
 
   // Strip country from city name if it's already included (e.g., "New York, USA" -> "New York")
   const cityName = city.includes(',') ? city.split(',')[0].trim() : city;
@@ -351,7 +343,7 @@ export default function LiveClock({
             fontVariantNumeric: 'tabular-nums',
           }}
         >
-          .{now ? String(now.getMilliseconds()).padStart(3, '0') : '000'}
+          .{String(now.getMilliseconds()).padStart(3, '0')}
         </div>
       )}
 
@@ -365,7 +357,7 @@ export default function LiveClock({
             marginTop: 12,
           }}
         >
-          {now ? dateFormatter.format(now) : ''}
+          {dateFormatter.format(now)}
         </div>
       )}
 

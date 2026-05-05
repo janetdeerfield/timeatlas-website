@@ -99,7 +99,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
             fontWeight: 800,
             color: '#080A0C',
           }}
-          suppressHydrationWarning
         >
           {timeData.formattedTime}
         </div>
@@ -109,7 +108,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
             fontFamily: 'Open Sans, sans-serif',
             color: '#364151',
           }}
-          suppressHydrationWarning
         >
           {date}
         </div>
