@@ -22,23 +22,13 @@ interface TimeData {
   utcString: string;
 }
 
-const PLACEHOLDER_TIME: TimeData = {
-  hour: '--',
-  minute: '--',
-  second: '--',
-  dayPeriod: '',
-  formattedTime: '--:--',
-  formattedDate: '',
-  milliseconds: '000',
-  offsetMinutes: 0,
-  utcOffset: 'UTC',
-  isoString: '',
-  unixTimestamp: 0,
-  utcString: '',
-};
+function getInitialNow(): Date {
+  const prerenderNow =
+    typeof document === 'undefined'
+      ? (globalThis as { __TIMEATLAS_PRERENDER_NOW?: string }).__TIMEATLAS_PRERENDER_NOW
+      : document.documentElement.dataset.prerenderNow;
 
-function shouldUseStableInitialTime(): boolean {
-  return typeof document === 'undefined' || document.documentElement.dataset.prerendered === 'true';
+  return prerenderNow ? new Date(prerenderNow) : new Date();
 }
 
 /**
@@ -86,9 +76,7 @@ export function useTime({
   showSeconds = true,
   showMilliseconds = false,
 }: UseTimeOptions): TimeData {
-  const [now, setNow] = useState<Date | null>(() =>
-    shouldUseStableInitialTime() ? null : new Date()
-  );
+  const [now, setNow] = useState(getInitialNow);
 
   useEffect(() => {
     setNow(new Date());
@@ -102,15 +90,6 @@ export function useTime({
 
     return () => clearInterval(interval);
   }, [showMilliseconds]);
-
-  const placeholderTime = useMemo(() => {
-    const formattedTime = showSeconds ? '--:--:--' : '--:--';
-
-    return {
-      ...PLACEHOLDER_TIME,
-      formattedTime,
-    };
-  }, [showSeconds]);
 
   const hour12 = format === '12h';
 
@@ -133,8 +112,6 @@ export function useTime({
       year: 'numeric',
     });
   }, [timeZone]);
-
-  if (!now) return placeholderTime;
 
   const parts = timeFormatter.formatToParts(now);
   const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';

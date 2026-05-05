@@ -10,16 +10,16 @@ interface ClockHeroProps {
 const DEFAULT_TIMEZONE = 'America/New_York';
 const DEFAULT_CITY = 'New York, USA';
 
-function shouldUseStableInitialLocation(): boolean {
-  return typeof document === 'undefined' || document.documentElement.dataset.prerendered === 'true';
+function getInitialLocation() {
+  if (typeof document === 'undefined' || document.documentElement.dataset.prerendered === 'true') {
+    return { timezone: DEFAULT_TIMEZONE, city: DEFAULT_CITY };
+  }
+
+  return { timezone: getUserTimezone(), city: getUserCity() };
 }
 
 export function ClockHero({ use24Hour }: ClockHeroProps) {
-  const [location, setLocation] = useState(() =>
-    shouldUseStableInitialLocation()
-      ? { timezone: DEFAULT_TIMEZONE, city: DEFAULT_CITY }
-      : { timezone: getUserTimezone(), city: getUserCity() }
-  );
+  const [location, setLocation] = useState(getInitialLocation);
 
   useEffect(() => {
     setLocation({ timezone: getUserTimezone(), city: getUserCity() });
