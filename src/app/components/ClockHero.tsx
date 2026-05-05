@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import LiveClock from './LiveClock';
 import { getUserTimezone, getUserCity, speakTime, getTimeForSpeech } from '../utils/time';
@@ -6,9 +7,25 @@ interface ClockHeroProps {
   use24Hour: boolean;
 }
 
+const DEFAULT_TIMEZONE = 'America/New_York';
+const DEFAULT_CITY = 'New York, USA';
+
+function shouldUseStableInitialLocation(): boolean {
+  return typeof document === 'undefined' || document.documentElement.dataset.prerendered === 'true';
+}
+
 export function ClockHero({ use24Hour }: ClockHeroProps) {
-  const timezone = getUserTimezone();
-  const city = getUserCity();
+  const [location, setLocation] = useState(() =>
+    shouldUseStableInitialLocation()
+      ? { timezone: DEFAULT_TIMEZONE, city: DEFAULT_CITY }
+      : { timezone: getUserTimezone(), city: getUserCity() }
+  );
+
+  useEffect(() => {
+    setLocation({ timezone: getUserTimezone(), city: getUserCity() });
+  }, []);
+
+  const { timezone, city } = location;
 
   const handleHearTime = () => {
     const speechText = getTimeForSpeech(timezone, use24Hour);
