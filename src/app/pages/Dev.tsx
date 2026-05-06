@@ -2,13 +2,39 @@ import { useState, useEffect } from 'react';
 import { Code, Copy, Check } from 'lucide-react';
 import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
-import { getUTCTime, getUnixTimestamp, getISO8601, getUserTimezone } from '../utils/time';
+import { getUserTimezone } from '../utils/time';
 import { formatUnixTime, parseUnixTime, copyToClipboard } from '../utils/format';
+
+function getInitialDate() {
+  const prerenderNow =
+    typeof document === 'undefined'
+      ? (globalThis as { __TIMEATLAS_PRERENDER_NOW?: string }).__TIMEATLAS_PRERENDER_NOW
+      : document.documentElement.dataset.prerenderNow;
+
+  return prerenderNow ? new Date(prerenderNow) : new Date();
+}
+
+function formatUtcTime(date: Date) {
+  return date.toISOString().split('T')[1].split('.')[0];
+}
+
+function getInitialTimezone() {
+  if (typeof document === 'undefined') {
+    const isPrerendering = Boolean(
+      (globalThis as { __TIMEATLAS_PRERENDER_NOW?: string }).__TIMEATLAS_PRERENDER_NOW
+    );
+    return isPrerendering ? 'UTC' : getUserTimezone();
+  }
+
+  return document.documentElement.dataset.prerendered === 'true' ? 'UTC' : getUserTimezone();
+}
 
 export function Dev() {
   const [unixInput, setUnixInput] = useState('');
   const [convertedTime, setConvertedTime] = useState('');
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [currentDate, setCurrentDate] = useState(getInitialDate);
+  const [timezone, setTimezone] = useState(getInitialTimezone);
 
   const handleUnixConvert = () => {
     const timestamp = parseUnixTime(unixInput);
@@ -29,16 +55,26 @@ export function Dev() {
     }
   };
 
-  const currentUTC = getUTCTime();
-  const currentUnix = getUnixTimestamp();
-  const currentISO = getISO8601();
-  const timezone = getUserTimezone();
+  useEffect(() => {
+    setCurrentDate(new Date());
+    setTimezone(getUserTimezone());
+
+    const interval = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentUTC = formatUtcTime(currentDate);
+  const currentUnix = Math.floor(currentDate.getTime() / 1000);
+  const currentISO = currentDate.toISOString();
 
   return (
     <>
       <SEO
-        title="Developer Tools – Unix, UTC & ISO 8601 Converters | TimeAtlas"
-        description="Essential time utilities for developers. Convert Unix timestamps, check UTC time, and get ISO 8601 formatted dates. Copy code examples for JavaScript and Python."
+        title="UTC, Unix Time & ISO 8601 Tools | TimeAtlas"
+        description="Developer-friendly UTC, Unix timestamp, and ISO 8601 time tools designed for precision and readability."
         path="/dev"
       />
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FEFEFE' }}>
@@ -58,7 +94,7 @@ export function Dev() {
                 color: '#080A0C',
               }}
             >
-              Developer Tools
+              UTC, Unix Time &amp; ISO 8601 Tools
             </h1>
             <p
               className="text-lg"

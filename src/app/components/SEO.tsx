@@ -5,9 +5,16 @@ interface SEOProps {
   description: string;
   path: string;
   type?: string;
+  robots?: string;
 }
 
-export function SEO({ title, description, path, type = 'website' }: SEOProps) {
+export function SEO({
+  title,
+  description,
+  path,
+  type = 'website',
+  robots = 'index,follow',
+}: SEOProps) {
   const siteUrl = 'https://timeatlas.co';
   const fullUrl = `${siteUrl}${path}`;
   const siteName = 'TimeAtlas';
@@ -17,7 +24,7 @@ export function SEO({ title, description, path, type = 'website' }: SEOProps) {
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="index,follow" />
+      <meta name="robots" content={robots} />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />

@@ -12,8 +12,8 @@ export function World({ use24Hour }: WorldProps) {
   return (
     <>
       <SEO
-        title="World Clock – Live Time in Major Cities | TimeAtlas"
-        description="Check current time in major cities around the world. Live time zone updates for New York, London, Tokyo, Sydney, and more. Perfect for global coordination."
+        title="World Clock — Current Time in Major Cities | TimeAtlas"
+        description="View current local times around the world with a clean, readable world clock designed for clarity and speed."
         path="/world"
       />
       <div
@@ -41,7 +41,7 @@ export function World({ use24Hour }: WorldProps) {
                 color: '#FEFEFE',
               }}
             >
-              World Time
+              World Clock
             </h1>
             <p
               className="text-lg"

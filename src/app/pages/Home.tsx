@@ -35,15 +35,15 @@ export function Home({ use24Hour }: HomeProps) {
   return (
     <>
       <SEO
-        title="Time Converter & World Clock | TimeAtlas"
-        description="Convert time zones instantly. Compare world times, plan meetings, and view exact time worldwide with TimeAtlas."
+        title="TimeAtlas — Exact Time, Time Zone Converter & World Clock"
+        description="Check the exact current time, convert time zones instantly, and plan meetings across the world with clean, fast, precise time tools."
         path="/"
       />
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FEFEFE' }}>
         <div className="flex-1">
           {/* Hero Section */}
           <section className="bg-white pb-2 sm:pb-8" style={{ backgroundColor: '#FEFEFE' }}>
-            <h1 className="sr-only">Time Converter &amp; World Clock</h1>
+            <h1 className="sr-only">Exact Time, Time Zone Converter &amp; World Clock</h1>
             <ClockHero use24Hour={use24Hour} />
 
             {/* Horizontal Divider */}

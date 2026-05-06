@@ -6,8 +6,8 @@ export function About() {
   return (
     <>
       <SEO
-        title="Explore the Tools | TimeAtlas"
-        description="Whether you're checking the exact time, converting time zones, or planning meetings across continents, every tool is designed to feel calm, fast, and intuitive."
+        title="About TimeAtlas — The Internet’s Cleanest Time Tools"
+        description="Learn about TimeAtlas — a calm, precise collection of modern time tools built for clarity, speed, and trust."
         path="/about"
       />
 
