@@ -127,11 +127,10 @@ export function Meet({ use24Hour }: MeetProps) {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F2EFEA' }}>
       <SEO
-        title="Meeting Planner – Find the Best Time Across Time Zones | TimeAtlas"
-        description="Schedule global meetings effortlessly. Find the best meeting time across multiple time zones. Perfect for remote teams and international collaboration."
+        title="Meeting Planner — Compare Time Zones for Scheduling | TimeAtlas"
+        description="Plan meetings across time zones with an intuitive scheduling tool built for distributed teams and global coordination."
         path="/meet"
       />
-      <h1 className="sr-only">Find the Best Meeting Times Across Time Zones</h1>
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         {/* Header */}
         <div className="text-center mb-12">
@@ -141,7 +140,7 @@ export function Meet({ use24Hour }: MeetProps) {
           >
             <Users className="w-8 h-8" style={{ color: '#2E45F0' }} />
           </div>
-          <h2
+          <h1
             className="text-5xl font-bold mb-3"
             style={{
               fontFamily: 'Inter, sans-serif',
@@ -149,7 +148,7 @@ export function Meet({ use24Hour }: MeetProps) {
             }}
           >
             Meeting Planner
-          </h2>
+          </h1>
           <p
             className="text-lg"
             style={{

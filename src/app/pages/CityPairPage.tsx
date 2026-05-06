@@ -1,21 +1,85 @@
 import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import { TimeHeader, TimePillPair, TimeTable, ConversionGrid, Section } from '../components/time';
-import type { CityPairPageData } from '../data/cityPairs';
-import { getZoneInfo, formatUtcOffsetLabel } from '../data/zones';
+import { cityPairs, type CityPairPageData } from '../data/cityPairs';
+import { ZONE_LIST, getZoneInfo, formatUtcOffsetLabel, type ZoneInfo } from '../data/zones';
 
 interface CityPairPageProps {
   page: CityPairPageData;
   use24Hour?: boolean;
 }
 
+function titleZoneName(zone: ZoneInfo) {
+  return zone.fullName.replace(/ Time$/, '');
+}
+
+function buildPageTitle(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
+  if (!fromZone || !toZone) return page.title;
+
+  return `${fromZone.abbr} → ${toZone.abbr} Converter (${titleZoneName(fromZone)} to ${titleZoneName(
+    toZone
+  )} Time) | TimeAtlas`;
+}
+
+function buildPageDescription(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
+  if (!fromZone || !toZone) return page.description;
+
+  return `Convert ${fromZone.fullName} (${fromZone.abbr}) to ${toZone.fullName} (${toZone.abbr}) instantly. See current time differences and compare both zones clearly.`;
+}
+
+function buildH1(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
+  if (!fromZone || !toZone) return page.h1;
+
+  return `${fromZone.abbr} → ${toZone.abbr} Converter`;
+}
+
+function buildCommonLinks(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
+  if (!fromZone || !toZone) return page.related;
+
+  const preferredTargets = ZONE_LIST.filter((zone) => zone.abbr !== fromZone.abbr)
+    .sort((a, b) => {
+      if (a.abbr === toZone.abbr) return -1;
+      if (b.abbr === toZone.abbr) return 1;
+      return (
+        Math.abs(a.utcOffset - fromZone.utcOffset) - Math.abs(b.utcOffset - fromZone.utcOffset)
+      );
+    })
+    .map((zone) => `${fromZone.slugPart}-to-${zone.slugPart}`);
+
+  const preferredSlugs = [
+    ...preferredTargets,
+    `${toZone.slugPart}-to-${fromZone.slugPart}`,
+    'pst-to-est',
+    'est-to-pst',
+    'utc-to-est',
+    'gmt-to-est',
+  ];
+
+  const links = preferredSlugs
+    .map((slug) => cityPairs.find((item) => item.slug === slug))
+    .filter((item): item is CityPairPageData => Boolean(item))
+    .filter((item) => item.slug !== page.slug)
+    .map((item) => ({ href: `/${item.slug}`, label: `${item.fromZone} → ${item.toZone}` }));
+
+  const unique = new Map<string, { href: string; label: string }>();
+  for (const link of [...links, ...page.related]) {
+    if (link.href !== `/${page.slug}` && !unique.has(link.href)) unique.set(link.href, link);
+  }
+
+  return Array.from(unique.values()).slice(0, 7);
+}
+
 export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
   const fromZone = getZoneInfo(page.fromZone);
   const toZone = getZoneInfo(page.toZone);
+  const title = buildPageTitle(page, fromZone, toZone);
+  const description = buildPageDescription(page, fromZone, toZone);
+  const h1 = buildH1(page, fromZone, toZone);
+  const commonLinks = buildCommonLinks(page, fromZone, toZone);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <SEO title={page.title} description={page.description} path={`/${page.slug}`} />
+      <SEO title={title} description={description} path={`/${page.slug}`} />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         {/* Breadcrumb */}
@@ -28,11 +92,11 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
             Convert
           </a>
           <span className="mx-2">/</span>
-          <span className="text-slate-900 font-semibold">{page.h1}</span>
+          <span className="text-slate-900 font-semibold">{h1}</span>
         </div>
 
         {/* H1 */}
-        <h1 className="text-4xl sm:text-5xl font-bold font-inter mb-4 text-slate-900">{page.h1}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold font-inter mb-4 text-slate-900">{h1}</h1>
 
         {/* Intro */}
         <p className="text-lg font-open-sans text-slate-700 mb-8 leading-relaxed">{page.intro}</p>
@@ -144,13 +208,13 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
           </div>
         </Section>
 
-        {/* ── 8. RELATED CONVERSIONS ─────────────────────────────────────── */}
+        {/* ── 8. COMMON TIME CONVERSIONS ─────────────────────────────────── */}
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
-            Related Time Conversions
+            Common Time Conversions
           </h2>
           <div className="flex flex-wrap gap-3">
-            {page.related.map((link) => (
+            {commonLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}

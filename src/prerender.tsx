@@ -9,7 +9,17 @@ import {
 import { createRouteObjects } from './app/routes';
 import { cityPairs } from './app/data/cityPairs';
 
-const coreRoutes = ['/', '/convert', '/world', '/meet', '/dev', '/about', '/privacy', '/terms'];
+const coreRoutes = [
+  '/',
+  '/convert',
+  '/world',
+  '/meet',
+  '/dev',
+  '/about',
+  '/privacy',
+  '/terms',
+  '/404',
+];
 
 export const prerenderRoutes = [...coreRoutes, ...cityPairs.map((page) => `/${page.slug}`)];
 

@@ -7,6 +7,7 @@ import { Dev } from './pages/Dev';
 import { About } from './pages/About';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
+import { NotFound } from './pages/NotFound';
 import { CityPairPage } from './pages/CityPairPage';
 import { cityPairs } from './data/cityPairs';
 import { RootLayout } from './pages/RootLayout';
@@ -59,6 +60,10 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
         path: pair.slug,
         element: <CityPairPage page={pair} />,
       })),
+      {
+        path: '*',
+        element: <NotFound />,
+      },
     ],
   },
 ];
