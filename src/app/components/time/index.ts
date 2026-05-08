@@ -1,4 +1,5 @@
 export { Section } from './Section';
+export { CityZoneTile, type CityZoneTileProps, type CityZoneTileVariant } from './CityZoneTile';
 export { TimePill } from './TimePill';
 export { TimePillPair } from './TimePillPair';
 export { TimeHeader } from './TimeHeader';
