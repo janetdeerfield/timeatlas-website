@@ -8,16 +8,16 @@ TimeAtlas is a **purely client-side** React + TypeScript SPA (no backend, no dat
 
 ### Quick reference
 
-| Action | Command |
-|--------|---------|
-| Install deps | `npm install` |
-| Dev server | `npm run dev` (port 5173) |
-| Type check | `npm run type-check` |
-| Format | `npm run format` |
-| Format check | `npm run format:check` |
-| Lint | `npm run lint` |
-| Production build | `npm run build` |
-| Preview build | `npm run preview` (port 4173) |
+| Action           | Command                       |
+| ---------------- | ----------------------------- |
+| Install deps     | `npm install`                 |
+| Dev server       | `npm run dev` (port 5173)     |
+| Type check       | `npm run type-check`          |
+| Format           | `npm run format`              |
+| Format check     | `npm run format:check`        |
+| Lint             | `npm run lint`                |
+| Production build | `npm run build`               |
+| Preview build    | `npm run preview` (port 4173) |
 
 ### Known issues
 
@@ -35,6 +35,7 @@ TimeAtlas is a **purely client-side** React + TypeScript SPA (no backend, no dat
 ### Testing
 
 There are currently **no automated test suites** (no vitest/jest). Quality is validated via:
+
 1. `npm run type-check` — TypeScript strict mode
 2. `npm run format:check` — Prettier
 3. `npm run build` — full production build with SSR pre-rendering of 119 routes
