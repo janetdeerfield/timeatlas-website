@@ -1,6 +1,5 @@
-import { Volume2 } from 'lucide-react';
 import { useTime } from '../hooks/useTime';
-import { speakTime, getTimeForSpeech, getShortDateInTimezone } from '../utils/time';
+import { getShortDateInTimezone } from '../utils/time';
 import { useState, useEffect } from 'react';
 
 interface CityCardProps {
@@ -29,11 +28,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
     const interval = setInterval(updateDate, 1000);
     return () => clearInterval(interval);
   }, [timezone]);
-
-  const handleHearTime = () => {
-    const speechText = getTimeForSpeech(timezone, use24Hour);
-    speakTime(speechText);
-  };
 
   return (
     <div
@@ -73,22 +67,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
             </p>
           )}
         </div>
-        <button
-          onClick={handleHearTime}
-          className="p-2 rounded-lg transition-colors"
-          style={{
-            backgroundColor: 'transparent',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#F0F9F3';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
-          }}
-          title="Hear the time"
-        >
-          <Volume2 className="w-4 h-4" style={{ color: '#364151' }} />
-        </button>
       </div>
 
       <div className="space-y-1">

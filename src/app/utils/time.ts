@@ -222,26 +222,6 @@ export function getTimeDifference(
   return { hours: diffHours, minutes: diffMinutes, dayDiff };
 }
 
-export function speakTime(text: string, lang: string = 'en-US') {
-  if ('speechSynthesis' in window) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
-    speechSynthesis.speak(utterance);
-  }
-}
-
-export function getTimeForSpeech(timezone: string, use24Hour: boolean = false): string {
-  // Get time without seconds for speech to avoid lag issues
-  const options: Intl.DateTimeFormatOptions = {
-    timeZone: timezone,
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: !use24Hour,
-  };
-  const time = new Intl.DateTimeFormat('en-US', options).format(new Date());
-  return `The time is ${time}`;
-}
-
 // DST detection function
 export function isDSTActive(timezone: string): boolean {
   const now = new Date();
