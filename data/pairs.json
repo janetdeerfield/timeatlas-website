@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-05-06",
+  "_notes": "Per-pair curated data. Most fields are derivable from zones.json and don't need to be stored here (time difference, DST relationship, etc. — compute at template render time). This file holds only the curated content that can't be derived: meeting overlap recommendations, sample city pairs, notable pairing context, flight times, and meeting difficulty assessment. Examples below cover all four DST-relationship variants. Use these as the pattern to generate the remaining pairs.",
+
+  "_pair_categories": {
+    "synchronized": "Both zones observe DST on the same schedule. Differential is constant year-round. Example: any two US zones (EST↔PST, CST↔MST). Easiest case for templates.",
+    "desynchronized": "Both zones observe DST but on different schedules (US vs EU). Differential shifts during the 2-3 weeks per year when one zone has switched and the other hasn't. Example: EST↔CET.",
+    "asymmetric": "One zone observes DST, the other doesn't. Differential shifts twice a year by 1 hour. Examples: EST↔IST, CET↔IST, PST↔JST.",
+    "neither": "Neither zone observes DST. Differential is constant year-round. Example: IST↔JST, HST↔IST, UTC↔IST."
+  },
+
+  "_field_definitions": {
+    "source_code": "Source zone code (e.g., 'EST'). Must match a zone in zones.json.",
+    "target_code": "Target zone code. Must match a zone in zones.json.",
+    "dst_relationship": "One of: synchronized, desynchronized, asymmetric, neither. Used by the template to select content variants.",
+    "sample_source_city": "Specific city to feature for this source zone in this pair's context (e.g., 'New York' for EST, 'Mumbai' for IST). Should be the most recognized city for the relevant business context.",
+    "sample_target_city": "Same, for the target zone.",
+    "meeting_overlap": "Object with start/end times in both zones. Curated recommendation, not derived. Should respect 9-5 working hours in both zones where possible; for difficult pairs, recommend the closest workable window.",
+    "meeting_difficulty": "One of: easy, moderate, hard. Easy = full overlap in business hours. Moderate = partial overlap. Hard = no overlap; teams typically use async or bridge calls.",
+    "notable_pairing": "1-2 sentences of context: who works across these zones and how. This is the most genuinely unique content per pair.",
+    "flight_route": "Object with hub airports, average flight time in minutes, and direct flight availability. Optional but recommended.",
+    "common_use_cases": "Array of 2-4 strings describing typical reasons users convert this pair (e.g., 'business meetings', 'flight scheduling', 'family abroad', 'remote work coordination')."
+  },
+
+  "pairs": [
+    {
+      "_variant": "SYNCHRONIZED — both observe DST on the same schedule",
+      "source_code": "EST",
+      "target_code": "PST",
+      "dst_relationship": "synchronized",
+      "sample_source_city": "New York",
+      "sample_target_city": "Los Angeles",
+      "meeting_overlap": {
+        "start_source": "12:00",
+        "end_source": "17:00",
+        "start_target": "09:00",
+        "end_target": "14:00",
+        "preferred_default": "13:00 EST / 10:00 PST"
+      },
+      "meeting_difficulty": "easy",
+      "notable_pairing": "Two coasts of the same country and the most-coordinated US business pairing. East Coast offices open while West Coast staff are still asleep, and West Coast offices stay open after East Coast colleagues have left for the day. Common pattern in finance, media, and bicoastal corporate operations.",
+      "flight_route": {
+        "primary_route": "JFK ↔ LAX",
+        "average_flight_time_minutes": 360,
+        "direct_flights_available": true,
+        "note": "One of the highest-volume domestic air corridors in the world."
+      },
+      "common_use_cases": ["business meetings", "media broadcast scheduling", "live event coordination", "family across coasts"]
+    },
+
+    {
+      "source_code": "PST",
+      "target_code": "EST",
+      "dst_relationship": "synchronized",
+      "sample_source_city": "Los Angeles",
+      "sample_target_city": "New York",
+      "meeting_overlap": {
+        "start_source": "09:00",
+        "end_source": "14:00",
+        "start_target": "12:00",
+        "end_target": "17:00",
+        "preferred_default": "10:00 PST / 13:00 EST"
+      },
+      "meeting_difficulty": "easy",
+      "notable_pairing": "The mirror of EST↔PST. West Coast tech companies coordinating with East Coast finance, media, or government typically anchor live calls in this window.",
+      "flight_route": {
+        "primary_route": "LAX ↔ JFK",
+        "average_flight_time_minutes": 330,
+        "direct_flights_available": true,
+        "note": "Eastbound flights are typically 30 minutes shorter due to jet stream tailwinds."
+      },
+      "common_use_cases": ["tech-finance coordination", "venture capital calls", "media production", "remote work"]
+    },
+
+    {
+      "_variant": "DESYNCHRONIZED — both observe DST, different schedules (US vs EU)",
+      "source_code": "EST",
+      "target_code": "CET",
+      "dst_relationship": "desynchronized",
+      "sample_source_city": "New York",
+      "sample_target_city": "Berlin",
+      "meeting_overlap": {
+        "start_source": "08:00",
+        "end_source": "11:30",
+        "start_target": "14:00",
+        "end_target": "17:30",
+        "preferred_default": "09:00 EST / 15:00 CET",
+        "note": "Standard 6-hour gap. Note that for two weeks in March (after US springs forward but before Europe does) and one week in late October, the gap shifts to 5 hours."
+      },
+      "meeting_difficulty": "moderate",
+      "notable_pairing": "The classic transatlantic business pair. Major financial centers (NYSE↔Frankfurt, NYSE↔Euronext) operate across this gap. The mid-March and late-October DST mismatch weeks are a known source of meeting confusion; some calendar tools handle it incorrectly.",
+      "flight_route": {
+        "primary_route": "JFK ↔ FRA",
+        "average_flight_time_minutes": 480,
+        "direct_flights_available": true,
+        "note": "Eastbound flights take ~7 hours; westbound ~9 hours due to headwinds."
+      },
+      "common_use_cases": ["finance and banking", "transatlantic business", "academic conferences", "diplomatic coordination"]
+    },
+
+    {
+      "_variant": "ASYMMETRIC — one observes DST, the other doesn't",
+      "source_code": "EST",
+      "target_code": "IST",
+      "dst_relationship": "asymmetric",
+      "sample_source_city": "New York",
+      "sample_target_city": "Mumbai",
+      "meeting_overlap": {
+        "start_source": "07:30",
+        "end_source": "10:00",
+        "start_target": "18:00",
+        "end_target": "20:30",
+        "preferred_default": "09:00 EST / 19:30 IST",
+        "note": "Mumbai's evening overlaps New York's morning. The gap is 9.5 hours during US standard time (Nov-Mar) and 10.5 hours during US daylight time (Mar-Nov), so the shift in early November and March changes overlap times."
+      },
+      "meeting_difficulty": "hard",
+      "notable_pairing": "The US-India tech corridor. Bangalore, Hyderabad, and Pune work extensively with US companies; this is one of the highest-volume async-collaboration pairings on the internet. Live meetings typically happen in the narrow window of US morning / India evening, with most coordination handled via written hand-offs.",
+      "flight_route": {
+        "primary_route": "JFK ↔ BOM",
+        "average_flight_time_minutes": 900,
+        "direct_flights_available": true,
+        "note": "Roughly 15-hour direct flight; one of the longest non-stop routes from JFK."
+      },
+      "common_use_cases": ["software engineering teams", "BPO operations", "family abroad", "academic collaboration"]
+    },
+
+    {
+      "source_code": "CET",
+      "target_code": "IST",
+      "dst_relationship": "asymmetric",
+      "sample_source_city": "Berlin",
+      "sample_target_city": "Mumbai",
+      "meeting_overlap": {
+        "start_source": "10:00",
+        "end_source": "14:00",
+        "start_target": "13:30",
+        "end_target": "17:30",
+        "preferred_default": "11:00 CET / 14:30 IST",
+        "note": "The 4.5-hour gap in summer (3.5 in winter) makes this one of the easier intercontinental pairs. India's afternoon overlaps Europe's late morning and early afternoon comfortably."
+      },
+      "meeting_difficulty": "moderate",
+      "notable_pairing": "European companies (especially in German engineering, French luxury, and Italian fashion) increasingly coordinate operations with Indian back-offices. The relatively manageable gap makes live meetings practical, unlike US-India.",
+      "flight_route": {
+        "primary_route": "FRA ↔ BOM",
+        "average_flight_time_minutes": 510,
+        "direct_flights_available": true,
+        "note": "Roughly 8.5-hour direct flight."
+      },
+      "common_use_cases": ["European-Indian business", "engineering collaboration", "manufacturing supply chains", "academic exchange"]
+    },
+
+    {
+      "_variant": "NEITHER — neither zone observes DST",
+      "source_code": "IST",
+      "target_code": "JST",
+      "dst_relationship": "neither",
+      "sample_source_city": "Mumbai",
+      "sample_target_city": "Tokyo",
+      "meeting_overlap": {
+        "start_source": "08:00",
+        "end_source": "13:00",
+        "start_target": "11:30",
+        "end_target": "16:30",
+        "preferred_default": "10:00 IST / 13:30 JST",
+        "note": "The 3.5-hour gap is constant year-round since neither zone observes DST. India's morning overlaps Japan's lunch and afternoon."
+      },
+      "meeting_difficulty": "easy",
+      "notable_pairing": "Asian business pair connecting India's tech sector with Japan's manufacturing and finance industries. The constant offset makes scheduling predictable, and the workday overlap is generous.",
+      "flight_route": {
+        "primary_route": "BOM ↔ NRT",
+        "average_flight_time_minutes": 540,
+        "direct_flights_available": true,
+        "note": "Roughly 9-hour direct flight."
+      },
+      "common_use_cases": ["Indo-Japanese business", "automotive supply chains", "investment coordination", "academic research"]
+    },
+
+    {
+      "source_code": "HST",
+      "target_code": "JST",
+      "dst_relationship": "neither",
+      "sample_source_city": "Honolulu",
+      "sample_target_city": "Tokyo",
+      "meeting_overlap": {
+        "start_source": "13:00",
+        "end_source": "16:00",
+        "start_target": "08:00",
+        "end_target": "11:00",
+        "preferred_default": "14:00 HST / 09:00 JST (next day)",
+        "note": "Japan is 19 hours ahead of Hawaii (or equivalently, Hawaii is 5 hours behind Japan with a one-day rollover). Constant year-round."
+      },
+      "meeting_difficulty": "moderate",
+      "notable_pairing": "Hawaii's mid-Pacific position and large Japanese-American population create an active business and family pair, especially in tourism, real estate, and military operations. The one-day-rollover quirk catches many people off guard.",
+      "flight_route": {
+        "primary_route": "HNL ↔ NRT",
+        "average_flight_time_minutes": 540,
+        "direct_flights_available": true,
+        "note": "Roughly 9-hour direct flight; Hawaii is the closest US state to Japan."
+      },
+      "common_use_cases": ["Japan-Hawaii tourism", "military coordination (Pearl Harbor ↔ Yokosuka)", "real estate investment", "family connections"]
+    },
+
+    {
+      "_variant": "UTC pairings (UTC is reference, treat as 'neither')",
+      "source_code": "UTC",
+      "target_code": "EST",
+      "dst_relationship": "asymmetric",
+      "sample_source_city": "(reference)",
+      "sample_target_city": "New York",
+      "meeting_overlap": {
+        "start_source": "13:00",
+        "end_source": "21:00",
+        "start_target": "08:00",
+        "end_target": "16:00",
+        "preferred_default": "14:00 UTC / 09:00 EST",
+        "note": "EST is UTC−5 in winter, UTC−4 in summer (EDT). The 'meeting overlap' here primarily serves developers coordinating with EST partners; UTC itself isn't a civil zone."
+      },
+      "meeting_difficulty": "easy",
+      "notable_pairing": "UTC↔EST is the most-converted pair for developers and technical teams, since most servers, log files, and APIs run on UTC and most US business operates on EST. Calendar bugs around DST transitions are a frequent source of incidents in software systems.",
+      "common_use_cases": ["software development", "API timestamps", "log analysis", "incident response", "scheduled jobs / cron"]
+    }
+  ],
+
+  "_remaining_pairs_to_generate": [
+    "EST↔CST", "CST↔EST", "EST↔MST", "MST↔EST", "EST↔AKST", "AKST↔EST", "EST↔HST", "HST↔EST",
+    "EST↔UTC", "EST↔GMT", "GMT↔EST", "EST↔JST", "JST↔EST", "CET↔EST",
+    "CST↔MST", "MST↔CST", "CST↔PST", "PST↔CST", "CST↔AKST", "AKST↔CST", "CST↔HST", "HST↔CST",
+    "CST↔UTC", "UTC↔CST", "CST↔GMT", "GMT↔CST", "CST↔CET", "CET↔CST", "CST↔IST", "IST↔CST",
+    "CST↔JST", "JST↔CST",
+    "MST↔PST", "PST↔MST", "MST↔AKST", "AKST↔MST", "MST↔HST", "HST↔MST", "MST↔UTC", "UTC↔MST",
+    "MST↔GMT", "GMT↔MST", "MST↔CET", "CET↔MST", "MST↔IST", "IST↔MST", "MST↔JST", "JST↔MST",
+    "PST↔AKST", "AKST↔PST", "PST↔HST", "HST↔PST", "PST↔UTC", "UTC↔PST", "PST↔GMT", "GMT↔PST",
+    "PST↔CET", "CET↔PST", "PST↔IST", "IST↔PST", "PST↔JST", "JST↔PST",
+    "AKST↔HST", "HST↔AKST", "AKST↔UTC", "UTC↔AKST", "AKST↔GMT", "GMT↔AKST", "AKST↔CET", "CET↔AKST",
+    "AKST↔IST", "IST↔AKST", "AKST↔JST", "JST↔AKST",
+    "HST↔UTC", "UTC↔HST", "HST↔GMT", "GMT↔HST", "HST↔CET", "CET↔HST", "HST↔IST", "IST↔HST",
+    "JST↔HST",
+    "UTC↔GMT", "GMT↔UTC", "UTC↔CET", "CET↔UTC", "UTC↔IST", "IST↔UTC", "UTC↔JST", "JST↔UTC",
+    "GMT↔CET", "CET↔GMT", "GMT↔IST", "IST↔GMT", "GMT↔JST", "JST↔GMT",
+    "CET↔JST", "JST↔CET", "JST↔IST",
+    "PST↔EST is already shown above"
+  ]
+}
