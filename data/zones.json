@@ -52,19 +52,83 @@
         { "name": "Panama", "population": 4400000, "observes_dst": false }
       ],
       "principal_cities": [
-        { "name": "New York", "country": "United States", "population": 8336000, "iana": "America/New_York", "is_financial_hub": true },
-        { "name": "Toronto", "country": "Canada", "population": 2794000, "iana": "America/Toronto", "is_financial_hub": true },
-        { "name": "Philadelphia", "country": "United States", "population": 1576000, "iana": "America/New_York", "is_financial_hub": false },
-        { "name": "Washington D.C.", "country": "United States", "population": 689000, "iana": "America/New_York", "is_capital": true },
-        { "name": "Boston", "country": "United States", "population": 654000, "iana": "America/New_York", "is_financial_hub": false },
-        { "name": "Atlanta", "country": "United States", "population": 499000, "iana": "America/New_York", "is_financial_hub": false },
-        { "name": "Miami", "country": "United States", "population": 449000, "iana": "America/New_York", "is_financial_hub": false }
+        {
+          "name": "New York",
+          "country": "United States",
+          "population": 8336000,
+          "iana": "America/New_York",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Toronto",
+          "country": "Canada",
+          "population": 2794000,
+          "iana": "America/Toronto",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Philadelphia",
+          "country": "United States",
+          "population": 1576000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        },
+        {
+          "name": "Washington D.C.",
+          "country": "United States",
+          "population": 689000,
+          "iana": "America/New_York",
+          "is_capital": true
+        },
+        {
+          "name": "Boston",
+          "country": "United States",
+          "population": 654000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        },
+        {
+          "name": "Atlanta",
+          "country": "United States",
+          "population": 499000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        },
+        {
+          "name": "Miami",
+          "country": "United States",
+          "population": 449000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        }
       ],
       "notable_institutions": [
-        { "name": "New York Stock Exchange", "abbreviation": "NYSE", "city": "New York", "category": "stock_exchange", "trading_hours_local": "09:30–16:00" },
-        { "name": "NASDAQ", "abbreviation": "NASDAQ", "city": "New York", "category": "stock_exchange", "trading_hours_local": "09:30–16:00" },
-        { "name": "United States Federal Reserve", "abbreviation": "Fed", "city": "Washington D.C.", "category": "central_bank" },
-        { "name": "United Nations Headquarters", "abbreviation": "UN", "city": "New York", "category": "international_organization" }
+        {
+          "name": "New York Stock Exchange",
+          "abbreviation": "NYSE",
+          "city": "New York",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:30–16:00"
+        },
+        {
+          "name": "NASDAQ",
+          "abbreviation": "NASDAQ",
+          "city": "New York",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:30–16:00"
+        },
+        {
+          "name": "United States Federal Reserve",
+          "abbreviation": "Fed",
+          "city": "Washington D.C.",
+          "category": "central_bank"
+        },
+        {
+          "name": "United Nations Headquarters",
+          "abbreviation": "UN",
+          "city": "New York",
+          "category": "international_organization"
+        }
       ],
       "geography": {
         "description": "Eastern North America from the Atlantic seaboard to the eastern Great Lakes, including the US East Coast, eastern Canada, the Bahamas, and parts of the Caribbean.",
@@ -118,8 +182,18 @@
       },
       "countries": [
         { "name": "United States (central)", "population": 95000000, "observes_dst": true },
-        { "name": "Mexico", "population": 130000000, "observes_dst": false, "note": "Abolished DST in 2022 except border municipalities" },
-        { "name": "Canada (Manitoba, Saskatchewan)", "population": 2700000, "observes_dst": "partial", "note": "Saskatchewan does not observe DST" },
+        {
+          "name": "Mexico",
+          "population": 130000000,
+          "observes_dst": false,
+          "note": "Abolished DST in 2022 except border municipalities"
+        },
+        {
+          "name": "Canada (Manitoba, Saskatchewan)",
+          "population": 2700000,
+          "observes_dst": "partial",
+          "note": "Saskatchewan does not observe DST"
+        },
         { "name": "Costa Rica", "population": 5200000, "observes_dst": false },
         { "name": "Guatemala", "population": 17800000, "observes_dst": false },
         { "name": "El Salvador", "population": 6300000, "observes_dst": false },
@@ -128,19 +202,79 @@
         { "name": "Belize", "population": 405000, "observes_dst": false }
       ],
       "principal_cities": [
-        { "name": "Mexico City", "country": "Mexico", "population": 9210000, "iana": "America/Mexico_City", "is_capital": true, "observes_dst": false },
-        { "name": "Chicago", "country": "United States", "population": 2746000, "iana": "America/Chicago", "is_financial_hub": true },
-        { "name": "Houston", "country": "United States", "population": 2304000, "iana": "America/Chicago" },
-        { "name": "Guadalajara", "country": "Mexico", "population": 1385000, "iana": "America/Mexico_City" },
-        { "name": "San Antonio", "country": "United States", "population": 1495000, "iana": "America/Chicago" },
-        { "name": "Dallas", "country": "United States", "population": 1304000, "iana": "America/Chicago" },
-        { "name": "Monterrey", "country": "Mexico", "population": 1142000, "iana": "America/Monterrey" }
+        {
+          "name": "Mexico City",
+          "country": "Mexico",
+          "population": 9210000,
+          "iana": "America/Mexico_City",
+          "is_capital": true,
+          "observes_dst": false
+        },
+        {
+          "name": "Chicago",
+          "country": "United States",
+          "population": 2746000,
+          "iana": "America/Chicago",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Houston",
+          "country": "United States",
+          "population": 2304000,
+          "iana": "America/Chicago"
+        },
+        {
+          "name": "Guadalajara",
+          "country": "Mexico",
+          "population": 1385000,
+          "iana": "America/Mexico_City"
+        },
+        {
+          "name": "San Antonio",
+          "country": "United States",
+          "population": 1495000,
+          "iana": "America/Chicago"
+        },
+        {
+          "name": "Dallas",
+          "country": "United States",
+          "population": 1304000,
+          "iana": "America/Chicago"
+        },
+        {
+          "name": "Monterrey",
+          "country": "Mexico",
+          "population": 1142000,
+          "iana": "America/Monterrey"
+        }
       ],
       "notable_institutions": [
-        { "name": "CME Group", "abbreviation": "CME", "city": "Chicago", "category": "futures_exchange", "trading_hours_local": "near 24h electronic" },
-        { "name": "Chicago Board Options Exchange", "abbreviation": "CBOE", "city": "Chicago", "category": "options_exchange" },
-        { "name": "Federal Reserve Bank of Chicago", "abbreviation": "FRBC", "city": "Chicago", "category": "central_bank" },
-        { "name": "Mexican Stock Exchange", "abbreviation": "BMV", "city": "Mexico City", "category": "stock_exchange", "trading_hours_local": "08:30–15:00" }
+        {
+          "name": "CME Group",
+          "abbreviation": "CME",
+          "city": "Chicago",
+          "category": "futures_exchange",
+          "trading_hours_local": "near 24h electronic"
+        },
+        {
+          "name": "Chicago Board Options Exchange",
+          "abbreviation": "CBOE",
+          "city": "Chicago",
+          "category": "options_exchange"
+        },
+        {
+          "name": "Federal Reserve Bank of Chicago",
+          "abbreviation": "FRBC",
+          "city": "Chicago",
+          "category": "central_bank"
+        },
+        {
+          "name": "Mexican Stock Exchange",
+          "abbreviation": "BMV",
+          "city": "Mexico City",
+          "category": "stock_exchange",
+          "trading_hours_local": "08:30–15:00"
+        }
       ],
       "geography": {
         "description": "Central North America from the Great Plains through Texas and into Mexico and most of Central America.",
@@ -190,23 +324,83 @@
         "letter": "T"
       },
       "countries": [
-        { "name": "United States (mountain)", "population": 16000000, "observes_dst": "partial", "note": "Most of Arizona does not observe DST" },
-        { "name": "Canada (Alberta, Northwest Territories)", "population": 4500000, "observes_dst": true },
-        { "name": "Mexico (Sonora, Chihuahua border)", "population": 4500000, "observes_dst": false }
+        {
+          "name": "United States (mountain)",
+          "population": 16000000,
+          "observes_dst": "partial",
+          "note": "Most of Arizona does not observe DST"
+        },
+        {
+          "name": "Canada (Alberta, Northwest Territories)",
+          "population": 4500000,
+          "observes_dst": true
+        },
+        {
+          "name": "Mexico (Sonora, Chihuahua border)",
+          "population": 4500000,
+          "observes_dst": false
+        }
       ],
       "principal_cities": [
-        { "name": "Phoenix", "country": "United States", "population": 1608000, "iana": "America/Phoenix", "observes_dst": false },
-        { "name": "Calgary", "country": "Canada", "population": 1306000, "iana": "America/Edmonton" },
-        { "name": "Edmonton", "country": "Canada", "population": 1010000, "iana": "America/Edmonton" },
-        { "name": "Denver", "country": "United States", "population": 715000, "iana": "America/Denver" },
-        { "name": "El Paso", "country": "United States", "population": 678000, "iana": "America/Denver" },
-        { "name": "Albuquerque", "country": "United States", "population": 562000, "iana": "America/Denver" },
-        { "name": "Tucson", "country": "United States", "population": 543000, "iana": "America/Phoenix", "observes_dst": false }
+        {
+          "name": "Phoenix",
+          "country": "United States",
+          "population": 1608000,
+          "iana": "America/Phoenix",
+          "observes_dst": false
+        },
+        {
+          "name": "Calgary",
+          "country": "Canada",
+          "population": 1306000,
+          "iana": "America/Edmonton"
+        },
+        {
+          "name": "Edmonton",
+          "country": "Canada",
+          "population": 1010000,
+          "iana": "America/Edmonton"
+        },
+        {
+          "name": "Denver",
+          "country": "United States",
+          "population": 715000,
+          "iana": "America/Denver"
+        },
+        {
+          "name": "El Paso",
+          "country": "United States",
+          "population": 678000,
+          "iana": "America/Denver"
+        },
+        {
+          "name": "Albuquerque",
+          "country": "United States",
+          "population": 562000,
+          "iana": "America/Denver"
+        },
+        {
+          "name": "Tucson",
+          "country": "United States",
+          "population": 543000,
+          "iana": "America/Phoenix",
+          "observes_dst": false
+        }
       ],
       "notable_institutions": [
         { "name": "Denver Mint", "city": "Denver", "category": "government" },
-        { "name": "United States Air Force Academy", "abbreviation": "USAFA", "city": "Colorado Springs", "category": "military" },
-        { "name": "North American Aerospace Defense Command", "abbreviation": "NORAD", "city": "Colorado Springs", "category": "military" }
+        {
+          "name": "United States Air Force Academy",
+          "abbreviation": "USAFA",
+          "city": "Colorado Springs",
+          "category": "military"
+        },
+        {
+          "name": "North American Aerospace Defense Command",
+          "abbreviation": "NORAD",
+          "city": "Colorado Springs",
+          "category": "military"
+        }
       ],
       "geography": {
         "description": "The North American mountain region from the Canadian Northwest Territories through the Rocky Mountains and into northwestern Mexico.",
@@ -240,11 +434,7 @@
       },
       "iana": {
         "primary": "America/Los_Angeles",
-        "all": [
-          "America/Los_Angeles",
-          "America/Vancouver",
-          "America/Tijuana"
-        ]
+        "all": ["America/Los_Angeles", "America/Vancouver", "America/Tijuana"]
       },
       "military_code": {
         "name": "Uniform",
@@ -252,21 +442,73 @@
       },
       "countries": [
         { "name": "United States (Pacific)", "population": 53000000, "observes_dst": true },
-        { "name": "Canada (British Columbia, Yukon)", "population": 5300000, "observes_dst": "partial", "note": "Yukon stays on PDT year-round (effectively MST)" },
+        {
+          "name": "Canada (British Columbia, Yukon)",
+          "population": 5300000,
+          "observes_dst": "partial",
+          "note": "Yukon stays on PDT year-round (effectively MST)"
+        },
         { "name": "Mexico (Baja California)", "population": 3800000, "observes_dst": true }
       ],
       "principal_cities": [
-        { "name": "Los Angeles", "country": "United States", "population": 3898000, "iana": "America/Los_Angeles", "is_financial_hub": true },
-        { "name": "San Diego", "country": "United States", "population": 1386000, "iana": "America/Los_Angeles" },
-        { "name": "San Jose", "country": "United States", "population": 1014000, "iana": "America/Los_Angeles" },
-        { "name": "San Francisco", "country": "United States", "population": 873000, "iana": "America/Los_Angeles", "is_financial_hub": true },
-        { "name": "Seattle", "country": "United States", "population": 749000, "iana": "America/Los_Angeles" },
-        { "name": "Vancouver", "country": "Canada", "population": 675000, "iana": "America/Vancouver" },
-        { "name": "Portland", "country": "United States", "population": 652000, "iana": "America/Los_Angeles" }
+        {
+          "name": "Los Angeles",
+          "country": "United States",
+          "population": 3898000,
+          "iana": "America/Los_Angeles",
+          "is_financial_hub": true
+        },
+        {
+          "name": "San Diego",
+          "country": "United States",
+          "population": 1386000,
+          "iana": "America/Los_Angeles"
+        },
+        {
+          "name": "San Jose",
+          "country": "United States",
+          "population": 1014000,
+          "iana": "America/Los_Angeles"
+        },
+        {
+          "name": "San Francisco",
+          "country": "United States",
+          "population": 873000,
+          "iana": "America/Los_Angeles",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Seattle",
+          "country": "United States",
+          "population": 749000,
+          "iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Vancouver",
+          "country": "Canada",
+          "population": 675000,
+          "iana": "America/Vancouver"
+        },
+        {
+          "name": "Portland",
+          "country": "United States",
+          "population": 652000,
+          "iana": "America/Los_Angeles"
+        }
       ],
       "notable_institutions": [
-        { "name": "Federal Reserve Bank of San Francisco", "abbreviation": "FRBSF", "city": "San Francisco", "category": "central_bank" },
-        { "name": "Pacific Stock Exchange (now NYSE Arca)", "abbreviation": "NYSE Arca", "city": "San Francisco", "category": "stock_exchange" },
+        {
+          "name": "Federal Reserve Bank of San Francisco",
+          "abbreviation": "FRBSF",
+          "city": "San Francisco",
+          "category": "central_bank"
+        },
+        {
+          "name": "Pacific Stock Exchange (now NYSE Arca)",
+          "abbreviation": "NYSE Arca",
+          "city": "San Francisco",
+          "category": "stock_exchange"
+        },
         { "name": "Boeing Commercial Airplanes HQ", "city": "Seattle", "category": "industry" }
       ],
       "geography": {
@@ -318,16 +560,56 @@
         { "name": "United States (Alaska)", "population": 733000, "observes_dst": true }
       ],
       "principal_cities": [
-        { "name": "Anchorage", "country": "United States", "population": 291000, "iana": "America/Anchorage" },
-        { "name": "Fairbanks", "country": "United States", "population": 32000, "iana": "America/Anchorage" },
-        { "name": "Juneau", "country": "United States", "population": 32000, "iana": "America/Juneau", "is_capital": true },
-        { "name": "Sitka", "country": "United States", "population": 8500, "iana": "America/Sitka" },
-        { "name": "Ketchikan", "country": "United States", "population": 8200, "iana": "America/Juneau" }
+        {
+          "name": "Anchorage",
+          "country": "United States",
+          "population": 291000,
+          "iana": "America/Anchorage"
+        },
+        {
+          "name": "Fairbanks",
+          "country": "United States",
+          "population": 32000,
+          "iana": "America/Anchorage"
+        },
+        {
+          "name": "Juneau",
+          "country": "United States",
+          "population": 32000,
+          "iana": "America/Juneau",
+          "is_capital": true
+        },
+        {
+          "name": "Sitka",
+          "country": "United States",
+          "population": 8500,
+          "iana": "America/Sitka"
+        },
+        {
+          "name": "Ketchikan",
+          "country": "United States",
+          "population": 8200,
+          "iana": "America/Juneau"
+        }
       ],
       "notable_institutions": [
-        { "name": "Joint Base Elmendorf-Richardson", "abbreviation": "JBER", "city": "Anchorage", "category": "military" },
-        { "name": "Trans-Alaska Pipeline System operations", "abbreviation": "TAPS", "city": "Anchorage", "category": "industry" },
-        { "name": "U.S. Geological Survey Alaska Science Center", "city": "Anchorage", "category": "government" }
+        {
+          "name": "Joint Base Elmendorf-Richardson",
+          "abbreviation": "JBER",
+          "city": "Anchorage",
+          "category": "military"
+        },
+        {
+          "name": "Trans-Alaska Pipeline System operations",
+          "abbreviation": "TAPS",
+          "city": "Anchorage",
+          "category": "industry"
+        },
+        {
+          "name": "U.S. Geological Survey Alaska Science Center",
+          "city": "Anchorage",
+          "category": "government"
+        }
       ],
       "geography": {
         "description": "Most of Alaska except the Aleutian Islands. Covers the largest land area of any US time zone but has the smallest population.",
@@ -352,10 +634,7 @@
       },
       "iana": {
         "primary": "Pacific/Honolulu",
-        "all": [
-          "Pacific/Honolulu",
-          "America/Adak"
-        ]
+        "all": ["Pacific/Honolulu", "America/Adak"]
       },
       "military_code": {
         "name": "Whiskey",
@@ -365,15 +644,45 @@
         { "name": "United States (Hawaii)", "population": 1455000, "observes_dst": false }
       ],
       "principal_cities": [
-        { "name": "Honolulu", "country": "United States", "population": 350000, "iana": "Pacific/Honolulu", "is_capital": true },
-        { "name": "Pearl City", "country": "United States", "population": 47000, "iana": "Pacific/Honolulu" },
-        { "name": "Hilo", "country": "United States", "population": 44000, "iana": "Pacific/Honolulu" },
-        { "name": "Kailua", "country": "United States", "population": 38000, "iana": "Pacific/Honolulu" },
-        { "name": "Waipahu", "country": "United States", "population": 38000, "iana": "Pacific/Honolulu" }
+        {
+          "name": "Honolulu",
+          "country": "United States",
+          "population": 350000,
+          "iana": "Pacific/Honolulu",
+          "is_capital": true
+        },
+        {
+          "name": "Pearl City",
+          "country": "United States",
+          "population": 47000,
+          "iana": "Pacific/Honolulu"
+        },
+        {
+          "name": "Hilo",
+          "country": "United States",
+          "population": 44000,
+          "iana": "Pacific/Honolulu"
+        },
+        {
+          "name": "Kailua",
+          "country": "United States",
+          "population": 38000,
+          "iana": "Pacific/Honolulu"
+        },
+        {
+          "name": "Waipahu",
+          "country": "United States",
+          "population": 38000,
+          "iana": "Pacific/Honolulu"
+        }
       ],
       "notable_institutions": [
         { "name": "Joint Base Pearl Harbor-Hickam", "city": "Honolulu", "category": "military" },
-        { "name": "U.S. Pacific Fleet Headquarters", "city": "Pearl Harbor", "category": "military" },
+        {
+          "name": "U.S. Pacific Fleet Headquarters",
+          "city": "Pearl Harbor",
+          "category": "military"
+        },
         { "name": "University of Hawaii at Manoa", "city": "Honolulu", "category": "education" }
       ],
       "geography": {
@@ -406,15 +715,35 @@
         "letter": "Z"
       },
       "countries": [
-        { "name": "(Reference standard, not a civil time zone)", "population": null, "observes_dst": false, "note": "UTC is not a civil time zone for any country. It is the global reference for civil time, computing systems, aviation, and maritime applications." }
+        {
+          "name": "(Reference standard, not a civil time zone)",
+          "population": null,
+          "observes_dst": false,
+          "note": "UTC is not a civil time zone for any country. It is the global reference for civil time, computing systems, aviation, and maritime applications."
+        }
       ],
       "principal_cities": [
         { "name": "(Used worldwide as a standard reference)", "is_reference": true }
       ],
       "notable_institutions": [
-        { "name": "International Bureau of Weights and Measures", "abbreviation": "BIPM", "city": "Sèvres, France", "category": "international_organization" },
-        { "name": "International Earth Rotation and Reference Systems Service", "abbreviation": "IERS", "city": "Frankfurt", "category": "international_organization" },
-        { "name": "International Telecommunication Union", "abbreviation": "ITU", "city": "Geneva", "category": "international_organization" }
+        {
+          "name": "International Bureau of Weights and Measures",
+          "abbreviation": "BIPM",
+          "city": "Sèvres, France",
+          "category": "international_organization"
+        },
+        {
+          "name": "International Earth Rotation and Reference Systems Service",
+          "abbreviation": "IERS",
+          "city": "Frankfurt",
+          "category": "international_organization"
+        },
+        {
+          "name": "International Telecommunication Union",
+          "abbreviation": "ITU",
+          "city": "Geneva",
+          "category": "international_organization"
+        }
       ],
       "geography": {
         "description": "UTC is a global reference standard, not a geographic zone. It is the basis for all civil time zone offsets worldwide.",
@@ -466,7 +795,12 @@
         "note": "Shares the Zulu designation with UTC because their offsets are identical."
       },
       "countries": [
-        { "name": "United Kingdom", "population": 67000000, "observes_dst": true, "note": "GMT in winter, BST in summer" },
+        {
+          "name": "United Kingdom",
+          "population": 67000000,
+          "observes_dst": true,
+          "note": "GMT in winter, BST in summer"
+        },
         { "name": "Ireland", "population": 5000000, "observes_dst": true },
         { "name": "Portugal", "population": 10300000, "observes_dst": true },
         { "name": "Iceland", "population": 376000, "observes_dst": false },
@@ -484,18 +818,77 @@
         { "name": "Guinea-Bissau", "population": 2100000, "observes_dst": false }
       ],
       "principal_cities": [
-        { "name": "London", "country": "United Kingdom", "population": 8982000, "iana": "Europe/London", "is_capital": true, "is_financial_hub": true },
-        { "name": "Dublin", "country": "Ireland", "population": 1388000, "iana": "Europe/Dublin", "is_capital": true },
-        { "name": "Lisbon", "country": "Portugal", "population": 547000, "iana": "Europe/Lisbon", "is_capital": true },
-        { "name": "Casablanca", "country": "Morocco", "population": 3360000, "iana": "Africa/Casablanca", "note": "Morocco uses GMT+1 most of year, drops to GMT during Ramadan" },
-        { "name": "Accra", "country": "Ghana", "population": 2300000, "iana": "Africa/Accra", "is_capital": true },
-        { "name": "Dakar", "country": "Senegal", "population": 1146000, "iana": "Africa/Dakar", "is_capital": true },
-        { "name": "Reykjavik", "country": "Iceland", "population": 131000, "iana": "Atlantic/Reykjavik", "is_capital": true }
+        {
+          "name": "London",
+          "country": "United Kingdom",
+          "population": 8982000,
+          "iana": "Europe/London",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Dublin",
+          "country": "Ireland",
+          "population": 1388000,
+          "iana": "Europe/Dublin",
+          "is_capital": true
+        },
+        {
+          "name": "Lisbon",
+          "country": "Portugal",
+          "population": 547000,
+          "iana": "Europe/Lisbon",
+          "is_capital": true
+        },
+        {
+          "name": "Casablanca",
+          "country": "Morocco",
+          "population": 3360000,
+          "iana": "Africa/Casablanca",
+          "note": "Morocco uses GMT+1 most of year, drops to GMT during Ramadan"
+        },
+        {
+          "name": "Accra",
+          "country": "Ghana",
+          "population": 2300000,
+          "iana": "Africa/Accra",
+          "is_capital": true
+        },
+        {
+          "name": "Dakar",
+          "country": "Senegal",
+          "population": 1146000,
+          "iana": "Africa/Dakar",
+          "is_capital": true
+        },
+        {
+          "name": "Reykjavik",
+          "country": "Iceland",
+          "population": 131000,
+          "iana": "Atlantic/Reykjavik",
+          "is_capital": true
+        }
       ],
       "notable_institutions": [
-        { "name": "Royal Observatory Greenwich", "city": "London", "category": "scientific", "note": "Home of the Prime Meridian" },
-        { "name": "London Stock Exchange", "abbreviation": "LSE", "city": "London", "category": "stock_exchange", "trading_hours_local": "08:00–16:30" },
-        { "name": "Bank of England", "abbreviation": "BoE", "city": "London", "category": "central_bank" },
+        {
+          "name": "Royal Observatory Greenwich",
+          "city": "London",
+          "category": "scientific",
+          "note": "Home of the Prime Meridian"
+        },
+        {
+          "name": "London Stock Exchange",
+          "abbreviation": "LSE",
+          "city": "London",
+          "category": "stock_exchange",
+          "trading_hours_local": "08:00–16:30"
+        },
+        {
+          "name": "Bank of England",
+          "abbreviation": "BoE",
+          "city": "London",
+          "category": "central_bank"
+        },
         { "name": "Euronext Lisbon", "city": "Lisbon", "category": "stock_exchange" }
       ],
       "geography": {
@@ -592,24 +985,93 @@
         { "name": "Tunisia", "population": 12000000, "observes_dst": false }
       ],
       "principal_cities": [
-        { "name": "Berlin", "country": "Germany", "population": 3677000, "iana": "Europe/Berlin", "is_capital": true },
-        { "name": "Madrid", "country": "Spain", "population": 3334000, "iana": "Europe/Madrid", "is_capital": true },
-        { "name": "Rome", "country": "Italy", "population": 2873000, "iana": "Europe/Rome", "is_capital": true },
-        { "name": "Paris", "country": "France", "population": 2161000, "iana": "Europe/Paris", "is_capital": true, "is_financial_hub": true },
-        { "name": "Vienna", "country": "Austria", "population": 1931000, "iana": "Europe/Vienna", "is_capital": true },
+        {
+          "name": "Berlin",
+          "country": "Germany",
+          "population": 3677000,
+          "iana": "Europe/Berlin",
+          "is_capital": true
+        },
+        {
+          "name": "Madrid",
+          "country": "Spain",
+          "population": 3334000,
+          "iana": "Europe/Madrid",
+          "is_capital": true
+        },
+        {
+          "name": "Rome",
+          "country": "Italy",
+          "population": 2873000,
+          "iana": "Europe/Rome",
+          "is_capital": true
+        },
+        {
+          "name": "Paris",
+          "country": "France",
+          "population": 2161000,
+          "iana": "Europe/Paris",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Vienna",
+          "country": "Austria",
+          "population": 1931000,
+          "iana": "Europe/Vienna",
+          "is_capital": true
+        },
         { "name": "Hamburg", "country": "Germany", "population": 1899000, "iana": "Europe/Berlin" },
-        { "name": "Warsaw", "country": "Poland", "population": 1794000, "iana": "Europe/Warsaw", "is_capital": true },
+        {
+          "name": "Warsaw",
+          "country": "Poland",
+          "population": 1794000,
+          "iana": "Europe/Warsaw",
+          "is_capital": true
+        },
         { "name": "Barcelona", "country": "Spain", "population": 1620000, "iana": "Europe/Madrid" },
         { "name": "Munich", "country": "Germany", "population": 1488000, "iana": "Europe/Berlin" },
-        { "name": "Milan", "country": "Italy", "population": 1352000, "iana": "Europe/Rome", "is_financial_hub": true }
+        {
+          "name": "Milan",
+          "country": "Italy",
+          "population": 1352000,
+          "iana": "Europe/Rome",
+          "is_financial_hub": true
+        }
       ],
       "notable_institutions": [
-        { "name": "European Central Bank", "abbreviation": "ECB", "city": "Frankfurt", "category": "central_bank" },
-        { "name": "Eurex Exchange", "abbreviation": "Eurex", "city": "Frankfurt", "category": "futures_exchange" },
-        { "name": "Euronext Paris", "city": "Paris", "category": "stock_exchange", "trading_hours_local": "09:00–17:30" },
-        { "name": "Frankfurt Stock Exchange", "abbreviation": "FWB", "city": "Frankfurt", "category": "stock_exchange", "trading_hours_local": "09:00–17:30" },
+        {
+          "name": "European Central Bank",
+          "abbreviation": "ECB",
+          "city": "Frankfurt",
+          "category": "central_bank"
+        },
+        {
+          "name": "Eurex Exchange",
+          "abbreviation": "Eurex",
+          "city": "Frankfurt",
+          "category": "futures_exchange"
+        },
+        {
+          "name": "Euronext Paris",
+          "city": "Paris",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:00–17:30"
+        },
+        {
+          "name": "Frankfurt Stock Exchange",
+          "abbreviation": "FWB",
+          "city": "Frankfurt",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:00–17:30"
+        },
         { "name": "Borsa Italiana", "city": "Milan", "category": "stock_exchange" },
-        { "name": "NATO Headquarters", "abbreviation": "NATO", "city": "Brussels", "category": "international_organization" },
+        {
+          "name": "NATO Headquarters",
+          "abbreviation": "NATO",
+          "city": "Brussels",
+          "category": "international_organization"
+        },
         { "name": "European Parliament", "city": "Brussels / Strasbourg", "category": "government" }
       ],
       "geography": {
@@ -644,11 +1106,28 @@
       },
       "countries": [
         { "name": "India", "population": 1428000000, "observes_dst": false },
-        { "name": "Sri Lanka", "population": 22000000, "observes_dst": false, "note": "Sri Lanka also uses UTC+5:30, though its zone identifier is technically separate" }
+        {
+          "name": "Sri Lanka",
+          "population": 22000000,
+          "observes_dst": false,
+          "note": "Sri Lanka also uses UTC+5:30, though its zone identifier is technically separate"
+        }
       ],
       "principal_cities": [
-        { "name": "Mumbai", "country": "India", "population": 12442000, "iana": "Asia/Kolkata", "is_financial_hub": true },
-        { "name": "Delhi", "country": "India", "population": 11000000, "iana": "Asia/Kolkata", "is_capital": true },
+        {
+          "name": "Mumbai",
+          "country": "India",
+          "population": 12442000,
+          "iana": "Asia/Kolkata",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Delhi",
+          "country": "India",
+          "population": 11000000,
+          "iana": "Asia/Kolkata",
+          "is_capital": true
+        },
         { "name": "Bangalore", "country": "India", "population": 8443000, "iana": "Asia/Kolkata" },
         { "name": "Hyderabad", "country": "India", "population": 6993000, "iana": "Asia/Kolkata" },
         { "name": "Ahmedabad", "country": "India", "population": 5571000, "iana": "Asia/Kolkata" },
@@ -656,10 +1135,32 @@
         { "name": "Kolkata", "country": "India", "population": 4496000, "iana": "Asia/Kolkata" }
       ],
       "notable_institutions": [
-        { "name": "Bombay Stock Exchange", "abbreviation": "BSE", "city": "Mumbai", "category": "stock_exchange", "trading_hours_local": "09:15–15:30" },
-        { "name": "National Stock Exchange of India", "abbreviation": "NSE", "city": "Mumbai", "category": "stock_exchange", "trading_hours_local": "09:15–15:30" },
-        { "name": "Reserve Bank of India", "abbreviation": "RBI", "city": "Mumbai", "category": "central_bank" },
-        { "name": "Indian Space Research Organisation", "abbreviation": "ISRO", "city": "Bangalore", "category": "government" }
+        {
+          "name": "Bombay Stock Exchange",
+          "abbreviation": "BSE",
+          "city": "Mumbai",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:15–15:30"
+        },
+        {
+          "name": "National Stock Exchange of India",
+          "abbreviation": "NSE",
+          "city": "Mumbai",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:15–15:30"
+        },
+        {
+          "name": "Reserve Bank of India",
+          "abbreviation": "RBI",
+          "city": "Mumbai",
+          "category": "central_bank"
+        },
+        {
+          "name": "Indian Space Research Organisation",
+          "abbreviation": "ISRO",
+          "city": "Bangalore",
+          "category": "government"
+        }
       ],
       "geography": {
         "description": "All of India and Sri Lanka. India uses a single time zone despite spanning roughly 30° of longitude — a unique choice among large countries.",
@@ -690,11 +1191,16 @@
         "name": "India",
         "letter": "I"
       },
-      "countries": [
-        { "name": "Japan", "population": 125000000, "observes_dst": false }
-      ],
+      "countries": [{ "name": "Japan", "population": 125000000, "observes_dst": false }],
       "principal_cities": [
-        { "name": "Tokyo", "country": "Japan", "population": 13960000, "iana": "Asia/Tokyo", "is_capital": true, "is_financial_hub": true },
+        {
+          "name": "Tokyo",
+          "country": "Japan",
+          "population": 13960000,
+          "iana": "Asia/Tokyo",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
         { "name": "Yokohama", "country": "Japan", "population": 3776000, "iana": "Asia/Tokyo" },
         { "name": "Osaka", "country": "Japan", "population": 2691000, "iana": "Asia/Tokyo" },
         { "name": "Nagoya", "country": "Japan", "population": 2295000, "iana": "Asia/Tokyo" },
@@ -703,8 +1209,19 @@
         { "name": "Kobe", "country": "Japan", "population": 1525000, "iana": "Asia/Tokyo" }
       ],
       "notable_institutions": [
-        { "name": "Tokyo Stock Exchange", "abbreviation": "TSE", "city": "Tokyo", "category": "stock_exchange", "trading_hours_local": "09:00–11:30, 12:30–15:00" },
-        { "name": "Bank of Japan", "abbreviation": "BoJ", "city": "Tokyo", "category": "central_bank" },
+        {
+          "name": "Tokyo Stock Exchange",
+          "abbreviation": "TSE",
+          "city": "Tokyo",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:00–11:30, 12:30–15:00"
+        },
+        {
+          "name": "Bank of Japan",
+          "abbreviation": "BoJ",
+          "city": "Tokyo",
+          "category": "central_bank"
+        },
         { "name": "Imperial Household Agency", "city": "Tokyo", "category": "government" }
       ],
       "geography": {

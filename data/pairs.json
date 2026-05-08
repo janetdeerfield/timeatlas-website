@@ -46,7 +46,12 @@
         "direct_flights_available": true,
         "note": "One of the highest-volume domestic air corridors in the world."
       },
-      "common_use_cases": ["business meetings", "media broadcast scheduling", "live event coordination", "family across coasts"]
+      "common_use_cases": [
+        "business meetings",
+        "media broadcast scheduling",
+        "live event coordination",
+        "family across coasts"
+      ]
     },
 
     {
@@ -70,7 +75,12 @@
         "direct_flights_available": true,
         "note": "Eastbound flights are typically 30 minutes shorter due to jet stream tailwinds."
       },
-      "common_use_cases": ["tech-finance coordination", "venture capital calls", "media production", "remote work"]
+      "common_use_cases": [
+        "tech-finance coordination",
+        "venture capital calls",
+        "media production",
+        "remote work"
+      ]
     },
 
     {
@@ -96,7 +106,12 @@
         "direct_flights_available": true,
         "note": "Eastbound flights take ~7 hours; westbound ~9 hours due to headwinds."
       },
-      "common_use_cases": ["finance and banking", "transatlantic business", "academic conferences", "diplomatic coordination"]
+      "common_use_cases": [
+        "finance and banking",
+        "transatlantic business",
+        "academic conferences",
+        "diplomatic coordination"
+      ]
     },
 
     {
@@ -122,7 +137,12 @@
         "direct_flights_available": true,
         "note": "Roughly 15-hour direct flight; one of the longest non-stop routes from JFK."
       },
-      "common_use_cases": ["software engineering teams", "BPO operations", "family abroad", "academic collaboration"]
+      "common_use_cases": [
+        "software engineering teams",
+        "BPO operations",
+        "family abroad",
+        "academic collaboration"
+      ]
     },
 
     {
@@ -147,7 +167,12 @@
         "direct_flights_available": true,
         "note": "Roughly 8.5-hour direct flight."
       },
-      "common_use_cases": ["European-Indian business", "engineering collaboration", "manufacturing supply chains", "academic exchange"]
+      "common_use_cases": [
+        "European-Indian business",
+        "engineering collaboration",
+        "manufacturing supply chains",
+        "academic exchange"
+      ]
     },
 
     {
@@ -173,7 +198,12 @@
         "direct_flights_available": true,
         "note": "Roughly 9-hour direct flight."
       },
-      "common_use_cases": ["Indo-Japanese business", "automotive supply chains", "investment coordination", "academic research"]
+      "common_use_cases": [
+        "Indo-Japanese business",
+        "automotive supply chains",
+        "investment coordination",
+        "academic research"
+      ]
     },
 
     {
@@ -198,7 +228,12 @@
         "direct_flights_available": true,
         "note": "Roughly 9-hour direct flight; Hawaii is the closest US state to Japan."
       },
-      "common_use_cases": ["Japan-Hawaii tourism", "military coordination (Pearl Harbor ↔ Yokosuka)", "real estate investment", "family connections"]
+      "common_use_cases": [
+        "Japan-Hawaii tourism",
+        "military coordination (Pearl Harbor ↔ Yokosuka)",
+        "real estate investment",
+        "family connections"
+      ]
     },
 
     {
@@ -218,27 +253,117 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "UTC↔EST is the most-converted pair for developers and technical teams, since most servers, log files, and APIs run on UTC and most US business operates on EST. Calendar bugs around DST transitions are a frequent source of incidents in software systems.",
-      "common_use_cases": ["software development", "API timestamps", "log analysis", "incident response", "scheduled jobs / cron"]
+      "common_use_cases": [
+        "software development",
+        "API timestamps",
+        "log analysis",
+        "incident response",
+        "scheduled jobs / cron"
+      ]
     }
   ],
 
   "_remaining_pairs_to_generate": [
-    "EST↔CST", "CST↔EST", "EST↔MST", "MST↔EST", "EST↔AKST", "AKST↔EST", "EST↔HST", "HST↔EST",
-    "EST↔UTC", "EST↔GMT", "GMT↔EST", "EST↔JST", "JST↔EST", "CET↔EST",
-    "CST↔MST", "MST↔CST", "CST↔PST", "PST↔CST", "CST↔AKST", "AKST↔CST", "CST↔HST", "HST↔CST",
-    "CST↔UTC", "UTC↔CST", "CST↔GMT", "GMT↔CST", "CST↔CET", "CET↔CST", "CST↔IST", "IST↔CST",
-    "CST↔JST", "JST↔CST",
-    "MST↔PST", "PST↔MST", "MST↔AKST", "AKST↔MST", "MST↔HST", "HST↔MST", "MST↔UTC", "UTC↔MST",
-    "MST↔GMT", "GMT↔MST", "MST↔CET", "CET↔MST", "MST↔IST", "IST↔MST", "MST↔JST", "JST↔MST",
-    "PST↔AKST", "AKST↔PST", "PST↔HST", "HST↔PST", "PST↔UTC", "UTC↔PST", "PST↔GMT", "GMT↔PST",
-    "PST↔CET", "CET↔PST", "PST↔IST", "IST↔PST", "PST↔JST", "JST↔PST",
-    "AKST↔HST", "HST↔AKST", "AKST↔UTC", "UTC↔AKST", "AKST↔GMT", "GMT↔AKST", "AKST↔CET", "CET↔AKST",
-    "AKST↔IST", "IST↔AKST", "AKST↔JST", "JST↔AKST",
-    "HST↔UTC", "UTC↔HST", "HST↔GMT", "GMT↔HST", "HST↔CET", "CET↔HST", "HST↔IST", "IST↔HST",
+    "EST↔CST",
+    "CST↔EST",
+    "EST↔MST",
+    "MST↔EST",
+    "EST↔AKST",
+    "AKST↔EST",
+    "EST↔HST",
+    "HST↔EST",
+    "EST↔UTC",
+    "EST↔GMT",
+    "GMT↔EST",
+    "EST↔JST",
+    "JST↔EST",
+    "CET↔EST",
+    "CST↔MST",
+    "MST↔CST",
+    "CST↔PST",
+    "PST↔CST",
+    "CST↔AKST",
+    "AKST↔CST",
+    "CST↔HST",
+    "HST↔CST",
+    "CST↔UTC",
+    "UTC↔CST",
+    "CST↔GMT",
+    "GMT↔CST",
+    "CST↔CET",
+    "CET↔CST",
+    "CST↔IST",
+    "IST↔CST",
+    "CST↔JST",
+    "JST↔CST",
+    "MST↔PST",
+    "PST↔MST",
+    "MST↔AKST",
+    "AKST↔MST",
+    "MST↔HST",
+    "HST↔MST",
+    "MST↔UTC",
+    "UTC↔MST",
+    "MST↔GMT",
+    "GMT↔MST",
+    "MST↔CET",
+    "CET↔MST",
+    "MST↔IST",
+    "IST↔MST",
+    "MST↔JST",
+    "JST↔MST",
+    "PST↔AKST",
+    "AKST↔PST",
+    "PST↔HST",
+    "HST↔PST",
+    "PST↔UTC",
+    "UTC↔PST",
+    "PST↔GMT",
+    "GMT↔PST",
+    "PST↔CET",
+    "CET↔PST",
+    "PST↔IST",
+    "IST↔PST",
+    "PST↔JST",
+    "JST↔PST",
+    "AKST↔HST",
+    "HST↔AKST",
+    "AKST↔UTC",
+    "UTC↔AKST",
+    "AKST↔GMT",
+    "GMT↔AKST",
+    "AKST↔CET",
+    "CET↔AKST",
+    "AKST↔IST",
+    "IST↔AKST",
+    "AKST↔JST",
+    "JST↔AKST",
+    "HST↔UTC",
+    "UTC↔HST",
+    "HST↔GMT",
+    "GMT↔HST",
+    "HST↔CET",
+    "CET↔HST",
+    "HST↔IST",
+    "IST↔HST",
     "JST↔HST",
-    "UTC↔GMT", "GMT↔UTC", "UTC↔CET", "CET↔UTC", "UTC↔IST", "IST↔UTC", "UTC↔JST", "JST↔UTC",
-    "GMT↔CET", "CET↔GMT", "GMT↔IST", "IST↔GMT", "GMT↔JST", "JST↔GMT",
-    "CET↔JST", "JST↔CET", "JST↔IST",
+    "UTC↔GMT",
+    "GMT↔UTC",
+    "UTC↔CET",
+    "CET↔UTC",
+    "UTC↔IST",
+    "IST↔UTC",
+    "UTC↔JST",
+    "JST↔UTC",
+    "GMT↔CET",
+    "CET↔GMT",
+    "GMT↔IST",
+    "IST↔GMT",
+    "GMT↔JST",
+    "JST↔GMT",
+    "CET↔JST",
+    "JST↔CET",
+    "JST↔IST",
     "PST↔EST is already shown above"
   ]
 }
