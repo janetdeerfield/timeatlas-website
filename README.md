@@ -1,4 +1,4 @@
-# TimeAtlas V2
+# TimeAtlas
 
 The Internet's cleanest time tools platform. A modern, responsive web application for timezone management, world clocks, meeting planning, and time education.
 
@@ -217,8 +217,8 @@ npm run build
 
 ## Support & Resources
 
-- **Issues**: [GitHub Issues](https://github.com/janetdeerfield/TimeAtlasV2/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/janetdeerfield/TimeAtlasV2/discussions)
+- **Issues**: [GitHub Issues](https://github.com/janetdeerfield/Timeatlasv2websitedraft/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/janetdeerfield/Timeatlasv2websitedraft/discussions)
 - **Design Docs**: See [src/imports/](src/imports/) for original design notes
 
 ---
