@@ -9,6 +9,7 @@ import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { NotFound } from './pages/NotFound';
 import { CityPairPage } from './pages/CityPairPage';
+import { DevTestComponents } from './pages/DevTestComponents';
 import { cityPairs } from './data/cityPairs';
 import { RootLayout } from './pages/RootLayout';
 
@@ -53,6 +54,12 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
       {
         path: 'terms',
         element: <Terms />,
+      },
+
+      // Dev-only component preview (not indexed, not pre-rendered)
+      {
+        path: 'dev-test-components',
+        element: <DevTestComponents />,
       },
 
       // Dynamic city pair routes generated from data
