@@ -8,7 +8,10 @@ interface ConverterCardProps {
   variant?: ConverterCardVariant;
 }
 
-const variantStyles: Record<ConverterCardVariant, { padding: string; titleSize: string; subtitleSize: string }> = {
+const variantStyles: Record<
+  ConverterCardVariant,
+  { padding: string; titleSize: string; subtitleSize: string }
+> = {
   small: { padding: '12px 14px', titleSize: '0.8125rem', subtitleSize: '0.6875rem' },
   medium: { padding: '16px 20px', titleSize: '0.9375rem', subtitleSize: '0.75rem' },
   large: { padding: '20px 24px', titleSize: '1.125rem', subtitleSize: '0.875rem' },

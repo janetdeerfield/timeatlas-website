@@ -35,10 +35,7 @@ export function DevTestComponents() {
   const mumbaiTime = useFormattedTime('Asia/Kolkata', true);
 
   return (
-    <div
-      className="max-w-6xl mx-auto px-6 py-10"
-      style={{ fontFamily: 'var(--font-body)' }}
-    >
+    <div className="max-w-6xl mx-auto px-6 py-10" style={{ fontFamily: 'var(--font-body)' }}>
       <SEO
         title="Dev: Component Preview — TimeAtlas"
         description="Internal component preview page for Phase 1 components."
@@ -59,40 +56,34 @@ export function DevTestComponents() {
       </div>
 
       {/* ─── ClientOnlyTime ─────────────────────────────── */}
-      <Section title="ClientOnlyTime" description="Hydration-safe wrapper. Shows placeholder server-side, live content after mount.">
+      <Section
+        title="ClientOnlyTime"
+        description="Hydration-safe wrapper. Shows placeholder server-side, live content after mount."
+      >
         <div className="flex flex-wrap gap-6 items-center">
           <DemoCard label="Default placeholder">
             <ClientOnlyTime>
-              {(mounted) =>
-                mounted ? (
-                  <LiveClock timeZone="America/New_York" />
-                ) : null
-              }
+              {(mounted) => (mounted ? <LiveClock timeZone="America/New_York" /> : null)}
             </ClientOnlyTime>
           </DemoCard>
           <DemoCard label="Custom placeholder '⏳ Loading…'">
             <ClientOnlyTime placeholder="⏳ Loading…">
-              {(mounted) =>
-                mounted ? (
-                  <LiveClock timeZone="Europe/London" />
-                ) : null
-              }
+              {(mounted) => (mounted ? <LiveClock timeZone="Europe/London" /> : null)}
             </ClientOnlyTime>
           </DemoCard>
           <DemoCard label="Placeholder '--'">
             <ClientOnlyTime placeholder="--">
-              {(mounted) =>
-                mounted ? (
-                  <LiveClock timeZone="Asia/Tokyo" />
-                ) : null
-              }
+              {(mounted) => (mounted ? <LiveClock timeZone="Asia/Tokyo" /> : null)}
             </ClientOnlyTime>
           </DemoCard>
         </div>
       </Section>
 
       {/* ─── CityZoneTile — Standard ──────────────────── */}
-      <Section title="CityZoneTile — standard" description="Default card layout for the /world grid.">
+      <Section
+        title="CityZoneTile — standard"
+        description="Default card layout for the /world grid."
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <CityZoneTile
             name="New York"
@@ -130,7 +121,10 @@ export function DevTestComponents() {
       </Section>
 
       {/* ─── CityZoneTile — with-flag ─────────────────── */}
-      <Section title="CityZoneTile — with-flag" description="Standard card with country flag emoji.">
+      <Section
+        title="CityZoneTile — with-flag"
+        description="Standard card with country flag emoji."
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <CityZoneTile
             variant="with-flag"
@@ -221,7 +215,10 @@ export function DevTestComponents() {
       </Section>
 
       {/* ─── CityZoneTile — offset-only ───────────────── */}
-      <Section title="CityZoneTile — offset-only" description="Minimal row showing city name + UTC offset only.">
+      <Section
+        title="CityZoneTile — offset-only"
+        description="Minimal row showing city name + UTC offset only."
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
           <CityZoneTile
             variant="offset-only"
@@ -263,7 +260,10 @@ export function DevTestComponents() {
       </Section>
 
       {/* ─── ConverterCard — large ────────────────────── */}
-      <Section title="ConverterCard — large" description="Featured converter cards for hero sections.">
+      <Section
+        title="ConverterCard — large"
+        description="Featured converter cards for hero sections."
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <ConverterCard
             variant="large"
@@ -290,19 +290,55 @@ export function DevTestComponents() {
       </Section>
 
       {/* ─── ConverterCard — medium ───────────────────── */}
-      <Section title="ConverterCard — medium" description="Default converter cards for grid layouts (6 per row).">
+      <Section
+        title="ConverterCard — medium"
+        description="Default converter cards for grid layouts (6 per row)."
+      >
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          <ConverterCard sourceCode="EST" targetCode="PST" currentExampleTime="9:00 AM → 6:00 AM" href="/est-to-pst" />
-          <ConverterCard sourceCode="PST" targetCode="EST" currentExampleTime="6:00 AM → 9:00 AM" href="/pst-to-est" />
-          <ConverterCard sourceCode="UTC" targetCode="EST" currentExampleTime="2:00 PM → 9:00 AM" href="/utc-to-est" />
-          <ConverterCard sourceCode="GMT" targetCode="CET" currentExampleTime="12:00 PM → 1:00 PM" href="/gmt-to-cet" />
-          <ConverterCard sourceCode="JST" targetCode="PST" currentExampleTime="9:00 AM → 4:00 PM" href="/jst-to-pst" />
-          <ConverterCard sourceCode="IST" targetCode="GMT" currentExampleTime="5:30 PM → 12:00 PM" href="/ist-to-gmt" />
+          <ConverterCard
+            sourceCode="EST"
+            targetCode="PST"
+            currentExampleTime="9:00 AM → 6:00 AM"
+            href="/est-to-pst"
+          />
+          <ConverterCard
+            sourceCode="PST"
+            targetCode="EST"
+            currentExampleTime="6:00 AM → 9:00 AM"
+            href="/pst-to-est"
+          />
+          <ConverterCard
+            sourceCode="UTC"
+            targetCode="EST"
+            currentExampleTime="2:00 PM → 9:00 AM"
+            href="/utc-to-est"
+          />
+          <ConverterCard
+            sourceCode="GMT"
+            targetCode="CET"
+            currentExampleTime="12:00 PM → 1:00 PM"
+            href="/gmt-to-cet"
+          />
+          <ConverterCard
+            sourceCode="JST"
+            targetCode="PST"
+            currentExampleTime="9:00 AM → 4:00 PM"
+            href="/jst-to-pst"
+          />
+          <ConverterCard
+            sourceCode="IST"
+            targetCode="GMT"
+            currentExampleTime="5:30 PM → 12:00 PM"
+            href="/ist-to-gmt"
+          />
         </div>
       </Section>
 
       {/* ─── ConverterCard — small ────────────────────── */}
-      <Section title="ConverterCard — small" description="Compact converter cards for dense directories (12 per row).">
+      <Section
+        title="ConverterCard — small"
+        description="Compact converter cards for dense directories (12 per row)."
+      >
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-12 gap-2">
           <ConverterCard variant="small" sourceCode="EST" targetCode="PST" href="/est-to-pst" />
           <ConverterCard variant="small" sourceCode="PST" targetCode="EST" href="/pst-to-est" />
@@ -324,7 +360,15 @@ export function DevTestComponents() {
 
 /* ─── helper sub-components (page-local) ──────────── */
 
-function Section({ title, description, children }: { title: string; description: string; children: React.ReactNode }) {
+function Section({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}) {
   return (
     <section className="mb-12">
       <h2
@@ -345,7 +389,10 @@ function DemoCard({ label, children }: { label: string; children: React.ReactNod
   return (
     <div
       className="p-4 rounded-lg"
-      style={{ backgroundColor: 'var(--color-panel)', border: '1px solid var(--color-border-light)' }}
+      style={{
+        backgroundColor: 'var(--color-panel)',
+        border: '1px solid var(--color-border-light)',
+      }}
     >
       <div className="text-xs mb-2" style={{ color: 'var(--color-charcoal-blue)' }}>
         {label}

@@ -133,7 +133,7 @@ export function CityZoneTile({
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
-          {(variant === 'with-flag' && flag) && (
+          {variant === 'with-flag' && flag && (
             <span className="text-2xl" aria-hidden="true">
               {flag}
             </span>
