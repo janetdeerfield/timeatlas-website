@@ -53,6 +53,7 @@ This project follows a structured, code-first development workflow designed for 
 - **[Git Workflow](.github/GIT_WORKFLOW.md)** - Branching strategy, commit conventions, PR process
 - **[Deployment Guide](.github/DEPLOYMENT.md)** - Production deployment steps and verification
 - **[Contributing Guidelines](.github/CONTRIBUTING.md)** - Code standards and best practices
+- **[V3 Build Brief](BUILD_BRIEF_V3.md)** - Current source of truth for V3 build scope and phase gates
 
 ### 🔄 Development Flow
 
