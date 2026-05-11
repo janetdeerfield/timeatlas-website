@@ -23,3 +23,5 @@
 ## Deletion checklist
 
 - [ ] Remove /dev-test-components route before V3 production deploy
+
+**Implementation note:** The preview route is included in local production preview builds so reviewers can inspect component output after `npm run build && npm run preview`. It remains `noindex,nofollow` and must be removed before deployment.
