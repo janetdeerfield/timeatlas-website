@@ -15,7 +15,6 @@ const coreRoutes = [
   '/world',
   '/meet',
   '/dev',
-  '/dev-test-components',
   '/about',
   '/privacy',
   '/terms',

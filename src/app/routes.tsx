@@ -43,10 +43,14 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
         path: 'dev',
         element: <Dev />,
       },
-      {
-        path: 'dev-test-components',
-        element: <DevTestComponents />,
-      },
+      ...(import.meta.env.DEV
+        ? [
+            {
+              path: 'dev-test-components',
+              element: <DevTestComponents />,
+            },
+          ]
+        : []),
       {
         path: 'about',
         element: <About />,
