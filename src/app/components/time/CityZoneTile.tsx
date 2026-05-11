@@ -1,5 +1,6 @@
 import type { MouseEventHandler } from 'react';
 import { ClientOnlyTime, DEFAULT_TIME_PLACEHOLDER } from './ClientOnlyTime';
+import { joinClasses } from './utils';
 
 export type CityZoneTileVariant = 'compact' | 'standard' | 'with-flag' | 'offset-only';
 
@@ -25,10 +26,6 @@ const variantClasses: Record<CityZoneTileVariant, string> = {
   'with-flag': 'items-start gap-4 p-5',
   'offset-only': 'items-center justify-between gap-4 px-4 py-3',
 };
-
-function joinClasses(...classes: Array<string | undefined | false>): string {
-  return classes.filter(Boolean).join(' ');
-}
 
 function buildAriaLabel({
   name,

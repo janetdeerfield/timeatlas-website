@@ -1,3 +1,5 @@
+import { joinClasses } from './utils';
+
 export type ConverterCardVariant = 'small' | 'medium' | 'large';
 
 export interface ConverterCardProps {
@@ -32,10 +34,6 @@ const exampleClasses: Record<ConverterCardVariant, string> = {
   medium: 'text-sm',
   large: 'text-base',
 };
-
-function joinClasses(...classes: Array<string | undefined | false>): string {
-  return classes.filter(Boolean).join(' ');
-}
 
 export function ConverterCard({
   sourceCode,

@@ -4,6 +4,7 @@ import {
   CityZoneTile,
   ClientOnlyTime,
   ConverterCard,
+  CopyToClipboardButton,
   SwapButton,
   useClientOnly,
 } from '../components/time';
@@ -251,6 +252,19 @@ export function DevTestComponents() {
             /pst-to-est.
           </p>
           <SwapButton currentSource="EST" currentTarget="PST" />
+        </section>
+
+        <section className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            CopyToClipboardButton
+          </h2>
+          <p className="font-[var(--font-body)] text-sm text-muted-foreground">
+            Sample: copy a UTC time string and show copied feedback for 1500ms.
+          </p>
+          <div className="inline-flex items-center gap-3 rounded-lg border border-border bg-muted/30 px-3 py-2">
+            <code className="font-mono text-sm text-card-foreground">14:30:00 UTC</code>
+            <CopyToClipboardButton value="14:30:00 UTC" label="Copy UTC time" />
+          </div>
         </section>
       </main>
 

@@ -1,11 +1,9 @@
+import { joinClasses } from './utils';
+
 export interface SwapButtonProps {
   currentSource: string;
   currentTarget: string;
   className?: string;
-}
-
-function joinClasses(...classes: Array<string | undefined | false>): string {
-  return classes.filter(Boolean).join(' ');
 }
 
 function toRouteCode(code: string): string {
