@@ -39,7 +39,10 @@ export function ConverterCard({
         {sourceCode} <span style={{ color: 'var(--color-wisteria-blue)' }}>to</span> {targetCode}
       </p>
       {currentExampleTime ? (
-        <p className={`mt-2 font-medium ${exampleClass}`} style={{ color: 'var(--color-charcoal-blue)' }}>
+        <p
+          className={`mt-2 font-medium ${exampleClass}`}
+          style={{ color: 'var(--color-charcoal-blue)' }}
+        >
           {currentExampleTime}
         </p>
       ) : null}
