@@ -4,6 +4,7 @@ import { Convert } from './pages/Convert';
 import { World } from './pages/World';
 import { Meet } from './pages/Meet';
 import { Dev } from './pages/Dev';
+import { DevTestComponents } from './pages/DevTestComponents';
 import { About } from './pages/About';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
@@ -42,6 +43,14 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
         path: 'dev',
         element: <Dev />,
       },
+      ...(import.meta.env.DEV
+        ? [
+            {
+              path: 'dev-test-components',
+              element: <DevTestComponents />,
+            },
+          ]
+        : []),
       {
         path: 'about',
         element: <About />,
