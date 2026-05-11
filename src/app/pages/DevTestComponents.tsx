@@ -160,28 +160,36 @@ export function DevTestComponents() {
               <h3 className="text-lg font-semibold" style={{ color: 'var(--color-charcoal-blue)' }}>
                 Compact
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{renderCityVariant('compact')}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {renderCityVariant('compact')}
+              </div>
             </div>
 
             <div className="space-y-3">
               <h3 className="text-lg font-semibold" style={{ color: 'var(--color-charcoal-blue)' }}>
                 Standard
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{renderCityVariant('standard')}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {renderCityVariant('standard')}
+              </div>
             </div>
 
             <div className="space-y-3">
               <h3 className="text-lg font-semibold" style={{ color: 'var(--color-charcoal-blue)' }}>
                 With Flag
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{renderCityVariant('with-flag')}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {renderCityVariant('with-flag')}
+              </div>
             </div>
 
             <div className="space-y-3">
               <h3 className="text-lg font-semibold" style={{ color: 'var(--color-charcoal-blue)' }}>
                 Offset Only
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">{renderCityVariant('offset-only')}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {renderCityVariant('offset-only')}
+              </div>
             </div>
           </div>
         </section>
