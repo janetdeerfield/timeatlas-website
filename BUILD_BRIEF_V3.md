@@ -722,7 +722,7 @@ diff \<(cat dist/est-to-pst/index.html) \<(cat dist/ist-to-jst/index.html) | wc 
 - "Change default city" link near hero allows manual override (stored in localStorage)
 - New "Popular Conversions" row: 10 `<ConverterCard>` components
 - "U.S. Time Zones" block links to `/learn/us-time-zones` (placeholder until Phase 5; route resolves to a stub page that says "Coming soon")
-- "Hear the Time" button: keep but lazy-load audio asset only on click. **Feature flag `ENABLE_HEAR_THE_TIME`. If Phase 8 audit shows it costs measurable performance, set flag to false and remove from UI.**
+- "Hear the Time" button: removed per 2026-05-08 decision log. Do not retain as a feature flag.
 - Cities row: each card → `<CityZoneTile>` (anchor-rendered)
 - Footer: replace generic `github.com` and `linkedin.com` placeholder links with real TimeAtlas profiles or remove until profiles exist
 
@@ -868,12 +868,9 @@ Each learn page:
 - Identify layout thrashing
 - Batch DOM reads/writes
 
-#### 7.5 "Hear the Time" decision point
+#### 7.5 "Hear the Time" decision
 
-Run Phase 6 performance audit with feature enabled vs disabled.
-
-- If audio asset loads measurably impact LCP or transfer size: set feature flag to false, remove from UI.
-- If impact is negligible (lazy-loaded only on click): keep enabled. Decision logged in `decisions.md` with measurements.
+Removed before Phase 6 based on homepage real-estate value, not performance cost. Confirm the feature remains absent from the homepage and no feature flag is retained.
 
 #### 7.6 Accessibility pass
 
@@ -1135,7 +1132,7 @@ Maintain `decisions.md` in the repo root, updated at each phase gate. Format:
 
 Required entries (at minimum):
 
-- Hear the Time: keep or remove (Phase 6 decision based on performance measurements)
+- Hear the Time: removed on 2026-05-08 based on homepage real-estate value
 - Pair generation: 250 P1 only, or all 600 (decided based on Phase 2 progress)
 - API launch: V3 or post-V3 (Phase 7 decision)
 - Logo redesign: scheduled for V3.5 or later
