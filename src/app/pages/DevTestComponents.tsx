@@ -1,12 +1,18 @@
+import { useState } from 'react';
 import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import {
+  AddToCalendarButtonGroup,
   CityZoneTile,
   ClientOnlyTime,
   ConverterCard,
   CopyToClipboardButton,
+  DstScheduleBlock,
+  FaqItem,
+  RegionTabBar,
   SwapButton,
   useClientOnly,
+  type DstScheduleZone,
 } from '../components/time';
 
 interface CitySample {
@@ -79,6 +85,43 @@ const converterSamples = [
   },
 ];
 
+const dstZoneSamples: [DstScheduleZone, DstScheduleZone] = [
+  {
+    code: 'EST',
+    name: 'Eastern Time',
+    short_name: 'Eastern Time',
+    utc_offset_display: 'UTC-05:00',
+    observes_dst: true,
+    dst: {
+      summer_code: 'EDT',
+      summer_offset_display: 'UTC-04:00',
+      start_rule: 'Second Sunday in March',
+      end_rule: 'First Sunday in November',
+      start_date_current_year: '2026-03-08',
+      end_date_current_year: '2026-11-01',
+      start_clock_change: '2:00 AM -> 3:00 AM',
+      end_clock_change: '2:00 AM -> 1:00 AM',
+    },
+  },
+  {
+    code: 'JST',
+    name: 'Japan Standard Time',
+    short_name: 'Japan Standard Time',
+    utc_offset_display: 'UTC+09:00',
+    observes_dst: false,
+  },
+];
+
+const regionSamples = [
+  { id: 'all', label: 'All', href: '/world' },
+  { id: 'americas', label: 'Americas', href: '/world/americas' },
+  { id: 'europe', label: 'Europe', href: '/world/europe' },
+  { id: 'africa', label: 'Africa', href: '/world/africa' },
+  { id: 'middle-east', label: 'Middle East', href: '/world/middle-east' },
+  { id: 'asia', label: 'Asia', href: '/world/asia' },
+  { id: 'pacific', label: 'Pacific', href: '/world/pacific' },
+];
+
 function formatTimeForZone(timeZone: string) {
   try {
     return new Intl.DateTimeFormat('en-US', {
@@ -114,6 +157,7 @@ function renderCityVariant(
 
 export function DevTestComponents() {
   const mounted = useClientOnly();
+  const [activeRegion, setActiveRegion] = useState('all');
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -265,6 +309,53 @@ export function DevTestComponents() {
             <code className="font-mono text-sm text-card-foreground">14:30:00 UTC</code>
             <CopyToClipboardButton value="14:30:00 UTC" label="Copy UTC time" />
           </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            FaqItem
+          </h2>
+          <FaqItem
+            question="Does TimeAtlas render FAQ schema in the page HTML?"
+            answer="Yes. FaqItem renders Schema.org Question and Answer microdata with accessible collapse controls."
+            defaultOpen
+          />
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            DstScheduleBlock
+          </h2>
+          <DstScheduleBlock zones={dstZoneSamples} currentYear={2026} />
+        </section>
+
+        <section className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            RegionTabBar
+          </h2>
+          <p className="font-[var(--font-body)] text-sm text-muted-foreground">
+            Sample active region: {regionSamples.find((region) => region.id === activeRegion)?.label}
+          </p>
+          <RegionTabBar
+            regions={regionSamples}
+            activeRegion={activeRegion}
+            onChange={(region) => setActiveRegion(region.id)}
+          />
+        </section>
+
+        <section className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            AddToCalendarButtonGroup
+          </h2>
+          <p className="font-[var(--font-body)] text-sm text-muted-foreground">
+            Sample event: TimeAtlas planning review, May 12, 2026 at 2:30 PM Eastern.
+          </p>
+          <AddToCalendarButtonGroup
+            eventTitle="TimeAtlas planning review"
+            startTime="2026-05-12T14:30:00-04:00"
+            endTime="2026-05-12T15:00:00-04:00"
+            description="Review Phase 1 TimeAtlas component library previews."
+          />
         </section>
       </main>
 
