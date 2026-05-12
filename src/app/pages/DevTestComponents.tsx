@@ -221,7 +221,10 @@ function renderCityVariant(
 export function DevTestComponents() {
   const mounted = useClientOnly();
   const [activeRegion, setActiveRegion] = useState('all');
-  const [selectedCity, setSelectedCity] = useState(citySamples[0]);
+  const [selectedCity, setSelectedCity] = useState({
+    name: citySamples[0].name,
+    country: citySamples[0].country,
+  });
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -458,7 +461,7 @@ export function DevTestComponents() {
               ...city,
               currentTime: mounted ? formatTimeForZone(city.timeZone) : '--:--:--',
             }))}
-            onSelect={(city) => setSelectedCity(city)}
+            onSelect={(city) => setSelectedCity({ name: city.name, country: city.country })}
           />
         </section>
 
