@@ -121,7 +121,10 @@ export function AddToCalendarButtonGroup(props: AddToCalendarButtonGroupProps) {
   const links = buildCalendarLinks(props);
 
   return (
-    <div className={joinClasses('flex flex-wrap gap-2', props.className)} aria-label="Add to calendar">
+    <div
+      className={joinClasses('flex flex-wrap gap-2', props.className)}
+      aria-label="Add to calendar"
+    >
       <CalendarLink href={links.google}>Google Calendar</CalendarLink>
       <CalendarLink href={links.outlook}>Outlook</CalendarLink>
       <CalendarLink href={links.ics} download="timeatlas-event.ics">

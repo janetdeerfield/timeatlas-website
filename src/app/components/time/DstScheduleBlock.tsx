@@ -115,7 +115,9 @@ function ZoneDstSummary({ zone }: { zone: DstScheduleZone }) {
       )}
 
       {zone.dst?.note && (
-        <p className="mt-3 font-[var(--font-body)] text-xs text-muted-foreground">{zone.dst.note}</p>
+        <p className="mt-3 font-[var(--font-body)] text-xs text-muted-foreground">
+          {zone.dst.note}
+        </p>
       )}
     </section>
   );
@@ -123,7 +125,9 @@ function ZoneDstSummary({ zone }: { zone: DstScheduleZone }) {
 
 export function DstScheduleBlock({ zones, currentYear, className }: DstScheduleBlockProps) {
   return (
-    <div className={joinClasses('rounded-xl border border-border bg-card p-5 shadow-sm', className)}>
+    <div
+      className={joinClasses('rounded-xl border border-border bg-card p-5 shadow-sm', className)}
+    >
       <div className="mb-4">
         <h2 className="font-[var(--font-display)] text-xl font-semibold text-card-foreground">
           DST schedule for {currentYear}

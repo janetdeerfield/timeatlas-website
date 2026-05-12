@@ -157,7 +157,7 @@ const codeExampleSamples = [
   },
   {
     language: 'Python',
-    code: "from datetime import datetime, timezone\nprint(datetime.now(timezone.utc).isoformat())",
+    code: 'from datetime import datetime, timezone\nprint(datetime.now(timezone.utc).isoformat())',
   },
   {
     language: 'Ruby',
@@ -181,7 +181,7 @@ const codeExampleSamples = [
   },
   {
     language: 'SQL',
-    code: 'SELECT CURRENT_TIMESTAMP AT TIME ZONE \'UTC\' AS utc_time;',
+    code: "SELECT CURRENT_TIMESTAMP AT TIME ZONE 'UTC' AS utc_time;",
   },
 ];
 
@@ -359,8 +359,7 @@ export function DevTestComponents() {
             SwapButton
           </h2>
           <p className="font-[var(--font-body)] text-sm text-muted-foreground">
-            Sample: source EST, target PST. The component renders a crawlable anchor to
-            /pst-to-est.
+            Sample: source EST, target PST. The component renders a crawlable anchor to /pst-to-est.
           </p>
           <SwapButton currentSource="EST" currentTarget="PST" />
         </section>
@@ -401,7 +400,8 @@ export function DevTestComponents() {
             RegionTabBar
           </h2>
           <p className="font-[var(--font-body)] text-sm text-muted-foreground">
-            Sample active region: {regionSamples.find((region) => region.id === activeRegion)?.label}
+            Sample active region:{' '}
+            {regionSamples.find((region) => region.id === activeRegion)?.label}
           </p>
           <RegionTabBar
             regions={regionSamples}

@@ -1,7 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CopyToClipboardButton } from './CopyToClipboardButton';
 
-type ShareStateValue = string | number | boolean | null | undefined | Array<string | number | boolean>;
+type ShareStateValue =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | Array<string | number | boolean>;
 
 export interface ShareLinkButtonProps {
   state: Record<string, ShareStateValue>;

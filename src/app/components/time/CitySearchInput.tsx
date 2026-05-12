@@ -3,11 +3,10 @@ import type { KeyboardEvent } from 'react';
 import { CityZoneTile, type CityZoneTileProps } from './CityZoneTile';
 import { joinClasses } from './utils';
 
-export interface CitySearchCity
-  extends Pick<
-    CityZoneTileProps,
-    'name' | 'country' | 'currentTime' | 'utcOffset' | 'tzAbbreviation' | 'href' | 'flag'
-  > {
+export interface CitySearchCity extends Pick<
+  CityZoneTileProps,
+  'name' | 'country' | 'currentTime' | 'utcOffset' | 'tzAbbreviation' | 'href' | 'flag'
+> {
   searchTerms?: string[];
 }
 
@@ -41,7 +40,10 @@ export function CitySearchInput({
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const results = useMemo(() => cities.filter((city) => cityMatches(city, query)).slice(0, 6), [cities, query]);
+  const results = useMemo(
+    () => cities.filter((city) => cityMatches(city, query)).slice(0, 6),
+    [cities, query]
+  );
   const activeCity = results[activeIndex] ?? null;
   const listboxId = `${id}-listbox`;
   const activeDescendant = activeCity ? `${id}-option-${activeIndex}` : undefined;
@@ -84,7 +86,10 @@ export function CitySearchInput({
 
   return (
     <div className={joinClasses('relative', className)}>
-      <label htmlFor={id} className="mb-2 block font-[var(--font-display)] text-sm font-semibold text-card-foreground">
+      <label
+        htmlFor={id}
+        className="mb-2 block font-[var(--font-display)] text-sm font-semibold text-card-foreground"
+      >
         {label}
       </label>
       <input

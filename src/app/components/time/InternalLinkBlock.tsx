@@ -25,7 +25,9 @@ const variantLabels: Record<InternalLinkBlockVariant, string> = {
   related: 'Related',
 };
 
-function converterPartsFromHref(href: string): Pick<InternalLinkBlockLink, 'sourceCode' | 'targetCode'> {
+function converterPartsFromHref(
+  href: string
+): Pick<InternalLinkBlockLink, 'sourceCode' | 'targetCode'> {
   const match = href.match(/^\/([a-z0-9-]+)-to-([a-z0-9-]+)\/?$/i);
   if (!match) return {};
 
@@ -52,10 +54,13 @@ export function InternalLinkBlock({
   variant = 'related',
   className,
 }: InternalLinkBlockProps) {
-  const useConverterCards = variant === 'convert-from' || variant === 'convert-to' || variant === 'popular';
+  const useConverterCards =
+    variant === 'convert-from' || variant === 'convert-to' || variant === 'popular';
 
   return (
-    <section className={joinClasses('rounded-xl border border-border bg-card p-5 shadow-sm', className)}>
+    <section
+      className={joinClasses('rounded-xl border border-border bg-card p-5 shadow-sm', className)}
+    >
       <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
         <h2 className="font-[var(--font-display)] text-xl font-semibold text-card-foreground">
           {title}
@@ -68,7 +73,9 @@ export function InternalLinkBlock({
       <div
         className={joinClasses(
           'grid gap-3',
-          useConverterCards ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 lg:grid-cols-5'
+          useConverterCards
+            ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+            : 'grid-cols-2 lg:grid-cols-5'
         )}
       >
         {links.map((link) => {

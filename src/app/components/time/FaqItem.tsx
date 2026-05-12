@@ -69,7 +69,10 @@ export function FaqItem({
         itemType="https://schema.org/Answer"
         className={joinClasses('px-5 pb-5', !open && 'hidden')}
       >
-        <div itemProp="text" className="font-[var(--font-body)] text-sm leading-6 text-muted-foreground">
+        <div
+          itemProp="text"
+          className="font-[var(--font-body)] text-sm leading-6 text-muted-foreground"
+        >
           {answer}
         </div>
       </div>

@@ -57,7 +57,9 @@ export function CodeExampleTabbed({
   }
 
   return (
-    <section className={joinClasses('rounded-xl border border-border bg-card shadow-sm', className)}>
+    <section
+      className={joinClasses('rounded-xl border border-border bg-card shadow-sm', className)}
+    >
       <div
         role="tablist"
         aria-label="Code examples"
