@@ -3,13 +3,17 @@ import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import {
   AddToCalendarButtonGroup,
+  CitySearchInput,
   CityZoneTile,
   ClientOnlyTime,
+  CodeExampleTabbed,
   ConverterCard,
   CopyToClipboardButton,
   DstScheduleBlock,
   FaqItem,
+  InternalLinkBlock,
   RegionTabBar,
+  ShareLinkButton,
   SwapButton,
   useClientOnly,
   type DstScheduleZone,
@@ -122,6 +126,65 @@ const regionSamples = [
   { id: 'pacific', label: 'Pacific', href: '/world/pacific' },
 ];
 
+const internalLinkSamples = [
+  {
+    label: 'Convert EST to PST',
+    href: '/est-to-pst',
+    sourceCode: 'EST',
+    targetCode: 'PST',
+    currentExampleTime: '9:00 AM -> 6:00 AM',
+  },
+  {
+    label: 'Convert EST to UTC',
+    href: '/est-to-utc',
+    sourceCode: 'EST',
+    targetCode: 'UTC',
+    currentExampleTime: '9:00 AM -> 2:00 PM',
+  },
+  {
+    label: 'Convert EST to GMT',
+    href: '/est-to-gmt',
+    sourceCode: 'EST',
+    targetCode: 'GMT',
+    currentExampleTime: '9:00 AM -> 2:00 PM',
+  },
+];
+
+const codeExampleSamples = [
+  {
+    language: 'JavaScript',
+    code: "const formatter = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', timeStyle: 'medium' });\nconsole.log(formatter.format(new Date()));",
+  },
+  {
+    language: 'Python',
+    code: "from datetime import datetime, timezone\nprint(datetime.now(timezone.utc).isoformat())",
+  },
+  {
+    language: 'Ruby',
+    code: "require 'time'\nputs Time.now.utc.iso8601",
+  },
+  {
+    language: 'Go',
+    code: 'package main\n\nimport (\n  "fmt"\n  "time"\n)\n\nfunc main() {\n  fmt.Println(time.Now().UTC().Format(time.RFC3339))\n}',
+  },
+  {
+    language: 'PHP',
+    code: "$now = new DateTimeImmutable('now', new DateTimeZone('UTC'));\necho $now->format(DateTimeInterface::ATOM);",
+  },
+  {
+    language: 'Java',
+    code: 'import java.time.Instant;\n\nSystem.out.println(Instant.now().toString());',
+  },
+  {
+    language: 'C#',
+    code: 'Console.WriteLine(DateTimeOffset.UtcNow.ToString("O"));',
+  },
+  {
+    language: 'SQL',
+    code: 'SELECT CURRENT_TIMESTAMP AT TIME ZONE \'UTC\' AS utc_time;',
+  },
+];
+
 function formatTimeForZone(timeZone: string) {
   try {
     return new Intl.DateTimeFormat('en-US', {
@@ -158,6 +221,7 @@ function renderCityVariant(
 export function DevTestComponents() {
   const mounted = useClientOnly();
   const [activeRegion, setActiveRegion] = useState('all');
+  const [selectedCity, setSelectedCity] = useState(citySamples[0]);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -356,6 +420,53 @@ export function DevTestComponents() {
             endTime="2026-05-12T15:00:00-04:00"
             description="Review Phase 1 TimeAtlas component library previews."
           />
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            InternalLinkBlock
+          </h2>
+          <InternalLinkBlock
+            title="Convert from EST"
+            variant="convert-from"
+            links={internalLinkSamples}
+          />
+        </section>
+
+        <section className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            ShareLinkButton
+          </h2>
+          <p className="font-[var(--font-body)] text-sm text-muted-foreground">
+            Sample share state: selected cities and meeting time encoded into the current URL.
+          </p>
+          <ShareLinkButton
+            label="Copy share link"
+            state={{ cities: ['nyc', 'ldn', 'tokyo'], time: '14:30', format: '12h' }}
+          />
+        </section>
+
+        <section className="space-y-4 rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            CitySearchInput
+          </h2>
+          <p className="font-[var(--font-body)] text-sm text-muted-foreground">
+            Selected city: {selectedCity.name}, {selectedCity.country}
+          </p>
+          <CitySearchInput
+            cities={citySamples.map((city) => ({
+              ...city,
+              currentTime: mounted ? formatTimeForZone(city.timeZone) : '--:--:--',
+            }))}
+            onSelect={(city) => setSelectedCity(city)}
+          />
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-card-foreground">
+            CodeExampleTabbed
+          </h2>
+          <CodeExampleTabbed examples={codeExampleSamples} />
         </section>
       </main>
 

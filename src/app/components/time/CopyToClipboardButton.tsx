@@ -4,6 +4,8 @@ import { joinClasses } from './utils';
 export interface CopyToClipboardButtonProps {
   value: string;
   label: string;
+  idleText?: string;
+  copiedText?: string;
   className?: string;
 }
 
@@ -50,6 +52,8 @@ async function copyText(value: string): Promise<void> {
 export function CopyToClipboardButton({
   value,
   label,
+  idleText = 'Copy',
+  copiedText = 'Copied',
   className,
 }: CopyToClipboardButtonProps) {
   const [copied, setCopied] = useState(false);
@@ -93,7 +97,7 @@ export function CopyToClipboardButton({
         className
       )}
     >
-      {copied ? 'Copied' : 'Copy'}
+      {copied ? copiedText : idleText}
     </button>
   );
 }
