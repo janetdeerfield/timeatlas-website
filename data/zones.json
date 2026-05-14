@@ -1,0 +1,3062 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-05-14",
+  "current_year": 2026,
+  "_notes": "Per-zone factual data for V3 Phase 2. DST dates are for current_year 2026 and were checked against IANA tz database behavior. City population figures are city proper or closest official urban/local-government statistic available, rounded to the nearest thousand for display consistency.",
+  "zones": [
+    {
+      "code": "EST",
+      "name": "Eastern Standard Time",
+      "short_name": "Eastern Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -300,
+      "utc_offset_display": "−05:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "EDT",
+        "summer_name": "Eastern Daylight Time",
+        "summer_offset_minutes": -240,
+        "summer_offset_display": "−04:00",
+        "start_rule": "second_sunday_of_march",
+        "end_rule": "first_sunday_of_november",
+        "start_date_current_year": "2026-03-08",
+        "end_date_current_year": "2026-11-01",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "02:00 → 01:00"
+      },
+      "iana": {
+        "primary": "America/New_York",
+        "all": [
+          "America/New_York",
+          "America/Detroit",
+          "America/Toronto",
+          "America/Indiana/Indianapolis",
+          "America/Kentucky/Louisville",
+          "America/Nassau",
+          "America/Jamaica",
+          "America/Cayman",
+          "America/Panama"
+        ]
+      },
+      "military_code": {
+        "name": "Romeo",
+        "letter": "R"
+      },
+      "countries": [
+        {
+          "name": "United States (eastern)",
+          "population": 121000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Canada (eastern)",
+          "population": 25000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Bahamas",
+          "population": 412000,
+          "observes_dst": true
+        },
+        {
+          "name": "Jamaica",
+          "population": 2800000,
+          "observes_dst": false
+        },
+        {
+          "name": "Cayman Islands",
+          "population": 71000,
+          "observes_dst": false
+        },
+        {
+          "name": "Panama",
+          "population": 4400000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "New York",
+          "country": "United States",
+          "population": 8336000,
+          "iana": "America/New_York",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Toronto",
+          "country": "Canada",
+          "population": 2794000,
+          "iana": "America/Toronto",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Philadelphia",
+          "country": "United States",
+          "population": 1576000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        },
+        {
+          "name": "Washington D.C.",
+          "country": "United States",
+          "population": 689000,
+          "iana": "America/New_York",
+          "is_capital": true
+        },
+        {
+          "name": "Boston",
+          "country": "United States",
+          "population": 654000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        },
+        {
+          "name": "Atlanta",
+          "country": "United States",
+          "population": 499000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        },
+        {
+          "name": "Miami",
+          "country": "United States",
+          "population": 449000,
+          "iana": "America/New_York",
+          "is_financial_hub": false
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "New York Stock Exchange",
+          "abbreviation": "NYSE",
+          "city": "New York",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:30–16:00"
+        },
+        {
+          "name": "NASDAQ",
+          "abbreviation": "NASDAQ",
+          "city": "New York",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:30–16:00"
+        },
+        {
+          "name": "United States Federal Reserve",
+          "abbreviation": "Fed",
+          "city": "Washington D.C.",
+          "category": "central_bank"
+        },
+        {
+          "name": "United Nations Headquarters",
+          "abbreviation": "UN",
+          "city": "New York",
+          "category": "international_organization"
+        }
+      ],
+      "geography": {
+        "description": "Eastern North America from the Atlantic seaboard to the eastern Great Lakes, including the US East Coast, eastern Canada, the Bahamas, and parts of the Caribbean.",
+        "longitude_center": -75
+      },
+      "history": {
+        "adopted_year": 1883,
+        "note": "Adopted in 1883 with the establishment of standard railroad time zones in North America."
+      }
+    },
+    {
+      "code": "CST",
+      "name": "Central Standard Time",
+      "short_name": "Central Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -360,
+      "utc_offset_display": "−06:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "CDT",
+        "summer_name": "Central Daylight Time",
+        "summer_offset_minutes": -300,
+        "summer_offset_display": "−05:00",
+        "start_rule": "second_sunday_of_march",
+        "end_rule": "first_sunday_of_november",
+        "start_date_current_year": "2026-03-08",
+        "end_date_current_year": "2026-11-01",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "02:00 → 01:00",
+        "note": "Most of Mexico no longer observes DST as of 2022; only a few border-state municipalities still do."
+      },
+      "iana": {
+        "primary": "America/Chicago",
+        "all": [
+          "America/Chicago",
+          "America/Mexico_City",
+          "America/Winnipeg",
+          "America/Regina",
+          "America/Costa_Rica",
+          "America/El_Salvador",
+          "America/Guatemala",
+          "America/Tegucigalpa",
+          "America/Managua",
+          "America/Belize"
+        ]
+      },
+      "military_code": {
+        "name": "Sierra",
+        "letter": "S"
+      },
+      "countries": [
+        {
+          "name": "United States (central)",
+          "population": 95000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Mexico",
+          "population": 130000000,
+          "observes_dst": false,
+          "note": "Abolished DST in 2022 except border municipalities"
+        },
+        {
+          "name": "Canada (Manitoba, Saskatchewan)",
+          "population": 2700000,
+          "observes_dst": "partial",
+          "note": "Saskatchewan does not observe DST"
+        },
+        {
+          "name": "Costa Rica",
+          "population": 5200000,
+          "observes_dst": false
+        },
+        {
+          "name": "Guatemala",
+          "population": 17800000,
+          "observes_dst": false
+        },
+        {
+          "name": "El Salvador",
+          "population": 6300000,
+          "observes_dst": false
+        },
+        {
+          "name": "Honduras",
+          "population": 10300000,
+          "observes_dst": false
+        },
+        {
+          "name": "Nicaragua",
+          "population": 6700000,
+          "observes_dst": false
+        },
+        {
+          "name": "Belize",
+          "population": 405000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Mexico City",
+          "country": "Mexico",
+          "population": 9210000,
+          "iana": "America/Mexico_City",
+          "is_capital": true,
+          "observes_dst": false
+        },
+        {
+          "name": "Chicago",
+          "country": "United States",
+          "population": 2746000,
+          "iana": "America/Chicago",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Houston",
+          "country": "United States",
+          "population": 2304000,
+          "iana": "America/Chicago"
+        },
+        {
+          "name": "Guadalajara",
+          "country": "Mexico",
+          "population": 1385000,
+          "iana": "America/Mexico_City"
+        },
+        {
+          "name": "San Antonio",
+          "country": "United States",
+          "population": 1495000,
+          "iana": "America/Chicago"
+        },
+        {
+          "name": "Dallas",
+          "country": "United States",
+          "population": 1304000,
+          "iana": "America/Chicago"
+        },
+        {
+          "name": "Monterrey",
+          "country": "Mexico",
+          "population": 1142000,
+          "iana": "America/Monterrey"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "CME Group",
+          "abbreviation": "CME",
+          "city": "Chicago",
+          "category": "futures_exchange",
+          "trading_hours_local": "near 24h electronic"
+        },
+        {
+          "name": "Chicago Board Options Exchange",
+          "abbreviation": "CBOE",
+          "city": "Chicago",
+          "category": "options_exchange"
+        },
+        {
+          "name": "Federal Reserve Bank of Chicago",
+          "abbreviation": "FRBC",
+          "city": "Chicago",
+          "category": "central_bank"
+        },
+        {
+          "name": "Mexican Stock Exchange",
+          "abbreviation": "BMV",
+          "city": "Mexico City",
+          "category": "stock_exchange",
+          "trading_hours_local": "08:30–15:00"
+        }
+      ],
+      "geography": {
+        "description": "Central North America from the Great Plains through Texas and into Mexico and most of Central America.",
+        "longitude_center": -90
+      },
+      "history": {
+        "adopted_year": 1883,
+        "note": "Adopted with the 1883 standard railroad time zones; has the largest population of any North American zone due to Mexico's inclusion."
+      }
+    },
+    {
+      "code": "MST",
+      "name": "Mountain Standard Time",
+      "short_name": "Mountain Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -420,
+      "utc_offset_display": "−07:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "MDT",
+        "summer_name": "Mountain Daylight Time",
+        "summer_offset_minutes": -360,
+        "summer_offset_display": "−06:00",
+        "start_rule": "second_sunday_of_march",
+        "end_rule": "first_sunday_of_november",
+        "start_date_current_year": "2026-03-08",
+        "end_date_current_year": "2026-11-01",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "02:00 → 01:00",
+        "note": "Most of Arizona stays on MST year-round (does not observe DST). The Navajo Nation within Arizona does observe DST."
+      },
+      "iana": {
+        "primary": "America/Denver",
+        "all": [
+          "America/Denver",
+          "America/Phoenix",
+          "America/Edmonton",
+          "America/Boise",
+          "America/Inuvik",
+          "America/Yellowknife",
+          "America/Cambridge_Bay"
+        ]
+      },
+      "military_code": {
+        "name": "Tango",
+        "letter": "T"
+      },
+      "countries": [
+        {
+          "name": "United States (mountain)",
+          "population": 16000000,
+          "observes_dst": "partial",
+          "note": "Most of Arizona does not observe DST"
+        },
+        {
+          "name": "Canada (Alberta, Northwest Territories)",
+          "population": 4500000,
+          "observes_dst": true
+        },
+        {
+          "name": "Mexico (Sonora, Chihuahua border)",
+          "population": 4500000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Phoenix",
+          "country": "United States",
+          "population": 1608000,
+          "iana": "America/Phoenix",
+          "observes_dst": false
+        },
+        {
+          "name": "Calgary",
+          "country": "Canada",
+          "population": 1306000,
+          "iana": "America/Edmonton"
+        },
+        {
+          "name": "Edmonton",
+          "country": "Canada",
+          "population": 1010000,
+          "iana": "America/Edmonton"
+        },
+        {
+          "name": "Denver",
+          "country": "United States",
+          "population": 715000,
+          "iana": "America/Denver"
+        },
+        {
+          "name": "El Paso",
+          "country": "United States",
+          "population": 678000,
+          "iana": "America/Denver"
+        },
+        {
+          "name": "Albuquerque",
+          "country": "United States",
+          "population": 562000,
+          "iana": "America/Denver"
+        },
+        {
+          "name": "Tucson",
+          "country": "United States",
+          "population": 543000,
+          "iana": "America/Phoenix",
+          "observes_dst": false
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Denver Mint",
+          "city": "Denver",
+          "category": "government"
+        },
+        {
+          "name": "United States Air Force Academy",
+          "abbreviation": "USAFA",
+          "city": "Colorado Springs",
+          "category": "military"
+        },
+        {
+          "name": "North American Aerospace Defense Command",
+          "abbreviation": "NORAD",
+          "city": "Colorado Springs",
+          "category": "military"
+        }
+      ],
+      "geography": {
+        "description": "The North American mountain region from the Canadian Northwest Territories through the Rocky Mountains and into northwestern Mexico.",
+        "longitude_center": -105
+      },
+      "history": {
+        "adopted_year": 1883,
+        "note": "Adopted with the 1883 standard railroad time zones. Arizona opted out of DST in 1968 due to its hot summer climate."
+      }
+    },
+    {
+      "code": "PST",
+      "name": "Pacific Standard Time",
+      "short_name": "Pacific Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -480,
+      "utc_offset_display": "−08:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "PDT",
+        "summer_name": "Pacific Daylight Time",
+        "summer_offset_minutes": -420,
+        "summer_offset_display": "−07:00",
+        "start_rule": "second_sunday_of_march",
+        "end_rule": "first_sunday_of_november",
+        "start_date_current_year": "2026-03-08",
+        "end_date_current_year": "2026-11-01",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "02:00 → 01:00"
+      },
+      "iana": {
+        "primary": "America/Los_Angeles",
+        "all": ["America/Los_Angeles", "America/Vancouver", "America/Tijuana"]
+      },
+      "military_code": {
+        "name": "Uniform",
+        "letter": "U"
+      },
+      "countries": [
+        {
+          "name": "United States (Pacific)",
+          "population": 53000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Canada (British Columbia, Yukon)",
+          "population": 5300000,
+          "observes_dst": "partial",
+          "note": "Yukon stays on PDT year-round (effectively MST)"
+        },
+        {
+          "name": "Mexico (Baja California)",
+          "population": 3800000,
+          "observes_dst": true
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Los Angeles",
+          "country": "United States",
+          "population": 3898000,
+          "iana": "America/Los_Angeles",
+          "is_financial_hub": true
+        },
+        {
+          "name": "San Diego",
+          "country": "United States",
+          "population": 1386000,
+          "iana": "America/Los_Angeles"
+        },
+        {
+          "name": "San Jose",
+          "country": "United States",
+          "population": 1014000,
+          "iana": "America/Los_Angeles"
+        },
+        {
+          "name": "San Francisco",
+          "country": "United States",
+          "population": 873000,
+          "iana": "America/Los_Angeles",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Seattle",
+          "country": "United States",
+          "population": 749000,
+          "iana": "America/Los_Angeles"
+        },
+        {
+          "name": "Vancouver",
+          "country": "Canada",
+          "population": 675000,
+          "iana": "America/Vancouver"
+        },
+        {
+          "name": "Portland",
+          "country": "United States",
+          "population": 652000,
+          "iana": "America/Los_Angeles"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Federal Reserve Bank of San Francisco",
+          "abbreviation": "FRBSF",
+          "city": "San Francisco",
+          "category": "central_bank"
+        },
+        {
+          "name": "Pacific Stock Exchange (now NYSE Arca)",
+          "abbreviation": "NYSE Arca",
+          "city": "San Francisco",
+          "category": "stock_exchange"
+        },
+        {
+          "name": "Boeing Commercial Airplanes HQ",
+          "city": "Seattle",
+          "category": "industry"
+        }
+      ],
+      "geography": {
+        "description": "West coast of North America from southern Alaska to Baja California, including the major US tech industry hubs.",
+        "longitude_center": -120
+      },
+      "history": {
+        "adopted_year": 1883,
+        "note": "Adopted with the 1883 standard railroad time zones."
+      }
+    },
+    {
+      "code": "AKST",
+      "name": "Alaska Standard Time",
+      "short_name": "Alaska Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -540,
+      "utc_offset_display": "−09:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "AKDT",
+        "summer_name": "Alaska Daylight Time",
+        "summer_offset_minutes": -480,
+        "summer_offset_display": "−08:00",
+        "start_rule": "second_sunday_of_march",
+        "end_rule": "first_sunday_of_november",
+        "start_date_current_year": "2026-03-08",
+        "end_date_current_year": "2026-11-01",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "02:00 → 01:00"
+      },
+      "iana": {
+        "primary": "America/Anchorage",
+        "all": [
+          "America/Anchorage",
+          "America/Juneau",
+          "America/Sitka",
+          "America/Yakutat",
+          "America/Nome",
+          "America/Metlakatla"
+        ]
+      },
+      "military_code": {
+        "name": "Victor",
+        "letter": "V"
+      },
+      "countries": [
+        {
+          "name": "United States (Alaska)",
+          "population": 733000,
+          "observes_dst": true
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Anchorage",
+          "country": "United States",
+          "population": 291000,
+          "iana": "America/Anchorage"
+        },
+        {
+          "name": "Fairbanks",
+          "country": "United States",
+          "population": 32000,
+          "iana": "America/Anchorage"
+        },
+        {
+          "name": "Juneau",
+          "country": "United States",
+          "population": 32000,
+          "iana": "America/Juneau",
+          "is_capital": true
+        },
+        {
+          "name": "Sitka",
+          "country": "United States",
+          "population": 8500,
+          "iana": "America/Sitka"
+        },
+        {
+          "name": "Ketchikan",
+          "country": "United States",
+          "population": 8200,
+          "iana": "America/Juneau"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Joint Base Elmendorf-Richardson",
+          "abbreviation": "JBER",
+          "city": "Anchorage",
+          "category": "military"
+        },
+        {
+          "name": "Trans-Alaska Pipeline System operations",
+          "abbreviation": "TAPS",
+          "city": "Anchorage",
+          "category": "industry"
+        },
+        {
+          "name": "U.S. Geological Survey Alaska Science Center",
+          "city": "Anchorage",
+          "category": "government"
+        }
+      ],
+      "geography": {
+        "description": "Most of Alaska except the Aleutian Islands. Covers the largest land area of any US time zone but has the smallest population.",
+        "longitude_center": -150
+      },
+      "history": {
+        "adopted_year": 1983,
+        "note": "Alaska was consolidated from four time zones into two (Alaska and Hawaii-Aleutian) in 1983."
+      }
+    },
+    {
+      "code": "HST",
+      "name": "Hawaii-Aleutian Standard Time",
+      "short_name": "Hawaii Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -600,
+      "utc_offset_display": "−10:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Hawaii does not observe DST. The Aleutian Islands portion of HAST does observe DST (becoming HADT, UTC−9), but population there is negligible. For practical purposes HST is a fixed-offset zone."
+      },
+      "iana": {
+        "primary": "Pacific/Honolulu",
+        "all": ["Pacific/Honolulu", "America/Adak"]
+      },
+      "military_code": {
+        "name": "Whiskey",
+        "letter": "W"
+      },
+      "countries": [
+        {
+          "name": "United States (Hawaii)",
+          "population": 1455000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Honolulu",
+          "country": "United States",
+          "population": 350000,
+          "iana": "Pacific/Honolulu",
+          "is_capital": true
+        },
+        {
+          "name": "Pearl City",
+          "country": "United States",
+          "population": 47000,
+          "iana": "Pacific/Honolulu"
+        },
+        {
+          "name": "Hilo",
+          "country": "United States",
+          "population": 44000,
+          "iana": "Pacific/Honolulu"
+        },
+        {
+          "name": "Kailua",
+          "country": "United States",
+          "population": 38000,
+          "iana": "Pacific/Honolulu"
+        },
+        {
+          "name": "Waipahu",
+          "country": "United States",
+          "population": 38000,
+          "iana": "Pacific/Honolulu"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Joint Base Pearl Harbor-Hickam",
+          "city": "Honolulu",
+          "category": "military"
+        },
+        {
+          "name": "U.S. Pacific Fleet Headquarters",
+          "city": "Pearl Harbor",
+          "category": "military"
+        },
+        {
+          "name": "University of Hawaii at Manoa",
+          "city": "Honolulu",
+          "category": "education"
+        }
+      ],
+      "geography": {
+        "description": "The state of Hawaii and the western Aleutian Islands of Alaska. The most westerly time zone in the United States.",
+        "longitude_center": -157
+      },
+      "history": {
+        "adopted_year": 1900,
+        "note": "Hawaii originally used UTC−10:30 until 1947, when it shifted to UTC−10. Hawaii has not observed DST since 1933."
+      }
+    },
+    {
+      "code": "UTC",
+      "name": "Coordinated Universal Time",
+      "short_name": "Universal Time",
+      "category": "reference_standard",
+      "utc_offset_minutes": 0,
+      "utc_offset_display": "+00:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "UTC is the global reference time standard. By definition, it does not observe daylight saving."
+      },
+      "iana": {
+        "primary": "Etc/UTC",
+        "all": ["Etc/UTC", "UTC"]
+      },
+      "military_code": {
+        "name": "Zulu",
+        "letter": "Z"
+      },
+      "countries": [
+        {
+          "name": "(Reference standard, not a civil time zone)",
+          "population": null,
+          "observes_dst": false,
+          "note": "UTC is not a civil time zone for any country. It is the global reference for civil time, computing systems, aviation, and maritime applications."
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "London",
+          "country": "United Kingdom",
+          "population": 8982000,
+          "iana": "Europe/London",
+          "is_financial_hub": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Accra",
+          "country": "Ghana",
+          "population": 2300000,
+          "iana": "Africa/Accra",
+          "is_capital": true,
+          "observes_dst": false
+        },
+        {
+          "name": "Dakar",
+          "country": "Senegal",
+          "population": 1146000,
+          "iana": "Africa/Dakar",
+          "is_capital": true,
+          "observes_dst": false
+        },
+        {
+          "name": "Reykjavik",
+          "country": "Iceland",
+          "population": 139000,
+          "iana": "Atlantic/Reykjavik",
+          "is_capital": true,
+          "observes_dst": false
+        },
+        {
+          "name": "Abidjan",
+          "country": "Côte d'Ivoire",
+          "population": 5630000,
+          "iana": "Africa/Abidjan",
+          "is_financial_hub": true,
+          "observes_dst": false
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "International Bureau of Weights and Measures",
+          "abbreviation": "BIPM",
+          "city": "Sèvres",
+          "category": "time standard authority"
+        },
+        {
+          "name": "International Earth Rotation and Reference Systems Service",
+          "abbreviation": "IERS",
+          "city": "Paris",
+          "category": "Earth rotation monitoring"
+        },
+        {
+          "name": "International Telecommunication Union",
+          "abbreviation": "ITU",
+          "city": "Geneva",
+          "category": "telecommunications standardization"
+        },
+        {
+          "name": "Coordinated Universal Time reference services",
+          "city": "Global",
+          "category": "aviation, computing, and scientific reference"
+        }
+      ],
+      "geography": {
+        "description": "UTC is a global reference standard, not a geographic zone. It is the basis for all civil time zone offsets worldwide.",
+        "longitude_center": 0
+      },
+      "history": {
+        "adopted_year": 1972,
+        "note": "UTC was formally adopted in 1972, replacing GMT as the primary world time standard. It is maintained by atomic clocks and adjusted with leap seconds (though leap seconds are scheduled to be discontinued by 2035)."
+      }
+    },
+    {
+      "code": "GMT",
+      "name": "Greenwich Mean Time",
+      "short_name": "Greenwich Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 0,
+      "utc_offset_display": "+00:00",
+      "observes_dst": "partial",
+      "dst": {
+        "summer_code": "BST",
+        "summer_name": "British Summer Time / Western European Summer Time",
+        "summer_offset_minutes": 60,
+        "summer_offset_display": "+01:00",
+        "start_rule": "last_sunday_of_march",
+        "end_rule": "last_sunday_of_october",
+        "start_date_current_year": "2026-03-29",
+        "end_date_current_year": "2026-10-25",
+        "start_clock_change": "01:00 → 02:00",
+        "end_clock_change": "02:00 → 01:00",
+        "note": "GMT countries vary. The UK, Ireland, and Portugal observe summer time; Iceland and most of West Africa remain on GMT year-round."
+      },
+      "iana": {
+        "primary": "Europe/London",
+        "all": [
+          "Europe/London",
+          "Europe/Dublin",
+          "Europe/Lisbon",
+          "Atlantic/Reykjavik",
+          "Africa/Accra",
+          "Africa/Casablanca",
+          "Africa/Dakar",
+          "Africa/Abidjan",
+          "Africa/Bamako",
+          "Africa/Conakry",
+          "Africa/Lome",
+          "Africa/Nouakchott",
+          "Africa/Ouagadougou",
+          "Africa/Sao_Tome",
+          "Etc/GMT"
+        ]
+      },
+      "military_code": {
+        "name": "Zulu",
+        "letter": "Z",
+        "note": "Shares the Zulu designation with UTC because their offsets are identical."
+      },
+      "countries": [
+        {
+          "name": "United Kingdom",
+          "population": 67000000,
+          "observes_dst": true,
+          "note": "GMT in winter, BST in summer"
+        },
+        {
+          "name": "Ireland",
+          "population": 5000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Portugal",
+          "population": 10300000,
+          "observes_dst": true
+        },
+        {
+          "name": "Iceland",
+          "population": 376000,
+          "observes_dst": false
+        },
+        {
+          "name": "Ghana",
+          "population": 33000000,
+          "observes_dst": false
+        },
+        {
+          "name": "Senegal",
+          "population": 17700000,
+          "observes_dst": false
+        },
+        {
+          "name": "Côte d'Ivoire",
+          "population": 28000000,
+          "observes_dst": false
+        },
+        {
+          "name": "Mali",
+          "population": 22000000,
+          "observes_dst": false
+        },
+        {
+          "name": "Liberia",
+          "population": 5300000,
+          "observes_dst": false
+        },
+        {
+          "name": "Sierra Leone",
+          "population": 8400000,
+          "observes_dst": false
+        },
+        {
+          "name": "Burkina Faso",
+          "population": 22000000,
+          "observes_dst": false
+        },
+        {
+          "name": "Togo",
+          "population": 8800000,
+          "observes_dst": false
+        },
+        {
+          "name": "Mauritania",
+          "population": 4900000,
+          "observes_dst": false
+        },
+        {
+          "name": "Gambia",
+          "population": 2500000,
+          "observes_dst": false
+        },
+        {
+          "name": "Guinea",
+          "population": 13900000,
+          "observes_dst": false
+        },
+        {
+          "name": "Guinea-Bissau",
+          "population": 2100000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "London",
+          "country": "United Kingdom",
+          "population": 8982000,
+          "iana": "Europe/London",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Dublin",
+          "country": "Ireland",
+          "population": 1388000,
+          "iana": "Europe/Dublin",
+          "is_capital": true
+        },
+        {
+          "name": "Lisbon",
+          "country": "Portugal",
+          "population": 547000,
+          "iana": "Europe/Lisbon",
+          "is_capital": true
+        },
+        {
+          "name": "Casablanca",
+          "country": "Morocco",
+          "population": 3360000,
+          "iana": "Africa/Casablanca",
+          "note": "Morocco uses GMT+1 most of year, drops to GMT during Ramadan"
+        },
+        {
+          "name": "Accra",
+          "country": "Ghana",
+          "population": 2300000,
+          "iana": "Africa/Accra",
+          "is_capital": true
+        },
+        {
+          "name": "Dakar",
+          "country": "Senegal",
+          "population": 1146000,
+          "iana": "Africa/Dakar",
+          "is_capital": true
+        },
+        {
+          "name": "Reykjavik",
+          "country": "Iceland",
+          "population": 131000,
+          "iana": "Atlantic/Reykjavik",
+          "is_capital": true
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Royal Observatory Greenwich",
+          "city": "London",
+          "category": "scientific",
+          "note": "Home of the Prime Meridian"
+        },
+        {
+          "name": "London Stock Exchange",
+          "abbreviation": "LSE",
+          "city": "London",
+          "category": "stock_exchange",
+          "trading_hours_local": "08:00–16:30"
+        },
+        {
+          "name": "Bank of England",
+          "abbreviation": "BoE",
+          "city": "London",
+          "category": "central_bank"
+        },
+        {
+          "name": "Euronext Lisbon",
+          "city": "Lisbon",
+          "category": "stock_exchange"
+        }
+      ],
+      "geography": {
+        "description": "Western Europe and most of West Africa, anchored at the Prime Meridian at the Royal Observatory in Greenwich, London.",
+        "longitude_center": 0
+      },
+      "history": {
+        "adopted_year": 1884,
+        "note": "Established by international agreement at the 1884 International Meridian Conference. GMT was the world time reference until UTC formally replaced it in 1972."
+      }
+    },
+    {
+      "code": "CET",
+      "name": "Central European Time",
+      "short_name": "Central European Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 60,
+      "utc_offset_display": "+01:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "CEST",
+        "summer_name": "Central European Summer Time",
+        "summer_offset_minutes": 120,
+        "summer_offset_display": "+02:00",
+        "start_rule": "last_sunday_of_march",
+        "end_rule": "last_sunday_of_october",
+        "start_date_current_year": "2026-03-29",
+        "end_date_current_year": "2026-10-25",
+        "start_clock_change": "01:00 UTC → 02:00 UTC",
+        "end_clock_change": "01:00 UTC → 00:00 UTC",
+        "note": "EU Summer Time changes happen at the same moment across all EU member states."
+      },
+      "iana": {
+        "primary": "Europe/Paris",
+        "all": [
+          "Europe/Paris",
+          "Europe/Berlin",
+          "Europe/Madrid",
+          "Europe/Rome",
+          "Europe/Amsterdam",
+          "Europe/Brussels",
+          "Europe/Vienna",
+          "Europe/Warsaw",
+          "Europe/Stockholm",
+          "Europe/Copenhagen",
+          "Europe/Oslo",
+          "Europe/Prague",
+          "Europe/Budapest",
+          "Europe/Zurich",
+          "Europe/Belgrade",
+          "Europe/Zagreb",
+          "Europe/Sarajevo",
+          "Europe/Ljubljana",
+          "Europe/Bratislava",
+          "Europe/Tirane",
+          "Europe/Skopje",
+          "Europe/Andorra",
+          "Europe/Luxembourg",
+          "Europe/Malta",
+          "Europe/Monaco",
+          "Europe/Gibraltar",
+          "Europe/Vaduz",
+          "Europe/San_Marino",
+          "Europe/Vatican",
+          "Africa/Tunis",
+          "Africa/Algiers"
+        ]
+      },
+      "military_code": {
+        "name": "Alpha",
+        "letter": "A"
+      },
+      "countries": [
+        {
+          "name": "Germany",
+          "population": 83200000,
+          "observes_dst": true
+        },
+        {
+          "name": "France",
+          "population": 67800000,
+          "observes_dst": true
+        },
+        {
+          "name": "Italy",
+          "population": 59100000,
+          "observes_dst": true
+        },
+        {
+          "name": "Spain",
+          "population": 47600000,
+          "observes_dst": true
+        },
+        {
+          "name": "Poland",
+          "population": 38000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Netherlands",
+          "population": 17700000,
+          "observes_dst": true
+        },
+        {
+          "name": "Belgium",
+          "population": 11700000,
+          "observes_dst": true
+        },
+        {
+          "name": "Czechia",
+          "population": 10700000,
+          "observes_dst": true
+        },
+        {
+          "name": "Sweden",
+          "population": 10500000,
+          "observes_dst": true
+        },
+        {
+          "name": "Hungary",
+          "population": 9700000,
+          "observes_dst": true
+        },
+        {
+          "name": "Austria",
+          "population": 9000000,
+          "observes_dst": true
+        },
+        {
+          "name": "Switzerland",
+          "population": 8800000,
+          "observes_dst": true
+        },
+        {
+          "name": "Serbia",
+          "population": 6700000,
+          "observes_dst": true
+        },
+        {
+          "name": "Denmark",
+          "population": 5900000,
+          "observes_dst": true
+        },
+        {
+          "name": "Norway",
+          "population": 5500000,
+          "observes_dst": true
+        },
+        {
+          "name": "Slovakia",
+          "population": 5400000,
+          "observes_dst": true
+        },
+        {
+          "name": "Croatia",
+          "population": 3900000,
+          "observes_dst": true
+        },
+        {
+          "name": "Albania",
+          "population": 2800000,
+          "observes_dst": true
+        },
+        {
+          "name": "Algeria",
+          "population": 45000000,
+          "observes_dst": false
+        },
+        {
+          "name": "Tunisia",
+          "population": 12000000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Berlin",
+          "country": "Germany",
+          "population": 3677000,
+          "iana": "Europe/Berlin",
+          "is_capital": true
+        },
+        {
+          "name": "Madrid",
+          "country": "Spain",
+          "population": 3334000,
+          "iana": "Europe/Madrid",
+          "is_capital": true
+        },
+        {
+          "name": "Rome",
+          "country": "Italy",
+          "population": 2873000,
+          "iana": "Europe/Rome",
+          "is_capital": true
+        },
+        {
+          "name": "Paris",
+          "country": "France",
+          "population": 2161000,
+          "iana": "Europe/Paris",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Vienna",
+          "country": "Austria",
+          "population": 1931000,
+          "iana": "Europe/Vienna",
+          "is_capital": true
+        },
+        {
+          "name": "Hamburg",
+          "country": "Germany",
+          "population": 1899000,
+          "iana": "Europe/Berlin"
+        },
+        {
+          "name": "Warsaw",
+          "country": "Poland",
+          "population": 1794000,
+          "iana": "Europe/Warsaw",
+          "is_capital": true
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "European Central Bank",
+          "abbreviation": "ECB",
+          "city": "Frankfurt",
+          "category": "central_bank"
+        },
+        {
+          "name": "Eurex Exchange",
+          "abbreviation": "Eurex",
+          "city": "Frankfurt",
+          "category": "futures_exchange"
+        },
+        {
+          "name": "Euronext Paris",
+          "city": "Paris",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:00–17:30"
+        },
+        {
+          "name": "Frankfurt Stock Exchange",
+          "abbreviation": "FWB",
+          "city": "Frankfurt",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:00–17:30"
+        }
+      ],
+      "geography": {
+        "description": "Most of continental Western and Central Europe, plus parts of North Africa. The most densely populated time zone in Europe.",
+        "longitude_center": 15
+      },
+      "history": {
+        "adopted_year": 1893,
+        "note": "Adopted by Germany and Austria-Hungary in 1893; expanded across most of continental Europe through the 20th century."
+      }
+    },
+    {
+      "code": "IST",
+      "name": "India Standard Time",
+      "short_name": "India Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 330,
+      "utc_offset_display": "+05:30",
+      "observes_dst": false,
+      "dst": {
+        "note": "India does not observe daylight saving time. The IST offset of UTC+5:30 is constant year-round. Note: 'IST' is sometimes ambiguous — it can also refer to Irish Standard Time (Ireland's summer time). On TimeAtlas, IST refers exclusively to India Standard Time."
+      },
+      "iana": {
+        "primary": "Asia/Kolkata",
+        "all": ["Asia/Kolkata", "Asia/Colombo"]
+      },
+      "military_code": {
+        "name": null,
+        "letter": null,
+        "note": "IST has a 30-minute offset and does not have a standard NATO/military code. Some sources use the unofficial designation 'E*' (Echo-star) for half-hour zones, but this is not formally recognized."
+      },
+      "countries": [
+        {
+          "name": "India",
+          "population": 1428000000,
+          "observes_dst": false
+        },
+        {
+          "name": "Sri Lanka",
+          "population": 22000000,
+          "observes_dst": false,
+          "note": "Sri Lanka also uses UTC+5:30, though its zone identifier is technically separate"
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Mumbai",
+          "country": "India",
+          "population": 12442000,
+          "iana": "Asia/Kolkata",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Delhi",
+          "country": "India",
+          "population": 11000000,
+          "iana": "Asia/Kolkata",
+          "is_capital": true
+        },
+        {
+          "name": "Bangalore",
+          "country": "India",
+          "population": 8443000,
+          "iana": "Asia/Kolkata"
+        },
+        {
+          "name": "Hyderabad",
+          "country": "India",
+          "population": 6993000,
+          "iana": "Asia/Kolkata"
+        },
+        {
+          "name": "Ahmedabad",
+          "country": "India",
+          "population": 5571000,
+          "iana": "Asia/Kolkata"
+        },
+        {
+          "name": "Chennai",
+          "country": "India",
+          "population": 4646000,
+          "iana": "Asia/Kolkata"
+        },
+        {
+          "name": "Kolkata",
+          "country": "India",
+          "population": 4496000,
+          "iana": "Asia/Kolkata"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Bombay Stock Exchange",
+          "abbreviation": "BSE",
+          "city": "Mumbai",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:15–15:30"
+        },
+        {
+          "name": "National Stock Exchange of India",
+          "abbreviation": "NSE",
+          "city": "Mumbai",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:15–15:30"
+        },
+        {
+          "name": "Reserve Bank of India",
+          "abbreviation": "RBI",
+          "city": "Mumbai",
+          "category": "central_bank"
+        },
+        {
+          "name": "Indian Space Research Organisation",
+          "abbreviation": "ISRO",
+          "city": "Bangalore",
+          "category": "government"
+        }
+      ],
+      "geography": {
+        "description": "All of India and Sri Lanka. India uses a single time zone despite spanning roughly 30° of longitude — a unique choice among large countries.",
+        "longitude_center": 82.5
+      },
+      "history": {
+        "adopted_year": 1947,
+        "note": "IST was established when India gained independence in 1947. India debated dual time zones (one for the east, one for the west) several times but has retained the single-zone system."
+      }
+    },
+    {
+      "code": "JST",
+      "name": "Japan Standard Time",
+      "short_name": "Japan Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 540,
+      "utc_offset_display": "+09:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Japan has not observed daylight saving time since 1951."
+      },
+      "iana": {
+        "primary": "Asia/Tokyo",
+        "all": ["Asia/Tokyo"]
+      },
+      "military_code": {
+        "name": "India",
+        "letter": "I"
+      },
+      "countries": [
+        {
+          "name": "Japan",
+          "population": 125000000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Tokyo",
+          "country": "Japan",
+          "population": 13960000,
+          "iana": "Asia/Tokyo",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Yokohama",
+          "country": "Japan",
+          "population": 3776000,
+          "iana": "Asia/Tokyo"
+        },
+        {
+          "name": "Osaka",
+          "country": "Japan",
+          "population": 2691000,
+          "iana": "Asia/Tokyo"
+        },
+        {
+          "name": "Nagoya",
+          "country": "Japan",
+          "population": 2295000,
+          "iana": "Asia/Tokyo"
+        },
+        {
+          "name": "Sapporo",
+          "country": "Japan",
+          "population": 1973000,
+          "iana": "Asia/Tokyo"
+        },
+        {
+          "name": "Fukuoka",
+          "country": "Japan",
+          "population": 1612000,
+          "iana": "Asia/Tokyo"
+        },
+        {
+          "name": "Kobe",
+          "country": "Japan",
+          "population": 1525000,
+          "iana": "Asia/Tokyo"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Tokyo Stock Exchange",
+          "abbreviation": "TSE",
+          "city": "Tokyo",
+          "category": "stock_exchange",
+          "trading_hours_local": "09:00–11:30, 12:30–15:00"
+        },
+        {
+          "name": "Bank of Japan",
+          "abbreviation": "BoJ",
+          "city": "Tokyo",
+          "category": "central_bank"
+        },
+        {
+          "name": "Imperial Household Agency",
+          "city": "Tokyo",
+          "category": "government"
+        }
+      ],
+      "geography": {
+        "description": "All of Japan, from Hokkaido in the north to Okinawa in the south.",
+        "longitude_center": 138
+      },
+      "history": {
+        "adopted_year": 1888,
+        "note": "JST was established in 1888 based on the meridian at Akashi (135° E). Japan briefly observed DST during the US occupation (1948–1951) but abolished it as unpopular and has not used it since."
+      }
+    },
+    {
+      "code": "AEST",
+      "name": "Australian Eastern Standard Time",
+      "short_name": "Eastern Australia Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 600,
+      "utc_offset_display": "+10:00",
+      "observes_dst": "partial",
+      "dst": {
+        "summer_code": "AEDT",
+        "summer_name": "Australian Eastern Daylight Time",
+        "summer_offset_minutes": 660,
+        "summer_offset_display": "+11:00",
+        "start_rule": "first_sunday_of_october",
+        "end_rule": "first_sunday_of_april",
+        "start_date_current_year": "2026-10-04",
+        "end_date_current_year": "2026-04-05",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "03:00 → 02:00",
+        "note": "New South Wales, Victoria, Tasmania, and the Australian Capital Territory observe DST; Queensland remains on AEST year-round."
+      },
+      "iana": {
+        "primary": "Australia/Sydney",
+        "all": [
+          "Australia/Sydney",
+          "Australia/Melbourne",
+          "Australia/Brisbane",
+          "Australia/Hobart",
+          "Australia/Canberra"
+        ]
+      },
+      "military_code": {
+        "name": "Kilo",
+        "letter": "K"
+      },
+      "countries": [
+        {
+          "name": "Australia (eastern states)",
+          "population": 18200000,
+          "observes_dst": "partial",
+          "note": "Queensland does not observe DST, while NSW, Victoria, Tasmania, and ACT do."
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Sydney",
+          "country": "Australia",
+          "population": 5312000,
+          "iana": "Australia/Sydney",
+          "is_financial_hub": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Melbourne",
+          "country": "Australia",
+          "population": 5078000,
+          "iana": "Australia/Melbourne",
+          "is_financial_hub": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Brisbane",
+          "country": "Australia",
+          "population": 2707000,
+          "iana": "Australia/Brisbane",
+          "is_financial_hub": true,
+          "observes_dst": false
+        },
+        {
+          "name": "Gold Coast",
+          "country": "Australia",
+          "population": 647000,
+          "iana": "Australia/Brisbane",
+          "observes_dst": false
+        },
+        {
+          "name": "Canberra",
+          "country": "Australia",
+          "population": 466000,
+          "iana": "Australia/Sydney",
+          "is_capital": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Hobart",
+          "country": "Australia",
+          "population": 253000,
+          "iana": "Australia/Hobart",
+          "observes_dst": true
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Australian Securities Exchange",
+          "abbreviation": "ASX",
+          "city": "Sydney",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-16:00"
+        },
+        {
+          "name": "Reserve Bank of Australia",
+          "abbreviation": "RBA",
+          "city": "Sydney",
+          "category": "central bank"
+        },
+        {
+          "name": "Parliament of Australia",
+          "city": "Canberra",
+          "category": "national legislature"
+        },
+        {
+          "name": "Port of Brisbane",
+          "city": "Brisbane",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Eastern Australia, spanning the populous east coast from Queensland through New South Wales, Victoria, Tasmania, and the Australian Capital Territory.",
+        "longitude_center": 151
+      },
+      "history": {
+        "adopted_year": 1895,
+        "note": "Eastern Australian colonies adopted standard time in the 1890s; state-level DST rules later diverged, especially Queensland non-observance."
+      }
+    },
+    {
+      "code": "AEDT",
+      "name": "Australian Eastern Daylight Time",
+      "short_name": "Eastern Australia Daylight Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 660,
+      "utc_offset_display": "+11:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "AEDT",
+        "summer_name": "Australian Eastern Daylight Time",
+        "summer_offset_minutes": 660,
+        "summer_offset_display": "+11:00",
+        "start_rule": "first_sunday_of_october",
+        "end_rule": "first_sunday_of_april",
+        "start_date_current_year": "2026-10-04",
+        "end_date_current_year": "2026-04-05",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "03:00 → 02:00",
+        "note": "AEDT is the daylight-saving designation used in southeastern Australia; Queensland remains on AEST and is not represented by this daylight code."
+      },
+      "iana": {
+        "primary": "Australia/Sydney",
+        "all": ["Australia/Sydney", "Australia/Melbourne", "Australia/Hobart", "Australia/Canberra"]
+      },
+      "military_code": {
+        "name": "Lima",
+        "letter": "L"
+      },
+      "countries": [
+        {
+          "name": "Australia (southeastern states)",
+          "population": 13200000,
+          "observes_dst": true
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Sydney",
+          "country": "Australia",
+          "population": 5312000,
+          "iana": "Australia/Sydney",
+          "is_financial_hub": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Melbourne",
+          "country": "Australia",
+          "population": 5078000,
+          "iana": "Australia/Melbourne",
+          "is_financial_hub": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Canberra",
+          "country": "Australia",
+          "population": 466000,
+          "iana": "Australia/Sydney",
+          "is_capital": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Hobart",
+          "country": "Australia",
+          "population": 253000,
+          "iana": "Australia/Hobart",
+          "observes_dst": true
+        },
+        {
+          "name": "Wollongong",
+          "country": "Australia",
+          "population": 305000,
+          "iana": "Australia/Sydney",
+          "observes_dst": true
+        },
+        {
+          "name": "Geelong",
+          "country": "Australia",
+          "population": 289000,
+          "iana": "Australia/Melbourne",
+          "observes_dst": true
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Australian Securities Exchange",
+          "abbreviation": "ASX",
+          "city": "Sydney",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-16:00"
+        },
+        {
+          "name": "Reserve Bank of Australia",
+          "abbreviation": "RBA",
+          "city": "Sydney",
+          "category": "central bank"
+        },
+        {
+          "name": "Parliament of Australia",
+          "city": "Canberra",
+          "category": "national legislature"
+        },
+        {
+          "name": "Port of Melbourne",
+          "city": "Melbourne",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Southeastern Australia during daylight saving months, covering New South Wales, Victoria, Tasmania, and the Australian Capital Territory.",
+        "longitude_center": 150
+      },
+      "history": {
+        "adopted_year": 1971,
+        "note": "Modern recurring daylight saving in southeastern Australia developed in the early 1970s, with state rules aligned to the current October-April pattern."
+      }
+    },
+    {
+      "code": "ACST",
+      "name": "Australian Central Standard Time",
+      "short_name": "Central Australia Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 570,
+      "utc_offset_display": "+09:30",
+      "observes_dst": "partial",
+      "dst": {
+        "summer_code": "ACDT",
+        "summer_name": "Australian Central Daylight Time",
+        "summer_offset_minutes": 630,
+        "summer_offset_display": "+10:30",
+        "start_rule": "first_sunday_of_october",
+        "end_rule": "first_sunday_of_april",
+        "start_date_current_year": "2026-10-04",
+        "end_date_current_year": "2026-04-05",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "03:00 → 02:00",
+        "note": "South Australia observes DST; the Northern Territory remains on ACST year-round."
+      },
+      "iana": {
+        "primary": "Australia/Adelaide",
+        "all": ["Australia/Adelaide", "Australia/Darwin", "Australia/Broken_Hill"]
+      },
+      "military_code": {
+        "name": null,
+        "letter": null,
+        "note": "ACST has a half-hour offset and does not have a standard NATO/military time-zone letter."
+      },
+      "countries": [
+        {
+          "name": "Australia (central states and territories)",
+          "population": 2100000,
+          "observes_dst": "partial",
+          "note": "South Australia observes DST; Northern Territory does not."
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Adelaide",
+          "country": "Australia",
+          "population": 1387000,
+          "iana": "Australia/Adelaide",
+          "is_financial_hub": true,
+          "observes_dst": true
+        },
+        {
+          "name": "Darwin",
+          "country": "Australia",
+          "population": 148000,
+          "iana": "Australia/Darwin",
+          "observes_dst": false
+        },
+        {
+          "name": "Alice Springs",
+          "country": "Australia",
+          "population": 26000,
+          "iana": "Australia/Darwin",
+          "observes_dst": false
+        },
+        {
+          "name": "Palmerston",
+          "country": "Australia",
+          "population": 33000,
+          "iana": "Australia/Darwin",
+          "observes_dst": false
+        },
+        {
+          "name": "Mount Gambier",
+          "country": "Australia",
+          "population": 29000,
+          "iana": "Australia/Adelaide",
+          "observes_dst": true
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "South Australian Parliament",
+          "city": "Adelaide",
+          "category": "state legislature"
+        },
+        {
+          "name": "Adelaide Airport",
+          "city": "Adelaide",
+          "category": "aviation hub"
+        },
+        {
+          "name": "Darwin Port",
+          "city": "Darwin",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Central Australia, covering South Australia and the Northern Territory with a distinctive half-hour offset.",
+        "longitude_center": 135
+      },
+      "history": {
+        "adopted_year": 1895,
+        "note": "South Australia adopted a central half-hour standard in the 1890s; the Northern Territory retained the same standard offset without DST."
+      }
+    },
+    {
+      "code": "AWST",
+      "name": "Australian Western Standard Time",
+      "short_name": "Western Australia Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 480,
+      "utc_offset_display": "+08:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Western Australia does not observe DST; state referendums have repeatedly rejected permanent daylight saving."
+      },
+      "iana": {
+        "primary": "Australia/Perth",
+        "all": ["Australia/Perth"]
+      },
+      "military_code": {
+        "name": "Hotel",
+        "letter": "H"
+      },
+      "countries": [
+        {
+          "name": "Australia (Western Australia)",
+          "population": 2900000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Perth",
+          "country": "Australia",
+          "population": 2309000,
+          "iana": "Australia/Perth",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Mandurah",
+          "country": "Australia",
+          "population": 107000,
+          "iana": "Australia/Perth"
+        },
+        {
+          "name": "Bunbury",
+          "country": "Australia",
+          "population": 75000,
+          "iana": "Australia/Perth"
+        },
+        {
+          "name": "Albany",
+          "country": "Australia",
+          "population": 39000,
+          "iana": "Australia/Perth"
+        },
+        {
+          "name": "Geraldton",
+          "country": "Australia",
+          "population": 32000,
+          "iana": "Australia/Perth"
+        },
+        {
+          "name": "Kalgoorlie",
+          "country": "Australia",
+          "population": 29000,
+          "iana": "Australia/Perth"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Perth Mint",
+          "city": "Perth",
+          "category": "precious metals institution"
+        },
+        {
+          "name": "Chamber of Minerals and Energy of Western Australia",
+          "city": "Perth",
+          "category": "resources industry body"
+        },
+        {
+          "name": "Port of Fremantle",
+          "city": "Fremantle",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Western Australia, from Perth and the Indian Ocean coast across the sparsely populated interior.",
+        "longitude_center": 120
+      },
+      "history": {
+        "adopted_year": 1895,
+        "note": "Western Australia adopted standard time in 1895 and has remained on UTC+8 outside short DST trials."
+      }
+    },
+    {
+      "code": "NZST",
+      "name": "New Zealand Standard Time",
+      "short_name": "New Zealand Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 720,
+      "utc_offset_display": "+12:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "NZDT",
+        "summer_name": "New Zealand Daylight Time",
+        "summer_offset_minutes": 780,
+        "summer_offset_display": "+13:00",
+        "start_rule": "last_sunday_of_september",
+        "end_rule": "first_sunday_of_april",
+        "start_date_current_year": "2026-09-27",
+        "end_date_current_year": "2026-04-05",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "03:00 → 02:00"
+      },
+      "iana": {
+        "primary": "Pacific/Auckland",
+        "all": ["Pacific/Auckland", "Antarctica/McMurdo"]
+      },
+      "military_code": {
+        "name": "Mike",
+        "letter": "M"
+      },
+      "countries": [
+        {
+          "name": "New Zealand",
+          "population": 5300000,
+          "observes_dst": true
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Auckland",
+          "country": "New Zealand",
+          "population": 1571000,
+          "iana": "Pacific/Auckland",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Christchurch",
+          "country": "New Zealand",
+          "population": 397000,
+          "iana": "Pacific/Auckland"
+        },
+        {
+          "name": "Wellington",
+          "country": "New Zealand",
+          "population": 216000,
+          "iana": "Pacific/Auckland",
+          "is_capital": true
+        },
+        {
+          "name": "Hamilton",
+          "country": "New Zealand",
+          "population": 179000,
+          "iana": "Pacific/Auckland"
+        },
+        {
+          "name": "Tauranga",
+          "country": "New Zealand",
+          "population": 162000,
+          "iana": "Pacific/Auckland"
+        },
+        {
+          "name": "Dunedin",
+          "country": "New Zealand",
+          "population": 132000,
+          "iana": "Pacific/Auckland"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "New Zealand Exchange",
+          "abbreviation": "NZX",
+          "city": "Wellington",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-16:45"
+        },
+        {
+          "name": "Reserve Bank of New Zealand",
+          "abbreviation": "RBNZ",
+          "city": "Wellington",
+          "category": "central bank"
+        },
+        {
+          "name": "New Zealand Parliament",
+          "city": "Wellington",
+          "category": "national legislature"
+        },
+        {
+          "name": "Auckland Airport",
+          "city": "Auckland",
+          "category": "aviation hub"
+        }
+      ],
+      "geography": {
+        "description": "New Zealand mainland and nearby dependencies, one of the earliest major economies to begin each calendar day.",
+        "longitude_center": 174
+      },
+      "history": {
+        "adopted_year": 1868,
+        "note": "New Zealand adopted a national standard time in 1868, among the earliest countries to do so."
+      }
+    },
+    {
+      "code": "NZDT",
+      "name": "New Zealand Daylight Time",
+      "short_name": "New Zealand Daylight Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 780,
+      "utc_offset_display": "+13:00",
+      "observes_dst": true,
+      "dst": {
+        "summer_code": "NZDT",
+        "summer_name": "New Zealand Daylight Time",
+        "summer_offset_minutes": 780,
+        "summer_offset_display": "+13:00",
+        "start_rule": "last_sunday_of_september",
+        "end_rule": "first_sunday_of_april",
+        "start_date_current_year": "2026-09-27",
+        "end_date_current_year": "2026-04-05",
+        "start_clock_change": "02:00 → 03:00",
+        "end_clock_change": "03:00 → 02:00",
+        "note": "NZDT is the daylight-saving designation for New Zealand during the southern summer."
+      },
+      "iana": {
+        "primary": "Pacific/Auckland",
+        "all": ["Pacific/Auckland", "Antarctica/McMurdo"]
+      },
+      "military_code": {
+        "name": null,
+        "letter": null,
+        "note": "UTC+13 is outside the standard single-letter NATO/military time-zone range."
+      },
+      "countries": [
+        {
+          "name": "New Zealand",
+          "population": 5300000,
+          "observes_dst": true
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Auckland",
+          "country": "New Zealand",
+          "population": 1571000,
+          "iana": "Pacific/Auckland",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Christchurch",
+          "country": "New Zealand",
+          "population": 397000,
+          "iana": "Pacific/Auckland"
+        },
+        {
+          "name": "Wellington",
+          "country": "New Zealand",
+          "population": 216000,
+          "iana": "Pacific/Auckland",
+          "is_capital": true
+        },
+        {
+          "name": "Hamilton",
+          "country": "New Zealand",
+          "population": 179000,
+          "iana": "Pacific/Auckland"
+        },
+        {
+          "name": "Tauranga",
+          "country": "New Zealand",
+          "population": 162000,
+          "iana": "Pacific/Auckland"
+        },
+        {
+          "name": "Dunedin",
+          "country": "New Zealand",
+          "population": 132000,
+          "iana": "Pacific/Auckland"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "New Zealand Exchange",
+          "abbreviation": "NZX",
+          "city": "Wellington",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-16:45"
+        },
+        {
+          "name": "Reserve Bank of New Zealand",
+          "abbreviation": "RBNZ",
+          "city": "Wellington",
+          "category": "central bank"
+        },
+        {
+          "name": "New Zealand Parliament",
+          "city": "Wellington",
+          "category": "national legislature"
+        },
+        {
+          "name": "Auckland Airport",
+          "city": "Auckland",
+          "category": "aviation hub"
+        }
+      ],
+      "geography": {
+        "description": "New Zealand during daylight saving months, operating one hour ahead of NZST across the same national territory.",
+        "longitude_center": 174
+      },
+      "history": {
+        "adopted_year": 1927,
+        "note": "New Zealand first experimented with summer time in 1927; the modern NZDT season is defined by national daylight saving legislation."
+      }
+    },
+    {
+      "code": "SGT",
+      "name": "Singapore Time",
+      "short_name": "Singapore Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 480,
+      "utc_offset_display": "+08:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Singapore does not observe DST."
+      },
+      "iana": {
+        "primary": "Asia/Singapore",
+        "all": ["Asia/Singapore"]
+      },
+      "military_code": {
+        "name": "Hotel",
+        "letter": "H"
+      },
+      "countries": [
+        {
+          "name": "Singapore",
+          "population": 5920000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Singapore",
+          "country": "Singapore",
+          "population": 5920000,
+          "iana": "Asia/Singapore",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Jurong East",
+          "country": "Singapore",
+          "population": 79000,
+          "iana": "Asia/Singapore"
+        },
+        {
+          "name": "Woodlands",
+          "country": "Singapore",
+          "population": 255000,
+          "iana": "Asia/Singapore"
+        },
+        {
+          "name": "Tampines",
+          "country": "Singapore",
+          "population": 265000,
+          "iana": "Asia/Singapore"
+        },
+        {
+          "name": "Yishun",
+          "country": "Singapore",
+          "population": 223000,
+          "iana": "Asia/Singapore"
+        },
+        {
+          "name": "Bedok",
+          "country": "Singapore",
+          "population": 277000,
+          "iana": "Asia/Singapore"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Singapore Exchange",
+          "abbreviation": "SGX",
+          "city": "Singapore",
+          "category": "securities exchange",
+          "trading_hours_local": "09:00-17:00"
+        },
+        {
+          "name": "Monetary Authority of Singapore",
+          "abbreviation": "MAS",
+          "city": "Singapore",
+          "category": "central bank and regulator"
+        },
+        {
+          "name": "Changi Airport Group",
+          "city": "Singapore",
+          "category": "aviation hub"
+        },
+        {
+          "name": "PSA International",
+          "city": "Singapore",
+          "category": "port operator"
+        }
+      ],
+      "geography": {
+        "description": "The city-state of Singapore at the southern tip of the Malay Peninsula, using UTC+8 for economic alignment with East Asia.",
+        "longitude_center": 104
+      },
+      "history": {
+        "adopted_year": 1982,
+        "note": "Singapore moved to UTC+8 in 1982 to align clocks with Malaysia and major East Asian trading partners."
+      }
+    },
+    {
+      "code": "HKT",
+      "name": "Hong Kong Time",
+      "short_name": "Hong Kong Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 480,
+      "utc_offset_display": "+08:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Hong Kong has not observed DST since 1979."
+      },
+      "iana": {
+        "primary": "Asia/Hong_Kong",
+        "all": ["Asia/Hong_Kong"]
+      },
+      "military_code": {
+        "name": "Hotel",
+        "letter": "H"
+      },
+      "countries": [
+        {
+          "name": "Hong Kong",
+          "population": 7500000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Hong Kong",
+          "country": "Hong Kong",
+          "population": 7500000,
+          "iana": "Asia/Hong_Kong",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Kowloon",
+          "country": "Hong Kong",
+          "population": 2200000,
+          "iana": "Asia/Hong_Kong"
+        },
+        {
+          "name": "Sha Tin",
+          "country": "Hong Kong",
+          "population": 692000,
+          "iana": "Asia/Hong_Kong"
+        },
+        {
+          "name": "Yuen Long",
+          "country": "Hong Kong",
+          "population": 669000,
+          "iana": "Asia/Hong_Kong"
+        },
+        {
+          "name": "Tuen Mun",
+          "country": "Hong Kong",
+          "population": 506000,
+          "iana": "Asia/Hong_Kong"
+        },
+        {
+          "name": "Tsuen Wan",
+          "country": "Hong Kong",
+          "population": 304000,
+          "iana": "Asia/Hong_Kong"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Hong Kong Exchanges and Clearing",
+          "abbreviation": "HKEX",
+          "city": "Hong Kong",
+          "category": "securities exchange",
+          "trading_hours_local": "09:30-16:00"
+        },
+        {
+          "name": "Hong Kong Monetary Authority",
+          "abbreviation": "HKMA",
+          "city": "Hong Kong",
+          "category": "monetary authority"
+        },
+        {
+          "name": "Hong Kong International Airport",
+          "city": "Chek Lap Kok",
+          "category": "aviation hub"
+        },
+        {
+          "name": "University of Hong Kong",
+          "city": "Hong Kong",
+          "category": "research university"
+        }
+      ],
+      "geography": {
+        "description": "Hong Kong on the South China coast, sharing UTC+8 with mainland China while maintaining its own IANA identifier.",
+        "longitude_center": 114
+      },
+      "history": {
+        "adopted_year": 1904,
+        "note": "Hong Kong adopted standard time in the early 20th century and discontinued daylight saving after 1979."
+      }
+    },
+    {
+      "code": "KST",
+      "name": "Korea Standard Time",
+      "short_name": "Korea Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 540,
+      "utc_offset_display": "+09:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "South Korea does not currently observe DST; temporary DST experiments ended in 1988."
+      },
+      "iana": {
+        "primary": "Asia/Seoul",
+        "all": ["Asia/Seoul", "Asia/Pyongyang"]
+      },
+      "military_code": {
+        "name": "India",
+        "letter": "I"
+      },
+      "countries": [
+        {
+          "name": "South Korea",
+          "population": 51700000,
+          "observes_dst": false
+        },
+        {
+          "name": "North Korea",
+          "population": 26000000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Seoul",
+          "country": "South Korea",
+          "population": 9390000,
+          "iana": "Asia/Seoul",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Busan",
+          "country": "South Korea",
+          "population": 3290000,
+          "iana": "Asia/Seoul"
+        },
+        {
+          "name": "Incheon",
+          "country": "South Korea",
+          "population": 3010000,
+          "iana": "Asia/Seoul"
+        },
+        {
+          "name": "Daegu",
+          "country": "South Korea",
+          "population": 2370000,
+          "iana": "Asia/Seoul"
+        },
+        {
+          "name": "Daejeon",
+          "country": "South Korea",
+          "population": 1440000,
+          "iana": "Asia/Seoul"
+        },
+        {
+          "name": "Gwangju",
+          "country": "South Korea",
+          "population": 1420000,
+          "iana": "Asia/Seoul"
+        },
+        {
+          "name": "Ulsan",
+          "country": "South Korea",
+          "population": 1100000,
+          "iana": "Asia/Seoul"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Korea Exchange",
+          "abbreviation": "KRX",
+          "city": "Busan",
+          "category": "securities exchange",
+          "trading_hours_local": "09:00-15:30"
+        },
+        {
+          "name": "Bank of Korea",
+          "city": "Seoul",
+          "category": "central bank"
+        },
+        {
+          "name": "Samsung Electronics Headquarters",
+          "city": "Suwon",
+          "category": "corporate headquarters"
+        },
+        {
+          "name": "Incheon International Airport",
+          "city": "Incheon",
+          "category": "aviation hub"
+        }
+      ],
+      "geography": {
+        "description": "The Korean Peninsula, centered near 127°E and aligned with Japan Standard Time at UTC+9.",
+        "longitude_center": 127
+      },
+      "history": {
+        "adopted_year": 1961,
+        "note": "South Korea standardized on UTC+9 in 1961; North Korea returned to UTC+9 in 2018 after a brief UTC+8:30 period."
+      }
+    },
+    {
+      "code": "BRT",
+      "name": "Brasília Time",
+      "short_name": "Brazil Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -180,
+      "utc_offset_display": "−03:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Brazil abolished nationwide daylight saving time in 2019."
+      },
+      "iana": {
+        "primary": "America/Sao_Paulo",
+        "all": [
+          "America/Sao_Paulo",
+          "America/Rio_de_Janeiro",
+          "America/Bahia",
+          "America/Fortaleza",
+          "America/Recife",
+          "America/Belem"
+        ]
+      },
+      "military_code": {
+        "name": "Papa",
+        "letter": "P"
+      },
+      "countries": [
+        {
+          "name": "Brazil (Brasília time states)",
+          "population": 175000000,
+          "observes_dst": false,
+          "note": "Brazil abolished DST in 2019."
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "São Paulo",
+          "country": "Brazil",
+          "population": 11451000,
+          "iana": "America/Sao_Paulo",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Rio de Janeiro",
+          "country": "Brazil",
+          "population": 6211000,
+          "iana": "America/Sao_Paulo"
+        },
+        {
+          "name": "Brasília",
+          "country": "Brazil",
+          "population": 2817000,
+          "iana": "America/Sao_Paulo",
+          "is_capital": true
+        },
+        {
+          "name": "Fortaleza",
+          "country": "Brazil",
+          "population": 2428000,
+          "iana": "America/Fortaleza"
+        },
+        {
+          "name": "Salvador",
+          "country": "Brazil",
+          "population": 2418000,
+          "iana": "America/Bahia"
+        },
+        {
+          "name": "Belo Horizonte",
+          "country": "Brazil",
+          "population": 2316000,
+          "iana": "America/Sao_Paulo"
+        },
+        {
+          "name": "Recife",
+          "country": "Brazil",
+          "population": 1488000,
+          "iana": "America/Recife"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "B3 Brasil Bolsa Balcão",
+          "abbreviation": "B3",
+          "city": "São Paulo",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-17:00"
+        },
+        {
+          "name": "Central Bank of Brazil",
+          "city": "Brasília",
+          "category": "central bank"
+        },
+        {
+          "name": "Palácio do Planalto",
+          "city": "Brasília",
+          "category": "executive government"
+        },
+        {
+          "name": "Port of Santos",
+          "city": "Santos",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Eastern and central Brazil, including the national capital Brasília and the São Paulo-Rio economic corridor.",
+        "longitude_center": -47
+      },
+      "history": {
+        "adopted_year": 1914,
+        "note": "Brazil introduced legal time zones in 1914; Brasília time became the principal national reference for government and markets."
+      }
+    },
+    {
+      "code": "ART",
+      "name": "Argentina Time",
+      "short_name": "Argentina Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -180,
+      "utc_offset_display": "−03:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Argentina does not currently observe DST."
+      },
+      "iana": {
+        "primary": "America/Argentina/Buenos_Aires",
+        "all": [
+          "America/Argentina/Buenos_Aires",
+          "America/Argentina/Cordoba",
+          "America/Argentina/Rosario",
+          "America/Argentina/Mendoza",
+          "America/Argentina/Tucuman",
+          "America/Argentina/Ushuaia"
+        ]
+      },
+      "military_code": {
+        "name": "Papa",
+        "letter": "P"
+      },
+      "countries": [
+        {
+          "name": "Argentina",
+          "population": 46000000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Buenos Aires",
+          "country": "Argentina",
+          "population": 3121000,
+          "iana": "America/Argentina/Buenos_Aires",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Córdoba",
+          "country": "Argentina",
+          "population": 1566000,
+          "iana": "America/Argentina/Cordoba"
+        },
+        {
+          "name": "Rosario",
+          "country": "Argentina",
+          "population": 1342000,
+          "iana": "America/Argentina/Rosario"
+        },
+        {
+          "name": "La Plata",
+          "country": "Argentina",
+          "population": 772000,
+          "iana": "America/Argentina/Buenos_Aires"
+        },
+        {
+          "name": "Mar del Plata",
+          "country": "Argentina",
+          "population": 682000,
+          "iana": "America/Argentina/Buenos_Aires"
+        },
+        {
+          "name": "San Miguel de Tucumán",
+          "country": "Argentina",
+          "population": 548000,
+          "iana": "America/Argentina/Tucuman"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Banco Central de la República Argentina",
+          "abbreviation": "BCRA",
+          "city": "Buenos Aires",
+          "category": "central bank"
+        },
+        {
+          "name": "Bolsas y Mercados Argentinos",
+          "abbreviation": "BYMA",
+          "city": "Buenos Aires",
+          "category": "securities exchange",
+          "trading_hours_local": "11:00-17:00"
+        },
+        {
+          "name": "Casa Rosada",
+          "city": "Buenos Aires",
+          "category": "executive government"
+        },
+        {
+          "name": "CONAE",
+          "city": "Buenos Aires",
+          "category": "space agency"
+        }
+      ],
+      "geography": {
+        "description": "Argentina from the Río de la Plata through Patagonia, using a single UTC−3 civil time nationwide.",
+        "longitude_center": -64
+      },
+      "history": {
+        "adopted_year": 1920,
+        "note": "Argentina formalized national standard time in the early 20th century and has used several historical DST experiments, none currently active."
+      }
+    },
+    {
+      "code": "CLT",
+      "name": "Chile Standard Time",
+      "short_name": "Chile Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -240,
+      "utc_offset_display": "−04:00",
+      "observes_dst": "partial",
+      "dst": {
+        "summer_code": "CLST",
+        "summer_name": "Chile Summer Time",
+        "summer_offset_minutes": -180,
+        "summer_offset_display": "−03:00",
+        "start_rule": "first_sunday_of_september",
+        "end_rule": "first_saturday_of_april",
+        "start_date_current_year": "2026-09-06",
+        "end_date_current_year": "2026-04-04",
+        "start_clock_change": "00:00 → 01:00",
+        "end_clock_change": "24:00 → 23:00",
+        "note": "Most of continental Chile observes DST; the Magallanes Region stays on UTC−3 year-round."
+      },
+      "iana": {
+        "primary": "America/Santiago",
+        "all": ["America/Santiago", "America/Punta_Arenas"]
+      },
+      "military_code": {
+        "name": "Quebec",
+        "letter": "Q"
+      },
+      "countries": [
+        {
+          "name": "Chile (continental)",
+          "population": 19600000,
+          "observes_dst": "partial",
+          "note": "Magallanes uses UTC−3 year-round; Easter Island uses a separate offset."
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Santiago",
+          "country": "Chile",
+          "population": 6269000,
+          "iana": "America/Santiago",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Valparaíso",
+          "country": "Chile",
+          "population": 296000,
+          "iana": "America/Santiago"
+        },
+        {
+          "name": "Concepción",
+          "country": "Chile",
+          "population": 224000,
+          "iana": "America/Santiago"
+        },
+        {
+          "name": "Antofagasta",
+          "country": "Chile",
+          "population": 389000,
+          "iana": "America/Santiago"
+        },
+        {
+          "name": "La Serena",
+          "country": "Chile",
+          "population": 250000,
+          "iana": "America/Santiago"
+        },
+        {
+          "name": "Temuco",
+          "country": "Chile",
+          "population": 282000,
+          "iana": "America/Santiago"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Santiago Stock Exchange",
+          "abbreviation": "BCS",
+          "city": "Santiago",
+          "category": "securities exchange",
+          "trading_hours_local": "09:30-16:00"
+        },
+        {
+          "name": "Central Bank of Chile",
+          "city": "Santiago",
+          "category": "central bank"
+        },
+        {
+          "name": "La Moneda Palace",
+          "city": "Santiago",
+          "category": "executive government"
+        },
+        {
+          "name": "Port of Valparaíso",
+          "city": "Valparaíso",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Continental Chile, a long north-south Pacific corridor mostly west of the Andes.",
+        "longitude_center": -70
+      },
+      "history": {
+        "adopted_year": 1910,
+        "note": "Chile adopted legal standard time in the early 20th century; modern DST rules have changed frequently and are tracked from IANA data."
+      }
+    },
+    {
+      "code": "COT",
+      "name": "Colombia Time",
+      "short_name": "Colombia Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": -300,
+      "utc_offset_display": "−05:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Colombia does not observe DST."
+      },
+      "iana": {
+        "primary": "America/Bogota",
+        "all": ["America/Bogota"]
+      },
+      "military_code": {
+        "name": "Romeo",
+        "letter": "R"
+      },
+      "countries": [
+        {
+          "name": "Colombia",
+          "population": 52000000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Bogotá",
+          "country": "Colombia",
+          "population": 7929000,
+          "iana": "America/Bogota",
+          "is_capital": true,
+          "is_financial_hub": true
+        },
+        {
+          "name": "Medellín",
+          "country": "Colombia",
+          "population": 2533000,
+          "iana": "America/Bogota"
+        },
+        {
+          "name": "Cali",
+          "country": "Colombia",
+          "population": 2284000,
+          "iana": "America/Bogota"
+        },
+        {
+          "name": "Barranquilla",
+          "country": "Colombia",
+          "population": 1327000,
+          "iana": "America/Bogota"
+        },
+        {
+          "name": "Cartagena",
+          "country": "Colombia",
+          "population": 914000,
+          "iana": "America/Bogota"
+        },
+        {
+          "name": "Bucaramanga",
+          "country": "Colombia",
+          "population": 582000,
+          "iana": "America/Bogota"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Colombia Stock Exchange",
+          "abbreviation": "BVC",
+          "city": "Bogotá",
+          "category": "securities exchange",
+          "trading_hours_local": "09:30-16:00"
+        },
+        {
+          "name": "Banco de la República",
+          "city": "Bogotá",
+          "category": "central bank"
+        },
+        {
+          "name": "Casa de Nariño",
+          "city": "Bogotá",
+          "category": "executive government"
+        },
+        {
+          "name": "Port of Cartagena",
+          "city": "Cartagena",
+          "category": "logistics hub"
+        }
+      ],
+      "geography": {
+        "description": "Colombia across the northern Andes and Caribbean coast, using a single UTC−5 time nationwide.",
+        "longitude_center": -74
+      },
+      "history": {
+        "adopted_year": 1914,
+        "note": "Colombia adopted UTC−5 as national standard time in the early 20th century and has not used modern recurring DST."
+      }
+    },
+    {
+      "code": "GST",
+      "name": "Gulf Standard Time",
+      "short_name": "Gulf Time",
+      "category": "civil_zone",
+      "utc_offset_minutes": 240,
+      "utc_offset_display": "+04:00",
+      "observes_dst": false,
+      "dst": {
+        "note": "Gulf Standard Time does not observe DST."
+      },
+      "iana": {
+        "primary": "Asia/Dubai",
+        "all": ["Asia/Dubai", "Asia/Muscat"]
+      },
+      "military_code": {
+        "name": "Delta",
+        "letter": "D"
+      },
+      "countries": [
+        {
+          "name": "United Arab Emirates",
+          "population": 9900000,
+          "observes_dst": false
+        },
+        {
+          "name": "Oman",
+          "population": 5200000,
+          "observes_dst": false
+        }
+      ],
+      "principal_cities": [
+        {
+          "name": "Dubai",
+          "country": "United Arab Emirates",
+          "population": 3655000,
+          "iana": "Asia/Dubai",
+          "is_financial_hub": true
+        },
+        {
+          "name": "Abu Dhabi",
+          "country": "United Arab Emirates",
+          "population": 1568000,
+          "iana": "Asia/Dubai",
+          "is_capital": true
+        },
+        {
+          "name": "Sharjah",
+          "country": "United Arab Emirates",
+          "population": 1800000,
+          "iana": "Asia/Dubai"
+        },
+        {
+          "name": "Muscat",
+          "country": "Oman",
+          "population": 1720000,
+          "iana": "Asia/Muscat",
+          "is_capital": true
+        },
+        {
+          "name": "Al Ain",
+          "country": "United Arab Emirates",
+          "population": 766000,
+          "iana": "Asia/Dubai"
+        },
+        {
+          "name": "Ajman",
+          "country": "United Arab Emirates",
+          "population": 504000,
+          "iana": "Asia/Dubai"
+        }
+      ],
+      "notable_institutions": [
+        {
+          "name": "Abu Dhabi Securities Exchange",
+          "abbreviation": "ADX",
+          "city": "Abu Dhabi",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-15:00"
+        },
+        {
+          "name": "Dubai Financial Market",
+          "abbreviation": "DFM",
+          "city": "Dubai",
+          "category": "securities exchange",
+          "trading_hours_local": "10:00-15:00"
+        },
+        {
+          "name": "Central Bank of the UAE",
+          "city": "Abu Dhabi",
+          "category": "central bank"
+        },
+        {
+          "name": "Dubai International Airport",
+          "city": "Dubai",
+          "category": "aviation hub"
+        }
+      ],
+      "geography": {
+        "description": "The southeastern Arabian Peninsula around the Persian Gulf and Gulf of Oman, anchored by the UAE and Oman.",
+        "longitude_center": 55
+      },
+      "history": {
+        "adopted_year": 1920,
+        "note": "Gulf states standardized around UTC+4 through the 20th century as regional administration and aviation networks modernized."
+      }
+    }
+  ]
+}
