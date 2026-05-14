@@ -1,5 +1,4 @@
 import { joinClasses } from './utils';
-
 export interface SwapButtonProps {
   currentSource: string;
   currentTarget: string;
