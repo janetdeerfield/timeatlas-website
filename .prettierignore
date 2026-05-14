@@ -6,3 +6,6 @@ dist/**
 
 # External sample workspace
 notebook-renderer-react-sample/**
+
+# Claude Code worktrees (checked-out branches; let each branch manage its own formatting)
+.claude/worktrees/**
