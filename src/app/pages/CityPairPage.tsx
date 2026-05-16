@@ -69,9 +69,7 @@ function computeTimeDifference(
   const h = Math.floor(absMin / 60);
   const m = absMin % 60;
   const timeStr =
-    m === 0
-      ? `${h} hour${h !== 1 ? 's' : ''}`
-      : `${h} hour${h !== 1 ? 's' : ''} ${m} minutes`;
+    m === 0 ? `${h} hour${h !== 1 ? 's' : ''}` : `${h} hour${h !== 1 ? 's' : ''} ${m} minutes`;
   return diffMin > 0
     ? `${toCode} is ${timeStr} ahead of ${fromCode} (standard time)`
     : `${toCode} is ${timeStr} behind ${fromCode} (standard time)`;
@@ -114,10 +112,7 @@ function formatFlightDuration(minutes: number): string {
 
 // ─── Difficulty badge ─────────────────────────────────────────────────────────
 
-const DIFFICULTY_CONFIG: Record<
-  MeetingDifficulty,
-  { label: string; className: string }
-> = {
+const DIFFICULTY_CONFIG: Record<MeetingDifficulty, { label: string; className: string }> = {
   easy: {
     label: 'Easy overlap',
     className: 'border-emerald-200 bg-emerald-100 text-emerald-800',
@@ -185,14 +180,14 @@ function buildConvertToLinks(toCode: string, currentSlug: string): InternalLinkB
 }
 
 function buildPopularLinks(currentSlug: string): InternalLinkBlockLink[] {
-  return POPULAR_PAIRS.filter(
-    ([src, tgt]) => pairSlug(src, tgt) !== currentSlug
-  ).map(([src, tgt]) => ({
-    href: `/${pairSlug(src, tgt)}`,
-    label: `${src} → ${tgt}`,
-    sourceCode: src,
-    targetCode: tgt,
-  }));
+  return POPULAR_PAIRS.filter(([src, tgt]) => pairSlug(src, tgt) !== currentSlug).map(
+    ([src, tgt]) => ({
+      href: `/${pairSlug(src, tgt)}`,
+      label: `${src} → ${tgt}`,
+      sourceCode: src,
+      targetCode: tgt,
+    })
+  );
 }
 
 // ─── Keep buildCommonLinks for the legacy ConversionGrid pill block ────────────
@@ -204,7 +199,9 @@ function buildCommonLinks(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: 
     .sort((a, b) => {
       if (a.abbr === toZone.abbr) return -1;
       if (b.abbr === toZone.abbr) return 1;
-      return Math.abs(a.utcOffset - fromZone.utcOffset) - Math.abs(b.utcOffset - fromZone.utcOffset);
+      return (
+        Math.abs(a.utcOffset - fromZone.utcOffset) - Math.abs(b.utcOffset - fromZone.utcOffset)
+      );
     })
     .map((zone) => `${fromZone.slugPart}-to-${zone.slugPart}`);
 
@@ -279,7 +276,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         )
       : pairData
         ? null // pair exists but zones not in V3 — skip callout
-        : page.faq[2]?.answer ?? null; // legacy fallback
+        : (page.faq[2]?.answer ?? null); // legacy fallback
 
   // Legacy pill links (kept until cityPairs.ts is deleted)
   const commonLinks = buildCommonLinks(page, fromZone, toZone);
@@ -289,12 +286,15 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
       <SEO title={title} description={description} path={`/${page.slug}`} />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-
         {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
         <div className="mb-6 text-sm font-open-sans text-slate-600">
-          <a href="/" className="text-indigo-600 hover:text-indigo-700">Home</a>
+          <a href="/" className="text-indigo-600 hover:text-indigo-700">
+            Home
+          </a>
           <span className="mx-2">/</span>
-          <a href="/convert" className="text-indigo-600 hover:text-indigo-700">Convert</a>
+          <a href="/convert" className="text-indigo-600 hover:text-indigo-700">
+            Convert
+          </a>
           <span className="mx-2">/</span>
           <span className="text-slate-900 font-semibold">{h1}</span>
         </div>
@@ -317,9 +317,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
               <TimePillPair fromZone={fromZone} toZone={toZone} use24Hour={use24Hour} />
             </div>
           )}
-          <h3 className="text-base font-semibold font-inter text-slate-700 mb-4">
-            Compare Times
-          </h3>
+          <h3 className="text-base font-semibold font-inter text-slate-700 mb-4">Compare Times</h3>
           <TimeTable
             conversions={page.conversions}
             fromZoneAbbr={page.fromZone}
@@ -369,12 +367,9 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         {pairData && (
           <Section title={`Best Meeting Times: ${page.fromZone} & ${page.toZone}`}>
             <div className="space-y-4 font-open-sans">
-
               {/* Difficulty */}
               <div className="flex items-center gap-3">
-                <span className="text-sm font-semibold text-slate-700">
-                  Scheduling difficulty:
-                </span>
+                <span className="text-sm font-semibold text-slate-700">Scheduling difficulty:</span>
                 <DifficultyBadge difficulty={pairData.meeting_difficulty} />
               </div>
 
@@ -556,9 +551,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         {/* TODO: remove this section when cityPairs.ts is deleted */}
         {commonLinks.length > 0 && (
           <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">
-              More Converters
-            </h2>
+            <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">More Converters</h2>
             <div className="flex flex-wrap gap-3">
               {commonLinks.map((link) => (
                 <a

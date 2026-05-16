@@ -65,9 +65,10 @@ export const ZONES_V3: readonly ZoneV3[] = zonesData.zones as unknown as ZoneV3[
 
 export const CURRENT_YEAR: number = zonesData.current_year;
 
-const ZONE_MAP_V3 = Object.fromEntries(
-  ZONES_V3.map((z) => [z.code.toUpperCase(), z])
-) as Record<string, ZoneV3>;
+const ZONE_MAP_V3 = Object.fromEntries(ZONES_V3.map((z) => [z.code.toUpperCase(), z])) as Record<
+  string,
+  ZoneV3
+>;
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
