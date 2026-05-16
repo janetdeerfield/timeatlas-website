@@ -502,7 +502,7 @@
           "name": "Canada (British Columbia, Yukon)",
           "population": 5300000,
           "observes_dst": "partial",
-          "note": "Yukon stays on PDT year-round (effectively MST)"
+          "note": "Yukon switched to year-round UTC-7 ('Yukon Standard Time') in November 2020 — clock-equivalent to MST but legally distinct, never observing DST. It no longer moves with BC's PDT cycle despite sharing the same clock time in winter."
         },
         {
           "name": "Mexico (Baja California)",
@@ -602,7 +602,8 @@
         "start_date_current_year": "2026-03-08",
         "end_date_current_year": "2026-11-01",
         "start_clock_change": "02:00 → 03:00",
-        "end_clock_change": "02:00 → 01:00"
+        "end_clock_change": "02:00 → 01:00",
+        "note": "Hyder, Alaska (population ~50, southeastern panhandle) de facto follows Pacific Time to align with neighboring Stewart, British Columbia — it is technically in AKST territory but observes PST/PDT in practice. This is an extreme edge case and does not affect zone coverage."
       },
       "iana": {
         "primary": "America/Anchorage",
@@ -1565,29 +1566,13 @@
       "category": "civil_zone",
       "utc_offset_minutes": 600,
       "utc_offset_display": "+10:00",
-      "observes_dst": "partial",
+      "observes_dst": false,
       "dst": {
-        "summer_code": "AEDT",
-        "summer_name": "Australian Eastern Daylight Time",
-        "summer_offset_minutes": 660,
-        "summer_offset_display": "+11:00",
-        "start_rule": "first_sunday_of_october",
-        "end_rule": "first_sunday_of_april",
-        "start_date_current_year": "2026-10-04",
-        "end_date_current_year": "2026-04-05",
-        "start_clock_change": "02:00 → 03:00",
-        "end_clock_change": "03:00 → 02:00",
-        "note": "New South Wales, Victoria, Tasmania, and the Australian Capital Territory observe DST; Queensland remains on AEST year-round."
+        "note": "This record represents the year-round UTC+10 designation used in Queensland, which does not observe DST. NSW, Victoria, Tasmania, and ACT use AEST as the winter half of a cycle that transitions to AEDT (UTC+11) in summer — see the AEDT record for those DST dates and rules."
       },
       "iana": {
-        "primary": "Australia/Sydney",
-        "all": [
-          "Australia/Sydney",
-          "Australia/Melbourne",
-          "Australia/Brisbane",
-          "Australia/Hobart",
-          "Australia/Canberra"
-        ]
+        "primary": "Australia/Brisbane",
+        "all": ["Australia/Brisbane", "Australia/Lindeman"]
       },
       "military_code": {
         "name": "Kilo",
@@ -1702,7 +1687,7 @@
         "end_date_current_year": "2026-04-05",
         "start_clock_change": "02:00 → 03:00",
         "end_clock_change": "03:00 → 02:00",
-        "note": "AEDT is the daylight-saving designation used in southeastern Australia; Queensland remains on AEST and is not represented by this daylight code."
+        "note": "AEDT is the daylight-saving designation used in southeastern Australia; Queensland remains on AEST (UTC+10) year-round and is not represented by this code. Two Australian territories have unusual DST offsets: Lord Howe Island (NSW) uses UTC+10:30 in winter and UTC+11 in summer — the only jurisdiction in the world with a 30-minute DST shift; Norfolk Island uses UTC+11 in winter and UTC+12 in summer, following the same transition dates as eastern states."
       },
       "iana": {
         "primary": "Australia/Sydney",
@@ -1819,7 +1804,7 @@
         "end_date_current_year": "2026-04-05",
         "start_clock_change": "02:00 → 03:00",
         "end_clock_change": "03:00 → 02:00",
-        "note": "South Australia observes DST; the Northern Territory remains on ACST year-round."
+        "note": "South Australia observes DST (ACDT, UTC+10:30); the Northern Territory remains on ACST year-round. SA has used the same Sunday transition dates as the eastern states since the 2008/09 DST season — older sources stating SA changes one week later are out of date."
       },
       "iana": {
         "primary": "Australia/Adelaide",
@@ -2011,7 +1996,8 @@
         "start_date_current_year": "2026-09-27",
         "end_date_current_year": "2026-04-05",
         "start_clock_change": "02:00 → 03:00",
-        "end_clock_change": "03:00 → 02:00"
+        "end_clock_change": "03:00 → 02:00",
+        "note": "New Zealand (Pacific/Auckland) transitions between NZST (UTC+12, winter) and NZDT (UTC+13, summer). NZDT is also represented as a separate record covering the daylight-time state specifically. Chatham Islands use separate offsets (UTC+12:45 / UTC+13:45) and are not included here."
       },
       "iana": {
         "primary": "Pacific/Auckland",
@@ -2761,7 +2747,7 @@
         "end_date_current_year": "2026-04-04",
         "start_clock_change": "00:00 → 01:00",
         "end_clock_change": "24:00 → 23:00",
-        "note": "Most of continental Chile observes DST; the Magallanes Region stays on UTC−3 year-round."
+        "note": "Continental Chile observes DST (CLT UTC−4 ↔ CLST UTC−3). Magallanes and Aysén regions remain on UTC−3 year-round (America/Punta_Arenas). Easter Island uses a separate offset (UTC−6 standard / UTC−5 summer). Chile's DST transitions occur at midnight local time (not 02:00 as in North America/Europe). When CLST is active, mainland Chile and Argentina are on the same clock time (UTC−3)."
       },
       "iana": {
         "primary": "America/Santiago",

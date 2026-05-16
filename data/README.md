@@ -24,15 +24,15 @@ Most "facts about a pair" are derivable. Don't store them in `pairs.json`:
 
 Only these are stored in `pairs.json` because they require human judgment:
 
-| Fact                                          | Why curated, not derived                                                                                                         |
-| :-------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `dst_relationship`                            | Could be derived but storing it as a label simplifies template logic. One of: synchronized, desynchronized, asymmetric, neither. |
-| `meeting_overlap`                             | A recommendation, not a calculation. Should respect 9–5 in both zones; for hard pairs, recommend the closest workable window.    |
-| `meeting_difficulty`                          | A judgment call (easy / moderate / hard).                                                                                        |
-| `notable_pairing`                             | The most genuinely unique content per pair — a sentence or two of context.                                                       |
-| `sample_source_city` and `sample_target_city` | Which specific city to feature for this pair (Mumbai for EST↔IST, Bangalore for some software contexts).                         |
-| `flight_route`                                | Manually researched from airline data.                                                                                           |
-| `common_use_cases`                            | Editorial judgment about what users actually want.                                                                               |
+| Fact                                          | Why curated, not derived                                                                                                                   |
+| :-------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| `dst_relationship`                            | Could be derived but storing it as a label simplifies template logic. One of: synchronized, desynchronized, asymmetric, inverted, neither. |
+| `meeting_overlap`                             | A recommendation, not a calculation. Should respect 9–5 in both zones; for hard pairs, recommend the closest workable window.              |
+| `meeting_difficulty`                          | A judgment call (easy / moderate / hard).                                                                                                  |
+| `notable_pairing`                             | The most genuinely unique content per pair — a sentence or two of context.                                                                 |
+| `sample_source_city` and `sample_target_city` | Which specific city to feature for this pair (Mumbai for EST↔IST, Bangalore for some software contexts).                                   |
+| `flight_route`                                | Manually researched from airline data.                                                                                                     |
+| `common_use_cases`                            | Editorial judgment about what users actually want.                                                                                         |
 
 ## Template logic — how the data drives the page
 
@@ -50,6 +50,7 @@ Conditional template selected by `pairs.json` → `dst_relationship`:
 - `synchronized` → "{source.short_name} and {target.short_name} both observe DST on the same schedule, so the {derived_diff} between {sample_source_city} and {sample_target_city} stays constant year-round."
 - `desynchronized` → "{source.short_name} and {target.short_name} both observe DST but on different schedules, so for two weeks each spring and one week each fall the usual {derived_diff} gap shifts to {variant_diff}."
 - `asymmetric` → "{country_without_dst} does not observe DST, but {country_with_dst} does — so the gap between {sample_source_city} and {sample_target_city} shifts from {std_diff} to {dst_diff} when {observing_country}'s clocks {direction} in {month}."
+- `inverted` → "{source.short_name} and {target.short_name} are in opposite hemispheres and both observe daylight saving — but on opposite-season schedules. When {northern_country}'s clocks spring forward in {month}, {southern_country}'s fall back, so the gap between {sample_source_city} and {sample_target_city} shifts between {summer_diff} and {winter_diff} four times a year."
 - `neither` → "Neither {source.country} nor {target.country} observes DST, so the {derived_diff} between {sample_source_city} and {sample_target_city} is constant every day of the year."
 
 ### 3\. "Why does {SOURCE} differ from {TARGET}?"
@@ -75,6 +76,7 @@ Multi-variant section based on the same `dst_relationship` value:
 - `synchronized` → 1 paragraph noting both zones change on the same dates, gap stays constant
 - `desynchronized` → table showing the differential across the year (4-5 distinct periods)
 - `asymmetric` → 1 paragraph explaining the seasonal shift, with specific dates from `zones.json`
+- `inverted` → 2 paragraphs: one explaining that both zones observe DST on opposite-hemisphere schedules; one showing a condensed calendar of the four annual shift points
 - `neither` → 1 paragraph emphasizing the constant offset
 
 ### 8\. Cities and institutions in each zone
@@ -105,7 +107,7 @@ Three sections, all crawlable:
 
 ## Generating the remaining pairs
 
-`pairs.json` includes 8 worked examples covering all four DST-relationship variants. The remaining \~100 pairs need to be generated with the same structure. Two approaches:
+`pairs.json` includes 9 worked examples covering all five DST-relationship variants. The target is ~250 P1 directional pairs across all 25 zones. Two approaches:
 
 **Approach A — manual \+ AI assistance.** Feed the current `zones.json`, `pairs.json` (as the pattern), and the list under `_remaining_pairs_to_generate` to an AI agent. Ask it to generate one record per pair following the variant pattern that matches each pair's DST relationship. Plan to spot-check 10-20% of generated records by hand.
 
@@ -134,14 +136,23 @@ Each year, update:
 
 ## Notes on edge cases
 
-- **Mexico** — abolished DST in 2022 except for \~30 municipalities along the US border. CST records reflect this.
-- **Russia** — no DST since 2014\. Not in this dataset yet but relevant for future MSK records.
-- **Brazil** — no DST since 2019\. Relevant for future BRT records.
+- **Mexico** — abolished DST in 2022 except for ~30 municipalities along the US border. CST records reflect this.
+- **Russia** — no DST since 2014. Not in this dataset yet but relevant for future MSK records.
+- **Brazil** — no DST since 2019. BRT record reflects this.
+- **Argentina** — no DST since 2009. ART record reflects this.
+- **Colombia, UAE** — COT and GST have never observed DST in the modern era.
 - **Sri Lanka** — uses UTC+5:30, same as IST, but its IANA identifier is `Asia/Colombo`. The dataset notes this.
-- **Yukon** — stays on PDT year-round (effectively MST in winter, PDT in summer). Edge case for PST records.
+- **Yukon** — switched to year-round UTC-7 ("Yukon Standard Time") in November 2020, clock-equivalent to MST but legally distinct, never observing DST. Noted in the PST zone's countries array.
 - **Arizona** — most of Arizona stays on MST year-round; the Navajo Nation within Arizona observes MDT. Edge case for MST records.
-- **IST military code** — half-hour offset zones don't have standard NATO codes. Marked as null in the dataset with an explanatory note.
+- **Hyder, Alaska** — tiny SE Alaska town (~50 pop.) that de facto follows Pacific Time to align with neighboring Stewart, BC. Noted in the AKST zone's dst block.
+- **Half-hour offset zones (IST, ACST) and military codes** — half-hour offset zones don't have standard NATO time-zone letters. Both IST and ACST are marked `military_code.letter: null` in the dataset with explanatory notes.
 - **GMT vs UTC** — different categories (`civil_zone` vs `reference_standard`) but same offset. Template should handle both. The IST/Irish Standard Time abbreviation conflict is noted in the IST record.
+- **AEST vs AEDT split** — AEST represents year-round UTC+10 as used in Queensland (IANA: Australia/Brisbane). NSW, Victoria, Tasmania, and ACT cycle between AEST and AEDT; the AEDT record covers their DST state.
+- **NZST vs NZDT split** — Unlike AEST/AEDT, there is no NZ zone that stays at UTC+12 year-round; all of NZ observes DST. NZST is modeled as observes_dst=true (transitions to NZDT); NZDT is a separate record covering the UTC+13 summer state.
+- **Australian/NZ DST and the inverted category** — AU/NZ DST zones paired with Northern Hemisphere DST zones get `dst_relationship: "inverted"` in pairs.json. The template for this variant needs a fifth content block.
+- **Lord Howe Island** — uses UTC+10:30 (winter) / UTC+11 (summer), the only jurisdiction with a 30-minute DST shift. Footnoted in the AEDT zone's dst.note; not a separate zone record.
+- **Chile regional split** — mainland Chile observes DST (CLT ↔ CLST), but Magallanes and Aysén remain on UTC−3 year-round. Easter Island uses separate offsets. Chile's transitions occur at midnight local, not 02:00. Noted in the CLT record.
+- **South Australia / NT DST** — SA observes DST (ACDT, UTC+10:30); NT does not. SA has aligned with eastern-state transition dates since the 2008/09 season — older sources stating SA changes one week later are out of date.
 
 ## File layout in the codebase
 
