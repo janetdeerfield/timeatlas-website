@@ -7,7 +7,10 @@ export function ConversionGrid() {
       {ZONE_LIST.map((zone) => {
         const destinations = ZONE_LIST.filter((z) => z.abbr !== zone.abbr);
         return (
-          <div key={zone.abbr} className="rounded-xl border border-indigo-100 bg-indigo-50/40 px-4 py-4">
+          <div
+            key={zone.abbr}
+            className="rounded-xl border border-indigo-100 bg-indigo-50/40 px-4 py-4"
+          >
             <p className="text-xs font-semibold font-inter text-indigo-500 uppercase tracking-wider mb-3">
               {zone.abbr} · {zone.city} →
             </p>

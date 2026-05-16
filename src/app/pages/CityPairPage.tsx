@@ -139,8 +139,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
             {/* DST relationship callout — unique per pair */}
             {page.faq[2] && (
               <p className="rounded-lg border border-amber-100 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-                <strong className="font-inter">Daylight Saving Time:</strong>{' '}
-                {page.faq[2].answer}
+                <strong className="font-inter">Daylight Saving Time:</strong> {page.faq[2].answer}
               </p>
             )}
             {/* Page-specific FAQ answers */}
