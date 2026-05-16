@@ -79,16 +79,22 @@ export function useTime({
   const [now, setNow] = useState(getInitialNow);
 
   useEffect(() => {
-    setNow(new Date());
+    let interval: ReturnType<typeof setInterval> | undefined;
 
-    const interval = setInterval(
-      () => {
-        setNow(new Date());
-      },
-      showMilliseconds ? 100 : 1000
-    );
+    const startTicking = () => {
+      setNow(new Date());
+      interval = setInterval(() => setNow(new Date()), showMilliseconds ? 100 : 1000);
+    };
 
-    return () => clearInterval(interval);
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      window.requestIdleCallback(startTicking);
+    } else {
+      setTimeout(startTicking, 0);
+    }
+
+    return () => {
+      if (interval !== undefined) clearInterval(interval);
+    };
   }, [showMilliseconds]);
 
   const hour12 = format === '12h';

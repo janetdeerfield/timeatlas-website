@@ -1,122 +1,31 @@
-import { useState } from 'react';
 import { ZONE_LIST } from '../../data/zones';
 import { trackConversionClick } from '../../utils/analytics';
 
-/**
- * A single conversion link pill shown in the expanded state.
- */
-function DestinationPill({
-  href,
-  label,
-  onClick,
-}: {
-  href: string;
-  label: string;
-  onClick: () => void;
-}) {
-  return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold font-inter text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-colors shadow-sm"
-    >
-      {label}
-    </a>
-  );
-}
-
-interface ExpandedDestinationsProps {
-  sourceAbbr: string;
-  sourceCity: string;
-  sourceSlugPart: string;
-}
-
-/**
- * Expanded panel showing all 10 destination links for a given source zone.
- */
-function ExpandedDestinations({
-  sourceAbbr,
-  sourceCity,
-  sourceSlugPart,
-}: ExpandedDestinationsProps) {
-  const destinations = ZONE_LIST.filter((z) => z.abbr !== sourceAbbr);
-
-  return (
-    <div className="rounded-xl border border-indigo-100 bg-indigo-50/40 px-4 py-4">
-      <p className="text-xs font-semibold font-inter text-indigo-500 uppercase tracking-wider mb-3">
-        {sourceAbbr} · {sourceCity} →
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {destinations.map((dest) => (
-          <DestinationPill
-            key={dest.abbr}
-            href={`/${sourceSlugPart}-to-${dest.slugPart}`}
-            label={`${sourceAbbr} → ${dest.abbr}`}
-            onClick={() => trackConversionClick(sourceAbbr, dest.abbr)}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/**
- * Interactive navigation grid for "Common Time Conversions".
- *
- * - Shows 11 top-level mini pill buttons (not direct links) in a responsive flex-wrap layout.
- * - Clicking a source pill expands all 10 destination links for that source directly below it.
- * - Only one source can be expanded at a time.
- *
- * Zone abbreviations follow the canonical TimeAtlas route spec: EST, CST, MST, PST, AKST, HST,
- * UTC, GMT, IST, CET, JST.
- *
- * By rendering destinations only when expanded (conditional render), search engines see no
- * hidden links, keeping on-page outbound links within a focused range.
- */
 export function ConversionGrid() {
-  const [expandedAbbr, setExpandedAbbr] = useState<string | null>(null);
-
-  const toggleZone = (abbr: string) => {
-    setExpandedAbbr((prev) => (prev === abbr ? null : abbr));
-  };
-
-  const activeZone = ZONE_LIST.find((z) => z.abbr === expandedAbbr) ?? null;
-
   return (
-    <div className="space-y-4">
-      <p className="text-[15px] font-open-sans text-slate-500">
-        Select a time zone to explore all conversions.
-      </p>
-
-      {/* Top-level source pills */}
-      <div className="flex flex-wrap gap-3">
-        {ZONE_LIST.map((zone) => {
-          const isExpanded = expandedAbbr === zone.abbr;
-          return (
-            <button
-              key={zone.abbr}
-              onClick={() => toggleZone(zone.abbr)}
-              aria-expanded={isExpanded}
-              className={`w-14 rounded-full border px-3 py-1.5 text-xs font-semibold font-inter transition-colors cursor-pointer flex items-center justify-center ${
-                isExpanded
-                  ? 'border-indigo-400 bg-indigo-600 text-white shadow'
-                  : 'border-slate-200 bg-white text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50'
-              }`}
-            >
-              {zone.abbr}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Expanded destination links — rendered only for the active source */}
-      {activeZone !== null && (
-        <ExpandedDestinations
-          sourceAbbr={activeZone.abbr}
-          sourceCity={activeZone.city}
-          sourceSlugPart={activeZone.slugPart}
-        />
-      )}
+    <div className="space-y-5">
+      {ZONE_LIST.map((zone) => {
+        const destinations = ZONE_LIST.filter((z) => z.abbr !== zone.abbr);
+        return (
+          <div key={zone.abbr} className="rounded-xl border border-indigo-100 bg-indigo-50/40 px-4 py-4">
+            <p className="text-xs font-semibold font-inter text-indigo-500 uppercase tracking-wider mb-3">
+              {zone.abbr} · {zone.city} →
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {destinations.map((dest) => (
+                <a
+                  key={dest.abbr}
+                  href={`/${zone.slugPart}-to-${dest.slugPart}`}
+                  onClick={() => trackConversionClick(zone.abbr, dest.abbr)}
+                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold font-inter text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-colors shadow-sm"
+                >
+                  {zone.abbr} → {dest.abbr}
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

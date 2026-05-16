@@ -21,10 +21,8 @@ function buildPageTitle(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: Zo
   )} Time) | TimeAtlas`;
 }
 
-function buildPageDescription(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
-  if (!fromZone || !toZone) return page.description;
-
-  return `Convert ${fromZone.fullName} (${fromZone.abbr}) to ${toZone.fullName} (${toZone.abbr}) instantly. See current time differences and compare both zones clearly.`;
+function buildPageDescription(page: CityPairPageData, _fromZone?: ZoneInfo, _toZone?: ZoneInfo) {
+  return page.description;
 }
 
 function buildH1(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
@@ -138,6 +136,13 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
               acts as the global reference point for civil time.
             </p>
             <p>{page.timeDifference}.</p>
+            {/* DST relationship callout — unique per pair */}
+            {page.faq[2] && (
+              <p className="rounded-lg border border-amber-100 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                <strong className="font-inter">Daylight Saving Time:</strong>{' '}
+                {page.faq[2].answer}
+              </p>
+            )}
             {/* Page-specific FAQ answers */}
             <div className="mt-4 space-y-4">
               {page.faq.map((item) => (
