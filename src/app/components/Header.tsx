@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 
-const logoImage = '/timeatlas-logo.png';
-
 interface HeaderProps {
   use24Hour: boolean;
   onToggleFormat: () => void;
@@ -34,16 +32,20 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoImage} alt="TimeAtlas Logo" className="h-8" />
-              <span
-                className="text-xs"
-                style={{
-                  fontFamily: 'Open Sans, sans-serif',
-                  color: '#6B7280',
-                }}
-              >
-                The Internet's Cleanest Time Tools
-              </span>
+              <img
+                src="/logo-conservatory.png"
+                alt="TimeAtlas"
+                width="48"
+                height="48"
+                className="h-8 w-auto"
+              />
+              <img
+                src="/logo-wordmark.png"
+                alt="TimeAtlas"
+                width="140"
+                height="32"
+                className="h-5 w-auto"
+              />
             </Link>
 
             {/* Navigation */}
@@ -112,7 +114,13 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
             {/* Top row: Logo */}
             <div className="flex items-center justify-center mb-2">
               <Link to="/" className="hover:opacity-80 transition-opacity">
-                <img src={logoImage} alt="TimeAtlas Logo" className="h-7" />
+                <img
+                  src="/logo-conservatory.png"
+                  alt="TimeAtlas"
+                  width="48"
+                  height="48"
+                  className="h-7 w-auto"
+                />
               </Link>
             </div>
 
