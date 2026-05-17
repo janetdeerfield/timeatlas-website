@@ -11,8 +11,7 @@ import {
   InternalLinkBlock,
   type InternalLinkBlockLink,
 } from '../components/time';
-import { cityPairs, type CityPairPageData } from '../data/cityPairs';
-import { ZONE_LIST, getZoneInfo, type ZoneInfo } from '../data/zones';
+import { getZoneInfo, type ZoneInfo } from '../data/zones';
 import { getZoneV3, zoneSlugPart, CURRENT_YEAR, type ZoneV3 } from '../data/zonesV3';
 import {
   getPairV3,
@@ -24,23 +23,35 @@ import {
   type DstRelationship,
 } from '../data/pairsV3';
 
-// ─── Existing title / SEO helpers (unchanged) ─────────────────────────────────
+// ─── SEO helpers ──────────────────────────────────────────────────────────────
 
 function titleZoneName(zone: ZoneInfo) {
   return zone.fullName.replace(/ Time$/, '');
 }
 
-function buildPageTitle(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
-  if (!fromZone || !toZone) return page.title;
+function buildPageTitle(
+  sourceCode: string,
+  targetCode: string,
+  fromZone?: ZoneInfo,
+  toZone?: ZoneInfo
+) {
+  if (!fromZone || !toZone) return `${sourceCode} to ${targetCode} Time Converter | TimeAtlas`;
   return `${fromZone.abbr} → ${toZone.abbr} Converter (${titleZoneName(fromZone)} to ${titleZoneName(toZone)} Time) | TimeAtlas`;
 }
 
-function buildPageDescription(page: CityPairPageData) {
-  return page.description;
+function buildPageDescription(
+  sourceCode: string,
+  targetCode: string,
+  fromZone?: ZoneInfo,
+  toZone?: ZoneInfo
+) {
+  if (!fromZone || !toZone)
+    return `Convert ${sourceCode} to ${targetCode} time instantly. Free time zone converter for meetings, travel, and remote work.`;
+  return `Convert ${fromZone.fullName} (${sourceCode}) to ${toZone.fullName} (${targetCode}) instantly. Free time zone converter for meetings, travel, and remote work.`;
 }
 
-function buildH1(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
-  if (!fromZone || !toZone) return page.h1;
+function buildH1(sourceCode: string, targetCode: string, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
+  if (!fromZone || !toZone) return `${sourceCode} to ${targetCode} Converter`;
   return `${fromZone.abbr} → ${toZone.abbr} Converter`;
 }
 
@@ -138,6 +149,34 @@ function DifficultyBadge({ difficulty }: { difficulty: MeetingDifficulty }) {
   );
 }
 
+// ─── Dynamic conversion table ─────────────────────────────────────────────────
+
+function formatHour(totalMin: number, abbr: string): string {
+  const norm = ((totalMin % 1440) + 1440) % 1440;
+  const h = Math.floor(norm / 60);
+  const m = norm % 60;
+  const ampm = h < 12 ? 'AM' : 'PM';
+  const h12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
+  return `${h12}:${m.toString().padStart(2, '0')} ${ampm} ${abbr}`;
+}
+
+function generateConversions(
+  sourceCode: string,
+  targetCode: string,
+  fromV3?: ZoneV3,
+  toV3?: ZoneV3
+): Array<{ from: string; to: string }> {
+  if (!fromV3 || !toV3) return [];
+  const diffMin = toV3.utc_offset_minutes - fromV3.utc_offset_minutes;
+  return Array.from({ length: 13 }, (_, i) => {
+    const sourceMin = (8 + i) * 60;
+    return {
+      from: formatHour(sourceMin, sourceCode),
+      to: formatHour(sourceMin + diffMin, targetCode),
+    };
+  });
+}
+
 // ─── Internal link builders ───────────────────────────────────────────────────
 
 const POPULAR_PAIRS: ReadonlyArray<readonly [string, string]> = [
@@ -190,100 +229,49 @@ function buildPopularLinks(currentSlug: string): InternalLinkBlockLink[] {
   );
 }
 
-// ─── Keep buildCommonLinks for the legacy ConversionGrid pill block ────────────
-// TODO: remove once cityPairs.ts is deleted and InternalLinkBlock is the sole link surface
-function buildCommonLinks(page: CityPairPageData, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
-  if (!fromZone || !toZone) return page.related;
-
-  const preferredTargets = ZONE_LIST.filter((zone) => zone.abbr !== fromZone.abbr)
-    .sort((a, b) => {
-      if (a.abbr === toZone.abbr) return -1;
-      if (b.abbr === toZone.abbr) return 1;
-      return (
-        Math.abs(a.utcOffset - fromZone.utcOffset) - Math.abs(b.utcOffset - fromZone.utcOffset)
-      );
-    })
-    .map((zone) => `${fromZone.slugPart}-to-${zone.slugPart}`);
-
-  const preferredSlugs = [
-    ...preferredTargets,
-    `${toZone.slugPart}-to-${fromZone.slugPart}`,
-    'pst-to-est',
-    'est-to-pst',
-    'utc-to-est',
-    'gmt-to-est',
-  ];
-
-  const links = preferredSlugs
-    .map((slug) => cityPairs.find((item) => item.slug === slug))
-    .filter((item): item is CityPairPageData => Boolean(item))
-    .filter((item) => item.slug !== page.slug)
-    .map((item) => ({ href: `/${item.slug}`, label: `${item.fromZone} → ${item.toZone}` }));
-
-  const unique = new Map<string, { href: string; label: string }>();
-  for (const link of [...links, ...page.related]) {
-    if (link.href !== `/${page.slug}` && !unique.has(link.href)) unique.set(link.href, link);
-  }
-  return Array.from(unique.values()).slice(0, 7);
-}
-
 // ─── Page component ───────────────────────────────────────────────────────────
 
 interface CityPairPageProps {
-  page: CityPairPageData;
+  pair: PairV3;
   use24Hour?: boolean;
 }
 
-export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
-  // Legacy zone lookup (drives existing interactive components)
-  const fromZone = getZoneInfo(page.fromZone);
-  const toZone = getZoneInfo(page.toZone);
+export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
+  const sourceCode = pair.source_code;
+  const targetCode = pair.target_code;
+  const currentSlug = pairSlug(sourceCode, targetCode);
 
-  // V3 zone lookup (drives new data-driven sections)
-  const fromZoneV3 = getZoneV3(page.fromZone);
-  const toZoneV3 = getZoneV3(page.toZone);
+  const fromZone = getZoneInfo(sourceCode);
+  const toZone = getZoneInfo(targetCode);
+  const fromZoneV3 = getZoneV3(sourceCode);
+  const toZoneV3 = getZoneV3(targetCode);
+  const pairData: PairV3 = pair;
 
-  // Pair lookup (optional — not all slugs are in pairs.json yet)
-  const pairData: PairV3 | undefined = getPairV3(page.fromZone, page.toZone);
+  const title = buildPageTitle(sourceCode, targetCode, fromZone, toZone);
+  const description = buildPageDescription(sourceCode, targetCode, fromZone, toZone);
+  const h1 = buildH1(sourceCode, targetCode, fromZone, toZone);
 
-  const title = buildPageTitle(page, fromZone, toZone);
-  const description = buildPageDescription(page);
-  const h1 = buildH1(page, fromZone, toZone);
-
-  const currentSlug = page.slug;
-  const convertFromLinks = buildConvertFromLinks(page.fromZone, currentSlug);
-  const convertToLinks = buildConvertToLinks(page.toZone, currentSlug);
+  const convertFromLinks = buildConvertFromLinks(sourceCode, currentSlug);
+  const convertToLinks = buildConvertToLinks(targetCode, currentSlug);
   const popularLinks = buildPopularLinks(currentSlug);
 
-  // Intro: prefer curated notable_pairing, fall back to legacy page.intro
-  const introText = pairData?.notable_pairing ?? page.intro;
+  const introText = pairData.notable_pairing;
 
-  // Time difference: prefer computed from V3 data, fall back to legacy field
   const timeDiffText =
     fromZoneV3 && toZoneV3
-      ? computeTimeDifference(page.fromZone, page.toZone, fromZoneV3, toZoneV3)
-      : page.timeDifference;
+      ? computeTimeDifference(sourceCode, targetCode, fromZoneV3, toZoneV3)
+      : `${sourceCode} and ${targetCode} time conversion`;
 
-  // DST callout: derived from pair data if available
   const dstCallout =
-    pairData && fromZoneV3 && toZoneV3
-      ? dstRelationshipText(
-          pairData.dst_relationship,
-          page.fromZone,
-          page.toZone,
-          fromZoneV3,
-          toZoneV3
-        )
-      : pairData
-        ? null // pair exists but zones not in V3 — skip callout
-        : (page.faq[2]?.answer ?? null); // legacy fallback
+    fromZoneV3 && toZoneV3
+      ? dstRelationshipText(pairData.dst_relationship, sourceCode, targetCode, fromZoneV3, toZoneV3)
+      : null;
 
-  // Legacy pill links (kept until cityPairs.ts is deleted)
-  const commonLinks = buildCommonLinks(page, fromZone, toZone);
+  const conversions = generateConversions(sourceCode, targetCode, fromZoneV3, toZoneV3);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <SEO title={title} description={description} path={`/${page.slug}`} />
+      <SEO title={title} description={description} path={`/${currentSlug}`} />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
@@ -318,11 +306,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
             </div>
           )}
           <h3 className="text-base font-semibold font-inter text-slate-700 mb-4">Compare Times</h3>
-          <TimeTable
-            conversions={page.conversions}
-            fromZoneAbbr={page.fromZone}
-            toZoneAbbr={page.toZone}
-          />
+          <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} />
         </Section>
 
         {/* ── 3. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}
@@ -346,26 +330,12 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
                 <strong className="font-inter">Daylight Saving Time:</strong> {dstCallout}
               </p>
             )}
-
-            {/* FAQ items (legacy field — retained for scaffold period) */}
-            {page.faq.length > 0 && (
-              <div className="mt-4 space-y-4">
-                {page.faq.map((item) => (
-                  <div key={item.question}>
-                    <h3 className="font-semibold font-inter text-slate-900 mb-1">
-                      {item.question}
-                    </h3>
-                    <p>{item.answer}</p>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         </Section>
 
         {/* ── 5. BEST MEETING TIMES (data-driven, conditional) ────────────── */}
         {pairData && (
-          <Section title={`Best Meeting Times: ${page.fromZone} & ${page.toZone}`}>
+          <Section title={`Best Meeting Times: ${sourceCode} & ${targetCode}`}>
             <div className="space-y-4 font-open-sans">
               {/* Difficulty */}
               <div className="flex items-center gap-3">
@@ -378,7 +348,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
                 <div className="grid grid-cols-2 gap-6 mb-3">
                   <div>
                     <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
-                      {page.fromZone}
+                      {sourceCode}
                     </p>
                     <p className="text-lg font-bold font-inter text-slate-900">
                       {pairData.meeting_overlap.start_source}–{pairData.meeting_overlap.end_source}
@@ -389,7 +359,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
                   </div>
                   <div>
                     <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
-                      {page.toZone}
+                      {targetCode}
                     </p>
                     <p className="text-lg font-bold font-inter text-slate-900">
                       {pairData.meeting_overlap.start_target}–{pairData.meeting_overlap.end_target}
@@ -524,7 +494,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
         {/* ── 9. INTERNAL LINK BLOCKS ─────────────────────────────────────── */}
         {convertFromLinks.length > 0 && (
           <InternalLinkBlock
-            title={`Convert from ${fromZoneV3?.short_name ?? page.fromZone}`}
+            title={`Convert from ${fromZoneV3?.short_name ?? sourceCode}`}
             links={convertFromLinks}
             variant="convert-from"
             className="mb-10"
@@ -533,7 +503,7 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
 
         {convertToLinks.length > 0 && (
           <InternalLinkBlock
-            title={`Convert to ${toZoneV3?.short_name ?? page.toZone}`}
+            title={`Convert to ${toZoneV3?.short_name ?? targetCode}`}
             links={convertToLinks}
             variant="convert-to"
             className="mb-10"
@@ -546,25 +516,6 @@ export function CityPairPage({ page, use24Hour = false }: CityPairPageProps) {
           variant="popular"
           className="mb-10"
         />
-
-        {/* ── LEGACY: Common Time Conversions pill block ───────────────────── */}
-        {/* TODO: remove this section when cityPairs.ts is deleted */}
-        {commonLinks.length > 0 && (
-          <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-bold font-inter text-slate-900 mb-4">More Converters</h2>
-            <div className="flex flex-wrap gap-3">
-              {commonLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-full border border-slate-200 px-4 py-2 text-sm font-open-sans text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 transition-colors"
-                >
-                  {link.label} →
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
       </main>
 
       <Footer />

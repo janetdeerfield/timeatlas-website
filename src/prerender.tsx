@@ -7,7 +7,7 @@ import {
   type StaticHandlerContext,
 } from 'react-router';
 import { createRouteObjects } from './app/routes';
-import { cityPairs } from './app/data/cityPairs';
+import { ALL_PAIRS, pairSlug } from './app/data/pairsV3';
 
 const coreRoutes = [
   '/',
@@ -22,7 +22,10 @@ const coreRoutes = [
   '/404',
 ];
 
-export const prerenderRoutes = [...coreRoutes, ...cityPairs.map((page) => `/${page.slug}`)];
+export const prerenderRoutes = [
+  ...coreRoutes,
+  ...ALL_PAIRS.map((pair) => `/${pairSlug(pair.source_code, pair.target_code)}`),
+];
 
 export async function renderPath(path: string) {
   const routes = createRouteObjects({

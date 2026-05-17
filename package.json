@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/prerender.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "node scripts/generate-sitemap.mjs && vite build && vite build --ssr src/prerender.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "validate:sitemap": "node scripts/validate-citypairs-sitemap.mjs",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "format": "prettier --write . --ignore-path .gitignore",
     "format:check": "prettier --check . --ignore-path .gitignore",
     "lint": "eslint . --ext .ts,.tsx",
