@@ -1,3 +1,13 @@
+# ==========================================
+# LAYER 1: HTTPS ENFORCEMENT
+# ==========================================
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ==========================================
+# LAYER 2: LEGACY REDIRECT MAP (301s)
+# ==========================================
 # Legacy TimeAtlas city-pair URL redirects.
 # Keep these above the SPA fallback so Apache returns the 301 before /index.html.
 Redirect 301 /akt-to-cet /akst-to-cet
@@ -99,9 +109,18 @@ Redirect 301 /utc-to-ht /utc-to-hst
 Redirect 301 /utc-to-mt /utc-to-mst
 Redirect 301 /utc-to-pt /utc-to-pst
 
-RewriteEngine On
+# ==========================================
+# LAYER 3: STATIC HTML RESOLUTION & SPA FALLBACK
+# ==========================================
 RewriteBase /
 
+# 1. First, check if the request matches a physical .html file
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 2. If no .html file exists, THEN fallback to index.html (React Router handles 404s)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
