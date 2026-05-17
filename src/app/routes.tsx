@@ -10,7 +10,7 @@ import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { NotFound } from './pages/NotFound';
 import { CityPairPage } from './pages/CityPairPage';
-import { cityPairs } from './data/cityPairs';
+import { ALL_PAIRS, pairSlug } from './data/pairsV3';
 import { RootLayout } from './pages/RootLayout';
 
 interface RouteConfig {
@@ -68,10 +68,10 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
         element: <Terms />,
       },
 
-      // Dynamic city pair routes generated from data
-      ...cityPairs.map((pair) => ({
-        path: pair.slug,
-        element: <CityPairPage page={pair} />,
+      // Dynamic city pair routes generated from pairs.json
+      ...ALL_PAIRS.map((pair) => ({
+        path: pairSlug(pair.source_code, pair.target_code),
+        element: <CityPairPage pair={pair} />,
       })),
       {
         path: '*',

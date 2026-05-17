@@ -44,7 +44,7 @@ export interface PairV3 {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 // Filter entries that have _variant-only keys (metadata rows without source_code)
-const ALL_PAIRS: PairV3[] = (pairsData.pairs as unknown as Array<Record<string, unknown>>)
+export const ALL_PAIRS: PairV3[] = (pairsData.pairs as unknown as Array<Record<string, unknown>>)
   .filter((p) => typeof p.source_code === 'string' && typeof p.target_code === 'string')
   .map((p) => p as unknown as PairV3);
 
