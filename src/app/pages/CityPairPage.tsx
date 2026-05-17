@@ -29,13 +29,22 @@ function titleZoneName(zone: ZoneInfo) {
   return zone.fullName.replace(/ Time$/, '');
 }
 
-function buildPageTitle(sourceCode: string, targetCode: string, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
-  if (!fromZone || !toZone)
-    return `${sourceCode} to ${targetCode} Time Converter | TimeAtlas`;
+function buildPageTitle(
+  sourceCode: string,
+  targetCode: string,
+  fromZone?: ZoneInfo,
+  toZone?: ZoneInfo
+) {
+  if (!fromZone || !toZone) return `${sourceCode} to ${targetCode} Time Converter | TimeAtlas`;
   return `${fromZone.abbr} → ${toZone.abbr} Converter (${titleZoneName(fromZone)} to ${titleZoneName(toZone)} Time) | TimeAtlas`;
 }
 
-function buildPageDescription(sourceCode: string, targetCode: string, fromZone?: ZoneInfo, toZone?: ZoneInfo) {
+function buildPageDescription(
+  sourceCode: string,
+  targetCode: string,
+  fromZone?: ZoneInfo,
+  toZone?: ZoneInfo
+) {
   if (!fromZone || !toZone)
     return `Convert ${sourceCode} to ${targetCode} time instantly. Free time zone converter for meetings, travel, and remote work.`;
   return `Convert ${fromZone.fullName} (${sourceCode}) to ${toZone.fullName} (${targetCode}) instantly. Free time zone converter for meetings, travel, and remote work.`;
@@ -161,7 +170,10 @@ function generateConversions(
   const diffMin = toV3.utc_offset_minutes - fromV3.utc_offset_minutes;
   return Array.from({ length: 13 }, (_, i) => {
     const sourceMin = (8 + i) * 60;
-    return { from: formatHour(sourceMin, sourceCode), to: formatHour(sourceMin + diffMin, targetCode) };
+    return {
+      from: formatHour(sourceMin, sourceCode),
+      to: formatHour(sourceMin + diffMin, targetCode),
+    };
   });
 }
 
@@ -294,11 +306,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             </div>
           )}
           <h3 className="text-base font-semibold font-inter text-slate-700 mb-4">Compare Times</h3>
-          <TimeTable
-            conversions={conversions}
-            fromZoneAbbr={sourceCode}
-            toZoneAbbr={targetCode}
-          />
+          <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} />
         </Section>
 
         {/* ── 3. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}
@@ -322,7 +330,6 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                 <strong className="font-inter">Daylight Saving Time:</strong> {dstCallout}
               </p>
             )}
-
           </div>
         </Section>
 
@@ -509,7 +516,6 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
           variant="popular"
           className="mb-10"
         />
-
       </main>
 
       <Footer />
