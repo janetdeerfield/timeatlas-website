@@ -31,21 +31,20 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           {/* Desktop Header */}
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Link to="/" className="flex flex-col hover:opacity-80 transition-opacity">
               <img
                 src="/logo-conservatory.png"
                 alt="TimeAtlas"
-                width="48"
-                height="48"
+                width="420"
+                height="96"
                 className="h-8 w-auto"
               />
-              <img
-                src="/logo-wordmark.png"
-                alt="TimeAtlas"
-                width="140"
-                height="32"
-                className="h-5 w-auto"
-              />
+              <span
+                className="text-xs mt-0.5"
+                style={{ fontFamily: 'Open Sans, sans-serif', color: '#6B7280' }}
+              >
+                The Internet's Cleanest Time Tools
+              </span>
             </Link>
 
             {/* Navigation */}

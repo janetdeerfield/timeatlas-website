@@ -2,7 +2,7 @@
 
 The Internet's cleanest time tools platform. A modern, responsive web application for timezone management, world clocks, meeting planning, and time education.
 
-**Live**: [timeatlas.com](https://timeatlas.com) | **Design**: [Figma](https://www.figma.com/design/ZKruc0E88EPk8Rn5iYkmZJ/TimeAtlas)
+**Live**: [timeatlas.com](https://timeatlas.com) | **Design**: [Figma](https://www.figma.com/design/M4JLEIfGTvj1QsK5ZxeB8k/TimeAtlas---Design-System?node-id=0-1&m=dev&t=HmpCYtm4HJJ1oZYP-1)
 
 ---
 
