@@ -31,16 +31,16 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           {/* Desktop Header */}
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex flex-col hover:opacity-80 transition-opacity">
+            <Link to="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
               <img
                 src="/logo-wordmark.png"
                 alt="TimeAtlas"
                 width="420"
                 height="96"
-                className="h-8 w-auto"
+                className="h-8 w-auto object-contain"
               />
               <span
-                className="text-xs mt-0.5"
+                className="text-xs sm:text-sm font-medium hidden sm:block"
                 style={{ fontFamily: 'Open Sans, sans-serif', color: '#6B7280' }}
               >
                 The Internet's Cleanest Time Tools
