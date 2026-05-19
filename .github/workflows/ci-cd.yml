@@ -40,27 +40,3 @@ jobs:
           name: dist-${{ github.run_id }}-${{ matrix.node-version }}
           path: dist/
           retention-days: 5
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    steps:
-      - uses: actions/checkout@v5
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v5
-        with:
-          name: dist-${{ github.run_id }}-24.x
-          path: dist/
-
-      - name: Deploy to production
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-        run: |
-          echo "Deploy configuration: Update with your hosting provider"
-          echo "Supported: Vercel, Netlify, SSH, AWS S3, GitHub Pages"
-          ls -la dist/

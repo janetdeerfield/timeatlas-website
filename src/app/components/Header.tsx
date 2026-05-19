@@ -33,7 +33,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
             {/* Logo */}
             <Link to="/" className="flex flex-col hover:opacity-80 transition-opacity">
               <img
-                src="/logo-conservatory.png"
+                src="/logo-wordmark.png"
                 alt="TimeAtlas"
                 width="420"
                 height="96"
