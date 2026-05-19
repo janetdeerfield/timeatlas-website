@@ -78,6 +78,13 @@ export function Convert({ use24Hour }: ConvertProps) {
       />
       <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         <div className="text-center mb-12">
+          <img
+            src="/icon-conservatory.png"
+            alt="TimeAtlas Icon"
+            width="64"
+            height="64"
+            className="mx-auto mb-4"
+          />
           <h1
             className="text-5xl font-bold mb-3"
             style={{
