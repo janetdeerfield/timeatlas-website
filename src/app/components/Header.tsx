@@ -37,14 +37,8 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                 alt="TimeAtlas"
                 width="420"
                 height="96"
-                className="h-8 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
-              <span
-                className="text-xs sm:text-sm font-medium hidden sm:block"
-                style={{ fontFamily: 'Open Sans, sans-serif', color: '#6B7280' }}
-              >
-                The Internet's Cleanest Time Tools
-              </span>
             </Link>
 
             {/* Navigation */}
@@ -114,29 +108,16 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
             <div className="flex items-center justify-center mb-2">
               <Link to="/" className="hover:opacity-80 transition-opacity">
                 <img
-                  src="/logo-conservatory.png"
+                  src="/logo-wordmark.png"
                   alt="TimeAtlas"
-                  width="48"
-                  height="48"
-                  className="h-7 w-auto"
+                  width="420"
+                  height="96"
+                  className="h-9 w-auto object-contain"
                 />
               </Link>
             </div>
 
-            {/* Second row: Tagline */}
-            <div className="text-center mb-3">
-              <span
-                className="text-xs"
-                style={{
-                  fontFamily: 'Open Sans, sans-serif',
-                  color: '#6B7280',
-                }}
-              >
-                The Internet's Cleanest Time Tools
-              </span>
-            </div>
-
-            {/* Third row: Controls */}
+            {/* Second row: Controls */}
             <div className="flex items-center justify-center gap-3">
               {/* 12h/24h Toggle */}
               <div className="flex items-center gap-2 text-sm">
