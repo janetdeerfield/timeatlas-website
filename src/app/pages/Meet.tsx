@@ -429,7 +429,7 @@ export function Meet({ use24Hour }: MeetProps) {
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
                           fontSize: '13px',
-                          color: '#6B7280',
+                          color: '#94A3B8',
                           marginTop: '2px',
                           fontVariantNumeric: 'tabular-nums',
                         }}

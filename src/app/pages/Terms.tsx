@@ -180,7 +180,7 @@ export function Terms() {
           <p
             style={{
               fontFamily: 'Open Sans, sans-serif',
-              color: '#6B7280',
+              color: '#94A3B8',
               fontSize: '14px',
               lineHeight: '24px',
               marginTop: '48px',

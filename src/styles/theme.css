@@ -2,17 +2,42 @@
 
 :root {
   /* TimeAtlas Color System */
-  --color-primary-indigo: #2e45f0;
-  --color-laser-blue: #005ee9;
-  --color-steel-blue: #0a84d0;
-  --color-wisteria-blue: #8495cb;
-  --color-onyx: #080a0c;
-  --color-charcoal-blue: #364151;
-  --color-border: #d9dee6;
-  --color-border-light: #e6e9ee;
-  --color-panel: #f2efea;
-  --color-soft-mint: #f0f9f3;
-  --color-page-bg: #fefefe;
+  --bg-base: #f7f8fa;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f3f5;
+  --bg-elevated: #e9ecef;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --text-muted: #8595ad;
+  --text-inverse: #ffffff;
+
+  --accent-convert: #1b6bb3;
+  --accent-world: #2359a1;
+  --accent-meet: #224fb8;
+  --accent-dev: #1c469c;
+
+  --border-subtle: #e2e8f0;
+  --border-medium: #e5e7eb;
+  --border-strong: #cbd5e1;
+
+  --gradient-atmosphere-start: #1b6bb3;
+  --gradient-atmosphere-mid: #2359a1;
+  --gradient-atmosphere-end: #1c469c;
+
+  /* Legacy aliases for existing component usage */
+  --color-primary-indigo: var(--accent-meet);
+  --color-laser-blue: var(--accent-world);
+  --color-steel-blue: var(--accent-convert);
+  --color-wisteria-blue: var(--text-muted);
+  --color-onyx: var(--text-primary);
+  --color-charcoal-blue: var(--text-secondary);
+  --color-border: var(--border-subtle);
+  --color-border-light: var(--border-medium);
+  --color-panel: var(--bg-subtle);
+  --color-soft-mint: var(--bg-elevated);
+  --color-page-bg: var(--bg-base);
 
   /* Font System */
   --font-display: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
@@ -20,23 +45,23 @@
   --font-size: 16px;
   --background: var(--color-page-bg);
   --foreground: var(--color-onyx);
-  --card: #fff;
+  --card: var(--bg-card);
   --card-foreground: var(--color-onyx);
-  --popover: #fff;
+  --popover: var(--bg-card);
   --popover-foreground: var(--color-onyx);
   --primary: var(--color-primary-indigo);
-  --primary-foreground: #fff;
+  --primary-foreground: var(--text-inverse);
   --secondary: var(--color-laser-blue);
-  --secondary-foreground: #fff;
+  --secondary-foreground: var(--text-inverse);
   --muted: var(--color-panel);
   --muted-foreground: var(--color-charcoal-blue);
   --accent: var(--color-steel-blue);
-  --accent-foreground: #fff;
+  --accent-foreground: var(--text-inverse);
   --destructive: #d4183d;
-  --destructive-foreground: #fff;
+  --destructive-foreground: var(--text-inverse);
   --border: var(--color-border);
   --input: transparent;
-  --input-background: #fff;
+  --input-background: var(--bg-card);
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;

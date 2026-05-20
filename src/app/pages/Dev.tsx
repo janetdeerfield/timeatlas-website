@@ -165,7 +165,7 @@ export function Dev() {
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
-                    color: '#8495CB',
+                    color: '#8595AD',
                   }}
                 >
                   Coordinated Universal Time (UTC) - The primary time standard
@@ -215,7 +215,7 @@ export function Dev() {
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
-                    color: '#8495CB',
+                    color: '#8595AD',
                   }}
                 >
                   Seconds since January 1, 1970 00:00:00 UTC
@@ -265,7 +265,7 @@ export function Dev() {
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
-                    color: '#8495CB',
+                    color: '#8595AD',
                   }}
                 >
                   International standard for date and time representation
@@ -315,7 +315,7 @@ export function Dev() {
                   className="text-sm mt-2"
                   style={{
                     fontFamily: 'Open Sans, sans-serif',
-                    color: '#8495CB',
+                    color: '#8595AD',
                   }}
                 >
                   IANA timezone identifier

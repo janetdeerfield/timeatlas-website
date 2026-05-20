@@ -228,7 +228,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               className="text-sm mb-4"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
-                color: '#8495CB',
+                color: '#8595AD',
               }}
             >
               {fromCity.timezoneDisplay || `${fromCity.timezoneAbbrev} · ${fromCity.utcOffset}`}
@@ -274,7 +274,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               className="text-sm mb-4"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
-                color: '#8495CB',
+                color: '#8595AD',
               }}
             >
               {toCity.timezoneDisplay || `${toCity.timezoneAbbrev} · ${toCity.utcOffset}`}
@@ -1105,7 +1105,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'utc' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'utc' && (
@@ -1147,7 +1147,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'gmt' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'gmt' && (
@@ -1190,7 +1190,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'meridian' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'meridian' && (
@@ -1235,7 +1235,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'idl' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'idl' && (
@@ -1280,7 +1280,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'iso' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'iso' && (
@@ -1325,7 +1325,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'unix' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'unix' && (
@@ -1369,7 +1369,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'dst' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'dst' && (
@@ -1414,7 +1414,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'aoe' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'aoe' && (
@@ -1458,7 +1458,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'us-zones' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'us-zones' && (
@@ -1502,7 +1502,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'et-diff' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'et-diff' && (
@@ -1545,7 +1545,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'minutes' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'minutes' && (
@@ -1586,7 +1586,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'seconds' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'seconds' && (
@@ -1627,7 +1627,7 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'hours' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8495CB' }}
+                  style={{ color: '#8595AD' }}
                 />
               </button>
               {openAccordion === 'hours' && (
