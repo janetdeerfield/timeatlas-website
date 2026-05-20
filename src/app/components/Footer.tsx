@@ -116,7 +116,6 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
         </div>
 
         {/* Bottom */}
