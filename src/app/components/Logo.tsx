@@ -5,7 +5,12 @@ interface LogoProps {
   alt?: string;
 }
 
-export function Logo({ className = 'h-10 w-auto', width = 420, height = 96, alt = 'TimeAtlas' }: LogoProps) {
+export function Logo({
+  className = 'h-10 w-auto',
+  width = 420,
+  height = 96,
+  alt = 'TimeAtlas',
+}: LogoProps) {
   return (
     <picture>
       <source srcSet="/logo-wordmark.webp 1x, /logo-wordmark.webp 2x" type="image/webp" />
