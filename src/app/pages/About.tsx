@@ -187,8 +187,7 @@ export function About() {
               }}
             >
               <strong>TimeAtlas</strong>
-              <br />
-              A time observatory for the internet
+              <br />A time observatory for the internet
             </p>
 
             {/* CTA */}
