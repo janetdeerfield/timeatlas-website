@@ -1,6 +1,4 @@
 // src/app/components/Footer.tsx (Add Time Tools section)
-import { Mail, Github, Linkedin } from 'lucide-react';
-
 export function Footer() {
   return (
     <footer className="mt-0" style={{ backgroundColor: '#080A0C', borderTop: 'none' }}>
@@ -119,58 +117,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
-          <div>
-            <h4
-              className="font-semibold mb-4"
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                color: '#FFFFFF',
-                fontSize: '14px',
-              }}
-            >
-              Connect
-            </h4>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={(e) =>
-                  (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')
-                }
-              >
-                <Github size={20} style={{ color: '#FFFFFF', transition: 'color 0.2s' }} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={(e) =>
-                  (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')
-                }
-              >
-                <Linkedin size={20} style={{ color: '#FFFFFF', transition: 'color 0.2s' }} />
-              </a>
-              <a
-                href="mailto:hello@timeatlas.co"
-                onMouseEnter={(e) =>
-                  (e.currentTarget.querySelector('svg')!.style.color = '#8495CB')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.querySelector('svg')!.style.color = '#FFFFFF')
-                }
-              >
-                <Mail size={20} style={{ color: '#FFFFFF', transition: 'color 0.2s' }} />
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Bottom */}
