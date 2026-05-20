@@ -385,7 +385,8 @@ export function Home({ use24Hour }: HomeProps) {
           <section
             className="py-16 pb-20"
             style={{
-              background: 'linear-gradient(135deg, #8495CB 0%, #3A5FB8 50%, #06B6D4 100%)',
+              background:
+                'linear-gradient(135deg, var(--gradient-atmosphere-start) 0%, var(--gradient-atmosphere-mid) 50%, var(--gradient-atmosphere-end) 100%)',
             }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -393,7 +394,7 @@ export function Home({ use24Hour }: HomeProps) {
                 className="text-3xl font-bold mb-8"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  color: '#080A0C',
+                  color: '#FFFFFF',
                 }}
               >
                 Fun with Time
