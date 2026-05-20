@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   use24Hour: boolean;
@@ -32,13 +33,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <img
-                src="/logo-wordmark.png"
-                alt="TimeAtlas"
-                width="420"
-                height="96"
-                className="h-10 w-auto object-contain"
-              />
+              <Logo className="h-10 w-auto" />
             </Link>
 
             {/* Navigation */}
@@ -107,13 +102,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
             {/* Top row: Logo */}
             <div className="flex items-center justify-center mb-2">
               <Link to="/" className="hover:opacity-80 transition-opacity">
-                <img
-                  src="/logo-wordmark.png"
-                  alt="TimeAtlas"
-                  width="420"
-                  height="96"
-                  className="h-9 w-auto object-contain"
-                />
+                <Logo className="h-9 w-auto" />
               </Link>
             </div>
 
