@@ -106,7 +106,10 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           <div className="md:hidden py-3">
             {/* Top row: Logo + Tagline */}
             <div className="flex flex-col items-center justify-center mb-2">
-              <Link to="/" className="flex flex-col items-center hover:opacity-80 transition-opacity">
+              <Link
+                to="/"
+                className="flex flex-col items-center hover:opacity-80 transition-opacity"
+              >
                 <Logo className="h-9 w-auto" />
                 <span className="text-xs font-medium text-slate-700 mt-0.5 tracking-wide">
                   A time observatory for the internet

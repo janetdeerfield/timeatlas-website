@@ -52,10 +52,6 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
           ]
         : []),
       {
-        path: 'dev-test-components',
-        element: <DevTestComponents />,
-      },
-      {
         path: 'about',
         element: <About />,
       },
