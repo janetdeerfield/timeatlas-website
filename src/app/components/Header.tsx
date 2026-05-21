@@ -32,8 +32,13 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           {/* Desktop Header */}
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <Logo className="h-10 w-auto" />
+            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <div className="flex flex-col items-center justify-center">
+                <Logo className="h-10 w-auto" />
+                <span className="text-xs font-medium text-slate-700 mt-0.5 tracking-wide">
+                  A time observatory for the internet
+                </span>
+              </div>
             </Link>
 
             {/* Navigation */}
@@ -45,7 +50,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   className="px-4 py-2 text-base font-medium transition-all"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    color: location.pathname === item.path ? '#2E45F0' : '#364151',
+                    color: location.pathname === item.path ? '#2E45F0' : '#334155',
                     backgroundColor: location.pathname === item.path ? '#E7EDFF' : 'transparent',
                     borderRadius: '999px',
                   }}
@@ -56,7 +61,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   }}
                   onMouseLeave={(e) => {
                     if (location.pathname !== item.path) {
-                      e.currentTarget.style.color = '#364151';
+                      e.currentTarget.style.color = '#334155';
                     }
                   }}
                 >
@@ -75,7 +80,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: !use24Hour ? '#2E45F0' : 'white',
-                    color: !use24Hour ? 'white' : '#364151',
+                    color: !use24Hour ? 'white' : '#334155',
                     border: !use24Hour ? 'none' : '1px solid #D9DEE6',
                   }}
                 >
@@ -87,7 +92,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: use24Hour ? '#2E45F0' : 'white',
-                    color: use24Hour ? 'white' : '#364151',
+                    color: use24Hour ? 'white' : '#334155',
                     border: use24Hour ? 'none' : '1px solid #D9DEE6',
                   }}
                 >
@@ -116,7 +121,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: !use24Hour ? '#2E45F0' : 'white',
-                    color: !use24Hour ? 'white' : '#364151',
+                    color: !use24Hour ? 'white' : '#334155',
                     border: !use24Hour ? 'none' : '1px solid #D9DEE6',
                     fontSize: '13px',
                   }}
@@ -129,7 +134,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: use24Hour ? '#2E45F0' : 'white',
-                    color: use24Hour ? 'white' : '#364151',
+                    color: use24Hour ? 'white' : '#334155',
                     border: use24Hour ? 'none' : '1px solid #D9DEE6',
                     fontSize: '13px',
                   }}
@@ -145,9 +150,9 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                 aria-label="Menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="h-5 w-5" style={{ color: '#364151' }} />
+                  <X className="h-5 w-5" style={{ color: '#334155' }} />
                 ) : (
-                  <Menu className="h-5 w-5" style={{ color: '#364151' }} />
+                  <Menu className="h-5 w-5" style={{ color: '#334155' }} />
                 )}
               </button>
             </div>
@@ -163,7 +168,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                       className="px-4 py-2.5 text-base font-medium transition-all"
                       style={{
                         fontFamily: 'Inter, sans-serif',
-                        color: location.pathname === item.path ? '#2E45F0' : '#364151',
+                        color: location.pathname === item.path ? '#2E45F0' : '#334155',
                         backgroundColor:
                           location.pathname === item.path ? '#E7EDFF' : 'transparent',
                         borderRadius: '8px',

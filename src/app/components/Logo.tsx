@@ -8,7 +8,7 @@ interface LogoProps {
 export function Logo({
   className = 'h-10 w-auto',
   width = 420,
-  height = 96,
+  height = 56,
   alt = 'TimeAtlas',
 }: LogoProps) {
   return (
