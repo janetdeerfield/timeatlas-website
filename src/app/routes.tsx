@@ -62,7 +62,9 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
               path: 'dev-test-components',
               element: (() => {
                 const DevTestComponents = lazy(() =>
-                  import('./pages/DevTestComponents').then((m) => ({ default: m.DevTestComponents }))
+                  import('./pages/DevTestComponents').then((m) => ({
+                    default: m.DevTestComponents,
+                  }))
                 );
                 return <DevTestComponents />;
               })(),
