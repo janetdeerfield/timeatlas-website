@@ -47,6 +47,19 @@ export default defineConfig({
           ) {
             return 'router';
           }
+          // pairs-data — the city-pair JSON (pairs.json + zonesV3) is ~380 kB of
+          // data that would otherwise sit in the main entry chunk. Splitting it out
+          // lets Vite emit a <link rel="modulepreload"> for it, so V8 can
+          // stream-compile the chunk in a background thread while the main entry
+          // initialises React and the router — reducing the longest main-thread task
+          // and therefore Total Blocking Time.
+          if (
+            id.includes('/data/pairs.json') ||
+            id.includes('/data/zonesV3') ||
+            id.includes('/data/pairsV3')
+          ) {
+            return 'pairs-data';
+          }
         },
       },
     },

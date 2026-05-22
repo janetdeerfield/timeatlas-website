@@ -12,6 +12,11 @@
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
+  # Static images (no content hash — use 30-day TTL, not immutable, so deploys can update them)
+  <FilesMatch "\.(webp|png|jpg|jpeg|gif|ico|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
   # Prerendered HTML + root index — always revalidate (no hash, content changes on deploy)
   <FilesMatch "\.html$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
