@@ -33,6 +33,37 @@
       crossorigin
     />
 
+    <!-- Structured data: site-wide WebSite + Organization schemas.
+         These are static and identical on every page, so they live here rather
+         than in a React component. stripBaseSeo() in prerender.mjs only removes
+         title/og tags, so these script blocks survive into every prerendered page. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TimeAtlas",
+        "url": "https://timeatlas.co",
+        "description": "Free time zone converter for meetings, travel, and remote work.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://timeatlas.co/convert?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TimeAtlas",
+        "url": "https://timeatlas.co",
+        "logo": "https://timeatlas.co/og-image.webp"
+      }
+    </script>
+
     <!-- Base Meta Description -->
     <meta name="description" content="TimeAtlas – A time observatory for the internet" />
 

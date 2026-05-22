@@ -1,4 +1,5 @@
 import { Footer } from '../components/Footer';
+import { JsonLd } from '../components/JsonLd';
 import { SEO } from '../components/SEO';
 import {
   TimeHeader,
@@ -229,6 +230,84 @@ function buildPopularLinks(currentSlug: string): InternalLinkBlockLink[] {
   );
 }
 
+// ─── Structured data builders ─────────────────────────────────────────────────
+
+const SITE_URL = 'https://timeatlas.co';
+
+function buildBreadcrumbSchema(currentSlug: string, h1: string): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Convert', item: `${SITE_URL}/convert` },
+      { '@type': 'ListItem', position: 3, name: h1, item: `${SITE_URL}/${currentSlug}` },
+    ],
+  };
+}
+
+function buildFaqSchema(
+  sourceCode: string,
+  targetCode: string,
+  fromZone: ZoneInfo | undefined,
+  toZone: ZoneInfo | undefined,
+  fromZoneV3: ZoneV3 | undefined,
+  toZoneV3: ZoneV3 | undefined,
+  timeDiffText: string,
+  dstCallout: string | null,
+  pairData: PairV3
+): object {
+  const faqItems: Array<{ question: string; answer: string }> = [];
+
+  // Q1: Time difference — maps to the "How Time Zone Conversion Works" section
+  if (fromZone && toZone) {
+    const dstSuffix = dstCallout ? ` ${dstCallout}` : '';
+    faqItems.push({
+      question: `What is the time difference between ${fromZone.fullName} (${sourceCode}) and ${toZone.fullName} (${targetCode})?`,
+      answer: `${timeDiffText}.${dstSuffix}`,
+    });
+  }
+
+  // Q2: DST observance — maps to the DST amber callout visible on the page
+  if (fromZoneV3 && toZoneV3) {
+    const fromDst = fromZoneV3.observes_dst ? 'observes' : 'does not observe';
+    const toDst = toZoneV3.observes_dst ? 'observes' : 'does not observe';
+    faqItems.push({
+      question: `Do ${sourceCode} and ${targetCode} observe Daylight Saving Time?`,
+      answer: `${sourceCode} (${fromZoneV3.short_name}) ${fromDst} Daylight Saving Time. ${targetCode} (${toZoneV3.short_name}) ${toDst} Daylight Saving Time.`,
+    });
+  }
+
+  // Q3: Best meeting times — maps to the "Best Meeting Times" section
+  const { meeting_overlap, meeting_difficulty } = pairData;
+  const difficultyLabel =
+    meeting_difficulty === 'easy'
+      ? 'easy'
+      : meeting_difficulty === 'moderate'
+        ? 'moderate'
+        : 'difficult';
+  let meetingAnswer =
+    `Scheduling meetings between ${sourceCode} and ${targetCode} is ${difficultyLabel}. ` +
+    `The recommended overlap window is ${meeting_overlap.start_source}–${meeting_overlap.end_source} ${sourceCode} ` +
+    `(${meeting_overlap.start_target}–${meeting_overlap.end_target} ${targetCode}). ` +
+    `Recommended time: ${meeting_overlap.preferred_default}.`;
+  if (meeting_overlap.note) meetingAnswer += ` ${meeting_overlap.note}`;
+  faqItems.push({
+    question: `What are the best times to schedule meetings between ${sourceCode} and ${targetCode}?`,
+    answer: meetingAnswer,
+  });
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
+}
+
 // ─── Page component ───────────────────────────────────────────────────────────
 
 interface CityPairPageProps {
@@ -269,9 +348,23 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
   const conversions = generateConversions(sourceCode, targetCode, fromZoneV3, toZoneV3);
 
+  const breadcrumbSchema = buildBreadcrumbSchema(currentSlug, h1);
+  const faqSchema = buildFaqSchema(
+    sourceCode,
+    targetCode,
+    fromZone,
+    toZone,
+    fromZoneV3,
+    toZoneV3,
+    timeDiffText,
+    dstCallout,
+    pairData
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <SEO title={title} description={description} path={`/${currentSlug}`} />
+      <JsonLd schemas={[breadcrumbSchema, faqSchema]} />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
