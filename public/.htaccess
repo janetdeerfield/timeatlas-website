@@ -115,6 +115,10 @@ Redirect 301 /utc-to-pt /utc-to-pst
 # ==========================================
 RewriteBase /
 
+# /convert: both convert.html and convert/ exist; serve .html directly, strip trailing slash
+RewriteRule ^convert/$ /convert [R=301,L]
+RewriteRule ^convert$ convert.html [L]
+
 # 1. First, check if the request matches a physical .html file
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
