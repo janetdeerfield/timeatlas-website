@@ -1,17 +1,28 @@
+import { lazy } from 'react';
 import { createBrowserRouter, type RouteObject } from 'react-router';
-import { Home } from './pages/Home';
-import { Convert } from './pages/Convert';
-import { World } from './pages/World';
-import { Meet } from './pages/Meet';
-import { Dev } from './pages/Dev';
-import { DevTestComponents } from './pages/DevTestComponents';
-import { About } from './pages/About';
-import { Privacy } from './pages/Privacy';
-import { Terms } from './pages/Terms';
-import { NotFound } from './pages/NotFound';
-import { CityPairPage } from './pages/CityPairPage';
 import { ALL_PAIRS, pairSlug } from './data/pairsV3';
 import { RootLayout } from './pages/RootLayout';
+
+// Lazy-loaded route components — each page becomes its own JS chunk.
+// Vite splits these at the dynamic import boundary; the browser only downloads
+// the chunk for the current route rather than all 594 KB up front.
+// RootLayout and ALL_PAIRS stay eager: the layout shell renders on every route,
+// and the pair list is needed immediately to register the city-pair routes.
+const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
+const Convert = lazy(() => import('./pages/Convert').then((m) => ({ default: m.Convert })));
+const World = lazy(() => import('./pages/World').then((m) => ({ default: m.World })));
+const Meet = lazy(() => import('./pages/Meet').then((m) => ({ default: m.Meet })));
+const Dev = lazy(() => import('./pages/Dev').then((m) => ({ default: m.Dev })));
+const DevTestComponents = lazy(() =>
+  import('./pages/DevTestComponents').then((m) => ({ default: m.DevTestComponents }))
+);
+const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
+const Privacy = lazy(() => import('./pages/Privacy').then((m) => ({ default: m.Privacy })));
+const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms })));
+const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
+const CityPairPage = lazy(() =>
+  import('./pages/CityPairPage').then((m) => ({ default: m.CityPairPage }))
+);
 
 interface RouteConfig {
   use24Hour: boolean;

@@ -1,4 +1,4 @@
-import { renderToString } from 'react-dom/server';
+import { renderToReadableStream } from 'react-dom/server';
 import { HelmetProvider, type HelmetServerState } from 'react-helmet-async';
 import {
   createStaticHandler,
@@ -41,7 +41,14 @@ export async function renderPath(path: string) {
 
   const router = createStaticRouter(handler.dataRoutes, context as StaticHandlerContext);
   const helmetContext = {};
-  const html = renderToString(
+
+  // renderToReadableStream + allReady waits for every Suspense boundary
+  // (including React.lazy route chunks) to fully resolve before we read the
+  // stream. renderToString cannot await lazy imports and would instead emit
+  // empty Suspense fallbacks, producing prerendered pages with missing content.
+  // renderToReadableStream uses Web Streams (no Node.js types required) and is
+  // directly supported by the DOM lib already in tsconfig.
+  const stream = await renderToReadableStream(
     <HelmetProvider context={helmetContext}>
       <StaticRouterProvider
         router={router}
@@ -50,6 +57,10 @@ export async function renderPath(path: string) {
       />
     </HelmetProvider>
   );
+
+  await stream.allReady;
+
+  const html = await new Response(stream).text();
   const { helmet } = helmetContext as { helmet: HelmetServerState };
 
   return {
@@ -57,6 +68,6 @@ export async function renderPath(path: string) {
     head: [helmet.title.toString(), helmet.meta.toString(), helmet.link.toString()]
       .filter(Boolean)
       .join('\n'),
-    statusCode: context.statusCode,
+    statusCode: (context as StaticHandlerContext).statusCode,
   };
 }

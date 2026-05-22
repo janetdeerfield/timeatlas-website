@@ -21,15 +21,31 @@ export default defineConfig({
   assetsInclude: ['**/*.svg', '**/*.csv'],
 
   build: {
+    // 'hidden' emits source maps alongside the bundles but does not add
+    // //# sourceMappingURL comments in the JS — maps are available for error
+    // monitoring tools (Sentry etc.) without being publicly referenced.
+    sourcemap: 'hidden',
+
     rollupOptions: {
       output: {
         manualChunks(id) {
+          // React core — small, stable, always needed
           if (
-            id.includes('node_modules/react/') ||
-            id.includes('node_modules/react-dom/') ||
-            id.includes('node_modules/react-router-dom/')
+            id.includes('/node_modules/react/') ||
+            id.includes('/node_modules/react-dom/') ||
+            id.includes('/node_modules/scheduler/')
           ) {
             return 'vendor';
+          }
+          // React Router — was previously lumped with vendor under the wrong
+          // package name (react-router-dom); the codebase imports from react-router.
+          // Split into its own chunk so vendor and router can download in parallel.
+          if (
+            id.includes('/node_modules/react-router/') ||
+            id.includes('/node_modules/react-router-dom/') ||
+            id.includes('/node_modules/@remix-run/')
+          ) {
+            return 'router';
           }
         },
       },

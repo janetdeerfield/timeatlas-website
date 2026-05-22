@@ -1,4 +1,24 @@
 # ==========================================
+# LAYER 0: CACHE-CONTROL HEADERS
+# ==========================================
+<IfModule mod_headers.c>
+  # Hashed JS + CSS assets (Vite appends a content hash — safe to cache for 1 year)
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Self-hosted font files (filenames are static but content never changes)
+  <FilesMatch "\.woff2$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Prerendered HTML + root index — always revalidate (no hash, content changes on deploy)
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ==========================================
 # LAYER 1: HTTPS ENFORCEMENT
 # ==========================================
 RewriteEngine On
@@ -115,23 +135,24 @@ Redirect 301 /utc-to-pt /utc-to-pst
 # ==========================================
 RewriteBase /
 
-# 1. Serve prerendered .html directly — no external redirect, no mod_dir interference.
-#
-#    Why !-d is intentionally absent:
-#    The prerender script writes BOTH slug.html AND slug/index.html for every route.
-#    The slug/ directory existing makes !-d evaluate FALSE, which would block this rule
-#    and let Apache's mod_dir fire a 301 DirectorySlash redirect (slug → slug/).
-#    Dropping !-d lets this rule win first for every prerendered path.
-#
-#    Why ^(.*?)/?$ instead of ^(.*)$:
-#    Strips an optional trailing slash before appending .html, so /convert/ and /convert
-#    both resolve to convert.html with a single internal rewrite — zero external redirects.
-#
+# 1. Trailing-slash → canonical 301.
+#    ^(.+)/$ requires at least one character before the slash, so root / is never matched.
+#    The %{DOCUMENT_ROOT}/$1.html check ensures we only redirect paths that actually have
+#    a prerendered page — unknown slugs fall through to the SPA fallback unchanged.
+#    Covers /convert/, /world/, /est-to-pst/, every city-pair variant, etc.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.*?)/?$ $1.html [L]
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-# 2. No prerendered .html exists → fallback to index.html (React Router handles routing)
+# 2. Serve prerendered .html directly for no-slash URLs.
+#    !-d is intentionally absent: the prerender previously created slug/ directories
+#    alongside slug.html; dropping !-d prevents mod_dir from blocking this rule on any
+#    server that still has those directories present from an older deploy.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*?)$ $1.html [L]
+
+# 3. No prerendered .html exists → fallback to index.html (React Router handles routing)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /index.html [L]
