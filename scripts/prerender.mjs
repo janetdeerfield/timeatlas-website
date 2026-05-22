@@ -23,8 +23,14 @@ function stripBaseSeo(html) {
 function routeToFiles(route) {
   if (route === '/') return [join(distDir, 'index.html')];
 
+  // Only write slug.html — never slug/index.html.
+  // Writing both created a slug/ directory that triggered Apache mod_dir's
+  // DirectorySlash redirect (GET /convert → 301 /convert/) before any
+  // RewriteRule could serve convert.html. The redirect destination then 404'd
+  // when convert/index.html wasn't present, creating a dead redirect chain
+  // that Google could not index. Flat .html files only; no directories.
   const routePath = route.replace(/^\//, '');
-  return [join(distDir, routePath, 'index.html'), join(distDir, routePath + '.html')];
+  return [join(distDir, routePath + '.html')];
 }
 
 function withRenderedApp(template, routeHead, appHtml) {

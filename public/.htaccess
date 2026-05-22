@@ -115,17 +115,23 @@ Redirect 301 /utc-to-pt /utc-to-pst
 # ==========================================
 RewriteBase /
 
-# /convert: both convert.html and convert/ exist; serve .html directly, strip trailing slash
-RewriteRule ^convert/$ /convert [R=301,L]
-RewriteRule ^convert$ convert.html [L]
-
-# 1. First, check if the request matches a physical .html file
+# 1. Serve prerendered .html directly — no external redirect, no mod_dir interference.
+#
+#    Why !-d is intentionally absent:
+#    The prerender script writes BOTH slug.html AND slug/index.html for every route.
+#    The slug/ directory existing makes !-d evaluate FALSE, which would block this rule
+#    and let Apache's mod_dir fire a 301 DirectorySlash redirect (slug → slug/).
+#    Dropping !-d lets this rule win first for every prerendered path.
+#
+#    Why ^(.*?)/?$ instead of ^(.*)$:
+#    Strips an optional trailing slash before appending .html, so /convert/ and /convert
+#    both resolve to convert.html with a single internal rewrite — zero external redirects.
+#
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.*)$ $1.html [L]
+RewriteRule ^(.*?)/?$ $1.html [L]
 
-# 2. If no .html file exists, THEN fallback to index.html (React Router handles 404s)
+# 2. No prerendered .html exists → fallback to index.html (React Router handles routing)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /index.html [L]
