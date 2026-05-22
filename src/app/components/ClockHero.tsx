@@ -47,7 +47,7 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
         style={{
           fontFamily: 'Open Sans, sans-serif',
           fontSize: '14px',
-          color: '#9AA3AF',
+          color: '#64748B',
           maxWidth: '900px',
           margin: '16px auto 0',
         }}

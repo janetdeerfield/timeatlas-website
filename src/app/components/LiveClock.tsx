@@ -349,7 +349,7 @@ export default function LiveClock({
           style={{
             fontFamily: 'Open Sans, sans-serif',
             fontSize: 14,
-            color: '#9AA3AF',
+            color: '#64748B',
             marginTop: 6,
             fontVariantNumeric: 'tabular-nums',
           }}

@@ -294,7 +294,7 @@ export function Home({ use24Hour }: HomeProps) {
                       <div
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
-                          color: '#8595AD',
+                          color: '#5C6E87',
                           fontSize: '13px',
                           fontStyle: 'italic',
                         }}
@@ -304,7 +304,7 @@ export function Home({ use24Hour }: HomeProps) {
                       <div
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
-                          color: '#8595AD',
+                          color: '#5C6E87',
                           fontSize: '13px',
                           fontStyle: 'italic',
                         }}
@@ -410,12 +410,12 @@ export function Home({ use24Hour }: HomeProps) {
                   }}
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Lightbulb className="w-5 h-5" style={{ color: '#0A84D0' }} />
+                    <Lightbulb className="w-5 h-5" style={{ color: '#0066AA' }} />
                     <h3
                       className="font-semibold uppercase tracking-wide text-sm"
                       style={{
                         fontFamily: 'Inter, sans-serif',
-                        color: '#0A84D0',
+                        color: '#0066AA',
                         letterSpacing: '0.05em',
                       }}
                     >
@@ -473,7 +473,7 @@ export function Home({ use24Hour }: HomeProps) {
                     style={{
                       fontFamily: 'Open Sans, sans-serif',
                       fontSize: 14,
-                      color: '#8595AD',
+                      color: '#5C6E87',
                     }}
                   >
                     — William Shakespeare

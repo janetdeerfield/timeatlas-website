@@ -205,7 +205,7 @@ export function About() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: '#0A84D0',
+                  color: '#0066AA',
                   textDecoration: 'none',
                   transition: 'all 0.2s ease',
                 }}
@@ -214,7 +214,7 @@ export function About() {
                   e.currentTarget.style.textDecoration = 'underline';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#0A84D0';
+                  e.currentTarget.style.color = '#0066AA';
                   e.currentTarget.style.textDecoration = 'none';
                 }}
               >

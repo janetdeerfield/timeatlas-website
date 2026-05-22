@@ -60,7 +60,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
               className="text-sm"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
-                color: '#8495CB',
+                color: '#4F63A3',
               }}
             >
               {country}
