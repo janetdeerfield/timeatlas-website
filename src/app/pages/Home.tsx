@@ -50,7 +50,7 @@ export function Home({ use24Hour }: HomeProps) {
             <div
               style={{
                 height: '1px',
-                background: '#ECEFF4',
+                background: '#D9DEE6',
                 width: '900px',
                 maxWidth: '90%',
                 margin: '8px auto 16px',
@@ -81,7 +81,7 @@ export function Home({ use24Hour }: HomeProps) {
                   icon={ArrowLeftRight}
                   href="/convert"
                   backgroundColor="#FFFFFF"
-                  textColor="#0A84D0"
+                  textColor="#1B6BB3"
                 />
                 <ToolCard
                   title="World Time"
@@ -89,7 +89,7 @@ export function Home({ use24Hour }: HomeProps) {
                   icon={Globe}
                   href="/world"
                   backgroundColor="#FFFFFF"
-                  textColor="#0A84D0"
+                  textColor="#2359A1"
                 />
                 <ToolCard
                   title="Meeting Planner"
@@ -97,7 +97,7 @@ export function Home({ use24Hour }: HomeProps) {
                   icon={Users}
                   href="/meet"
                   backgroundColor="#FFFFFF"
-                  textColor="#0A84D0"
+                  textColor="#224FB8"
                 />
                 <ToolCard
                   title="Developer Tools"
@@ -105,7 +105,7 @@ export function Home({ use24Hour }: HomeProps) {
                   icon={Code}
                   href="/dev"
                   backgroundColor="#FFFFFF"
-                  textColor="#0A84D0"
+                  textColor="#1C469C"
                 />
               </div>
             </div>
@@ -294,7 +294,7 @@ export function Home({ use24Hour }: HomeProps) {
                       <div
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
-                          color: '#6B7280',
+                          color: '#8595AD',
                           fontSize: '13px',
                           fontStyle: 'italic',
                         }}
@@ -304,7 +304,7 @@ export function Home({ use24Hour }: HomeProps) {
                       <div
                         style={{
                           fontFamily: 'Open Sans, sans-serif',
-                          color: '#6B7280',
+                          color: '#8595AD',
                           fontSize: '13px',
                           fontStyle: 'italic',
                         }}
@@ -385,7 +385,8 @@ export function Home({ use24Hour }: HomeProps) {
           <section
             className="py-16 pb-20"
             style={{
-              background: 'linear-gradient(135deg, #8495CB 0%, #3A5FB8 50%, #06B6D4 100%)',
+              background:
+                'linear-gradient(135deg, var(--gradient-atmosphere-start) 0%, var(--gradient-atmosphere-mid) 50%, var(--gradient-atmosphere-end) 100%)',
             }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -393,7 +394,7 @@ export function Home({ use24Hour }: HomeProps) {
                 className="text-3xl font-bold mb-8"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  color: '#080A0C',
+                  color: '#FFFFFF',
                 }}
               >
                 Fun with Time
@@ -472,7 +473,7 @@ export function Home({ use24Hour }: HomeProps) {
                     style={{
                       fontFamily: 'Open Sans, sans-serif',
                       fontSize: 14,
-                      color: '#6B7280',
+                      color: '#8595AD',
                     }}
                   >
                     — William Shakespeare

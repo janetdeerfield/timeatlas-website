@@ -47,7 +47,7 @@ export function World({ use24Hour }: WorldProps) {
               className="text-lg"
               style={{
                 fontFamily: 'Open Sans, sans-serif',
-                color: '#8495CB',
+                color: '#8595AD',
               }}
             >
               Live time in major cities around the globe

@@ -6,7 +6,7 @@ export function About() {
   return (
     <>
       <SEO
-        title="About TimeAtlas — The Internet’s Cleanest Time Tools"
+        title="About TimeAtlas — A time observatory for the internet"
         description="Learn about TimeAtlas — a calm, precise collection of modern time tools built for clarity, speed, and trust."
         path="/about"
       />
@@ -38,7 +38,7 @@ export function About() {
               }}
             >
               <strong style={{ color: '#0F172A' }}>TimeAtlas</strong> is a simple idea, carefully
-              built: the internet's cleanest time tools.
+              built: a time observatory for the internet.
             </p>
 
             <p
@@ -187,8 +187,7 @@ export function About() {
               }}
             >
               <strong>TimeAtlas</strong>
-              <br />
-              The Internet's Cleanest Time Tools
+              <br />A time observatory for the internet
             </p>
 
             {/* CTA */}

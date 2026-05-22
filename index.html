@@ -1,27 +1,64 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TimeAtlas</title>
 
+    <!--
+      Font preloads — tells the browser to fetch critical woff2 files immediately,
+      before the JS bundle → CSS → @font-face chain can discover them.
+      crossorigin is required even for same-origin fonts when using preload.
+    -->
+    <link
+      rel="preload"
+      href="/Fonts/inter-v20-latin/inter-v20-latin-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/Fonts/inter-v20-latin/inter-v20-latin-800.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/Fonts/open-sans-v44-latin/open-sans-v44-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Base Meta Description -->
-    <meta name="description" content="TimeAtlas – The Internet's Cleanest Time Tools" />
+    <meta name="description" content="TimeAtlas – A time observatory for the internet" />
 
     <!-- Open Graph (Sharing) -->
-    <meta property="og:title" content="TimeAtlas – The Internet's Cleanest Time Tools" />
+    <meta property="og:title" content="TimeAtlas – A time observatory for the internet" />
     <meta
       property="og:description"
       content="Convert time, plan meetings, and explore world clocks with precision."
     />
-    <meta property="og:image" content="https://timeatlas.co/timeatlas-logo.png" />
+    <meta property="og:image" content="https://timeatlas.co/logo-wordmark.webp" />
     <meta property="og:url" content="https://timeatlas.co" />
     <meta property="og:type" content="website" />
+  </head>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B310VMS98Q"></script>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!--
+      Google Analytics — loaded after the page has parsed.
+      `defer` on the external script means it executes after HTML parsing completes,
+      never blocking the critical rendering path. The inline init below is safe to
+      run immediately: it only queues commands into window.dataLayer; the gtag.js
+      library processes the queue when it loads.
+    -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-B310VMS98Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -30,17 +67,5 @@
       gtag('js', new Date());
       gtag('config', 'G-B310VMS98Q');
     </script>
-
-    <!-- Google AdSense -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6261637999104273"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

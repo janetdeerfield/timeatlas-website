@@ -1,5 +1,4 @@
 import { joinClasses } from './utils';
-
 export type ConverterCardVariant = 'small' | 'medium' | 'large';
 
 export interface ConverterCardProps {

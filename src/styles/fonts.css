@@ -1,5 +1,52 @@
-/* Import Inter for headings, navigation, and clock */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap');
+/* Inter — self-hosted */
+@font-face {
+  font-family: 'Inter';
+  src: url('/Fonts/inter-v20-latin/inter-v20-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/Fonts/inter-v20-latin/inter-v20-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/Fonts/inter-v20-latin/inter-v20-latin-800.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* Import Open Sans for body text */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+/* Open Sans — self-hosted */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/Fonts/open-sans-v44-latin/open-sans-v44-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/Fonts/open-sans-v44-latin/open-sans-v44-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/Fonts/open-sans-v44-latin/open-sans-v44-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/Fonts/open-sans-v44-latin/open-sans-v44-latin-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

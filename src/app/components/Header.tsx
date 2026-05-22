@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
-
-const logoImage = '/timeatlas-logo.png';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   use24Hour: boolean;
@@ -33,17 +32,13 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
           {/* Desktop Header */}
           <div className="hidden md:flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoImage} alt="TimeAtlas Logo" className="h-8" />
-              <span
-                className="text-xs"
-                style={{
-                  fontFamily: 'Open Sans, sans-serif',
-                  color: '#6B7280',
-                }}
-              >
-                The Internet's Cleanest Time Tools
-              </span>
+            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <div className="flex flex-col items-center justify-center">
+                <Logo className="h-10 w-auto" />
+                <span className="text-xs font-medium text-slate-700 mt-0.5 tracking-wide">
+                  A time observatory for the internet
+                </span>
+              </div>
             </Link>
 
             {/* Navigation */}
@@ -55,7 +50,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   className="px-4 py-2 text-base font-medium transition-all"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    color: location.pathname === item.path ? '#2E45F0' : '#364151',
+                    color: location.pathname === item.path ? '#2E45F0' : '#334155',
                     backgroundColor: location.pathname === item.path ? '#E7EDFF' : 'transparent',
                     borderRadius: '999px',
                   }}
@@ -66,7 +61,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   }}
                   onMouseLeave={(e) => {
                     if (location.pathname !== item.path) {
-                      e.currentTarget.style.color = '#364151';
+                      e.currentTarget.style.color = '#334155';
                     }
                   }}
                 >
@@ -85,7 +80,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: !use24Hour ? '#2E45F0' : 'white',
-                    color: !use24Hour ? 'white' : '#364151',
+                    color: !use24Hour ? 'white' : '#334155',
                     border: !use24Hour ? 'none' : '1px solid #D9DEE6',
                   }}
                 >
@@ -97,7 +92,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: use24Hour ? '#2E45F0' : 'white',
-                    color: use24Hour ? 'white' : '#364151',
+                    color: use24Hour ? 'white' : '#334155',
                     border: use24Hour ? 'none' : '1px solid #D9DEE6',
                   }}
                 >
@@ -109,27 +104,20 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
 
           {/* Mobile Header */}
           <div className="md:hidden py-3">
-            {/* Top row: Logo */}
-            <div className="flex items-center justify-center mb-2">
-              <Link to="/" className="hover:opacity-80 transition-opacity">
-                <img src={logoImage} alt="TimeAtlas Logo" className="h-7" />
+            {/* Top row: Logo + Tagline */}
+            <div className="flex flex-col items-center justify-center mb-2">
+              <Link
+                to="/"
+                className="flex flex-col items-center hover:opacity-80 transition-opacity"
+              >
+                <Logo className="h-9 w-auto" />
+                <span className="text-xs font-medium text-slate-700 mt-0.5 tracking-wide">
+                  A time observatory for the internet
+                </span>
               </Link>
             </div>
 
-            {/* Second row: Tagline */}
-            <div className="text-center mb-3">
-              <span
-                className="text-xs"
-                style={{
-                  fontFamily: 'Open Sans, sans-serif',
-                  color: '#6B7280',
-                }}
-              >
-                The Internet's Cleanest Time Tools
-              </span>
-            </div>
-
-            {/* Third row: Controls */}
+            {/* Second row: Controls */}
             <div className="flex items-center justify-center gap-3">
               {/* 12h/24h Toggle */}
               <div className="flex items-center gap-2 text-sm">
@@ -139,7 +127,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: !use24Hour ? '#2E45F0' : 'white',
-                    color: !use24Hour ? 'white' : '#364151',
+                    color: !use24Hour ? 'white' : '#334155',
                     border: !use24Hour ? 'none' : '1px solid #D9DEE6',
                     fontSize: '13px',
                   }}
@@ -152,7 +140,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     backgroundColor: use24Hour ? '#2E45F0' : 'white',
-                    color: use24Hour ? 'white' : '#364151',
+                    color: use24Hour ? 'white' : '#334155',
                     border: use24Hour ? 'none' : '1px solid #D9DEE6',
                     fontSize: '13px',
                   }}
@@ -168,9 +156,9 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                 aria-label="Menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="h-5 w-5" style={{ color: '#364151' }} />
+                  <X className="h-5 w-5" style={{ color: '#334155' }} />
                 ) : (
-                  <Menu className="h-5 w-5" style={{ color: '#364151' }} />
+                  <Menu className="h-5 w-5" style={{ color: '#334155' }} />
                 )}
               </button>
             </div>
@@ -186,7 +174,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                       className="px-4 py-2.5 text-base font-medium transition-all"
                       style={{
                         fontFamily: 'Inter, sans-serif',
-                        color: location.pathname === item.path ? '#2E45F0' : '#364151',
+                        color: location.pathname === item.path ? '#2E45F0' : '#334155',
                         backgroundColor:
                           location.pathname === item.path ? '#E7EDFF' : 'transparent',
                         borderRadius: '8px',
