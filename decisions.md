@@ -129,8 +129,9 @@ This prevents stale preview deploys from being indexed and prevents preview-mode
 ## Phase completion checklist (May 2026)
 
 Lesson from Phase 1: dev-only infrastructure created during a phase must be removed when the phase ships. Specifically:
+
 - Dev preview routes (e.g. DevTestComponents)
-- Feature flags for now-shipped features  
+- Feature flags for now-shipped features
 - Branches created for review/iteration that have been merged
 - Sample data files used during component design
 
