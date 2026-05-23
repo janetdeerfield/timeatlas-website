@@ -483,10 +483,7 @@ export function Meet({ use24Hour }: MeetProps) {
 
       {/* SEO Content Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        <h2
-          className="text-2xl font-bold mb-4"
-          style={{ color: '#080A0C' }}
-        >
+        <h2 className="text-2xl font-bold mb-4" style={{ color: '#080A0C' }}>
           Best Meeting Times Between Time Zones
         </h2>
         <p

@@ -131,10 +131,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               </button>
             ))
           ) : (
-            <div
-              className="p-8 text-center"
-              style={{ color: '#6B7280' }}
-            >
+            <div className="p-8 text-center" style={{ color: '#6B7280' }}>
               No results found
             </div>
           )}
