@@ -54,3 +54,34 @@ Original design: #TeamTimeAtlas, Figma, March 2026.
 ## Why other text uses system fonts (May 2026)
 
 Body text, headings, navigation, and all non-clock typography use the platform's system font stack. This is a deliberate performance choice: zero font network requests for ~95% of rendered content, faster FCP/LCP, no FOUT on body text. Inter remains loaded only for clock components, where it's brand-identity-critical. The slight cross-platform visual variation in body text is acceptable for a utility site.
+
+## Fading seconds on clock displays (March 2026 + extended May 2026)
+
+The hero clock on / uses a signature "fading seconds" visual treatment: the seconds digits (the third pair in 00:00:00) render at reduced opacity compared to hours and minutes. This establishes a visual hierarchy of importance: hours > minutes > seconds.
+
+Design history: solid black seconds were distracting and visually competitive with the hours/minutes. Multiple alternatives were tested (smaller point size, solid gray, various opacity values). The current fade was the winner after iteration with #TeamTimeAtlas in March 2026.
+
+Where this applies (as of [date PR 2 ships]):
+- Hero clock on /
+- "Time Zone Converter" clock on /convert
+- "World Time" clocks on /world
+- "UTC Time" clock on /dev
+- City-pair page clocks
+- Any other 00:00:00 display added in the future
+
+The 00:00 displays (no seconds) inherit Inter 800 + tabular-nums but do not need fading treatment — they have no seconds digits to de-emphasize.
+
+What to preserve in future refactors:
+- The opacity/styling values established for the seconds digits (see ClockDigits component or .clock-seconds class for canonical values)
+- The visual hierarchy hours > minutes > seconds
+
+## Brand color (May 2026 correction)
+
+The primary brand blue is #1B6BB3. Earlier work on city-pair pages used a purple accent that was not part of the brand palette. Corrected in May 2026 to #1B6BB3.
+
+The brand palette as of May 2026:
+- Primary blue: #1B6BB3 (links, accents, calls-to-action)
+- [add other brand colors as you identify them]
+
+Avoid introducing new accent colors without updating this file. If a feature needs a color that isn't in the palette, raise it for a palette decision, don't pick locally.
+
