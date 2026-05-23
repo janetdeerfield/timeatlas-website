@@ -62,6 +62,7 @@ The hero clock on / uses a signature "fading seconds" visual treatment: the seco
 Design history: solid black seconds were distracting and visually competitive with the hours/minutes. Multiple alternatives were tested (smaller point size, solid gray, various opacity values). The current fade was the winner after iteration with #TeamTimeAtlas in March 2026.
 
 Where this applies (as of [date PR 2 ships]):
+
 - Hero clock on /
 - "Time Zone Converter" clock on /convert
 - "World Time" clocks on /world
@@ -72,6 +73,7 @@ Where this applies (as of [date PR 2 ships]):
 The 00:00 displays (no seconds) inherit Inter 800 + tabular-nums but do not need fading treatment — they have no seconds digits to de-emphasize.
 
 What to preserve in future refactors:
+
 - The opacity/styling values established for the seconds digits (see ClockDigits component or .clock-seconds class for canonical values)
 - The visual hierarchy hours > minutes > seconds
 
@@ -80,8 +82,8 @@ What to preserve in future refactors:
 The primary brand blue is #1B6BB3. Earlier work on city-pair pages used a purple accent that was not part of the brand palette. Corrected in May 2026 to #1B6BB3.
 
 The brand palette as of May 2026:
+
 - Primary blue: #1B6BB3 (links, accents, calls-to-action)
 - [add other brand colors as you identify them]
 
 Avoid introducing new accent colors without updating this file. If a feature needs a color that isn't in the palette, raise it for a palette decision, don't pick locally.
-
