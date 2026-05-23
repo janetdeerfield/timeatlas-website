@@ -87,3 +87,8 @@ The brand palette as of May 2026:
 - [add other brand colors as you identify them]
 
 Avoid introducing new accent colors without updating this file. If a feature needs a color that isn't in the palette, raise it for a palette decision, don't pick locally.
+
+Monospace font usage:
+- Used for: code blocks, format examples (ISO 8601 strings, Unix timestamps, format specifiers), any content showing what you'd type or paste into a program
+- Not used for: clock readouts (those are Inter 800), UI labels, body text
+- Stack: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace
