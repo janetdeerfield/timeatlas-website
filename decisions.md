@@ -125,3 +125,15 @@ After merging a preview branch:
 3. Verify the preview URL returns 404 within 24 hours
 
 This prevents stale preview deploys from being indexed and prevents preview-mode noindex logic from accidentally persisting in main.
+
+## Phase completion checklist (May 2026)
+
+Lesson from Phase 1: dev-only infrastructure created during a phase must be removed when the phase ships. Specifically:
+- Dev preview routes (e.g. DevTestComponents)
+- Feature flags for now-shipped features  
+- Branches created for review/iteration that have been merged
+- Sample data files used during component design
+
+These are not delete-later items. They are end-of-phase items. Add a "decommission" step to every phase plan from Phase 3 onward.
+
+If component preview becomes useful again in future phases, adopt a real tool (Storybook, Ladle) rather than re-creating ad-hoc preview pages in src/app/pages/.
