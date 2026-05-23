@@ -34,6 +34,7 @@ src/app/components/LiveClock.tsx lines 138-157 for the canonical
 implementation.
 
 Why this matters:
+
 - `tabular-nums` gives all digits equal horizontal width, so the clock
   doesn't visually jitter as digits change each second.
 - As a side effect in Inter specifically, tabular figures use a redrawn
@@ -42,6 +43,7 @@ Why this matters:
 - The foot is intentional brand identity, not a font bug.
 
 What to preserve in any future refactor:
+
 - Inter font family for clock digits (do not substitute with another font)
 - Weight 800 specifically (700 reads as too light at clock display sizes)
 - `font-variant-numeric: tabular-nums` (removing this loses both the
