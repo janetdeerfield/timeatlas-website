@@ -88,21 +88,22 @@ The brand palette as of May 2026:
 
 Avoid introducing new accent colors without updating this file. If a feature needs a color that isn't in the palette, raise it for a palette decision, don't pick locally.
 
-
 ## Typography system — three tiers (May 2026)
 
 The full typography system is three tiers, no exceptions:
 
-| Content type | Font | Why |
-|---|---|---|
-| Clock digits | Inter 800 + `tabular-nums` | Brand-critical; foot-on-1 design intent; no jitter. See "Clock digit typography" above. |
-| Code / format strings | Monospace stack (see below) | Machine-readable output; character-width alignment matters. |
-| Everything else | System sans (`--font-sans`) | Zero network cost; utility site; body brand identity not a priority. |
+| Content type          | Font                        | Why                                                                                     |
+| --------------------- | --------------------------- | --------------------------------------------------------------------------------------- |
+| Clock digits          | Inter 800 + `tabular-nums`  | Brand-critical; foot-on-1 design intent; no jitter. See "Clock digit typography" above. |
+| Code / format strings | Monospace stack (see below) | Machine-readable output; character-width alignment matters.                             |
+| Everything else       | System sans (`--font-sans`) | Zero network cost; utility site; body brand identity not a priority.                    |
 
 **Monospace stack:**
+
 ```
 ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace
 ```
+
 SF Mono on macOS, Cascadia Code on modern Windows, Roboto Mono on Android — all higher quality than the old `Monaco, Consolas, monospace` fallback chain. Zero network cost.
 
 **Monospace applies to:** code blocks, format examples, ISO 8601 strings, Unix timestamps as format values, IANA timezone identifiers, any content showing what you'd type or paste into a terminal or API call.
@@ -110,4 +111,3 @@ SF Mono on macOS, Cascadia Code on modern Windows, Roboto Mono on Android — al
 **Monospace does not apply to:** live clock readouts (Inter 800), UI labels, body text, headings, navigation.
 
 **Note on numeric live readouts** (Unix timestamps, milliseconds, time differences): these are clocks, not code. They tick. They use Inter 800 + tabular-nums, not monospace, even though they look code-like at a glance. The test: if the value changes on a timer, it's a clock.
-
