@@ -37,7 +37,6 @@ export function World({ use24Hour }: WorldProps) {
             <h1
               className="text-5xl font-bold mb-3"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#FEFEFE',
               }}
             >
@@ -46,7 +45,6 @@ export function World({ use24Hour }: WorldProps) {
             <p
               className="text-lg"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#5C6E87',
               }}
             >
@@ -76,7 +74,6 @@ export function World({ use24Hour }: WorldProps) {
             <h2
               className="text-2xl font-bold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -86,7 +83,6 @@ export function World({ use24Hour }: WorldProps) {
               <p
                 className="mb-4"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                   lineHeight: '1.7',
                 }}
@@ -98,7 +94,6 @@ export function World({ use24Hour }: WorldProps) {
               </p>
               <p
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                   lineHeight: '1.7',
                 }}

@@ -39,7 +39,6 @@ export function ToolCard({
         <div
           className="px-6 py-3 rounded-full font-semibold mb-3"
           style={{
-            fontFamily: 'Inter, sans-serif',
             color: '#FFFFFF',
             backgroundColor: textColor || '#0A84D0',
             fontSize: '16px',
@@ -51,7 +50,6 @@ export function ToolCard({
         <p
           className="text-sm"
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             color: '#364151',
             lineHeight: 1.5,
           }}

@@ -17,7 +17,6 @@ export function About() {
           <article className="prose prose-lg max-w-none">
             <h1
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#0F172A',
                 fontSize: '48px',
                 fontWeight: 500,
@@ -30,7 +29,6 @@ export function About() {
 
             <p
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -43,7 +41,6 @@ export function About() {
 
             <p
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -58,7 +55,6 @@ export function About() {
 
             <h2
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#0F172A',
                 fontSize: '32px',
                 fontWeight: 500,
@@ -72,7 +68,6 @@ export function About() {
 
             <ul
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -93,7 +88,6 @@ export function About() {
 
             <h2
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#0F172A',
                 fontSize: '32px',
                 fontWeight: 500,
@@ -107,7 +101,6 @@ export function About() {
 
             <p
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -119,7 +112,6 @@ export function About() {
 
             <ul
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -140,7 +132,6 @@ export function About() {
 
             <p
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -152,7 +143,6 @@ export function About() {
 
             <h2
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#0F172A',
                 fontSize: '32px',
                 fontWeight: 500,
@@ -166,7 +156,6 @@ export function About() {
 
             <p
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#475569',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -179,7 +168,6 @@ export function About() {
 
             <p
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#0F172A',
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -202,7 +190,6 @@ export function About() {
                 to="/#time-tools"
                 style={{
                   display: 'inline-block',
-                  fontFamily: 'Inter, sans-serif',
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#0066AA',

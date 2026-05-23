@@ -137,7 +137,6 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
             defaultValue=""
             aria-label="Select your city"
             className="text-sm rounded-md border border-slate-300 px-2 py-1 bg-white text-slate-700 cursor-pointer"
-            style={{ fontFamily: 'Open Sans, sans-serif' }}
           >
             <option value="" disabled>
               Select your city…
@@ -154,7 +153,7 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
           <button
             onClick={() => setPicking(true)}
             className="text-xs hover:underline transition-colors"
-            style={{ fontFamily: 'Open Sans, sans-serif', color: '#64748B' }}
+            style={{ color: '#64748B' }}
           >
             Not your city? Change →
           </button>
@@ -165,7 +164,6 @@ export function ClockHero({ use24Hour }: ClockHeroProps) {
       <p
         className="text-center px-4"
         style={{
-          fontFamily: 'Open Sans, sans-serif',
           fontSize: '14px',
           color: '#64748B',
           maxWidth: '900px',

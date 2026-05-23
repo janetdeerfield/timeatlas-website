@@ -266,7 +266,6 @@ export default function LiveClock({
       {/* City (Country) */}
       <div
         style={{
-          fontFamily: 'Inter, sans-serif',
           fontWeight: 600,
           fontSize: compact ? 16 : 18,
           color: '#364151',
@@ -334,7 +333,6 @@ export default function LiveClock({
       {showTimeZoneName && (
         <div
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             fontSize: compact ? 14 : 16,
             color: '#6B7280',
             marginTop: 12,
@@ -347,7 +345,7 @@ export default function LiveClock({
       {showMilliseconds && (
         <div
           style={{
-            fontFamily: 'Open Sans, sans-serif',
+            fontFamily: 'Inter, sans-serif',
             fontSize: 14,
             color: '#64748B',
             marginTop: 6,
@@ -362,7 +360,6 @@ export default function LiveClock({
       {showDate && (
         <div
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             fontSize: compact ? 14 : 20,
             color: '#364151',
             marginTop: 12,
@@ -376,7 +373,6 @@ export default function LiveClock({
       {showUtcOffset && (
         <div
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             fontSize: compact ? 12 : 16,
             color: '#6B7280',
             marginTop: 8,
@@ -394,7 +390,6 @@ export default function LiveClock({
             gap: 24,
             marginTop: 24,
             flexWrap: 'wrap',
-            fontFamily: 'Open Sans, sans-serif',
             fontSize: 15,
           }}
         >

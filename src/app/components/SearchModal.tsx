@@ -96,7 +96,6 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             autoFocus
             className="flex-1 outline-none text-base"
             style={{
-              fontFamily: 'Open Sans, sans-serif',
               color: '#080A0C',
             }}
           />
@@ -120,7 +119,6 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 className="w-full text-left px-4 py-3 transition-colors border-b hover:bg-gray-50"
                 style={{
                   borderColor: '#F2EFEA',
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                 }}
               >
@@ -135,7 +133,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           ) : (
             <div
               className="p-8 text-center"
-              style={{ color: '#6B7280', fontFamily: 'Open Sans, sans-serif' }}
+              style={{ color: '#6B7280' }}
             >
               No results found
             </div>
@@ -148,7 +146,6 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
           style={{
             borderColor: '#E6E9EE',
             backgroundColor: '#F2EFEA',
-            fontFamily: 'Open Sans, sans-serif',
             color: '#6B7280',
           }}
         >

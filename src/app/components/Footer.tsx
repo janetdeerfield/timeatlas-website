@@ -9,7 +9,6 @@ export function Footer() {
             <h3
               className="text-lg font-bold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#FFFFFF',
               }}
             >
@@ -19,7 +18,6 @@ export function Footer() {
               <p
                 className="text-sm italic"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#CBD5E1',
                   lineHeight: '1.6',
                 }}
@@ -29,7 +27,6 @@ export function Footer() {
               <p
                 className="text-sm"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#CBD5E1',
                   lineHeight: '1.6',
                 }}
@@ -44,7 +41,6 @@ export function Footer() {
             <h4
               className="font-semibold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#FFFFFF',
                 fontSize: '14px',
               }}
@@ -64,7 +60,6 @@ export function Footer() {
                     href={item.href}
                     className="transition-colors"
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#FFFFFF',
                       fontSize: '14px',
                       textDecoration: 'none',
@@ -84,7 +79,6 @@ export function Footer() {
             <h4
               className="font-semibold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#FFFFFF',
                 fontSize: '14px',
               }}
@@ -102,7 +96,6 @@ export function Footer() {
                     href={item.href}
                     className="transition-colors"
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#FFFFFF',
                       fontSize: '14px',
                       textDecoration: 'none',
@@ -123,7 +116,6 @@ export function Footer() {
           className="border-t pt-8 text-center"
           style={{
             borderColor: '#1a1f2e',
-            fontFamily: 'Open Sans, sans-serif',
             fontSize: '14px',
             color: '#8495CB',
           }}

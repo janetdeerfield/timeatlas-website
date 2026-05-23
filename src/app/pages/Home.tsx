@@ -68,7 +68,6 @@ export function Home({ use24Hour }: HomeProps) {
               <h2
                 className="text-3xl font-bold mb-8 text-center"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   color: '#080A0C',
                 }}
               >
@@ -120,7 +119,6 @@ export function Home({ use24Hour }: HomeProps) {
               <h2
                 className="text-3xl font-bold mb-8"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   color: '#080A0C',
                 }}
               >
@@ -153,7 +151,6 @@ export function Home({ use24Hour }: HomeProps) {
                 <h2
                   className="text-2xl font-bold mb-6"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                   }}
                 >
@@ -171,7 +168,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <p
                     className="font-semibold mb-2"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                     }}
@@ -181,7 +177,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <p
                     className="mb-2"
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '14px',
                       lineHeight: '1.6',
@@ -192,7 +187,6 @@ export function Home({ use24Hour }: HomeProps) {
                   </p>
                   <p
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '14px',
                       lineHeight: '1.6',
@@ -208,7 +202,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
                         color: '#080A0C',
                         fontSize: '15px',
@@ -218,7 +211,6 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
                         fontSize: '15px',
                       }}
@@ -229,7 +221,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
                         color: '#080A0C',
                         fontSize: '15px',
@@ -239,7 +230,6 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
                         fontSize: '15px',
                       }}
@@ -250,7 +240,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
                         color: '#080A0C',
                         fontSize: '15px',
@@ -260,7 +249,6 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
                         fontSize: '15px',
                       }}
@@ -272,7 +260,6 @@ export function Home({ use24Hour }: HomeProps) {
                     <div className="flex flex-wrap items-center gap-1 sm:gap-2">
                       <span
                         style={{
-                          fontFamily: 'Inter, sans-serif',
                           fontWeight: 600,
                           color: '#080A0C',
                           fontSize: '15px',
@@ -282,7 +269,6 @@ export function Home({ use24Hour }: HomeProps) {
                       </span>
                       <span
                         style={{
-                          fontFamily: 'Open Sans, sans-serif',
                           color: '#364151',
                           fontSize: '15px',
                         }}
@@ -293,7 +279,6 @@ export function Home({ use24Hour }: HomeProps) {
                     <div className="pl-0 sm:pl-0">
                       <div
                         style={{
-                          fontFamily: 'Open Sans, sans-serif',
                           color: '#5C6E87',
                           fontSize: '13px',
                           fontStyle: 'italic',
@@ -303,7 +288,6 @@ export function Home({ use24Hour }: HomeProps) {
                       </div>
                       <div
                         style={{
-                          fontFamily: 'Open Sans, sans-serif',
                           color: '#5C6E87',
                           fontSize: '13px',
                           fontStyle: 'italic',
@@ -316,7 +300,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
                         color: '#080A0C',
                         fontSize: '15px',
@@ -326,7 +309,6 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
                         fontSize: '15px',
                       }}
@@ -337,7 +319,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
                         color: '#080A0C',
                         fontSize: '15px',
@@ -347,7 +328,6 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
                         fontSize: '15px',
                       }}
@@ -358,7 +338,6 @@ export function Home({ use24Hour }: HomeProps) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         fontWeight: 600,
                         color: '#080A0C',
                         fontSize: '15px',
@@ -368,7 +347,6 @@ export function Home({ use24Hour }: HomeProps) {
                     </span>
                     <span
                       style={{
-                        fontFamily: 'Open Sans, sans-serif',
                         color: '#364151',
                         fontSize: '15px',
                       }}
@@ -393,7 +371,6 @@ export function Home({ use24Hour }: HomeProps) {
               <h2
                 className="text-3xl font-bold mb-8"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   color: '#FFFFFF',
                 }}
               >
@@ -414,7 +391,6 @@ export function Home({ use24Hour }: HomeProps) {
                     <h3
                       className="font-semibold uppercase tracking-wide text-sm"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         color: '#0066AA',
                         letterSpacing: '0.05em',
                       }}
@@ -424,7 +400,6 @@ export function Home({ use24Hour }: HomeProps) {
                   </div>
                   <p
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       fontSize: 16,
                       lineHeight: 1.6,
                       color: '#364151',
@@ -449,7 +424,6 @@ export function Home({ use24Hour }: HomeProps) {
                     <h3
                       className="font-semibold uppercase tracking-wide text-sm"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         color: '#2E7D32',
                         letterSpacing: '0.05em',
                       }}
@@ -459,7 +433,6 @@ export function Home({ use24Hour }: HomeProps) {
                   </div>
                   <p
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       fontSize: 16,
                       lineHeight: 1.6,
                       color: '#364151',
@@ -471,7 +444,6 @@ export function Home({ use24Hour }: HomeProps) {
                   </p>
                   <p
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       fontSize: 14,
                       color: '#5C6E87',
                     }}
