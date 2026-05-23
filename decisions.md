@@ -111,3 +111,17 @@ SF Mono on macOS, Cascadia Code on modern Windows, Roboto Mono on Android — al
 **Monospace does not apply to:** live clock readouts (Inter 800), UI labels, body text, headings, navigation.
 
 **Note on numeric live readouts** (Unix timestamps, milliseconds, time differences): these are clocks, not code. They tick. They use Inter 800 + tabular-nums, not monospace, even though they look code-like at a glance. The test: if the value changes on a timer, it's a clock.
+
+## Branch and preview deployment policy (May 2026)
+
+Preview deployments must include robots.txt Disallow and meta noindex,nofollow on every page. The hosting platform handles this automatically for non-production deploys (verify with: curl preview-url/robots.txt and grep meta robots in the HTML).
+
+Production must have explicit meta robots="index,follow" and no Disallow in robots.txt.
+
+After merging a preview branch:
+1. Delete the local branch (git branch -d <branch>)
+2. Delete the remote branch (git push origin --delete <branch>)
+3. Verify the preview URL returns 404 within 24 hours
+
+This prevents stale preview deploys from being indexed and prevents preview-mode noindex logic from accidentally persisting in main.
+
