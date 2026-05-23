@@ -119,9 +119,9 @@ Preview deployments must include robots.txt Disallow and meta noindex,nofollow o
 Production must have explicit meta robots="index,follow" and no Disallow in robots.txt.
 
 After merging a preview branch:
+
 1. Delete the local branch (git branch -d <branch>)
 2. Delete the remote branch (git push origin --delete <branch>)
 3. Verify the preview URL returns 404 within 24 hours
 
 This prevents stale preview deploys from being indexed and prevents preview-mode noindex logic from accidentally persisting in main.
-
