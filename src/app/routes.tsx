@@ -13,11 +13,6 @@ const Convert = lazy(() => import('./pages/Convert').then((m) => ({ default: m.C
 const World = lazy(() => import('./pages/World').then((m) => ({ default: m.World })));
 const Meet = lazy(() => import('./pages/Meet').then((m) => ({ default: m.Meet })));
 const Dev = lazy(() => import('./pages/Dev').then((m) => ({ default: m.Dev })));
-// DevTestComponents is intentionally NOT declared at module scope.
-// A top-level lazy() makes Rollup include the chunk in every production build
-// regardless of the import.meta.env.DEV route guard. The dynamic import is
-// inlined inside the conditional below so Rollup dead-code-eliminates it when
-// building for production (import.meta.env.DEV === false).
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
 const Privacy = lazy(() => import('./pages/Privacy').then((m) => ({ default: m.Privacy })));
 const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms })));
@@ -56,21 +51,6 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
         path: 'dev',
         element: <Dev />,
       },
-      ...(import.meta.env.DEV
-        ? [
-            {
-              path: 'dev-test-components',
-              element: (() => {
-                const DevTestComponents = lazy(() =>
-                  import('./pages/DevTestComponents').then((m) => ({
-                    default: m.DevTestComponents,
-                  }))
-                );
-                return <DevTestComponents />;
-              })(),
-            },
-          ]
-        : []),
       {
         path: 'about',
         element: <About />,

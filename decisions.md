@@ -22,7 +22,7 @@
 
 ## Deletion checklist
 
-- [ ] Remove /dev-test-components route before V3 production deploy
+- [x] Remove /dev-test-components route before V3 production deploy — done, May 2026
 
 **Implementation note:** The preview route is included in local production preview builds so reviewers can inspect component output after `npm run build && npm run preview`. It remains `noindex,nofollow` and must be removed before deployment.
 
@@ -125,6 +125,16 @@ After merging a preview branch:
 3. Verify the preview URL returns 404 within 24 hours
 
 This prevents stale preview deploys from being indexed and prevents preview-mode noindex logic from accidentally persisting in main.
+
+## DevTestComponents removal — final (May 2026)
+
+DevTestComponents.tsx was a single-page visual catalog of the Phase 1 component library, used during March–April 2026 for component review during the design iteration phase. The page rendered 14 components in their multiple variants with realistic sample data.
+
+Removed in May 2026 once the Phase 1 library was stable and no longer being actively iterated. Git history preserves the file at commit `7d2f51d` (the HEAD immediately before deletion) if a future component catalog is needed.
+
+Why not keep it: the file lived in `src/app/pages/` alongside production pages, gated only by `import.meta.env.DEV`. The investigation report from 5/22 identified the gate as fragile — any future refactor of `routes.tsx` could accidentally expose it. The most likely root cause of the May 18–19 GSC noindex incident was a preview deployment of related infrastructure being crawled. Removing it eliminates this risk class entirely.
+
+If component preview becomes useful again: adopt Storybook or Ladle as a dedicated tool, separated from production source. Do not re-add isolated preview pages to `src/app/pages/`.
 
 ## Phase completion checklist (May 2026)
 
