@@ -126,6 +126,14 @@ After merging a preview branch:
 
 This prevents stale preview deploys from being indexed and prevents preview-mode noindex logic from accidentally persisting in main.
 
+## Font directory case normalization (May 2026)
+
+The fonts directory was originally created as `public/Fonts/` (uppercase F) and was renamed to `public/fonts/` at the OS level during the typography work. This rename was invisible on macOS's case-insensitive filesystem but would have caused production 404s on case-sensitive Linux servers — clock digits would have silently fallen back to system fonts, losing the brand-critical foot-on-1.
+
+Fix: normalized git-tracked path to lowercase `public/fonts/` using a two-step `git mv` rename (`Fonts → fonts_tmp → fonts`). Six leftover font files (Open Sans + Inter 500/600) that had been deleted at the OS level but never via `git rm` were properly removed in the same commit.
+
+Going forward: all filesystem paths in this codebase are lowercase. If you see an uppercase path anywhere, investigate.
+
 ## DevTestComponents removal — final (May 2026)
 
 DevTestComponents.tsx was a single-page visual catalog of the Phase 1 component library, used during March–April 2026 for component review during the design iteration phase. The page rendered 14 components in their multiple variants with realistic sample data.
