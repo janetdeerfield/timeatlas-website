@@ -14,10 +14,10 @@ export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTablePr
       <table className="w-full text-left text-sm">
         <thead>
           <tr className="border-b border-slate-100">
-            <th className="pb-3 pr-6 font-semibold font-inter text-slate-500 text-xs uppercase tracking-wider">
+            <th className="pb-3 pr-6 font-semibold text-slate-500 text-xs uppercase tracking-wider">
               {fromZoneAbbr}
             </th>
-            <th className="pb-3 font-semibold font-inter text-slate-500 text-xs uppercase tracking-wider">
+            <th className="pb-3 font-semibold text-slate-500 text-xs uppercase tracking-wider">
               {toZoneAbbr}
             </th>
           </tr>
@@ -30,8 +30,8 @@ export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTablePr
                 idx % 2 === 0 ? '' : 'bg-slate-50/50'
               }`}
             >
-              <td className="py-2.5 pr-6 font-open-sans text-slate-700">{row.from}</td>
-              <td className="py-2.5 font-open-sans text-slate-900 font-medium">{row.to}</td>
+              <td className="py-2.5 pr-6 text-slate-700">{row.from}</td>
+              <td className="py-2.5 text-slate-900 font-medium">{row.to}</td>
             </tr>
           ))}
         </tbody>

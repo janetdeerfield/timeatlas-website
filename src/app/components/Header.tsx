@@ -49,7 +49,6 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   to={item.path}
                   className="px-4 py-2 text-base font-medium transition-all"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: location.pathname === item.path ? '#2E45F0' : '#334155',
                     backgroundColor: location.pathname === item.path ? '#E7EDFF' : 'transparent',
                     borderRadius: '999px',
@@ -78,7 +77,6 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   onClick={onToggleFormat}
                   className="px-3 py-1.5 rounded-full font-medium transition-all"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     backgroundColor: !use24Hour ? '#2E45F0' : 'white',
                     color: !use24Hour ? 'white' : '#334155',
                     border: !use24Hour ? 'none' : '1px solid #D9DEE6',
@@ -90,7 +88,6 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   onClick={onToggleFormat}
                   className="px-3 py-1.5 rounded-full font-medium transition-all"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     backgroundColor: use24Hour ? '#2E45F0' : 'white',
                     color: use24Hour ? 'white' : '#334155',
                     border: use24Hour ? 'none' : '1px solid #D9DEE6',
@@ -125,7 +122,6 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   onClick={onToggleFormat}
                   className="px-2.5 py-1 rounded-full font-medium transition-all"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     backgroundColor: !use24Hour ? '#2E45F0' : 'white',
                     color: !use24Hour ? 'white' : '#334155',
                     border: !use24Hour ? 'none' : '1px solid #D9DEE6',
@@ -138,7 +134,6 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   onClick={onToggleFormat}
                   className="px-2.5 py-1 rounded-full font-medium transition-all"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     backgroundColor: use24Hour ? '#2E45F0' : 'white',
                     color: use24Hour ? 'white' : '#334155',
                     border: use24Hour ? 'none' : '1px solid #D9DEE6',
@@ -173,7 +168,6 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                       to={item.path}
                       className="px-4 py-2.5 text-base font-medium transition-all"
                       style={{
-                        fontFamily: 'Inter, sans-serif',
                         color: location.pathname === item.path ? '#2E45F0' : '#334155',
                         backgroundColor:
                           location.pathname === item.path ? '#E7EDFF' : 'transparent',

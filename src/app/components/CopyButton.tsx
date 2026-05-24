@@ -25,16 +25,15 @@ export function CopyButton({ text, label }: CopyButtonProps) {
       onClick={handleCopy}
       className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all text-sm font-medium"
       style={{
-        fontFamily: 'Inter, sans-serif',
         backgroundColor: 'white',
-        color: copied ? '#0A84D0' : '#364151',
+        color: copied ? '#0066AA' : '#364151',
         border: '1px solid #D9DEE6',
       }}
     >
       {copied ? (
         <>
-          <Check className="w-4 h-4" style={{ color: '#0A84D0' }} />
-          <span style={{ color: '#0A84D0' }}>Copied!</span>
+          <Check className="w-4 h-4" style={{ color: '#0066AA' }} />
+          <span style={{ color: '#0066AA' }}>Copied!</span>
         </>
       ) : (
         <>

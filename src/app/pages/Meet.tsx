@@ -143,7 +143,6 @@ export function Meet({ use24Hour }: MeetProps) {
           <h1
             className="text-5xl font-bold mb-3"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -152,7 +151,6 @@ export function Meet({ use24Hour }: MeetProps) {
           <p
             className="text-lg"
             style={{
-              fontFamily: 'Open Sans, sans-serif',
               color: '#364151',
             }}
           >
@@ -168,7 +166,6 @@ export function Meet({ use24Hour }: MeetProps) {
           <h2
             className="text-lg font-semibold mb-4"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -182,7 +179,6 @@ export function Meet({ use24Hour }: MeetProps) {
                   onChange={(e) => handleCityChange(index, e.target.value)}
                   className="flex-1 px-4 py-2 rounded-lg"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     border: '1px solid #D9DEE6',
                     color: '#080A0C',
                   }}
@@ -198,7 +194,6 @@ export function Meet({ use24Hour }: MeetProps) {
                     onClick={() => removeCity(index)}
                     className="px-4 py-2 rounded-lg transition-colors"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#d4183d',
                       backgroundColor: 'transparent',
                     }}
@@ -220,7 +215,6 @@ export function Meet({ use24Hour }: MeetProps) {
               onClick={addCity}
               className="mt-4 px-4 py-2 rounded-lg transition-colors"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#005EE9',
                 backgroundColor: 'transparent',
               }}
@@ -244,7 +238,6 @@ export function Meet({ use24Hour }: MeetProps) {
           <h2
             className="text-lg font-semibold mb-4"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -264,7 +257,6 @@ export function Meet({ use24Hour }: MeetProps) {
           <div
             className="text-center mt-2 text-2xl font-bold"
             style={{
-              fontFamily: 'Inter, sans-serif',
               fontWeight: 800,
               color: '#080A0C',
             }}
@@ -285,7 +277,6 @@ export function Meet({ use24Hour }: MeetProps) {
               <h2
                 className="text-lg font-semibold"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   color: '#080A0C',
                 }}
               >
@@ -296,7 +287,6 @@ export function Meet({ use24Hour }: MeetProps) {
               onClick={handleCopy}
               className="flex items-center gap-2 px-3 py-2 rounded-lg transition-colors"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: copied ? '#10b981' : '#005EE9',
                 backgroundColor: 'transparent',
                 border: '1px solid',
@@ -341,7 +331,6 @@ export function Meet({ use24Hour }: MeetProps) {
               />
               <span
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   fontSize: '0.875rem',
                   color: '#364151',
                 }}
@@ -360,7 +349,6 @@ export function Meet({ use24Hour }: MeetProps) {
               />
               <span
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   fontSize: '0.875rem',
                   color: '#364151',
                 }}
@@ -379,7 +367,6 @@ export function Meet({ use24Hour }: MeetProps) {
               />
               <span
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   fontSize: '0.875rem',
                   color: '#364151',
                 }}
@@ -418,7 +405,6 @@ export function Meet({ use24Hour }: MeetProps) {
                       <h3
                         className="font-semibold"
                         style={{
-                          fontFamily: 'Inter, sans-serif',
                           color: '#080A0C',
                         }}
                       >
@@ -427,7 +413,6 @@ export function Meet({ use24Hour }: MeetProps) {
                       <p
                         className="text-sm"
                         style={{
-                          fontFamily: 'Open Sans, sans-serif',
                           fontSize: '13px',
                           color: '#94A3B8',
                           marginTop: '2px',
@@ -451,7 +436,6 @@ export function Meet({ use24Hour }: MeetProps) {
                       <div
                         className="text-sm"
                         style={{
-                          fontFamily: 'Open Sans, sans-serif',
                           color: colors.text,
                           fontWeight: 600,
                         }}
@@ -478,7 +462,6 @@ export function Meet({ use24Hour }: MeetProps) {
             <p
               className="text-lg font-semibold"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -489,7 +472,6 @@ export function Meet({ use24Hour }: MeetProps) {
             <p
               className="text-sm mt-2"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#364151',
               }}
             >
@@ -501,16 +483,12 @@ export function Meet({ use24Hour }: MeetProps) {
 
       {/* SEO Content Section */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        <h2
-          className="text-2xl font-bold mb-4"
-          style={{ fontFamily: 'Inter, sans-serif', color: '#080A0C' }}
-        >
+        <h2 className="text-2xl font-bold mb-4" style={{ color: '#080A0C' }}>
           Best Meeting Times Between Time Zones
         </h2>
         <p
           className="mb-4"
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             color: '#364151',
             fontSize: '15px',
             lineHeight: '1.7',
@@ -522,7 +500,6 @@ export function Meet({ use24Hour }: MeetProps) {
         </p>
         <p
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             color: '#364151',
             fontSize: '15px',
             lineHeight: '1.7',

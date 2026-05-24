@@ -90,7 +90,6 @@ export function Dev() {
             <h1
               className="text-5xl font-bold mb-3"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -99,7 +98,6 @@ export function Dev() {
             <p
               className="text-lg"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#364151',
               }}
             >
@@ -115,7 +113,6 @@ export function Dev() {
             <h2
               className="text-xl font-semibold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -128,7 +125,6 @@ export function Dev() {
                   <h3
                     className="font-medium"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#364151',
                     }}
                   >
@@ -153,9 +149,11 @@ export function Dev() {
                   </button>
                 </div>
                 <code
-                  className="text-2xl font-mono font-bold"
+                  className="text-2xl font-bold"
                   style={{
-                    fontFamily: 'Monaco, Consolas, monospace',
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 800,
+                    fontVariantNumeric: 'tabular-nums',
                     color: '#080A0C',
                   }}
                 >
@@ -164,8 +162,7 @@ export function Dev() {
                 <p
                   className="text-sm mt-2"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
-                    color: '#8595AD',
+                    color: '#5C6E87',
                   }}
                 >
                   Coordinated Universal Time (UTC) - The primary time standard
@@ -178,7 +175,6 @@ export function Dev() {
                   <h3
                     className="font-medium"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#364151',
                     }}
                   >
@@ -203,9 +199,11 @@ export function Dev() {
                   </button>
                 </div>
                 <code
-                  className="text-2xl font-mono font-bold"
+                  className="text-2xl font-bold"
                   style={{
-                    fontFamily: 'Monaco, Consolas, monospace',
+                    fontFamily: 'Inter, sans-serif',
+                    fontWeight: 800,
+                    fontVariantNumeric: 'tabular-nums',
                     color: '#080A0C',
                   }}
                 >
@@ -214,8 +212,7 @@ export function Dev() {
                 <p
                   className="text-sm mt-2"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
-                    color: '#8595AD',
+                    color: '#5C6E87',
                   }}
                 >
                   Seconds since January 1, 1970 00:00:00 UTC
@@ -228,7 +225,6 @@ export function Dev() {
                   <h3
                     className="font-medium"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#364151',
                     }}
                   >
@@ -255,7 +251,8 @@ export function Dev() {
                 <code
                   className="text-lg font-mono font-bold break-all"
                   style={{
-                    fontFamily: 'Monaco, Consolas, monospace',
+                    fontFamily:
+                      'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace',
                     color: '#080A0C',
                   }}
                 >
@@ -264,8 +261,7 @@ export function Dev() {
                 <p
                   className="text-sm mt-2"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
-                    color: '#8595AD',
+                    color: '#5C6E87',
                   }}
                 >
                   International standard for date and time representation
@@ -278,7 +274,6 @@ export function Dev() {
                   <h3
                     className="font-medium"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#364151',
                     }}
                   >
@@ -305,7 +300,8 @@ export function Dev() {
                 <code
                   className="text-xl font-mono font-bold"
                   style={{
-                    fontFamily: 'Monaco, Consolas, monospace',
+                    fontFamily:
+                      'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace',
                     color: '#080A0C',
                   }}
                 >
@@ -314,8 +310,7 @@ export function Dev() {
                 <p
                   className="text-sm mt-2"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
-                    color: '#8595AD',
+                    color: '#5C6E87',
                   }}
                 >
                   IANA timezone identifier
@@ -332,7 +327,6 @@ export function Dev() {
             <h2
               className="text-xl font-semibold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -343,7 +337,6 @@ export function Dev() {
                 <label
                   className="block text-sm font-medium mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#364151',
                   }}
                 >
@@ -357,7 +350,8 @@ export function Dev() {
                     placeholder="e.g., 1709589895"
                     className="flex-1 px-4 py-3 rounded-lg font-mono"
                     style={{
-                      fontFamily: 'Monaco, Consolas, monospace',
+                      fontFamily:
+                        'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace',
                       border: '1px solid #D9DEE6',
                       color: '#080A0C',
                     }}
@@ -366,7 +360,6 @@ export function Dev() {
                     onClick={handleUnixConvert}
                     className="px-6 py-3 rounded-full font-semibold transition-all"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       backgroundColor: '#2E45F0',
                       color: 'white',
                     }}
@@ -389,7 +382,6 @@ export function Dev() {
                   <h3
                     className="font-medium mb-1"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#364151',
                     }}
                   >
@@ -398,7 +390,6 @@ export function Dev() {
                   <p
                     className="text-lg font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                     }}
                   >
@@ -417,7 +408,6 @@ export function Dev() {
             <h2
               className="text-xl font-semibold mb-4"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -428,7 +418,6 @@ export function Dev() {
                 <h3
                   className="font-medium mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#364151',
                   }}
                 >
@@ -442,7 +431,10 @@ export function Dev() {
                   }}
                 >
                   <code
-                    style={{ fontFamily: 'Monaco, Consolas, monospace' }}
+                    style={{
+                      fontFamily:
+                        'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace',
+                    }}
                   >{`// Get current Unix timestamp
 const timestamp = Math.floor(Date.now() / 1000);
 
@@ -457,7 +449,6 @@ const iso = new Date().toISOString();`}</code>
                 <h3
                   className="font-medium mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#364151',
                   }}
                 >
@@ -470,7 +461,12 @@ const iso = new Date().toISOString();`}</code>
                     color: '#F0F9F3',
                   }}
                 >
-                  <code style={{ fontFamily: 'Monaco, Consolas, monospace' }}>{`import time
+                  <code
+                    style={{
+                      fontFamily:
+                        'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace',
+                    }}
+                  >{`import time
 from datetime import datetime
 
 # Get current Unix timestamp

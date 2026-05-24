@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import { Header } from '../components/Header';
 import { trackPageView } from '../utils/analytics';
@@ -20,7 +20,12 @@ export function RootLayout({ use24Hour, onToggleFormat }: RootLayoutProps) {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header use24Hour={use24Hour} onToggleFormat={onToggleFormat} />
       <main style={{ flex: 1 }}>
-        <Outlet />
+        {/* fallback={null}: prerendered HTML is already visible in the DOM,
+            so we show nothing while the lazy chunk loads rather than replacing
+            the visible content with a spinner. */}
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );

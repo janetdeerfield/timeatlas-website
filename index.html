@@ -6,32 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TimeAtlas</title>
 
-    <!--
-      Font preloads — tells the browser to fetch critical woff2 files immediately,
-      before the JS bundle → CSS → @font-face chain can discover them.
-      crossorigin is required even for same-origin fonts when using preload.
-    -->
-    <link
-      rel="preload"
-      href="/Fonts/inter-v20-latin/inter-v20-latin-600.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/Fonts/inter-v20-latin/inter-v20-latin-800.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/Fonts/open-sans-v44-latin/open-sans-v44-latin-regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <!-- Structured data: site-wide WebSite + Organization schemas.
+         These are static and identical on every page, so they live here rather
+         than in a React component. stripBaseSeo() in prerender.mjs only removes
+         title/og tags, so these script blocks survive into every prerendered page. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TimeAtlas",
+        "url": "https://timeatlas.co",
+        "description": "Free time zone converter for meetings, travel, and remote work.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://timeatlas.co/convert?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TimeAtlas",
+        "url": "https://timeatlas.co",
+        "logo": "https://timeatlas.co/og-image.webp"
+      }
+    </script>
 
     <!-- Base Meta Description -->
     <meta name="description" content="TimeAtlas – A time observatory for the internet" />
@@ -42,7 +46,10 @@
       property="og:description"
       content="Convert time, plan meetings, and explore world clocks with precision."
     />
-    <meta property="og:image" content="https://timeatlas.co/logo-wordmark.webp" />
+    <meta property="og:image" content="https://timeatlas.co/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:url" content="https://timeatlas.co" />
     <meta property="og:type" content="website" />
   </head>

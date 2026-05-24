@@ -1,4 +1,9 @@
-import { renderToString } from 'react-dom/server';
+/// <reference types="node" />
+// prerender.tsx runs only in Node.js (via the SSR build).
+// The triple-slash directive above pulls in @types/node so PassThrough
+// and Buffer are recognised without adding "node" to the browser tsconfig.
+import { renderToPipeableStream } from 'react-dom/server';
+import { PassThrough } from 'node:stream';
 import { HelmetProvider, type HelmetServerState } from 'react-helmet-async';
 import {
   createStaticHandler,
@@ -41,22 +46,46 @@ export async function renderPath(path: string) {
 
   const router = createStaticRouter(handler.dataRoutes, context as StaticHandlerContext);
   const helmetContext = {};
-  const html = renderToString(
-    <HelmetProvider context={helmetContext}>
-      <StaticRouterProvider
-        router={router}
-        context={context as StaticHandlerContext}
-        hydrate={false}
-      />
-    </HelmetProvider>
-  );
-  const { helmet } = helmetContext as { helmet: HelmetServerState };
 
-  return {
-    html,
-    head: [helmet.title.toString(), helmet.meta.toString(), helmet.link.toString()]
-      .filter(Boolean)
-      .join('\n'),
-    statusCode: context.statusCode,
-  };
+  // renderToPipeableStream + onAllReady waits for every Suspense boundary
+  // (including React.lazy route chunks) to fully resolve before we read the
+  // stream. renderToString cannot await lazy imports and would instead emit
+  // empty Suspense fallbacks, producing prerendered pages with missing content.
+  // renderToPipeableStream uses Node.js streams and works correctly in the CJS
+  // SSR build context (renderToReadableStream is browser/Web Streams only).
+  return new Promise<{ html: string; head: string; statusCode: number }>((resolve, reject) => {
+    let html = '';
+    const { pipe } = renderToPipeableStream(
+      <HelmetProvider context={helmetContext}>
+        <StaticRouterProvider
+          router={router}
+          context={context as StaticHandlerContext}
+          hydrate={false}
+        />
+      </HelmetProvider>,
+      {
+        onAllReady() {
+          const stream = new PassThrough();
+          stream.on('data', (chunk: Buffer) => {
+            html += chunk.toString();
+          });
+          stream.on('end', () => {
+            const { helmet } = helmetContext as { helmet: HelmetServerState };
+            resolve({
+              html,
+              head: [helmet.title.toString(), helmet.meta.toString(), helmet.link.toString()]
+                .filter(Boolean)
+                .join('\n'),
+              statusCode: (context as StaticHandlerContext).statusCode,
+            });
+          });
+          stream.on('error', reject);
+          pipe(stream);
+        },
+        onError(error) {
+          reject(error);
+        },
+      }
+    );
+  });
 }

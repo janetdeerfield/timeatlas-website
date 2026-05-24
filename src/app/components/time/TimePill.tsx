@@ -24,18 +24,18 @@ export function TimePill({ zoneAbbr, city, ianaTimezone, use24Hour = false }: Ti
 
   return (
     <div className="flex-1 min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm flex flex-col gap-2">
-      <p className="text-sm font-semibold font-inter text-slate-500 tracking-wide uppercase">
+      <p className="text-sm font-semibold text-slate-500 tracking-wide uppercase">
         {zoneAbbr}
         <span className="mx-1 font-normal">·</span>
         {city}
       </p>
       <p
-        className="text-4xl font-bold font-inter text-slate-900 tabular-nums leading-none"
+        className="text-4xl font-bold text-slate-900 tabular-nums leading-none"
         suppressHydrationWarning
       >
         {timeData.formattedTime}
       </p>
-      <p className="text-xs font-open-sans text-slate-400" suppressHydrationWarning>
+      <p className="text-xs text-slate-400" suppressHydrationWarning>
         {timeData.formattedDate}
       </p>
     </div>

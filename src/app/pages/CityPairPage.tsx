@@ -1,4 +1,5 @@
 import { Footer } from '../components/Footer';
+import { JsonLd } from '../components/JsonLd';
 import { SEO } from '../components/SEO';
 import {
   TimeHeader,
@@ -142,7 +143,7 @@ function DifficultyBadge({ difficulty }: { difficulty: MeetingDifficulty }) {
   const { label, className } = DIFFICULTY_CONFIG[difficulty];
   return (
     <span
-      className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold font-inter ${className}`}
+      className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold ${className}`}
     >
       {label}
     </span>
@@ -229,6 +230,84 @@ function buildPopularLinks(currentSlug: string): InternalLinkBlockLink[] {
   );
 }
 
+// ─── Structured data builders ─────────────────────────────────────────────────
+
+const SITE_URL = 'https://timeatlas.co';
+
+function buildBreadcrumbSchema(currentSlug: string, h1: string): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Convert', item: `${SITE_URL}/convert` },
+      { '@type': 'ListItem', position: 3, name: h1, item: `${SITE_URL}/${currentSlug}` },
+    ],
+  };
+}
+
+function buildFaqSchema(
+  sourceCode: string,
+  targetCode: string,
+  fromZone: ZoneInfo | undefined,
+  toZone: ZoneInfo | undefined,
+  fromZoneV3: ZoneV3 | undefined,
+  toZoneV3: ZoneV3 | undefined,
+  timeDiffText: string,
+  dstCallout: string | null,
+  pairData: PairV3
+): object {
+  const faqItems: Array<{ question: string; answer: string }> = [];
+
+  // Q1: Time difference — maps to the "How Time Zone Conversion Works" section
+  if (fromZone && toZone) {
+    const dstSuffix = dstCallout ? ` ${dstCallout}` : '';
+    faqItems.push({
+      question: `What is the time difference between ${fromZone.fullName} (${sourceCode}) and ${toZone.fullName} (${targetCode})?`,
+      answer: `${timeDiffText}.${dstSuffix}`,
+    });
+  }
+
+  // Q2: DST observance — maps to the DST amber callout visible on the page
+  if (fromZoneV3 && toZoneV3) {
+    const fromDst = fromZoneV3.observes_dst ? 'observes' : 'does not observe';
+    const toDst = toZoneV3.observes_dst ? 'observes' : 'does not observe';
+    faqItems.push({
+      question: `Do ${sourceCode} and ${targetCode} observe Daylight Saving Time?`,
+      answer: `${sourceCode} (${fromZoneV3.short_name}) ${fromDst} Daylight Saving Time. ${targetCode} (${toZoneV3.short_name}) ${toDst} Daylight Saving Time.`,
+    });
+  }
+
+  // Q3: Best meeting times — maps to the "Best Meeting Times" section
+  const { meeting_overlap, meeting_difficulty } = pairData;
+  const difficultyLabel =
+    meeting_difficulty === 'easy'
+      ? 'easy'
+      : meeting_difficulty === 'moderate'
+        ? 'moderate'
+        : 'difficult';
+  let meetingAnswer =
+    `Scheduling meetings between ${sourceCode} and ${targetCode} is ${difficultyLabel}. ` +
+    `The recommended overlap window is ${meeting_overlap.start_source}–${meeting_overlap.end_source} ${sourceCode} ` +
+    `(${meeting_overlap.start_target}–${meeting_overlap.end_target} ${targetCode}). ` +
+    `Recommended time: ${meeting_overlap.preferred_default}.`;
+  if (meeting_overlap.note) meetingAnswer += ` ${meeting_overlap.note}`;
+  faqItems.push({
+    question: `What are the best times to schedule meetings between ${sourceCode} and ${targetCode}?`,
+    answer: meetingAnswer,
+  });
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
+}
+
 // ─── Page component ───────────────────────────────────────────────────────────
 
 interface CityPairPageProps {
@@ -269,13 +348,27 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
   const conversions = generateConversions(sourceCode, targetCode, fromZoneV3, toZoneV3);
 
+  const breadcrumbSchema = buildBreadcrumbSchema(currentSlug, h1);
+  const faqSchema = buildFaqSchema(
+    sourceCode,
+    targetCode,
+    fromZone,
+    toZone,
+    fromZoneV3,
+    toZoneV3,
+    timeDiffText,
+    dstCallout,
+    pairData
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <SEO title={title} description={description} path={`/${currentSlug}`} />
+      <JsonLd schemas={[breadcrumbSchema, faqSchema]} />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
-        <div className="mb-6 text-sm font-open-sans text-slate-600">
+        <div className="mb-6 text-sm text-slate-600">
           <a href="/" className="text-indigo-600 hover:text-indigo-700">
             Home
           </a>
@@ -288,10 +381,10 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
         </div>
 
         {/* ── H1 ──────────────────────────────────────────────────────────── */}
-        <h1 className="text-4xl sm:text-5xl font-bold font-inter mb-4 text-slate-900">{h1}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900">{h1}</h1>
 
         {/* ── Intro ───────────────────────────────────────────────────────── */}
-        <p className="text-lg font-open-sans text-slate-700 mb-8 leading-relaxed">{introText}</p>
+        <p className="text-lg text-slate-700 mb-8 leading-relaxed">{introText}</p>
 
         {/* ── 1. INSTANT ANSWER HEADER ────────────────────────────────────── */}
         {fromZone && toZone && (
@@ -305,7 +398,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
               <TimePillPair fromZone={fromZone} toZone={toZone} use24Hour={use24Hour} />
             </div>
           )}
-          <h3 className="text-base font-semibold font-inter text-slate-700 mb-4">Compare Times</h3>
+          <h3 className="text-base font-semibold text-slate-700 mb-4">Compare Times</h3>
           <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} />
         </Section>
 
@@ -316,7 +409,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
         {/* ── 4. HOW TIME ZONE CONVERSION WORKS ──────────────────────────── */}
         <Section title="How Time Zone Conversion Works">
-          <div className="space-y-4 font-open-sans text-slate-700 leading-relaxed">
+          <div className="space-y-4 text-slate-700 leading-relaxed">
             <p>
               Time zone conversion works by comparing the UTC offset of one location to another.
               Every city or region is measured relative to Coordinated Universal Time (UTC), which
@@ -327,7 +420,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             {/* DST relationship callout */}
             {dstCallout && (
               <p className="rounded-lg border border-amber-100 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-                <strong className="font-inter">Daylight Saving Time:</strong> {dstCallout}
+                <strong className="">Daylight Saving Time:</strong> {dstCallout}
               </p>
             )}
           </div>
@@ -336,7 +429,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
         {/* ── 5. BEST MEETING TIMES (data-driven, conditional) ────────────── */}
         {pairData && (
           <Section title={`Best Meeting Times: ${sourceCode} & ${targetCode}`}>
-            <div className="space-y-4 font-open-sans">
+            <div className="space-y-4 ">
               {/* Difficulty */}
               <div className="flex items-center gap-3">
                 <span className="text-sm font-semibold text-slate-700">Scheduling difficulty:</span>
@@ -347,10 +440,10 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
                 <div className="grid grid-cols-2 gap-6 mb-3">
                   <div>
-                    <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
                       {sourceCode}
                     </p>
-                    <p className="text-lg font-bold font-inter text-slate-900">
+                    <p className="text-lg font-bold text-slate-900">
                       {pairData.meeting_overlap.start_source}–{pairData.meeting_overlap.end_source}
                     </p>
                     {fromZoneV3 && (
@@ -358,10 +451,10 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                     )}
                   </div>
                   <div>
-                    <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
                       {targetCode}
                     </p>
-                    <p className="text-lg font-bold font-inter text-slate-900">
+                    <p className="text-lg font-bold text-slate-900">
                       {pairData.meeting_overlap.start_target}–{pairData.meeting_overlap.end_target}
                     </p>
                     {toZoneV3 && (
@@ -388,7 +481,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                   {pairData.common_use_cases.map((useCase) => (
                     <span
                       key={useCase}
-                      className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold font-inter text-slate-700"
+                      className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"
                     >
                       {useCase}
                     </span>
@@ -414,14 +507,14 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             <div className="grid gap-8 sm:grid-cols-2">
               {fromZoneV3 && (
                 <div>
-                  <h3 className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-3">
+                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
                     {fromZoneV3.code} — {fromZoneV3.short_name}
                   </h3>
                   <ul className="space-y-2">
                     {fromZoneV3.principal_cities.slice(0, 4).map((city) => (
                       <li
                         key={city.name}
-                        className="flex items-baseline justify-between gap-2 text-sm font-open-sans"
+                        className="flex items-baseline justify-between gap-2 text-sm "
                       >
                         <span className="font-semibold text-slate-900">{city.name}</span>
                         <span className="shrink-0 text-xs text-slate-500">{city.country}</span>
@@ -432,14 +525,14 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
               )}
               {toZoneV3 && (
                 <div>
-                  <h3 className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-3">
+                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
                     {toZoneV3.code} — {toZoneV3.short_name}
                   </h3>
                   <ul className="space-y-2">
                     {toZoneV3.principal_cities.slice(0, 4).map((city) => (
                       <li
                         key={city.name}
-                        className="flex items-baseline justify-between gap-2 text-sm font-open-sans"
+                        className="flex items-baseline justify-between gap-2 text-sm "
                       >
                         <span className="font-semibold text-slate-900">{city.name}</span>
                         <span className="shrink-0 text-xs text-slate-500">{city.country}</span>
@@ -455,26 +548,26 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
         {/* ── 8. FLIGHT INFORMATION (data-driven, conditional) ────────────── */}
         {pairData?.flight_route && (
           <Section title="Flight Information">
-            <div className="space-y-4 font-open-sans">
+            <div className="space-y-4 ">
               <div className="flex flex-wrap gap-8">
                 <div>
-                  <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
                     Route
                   </p>
-                  <p className="text-lg font-bold font-inter text-slate-900">
+                  <p className="text-lg font-bold text-slate-900">
                     {pairData.flight_route.primary_route}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
                     Avg. flight time
                   </p>
-                  <p className="text-lg font-bold font-inter text-slate-900">
+                  <p className="text-lg font-bold text-slate-900">
                     {formatFlightDuration(pairData.flight_route.average_flight_time_minutes)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold font-inter uppercase tracking-wide text-slate-500 mb-1">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
                     Direct flights
                   </p>
                   <p className="text-sm font-semibold text-slate-900">

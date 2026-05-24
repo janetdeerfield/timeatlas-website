@@ -49,7 +49,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
           <h3
             className="text-lg font-semibold"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -59,8 +58,7 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
             <p
               className="text-sm"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
-                color: '#8495CB',
+                color: '#4F63A3',
               }}
             >
               {country}
@@ -83,7 +81,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
         <div
           className="text-sm"
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             color: '#364151',
           }}
         >
@@ -92,7 +89,6 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
         <div
           className="text-xs"
           style={{
-            fontFamily: 'Open Sans, sans-serif',
             color: '#6B7280',
           }}
         >

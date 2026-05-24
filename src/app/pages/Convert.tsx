@@ -88,7 +88,6 @@ export function Convert({ use24Hour }: ConvertProps) {
           <h1
             className="text-5xl font-bold mb-3"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -97,7 +96,6 @@ export function Convert({ use24Hour }: ConvertProps) {
           <p
             className="text-lg"
             style={{
-              fontFamily: 'Open Sans, sans-serif',
               color: '#364151',
             }}
           >
@@ -115,7 +113,6 @@ export function Convert({ use24Hour }: ConvertProps) {
               <label
                 className="block text-sm font-medium mb-2"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   color: '#364151',
                 }}
               >
@@ -135,7 +132,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 }}
                 className="w-full px-4 py-3 rounded-lg"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   border: '1px solid #D9DEE6',
                   color: '#080A0C',
                 }}
@@ -173,7 +169,6 @@ export function Convert({ use24Hour }: ConvertProps) {
               <label
                 className="block text-sm font-medium mb-2"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   color: '#364151',
                 }}
               >
@@ -193,7 +188,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 }}
                 className="w-full px-4 py-3 rounded-lg"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   border: '1px solid #D9DEE6',
                   color: '#080A0C',
                 }}
@@ -218,7 +212,6 @@ export function Convert({ use24Hour }: ConvertProps) {
             <h3
               className="text-lg font-semibold mb-2"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -227,8 +220,7 @@ export function Convert({ use24Hour }: ConvertProps) {
             <p
               className="text-sm mb-4"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
-                color: '#8595AD',
+                color: '#5C6E87',
               }}
             >
               {fromCity.timezoneDisplay || `${fromCity.timezoneAbbrev} · ${fromCity.utcOffset}`}
@@ -237,7 +229,6 @@ export function Convert({ use24Hour }: ConvertProps) {
               <div
                 className="text-5xl font-bold tabular-nums mb-2"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   fontWeight: 800,
                   color: '#080A0C',
                 }}
@@ -247,7 +238,6 @@ export function Convert({ use24Hour }: ConvertProps) {
               <div
                 className="text-lg"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                 }}
               >
@@ -264,7 +254,6 @@ export function Convert({ use24Hour }: ConvertProps) {
             <h3
               className="text-lg font-semibold mb-2"
               style={{
-                fontFamily: 'Inter, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -273,8 +262,7 @@ export function Convert({ use24Hour }: ConvertProps) {
             <p
               className="text-sm mb-4"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
-                color: '#8595AD',
+                color: '#5C6E87',
               }}
             >
               {toCity.timezoneDisplay || `${toCity.timezoneAbbrev} · ${toCity.utcOffset}`}
@@ -283,7 +271,6 @@ export function Convert({ use24Hour }: ConvertProps) {
               <div
                 className="text-5xl font-bold tabular-nums mb-2"
                 style={{
-                  fontFamily: 'Inter, sans-serif',
                   fontWeight: 800,
                   color: '#080A0C',
                 }}
@@ -293,7 +280,6 @@ export function Convert({ use24Hour }: ConvertProps) {
               <div
                 className="text-lg"
                 style={{
-                  fontFamily: 'Open Sans, sans-serif',
                   color: '#364151',
                 }}
               >
@@ -312,7 +298,6 @@ export function Convert({ use24Hour }: ConvertProps) {
             <p
               className="text-lg mb-2"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#080A0C',
               }}
             >
@@ -326,7 +311,6 @@ export function Convert({ use24Hour }: ConvertProps) {
             <p
               className="text-sm"
               style={{
-                fontFamily: 'Open Sans, sans-serif',
                 color: '#364151',
               }}
             >
@@ -337,18 +321,14 @@ export function Convert({ use24Hour }: ConvertProps) {
 
         {/* ── Common Time Conversions ──────────────────────────────── */}
         <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-3xl font-bold font-inter text-slate-900 mb-4">
-            Common Time Conversions
-          </h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Common Time Conversions</h2>
           <ConversionGrid />
         </section>
 
         {/* ── How Time Zone Conversion Works ──────────────────────── */}
         <section className="mt-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-3xl font-bold font-inter text-slate-900 mb-4">
-            How Time Zone Conversion Works
-          </h2>
-          <div className="space-y-4 font-open-sans text-slate-700 leading-relaxed">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">How Time Zone Conversion Works</h2>
+          <div className="space-y-4 text-slate-700 leading-relaxed">
             <p>
               Time zone conversion works by comparing the UTC offset of one location to another.
               Every city or region is measured relative to Coordinated Universal Time (UTC), which
@@ -374,7 +354,6 @@ export function Convert({ use24Hour }: ConvertProps) {
           <h2
             className="text-3xl font-bold mb-6"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -389,7 +368,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -398,7 +376,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -410,7 +387,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -419,7 +395,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -431,7 +406,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -440,7 +414,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -452,7 +425,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -461,7 +433,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -473,7 +444,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -482,7 +452,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -495,7 +464,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -504,7 +472,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -517,7 +484,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -526,7 +492,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -538,7 +503,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 <h3
                   className="font-semibold mb-2"
                   style={{
-                    fontFamily: 'Inter, sans-serif',
                     color: '#080A0C',
                     fontSize: '16px',
                   }}
@@ -547,7 +511,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                   }}
@@ -564,7 +527,6 @@ export function Convert({ use24Hour }: ConvertProps) {
           <h2
             className="text-3xl font-bold mb-6"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -581,7 +543,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -591,7 +552,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -603,7 +563,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -613,7 +572,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -625,7 +583,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -635,7 +592,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -647,7 +603,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -657,7 +612,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -669,7 +623,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -679,7 +632,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -691,7 +643,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -701,7 +652,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -713,7 +663,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -723,7 +672,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -735,7 +683,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -745,7 +692,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -757,7 +703,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -767,7 +712,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -779,7 +723,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -789,7 +732,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -801,7 +743,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -811,7 +752,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -827,7 +767,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -837,7 +776,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -849,7 +787,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -859,7 +796,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -871,7 +807,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -881,7 +816,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -893,7 +827,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -903,7 +836,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -915,7 +847,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -925,7 +856,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -937,7 +867,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -947,7 +876,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -959,7 +887,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -969,7 +896,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -981,7 +907,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -991,7 +916,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -1003,7 +927,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -1013,7 +936,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -1025,7 +947,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -1035,7 +956,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -1047,7 +967,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   <span
                     className="font-semibold"
                     style={{
-                      fontFamily: 'Inter, sans-serif',
                       color: '#080A0C',
                       fontSize: '15px',
                       minWidth: '90px',
@@ -1057,7 +976,6 @@ export function Convert({ use24Hour }: ConvertProps) {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Open Sans, sans-serif',
                       color: '#364151',
                       fontSize: '15px',
                     }}
@@ -1075,7 +993,6 @@ export function Convert({ use24Hour }: ConvertProps) {
           <h2
             className="text-3xl font-bold mb-6"
             style={{
-              fontFamily: 'Inter, sans-serif',
               color: '#080A0C',
             }}
           >
@@ -1090,9 +1007,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('utc')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1105,14 +1020,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'utc' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'utc' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1132,9 +1046,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('gmt')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1147,14 +1059,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'gmt' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'gmt' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1175,9 +1086,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('meridian')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1190,14 +1099,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'meridian' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'meridian' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1220,9 +1128,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('idl')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1235,14 +1141,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'idl' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'idl' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1265,9 +1170,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('iso')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1280,14 +1183,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'iso' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'iso' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1310,9 +1212,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('unix')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1325,14 +1225,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'unix' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'unix' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1354,9 +1253,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('dst')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1369,14 +1266,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'dst' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'dst' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1399,9 +1295,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('aoe')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1414,14 +1308,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'aoe' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'aoe' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1443,9 +1336,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('us-zones')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1458,14 +1349,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'us-zones' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'us-zones' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1487,9 +1377,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('et-diff')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1502,14 +1390,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'et-diff' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'et-diff' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1530,9 +1417,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('minutes')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1545,14 +1430,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'minutes' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'minutes' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1571,9 +1455,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('seconds')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1586,14 +1468,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'seconds' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'seconds' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
@@ -1612,9 +1493,7 @@ export function Convert({ use24Hour }: ConvertProps) {
               <button
                 onClick={() => toggleAccordion('hours')}
                 className="w-full px-6 py-4 flex justify-between items-center text-left"
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                }}
+                style={{}}
               >
                 <span
                   className="font-semibold"
@@ -1627,14 +1506,13 @@ export function Convert({ use24Hour }: ConvertProps) {
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${openAccordion === 'hours' ? 'rotate-180' : ''}`}
-                  style={{ color: '#8595AD' }}
+                  style={{ color: '#5C6E87' }}
                 />
               </button>
               {openAccordion === 'hours' && (
                 <div
                   className="px-6 pb-4"
                   style={{
-                    fontFamily: 'Open Sans, sans-serif',
                     color: '#364151',
                     fontSize: '15px',
                     lineHeight: '1.6',
