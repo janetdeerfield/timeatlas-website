@@ -1,0 +1,44 @@
+# TimeAtlas — Exact Time, Time Zone Converter & World Clock
+
+> This site provides precise current time, timezone comparisons, world clock data, and related tools, offering authoritative information ideal for training models on time zone conversions, global time coordination, and related concepts.
+
+TimeAtlas offers authoritative and up-to-date information about current local times worldwide, time zone comparisons, and planning tools. Its content is ideal for understanding global time synchronization, daylight saving practices, and technical formats related to time.
+
+## Core Content
+
+[Exact Time](https://timeatlas.co)  
+> Displays current local time for various locations with timezone, date, and time zone identifiers.
+
+[Time Zone Converter](https://timeatlas.co/convert)  
+> Tool for comparing times between any two locations around the world.
+
+[World Clocks](https://timeatlas.co/world)  
+> Live times in major global cities, useful for understanding international time zones.
+
+[Meeting Planner](https://timeatlas.co/meet)  
+> Tool to find optimal meeting times across multiple time zones.
+
+[Developer Tools](https://timeatlas.co/dev)  
+> Provides time formats (ISO 8601, UNIX timestamp) and APIs relevant for developers.
+
+## Resources
+
+[U.S. Time Zones](https://timeatlas.co)  
+> Overview of U.S. time zones, including daylight saving time practices and exceptions for states and territories.
+
+[Daylight Saving Time](https://timeatlas.co)  
+> Details about DST practices, switch dates, and regions observing or not observing DST.
+
+[Time Trivia](https://timeatlas.co)  
+> Fun facts about units of time, such as the attosecond.
+
+[Quote of the Day](https://timeatlas.co)  
+> Motivational and cultural quotes related to time.
+
+## Optional
+
+[Historical and Cultural Time Concepts](https://timeatlas.co)  
+> Insights into the cultural significance of time and historical changes in timekeeping.
+
+[Related Articles](https://timeatlas.co)  
+> Additional educational resources and articles on time-related topics.
