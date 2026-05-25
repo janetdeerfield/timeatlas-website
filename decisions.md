@@ -65,13 +65,13 @@ Extended to all 00:00:00 clocks site-wide in May 2026 via the `<ClockFace>` comp
 
 **Canonical color values (ClockFace.tsx):**
 
-| Part | Color | Tailwind equiv |
-|---|---|---|
-| Hours + minutes | `#0f172a` | `slate-900` |
-| Seconds colon | `#475569` | `slate-600` |
-| Seconds first digit | `#475569` | `slate-600` |
-| Seconds second digit | `#94a3b8` | `slate-400` |
-| AM/PM period | `#6B7280` | `gray-500` |
+| Part                 | Color     | Tailwind equiv |
+| -------------------- | --------- | -------------- |
+| Hours + minutes      | `#0f172a` | `slate-900`    |
+| Seconds colon        | `#475569` | `slate-600`    |
+| Seconds first digit  | `#475569` | `slate-600`    |
+| Seconds second digit | `#94a3b8` | `slate-400`    |
+| AM/PM period         | `#6B7280` | `gray-500`     |
 
 Where this applies:
 

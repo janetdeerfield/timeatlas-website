@@ -32,8 +32,8 @@ export function ClockFace({
   dayPeriod,
   fontSize = 'clamp(3rem, 15vw, 7.5rem)',
 }: ClockFaceProps) {
-  const secondLeft = second ? second[0] ?? '0' : null;
-  const secondRight = second ? second[1] ?? '0' : null;
+  const secondLeft = second ? (second[0] ?? '0') : null;
+  const secondRight = second ? (second[1] ?? '0') : null;
 
   return (
     <div
