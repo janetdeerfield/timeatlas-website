@@ -2,7 +2,6 @@ interface TimeTableProps {
   conversions: Array<{ from: string; to: string }>;
   fromZoneAbbr: string;
   toZoneAbbr: string;
-  currentHourIdx?: number;
 }
 
 const GROUPS = [
@@ -13,18 +12,12 @@ const GROUPS = [
 
 function RowGroup({
   rows,
-  startIdx,
-  currentHourIdx,
   fromZoneAbbr,
   toZoneAbbr,
-  open,
 }: {
   rows: Array<{ from: string; to: string; idx: number }>;
-  startIdx: number;
-  currentHourIdx?: number;
   fromZoneAbbr: string;
   toZoneAbbr: string;
-  open: boolean;
 }) {
   return (
     <table className="w-full text-left text-sm">
@@ -35,41 +28,23 @@ function RowGroup({
         </tr>
       </thead>
       <tbody>
-        {rows.map((row) => {
-          const isCurrent = row.idx === currentHourIdx;
-          return (
-            <tr
-              key={row.from}
-              className={`border-b transition-colors ${
-                isCurrent
-                  ? 'bg-blue-50 border-blue-100'
-                  : `border-slate-50 hover:bg-slate-50 ${row.idx % 2 === 0 ? '' : 'bg-slate-50/50'}`
-              }`}
-            >
-              <td
-                className={`py-2.5 pr-6 ${isCurrent ? 'text-blue-700 font-semibold' : 'text-slate-700'}`}
-              >
-                {row.from}
-              </td>
-              <td
-                className={`py-2.5 font-medium ${isCurrent ? 'text-blue-900' : 'text-slate-900'}`}
-              >
-                {row.to}
-              </td>
-            </tr>
-          );
-        })}
+        {rows.map((row) => (
+          <tr
+            key={row.from}
+            className={`border-b border-slate-50 hover:bg-slate-50 transition-colors ${
+              row.idx % 2 === 0 ? '' : 'bg-slate-50/50'
+            }`}
+          >
+            <td className="py-2.5 pr-6 text-slate-700">{row.from}</td>
+            <td className="py-2.5 font-medium text-slate-900">{row.to}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
 }
 
-export function TimeTable({
-  conversions,
-  fromZoneAbbr,
-  toZoneAbbr,
-  currentHourIdx,
-}: TimeTableProps) {
+export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTableProps) {
   return (
     <div className="overflow-x-auto">
       {/* Shared column headers */}
@@ -91,11 +66,8 @@ export function TimeTable({
           .map((row, idx) => ({ ...row, idx }))
           .filter(({ idx }) => idx >= start && idx <= end);
 
-        const containsCurrent =
-          currentHourIdx !== undefined && currentHourIdx >= start && currentHourIdx <= end;
-
         return (
-          <details key={label} open={containsCurrent} className="group mb-1">
+          <details key={label} className="group mb-1">
             <summary className="flex items-center justify-between cursor-pointer select-none px-1 py-2 rounded hover:bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-400 list-none [&::-webkit-details-marker]:hidden">
               {label}
               <svg
@@ -113,11 +85,8 @@ export function TimeTable({
             </summary>
             <RowGroup
               rows={groupRows}
-              startIdx={start}
-              currentHourIdx={currentHourIdx}
               fromZoneAbbr={fromZoneAbbr}
               toZoneAbbr={toZoneAbbr}
-              open={containsCurrent}
             />
           </details>
         );

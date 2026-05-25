@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { Footer } from '../components/Footer';
 import { JsonLd } from '../components/JsonLd';
@@ -350,14 +349,6 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
   const conversions = generateConversions(sourceCode, targetCode, fromZoneV3, toZoneV3);
 
-  const [currentHourIdx, setCurrentHourIdx] = useState<number | null>(null);
-  useEffect(() => {
-    if (!fromZoneV3) return;
-    const nowUTC = Date.now();
-    const localMin = Math.floor(nowUTC / 60000) + fromZoneV3.utc_offset_minutes;
-    setCurrentHourIdx(Math.floor((((localMin % 1440) + 1440) % 1440) / 60));
-  }, [fromZoneV3]);
-
   const breadcrumbSchema = buildBreadcrumbSchema(currentSlug, h1);
   const faqSchema = buildFaqSchema(
     sourceCode,
@@ -413,7 +404,6 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             conversions={conversions}
             fromZoneAbbr={sourceCode}
             toZoneAbbr={targetCode}
-            currentHourIdx={currentHourIdx ?? undefined}
           />
         </Section>
 
