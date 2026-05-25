@@ -74,7 +74,16 @@ export function Home({ use24Hour }: HomeProps) {
                 Time Tools
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed mb-8 max-w-4xl mx-auto text-center">
-                TimeAtlas addresses the specific challenge of managing time across multiple global locations, facilitating seamless coordination without the confusion often associated with different time zones. With a unique focus on time conversion tools, meeting planners, and developer resources, it distinctly positions itself as a one-stop solution. Users ranging from remote teams to international travelers benefit greatly by utilizing its accurate local time features and intuitive interfaces. When planning meetings across continents, users can confidently select optimal times, reducing scheduling conflicts. TimeAtlas boasts real-time updates sourced from the official IANA time zone database, ensuring users receive the most reliable data possible, a claim backed by their commitment to precision and ease of use.
+                TimeAtlas addresses the specific challenge of managing time across multiple global
+                locations, facilitating seamless coordination without the confusion often associated
+                with different time zones. With a unique focus on time conversion tools, meeting
+                planners, and developer resources, it distinctly positions itself as a one-stop
+                solution. Users ranging from remote teams to international travelers benefit greatly
+                by utilizing its accurate local time features and intuitive interfaces. When
+                planning meetings across continents, users can confidently select optimal times,
+                reducing scheduling conflicts. TimeAtlas boasts real-time updates sourced from the
+                official IANA time zone database, ensuring users receive the most reliable data
+                possible, a claim backed by their commitment to precision and ease of use.
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <ToolCard

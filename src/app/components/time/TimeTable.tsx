@@ -2,16 +2,69 @@ interface TimeTableProps {
   conversions: Array<{ from: string; to: string }>;
   fromZoneAbbr: string;
   toZoneAbbr: string;
+  currentHourIdx?: number;
 }
 
-/**
- * Ultra-clean "Compare Times" two-column table.
- * Uses zone abbreviations as column headers, with only light dividers.
- */
-export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTableProps) {
+const GROUPS = [
+  { label: 'Morning', range: [0, 11] as [number, number] },
+  { label: 'Afternoon', range: [12, 16] as [number, number] },
+  { label: 'Evening', range: [17, 23] as [number, number] },
+];
+
+function RowGroup({
+  rows,
+  startIdx,
+  currentHourIdx,
+  fromZoneAbbr,
+  toZoneAbbr,
+  open,
+}: {
+  rows: Array<{ from: string; to: string; idx: number }>;
+  startIdx: number;
+  currentHourIdx?: number;
+  fromZoneAbbr: string;
+  toZoneAbbr: string;
+  open: boolean;
+}) {
+  return (
+    <table className="w-full text-left text-sm">
+      <thead className="sr-only">
+        <tr>
+          <th>{fromZoneAbbr}</th>
+          <th>{toZoneAbbr}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => {
+          const isCurrent = row.idx === currentHourIdx;
+          return (
+            <tr
+              key={row.from}
+              className={`border-b transition-colors ${
+                isCurrent
+                  ? 'bg-blue-50 border-blue-100'
+                  : `border-slate-50 hover:bg-slate-50 ${row.idx % 2 === 0 ? '' : 'bg-slate-50/50'}`
+              }`}
+            >
+              <td className={`py-2.5 pr-6 ${isCurrent ? 'text-blue-700 font-semibold' : 'text-slate-700'}`}>
+                {row.from}
+              </td>
+              <td className={`py-2.5 font-medium ${isCurrent ? 'text-blue-900' : 'text-slate-900'}`}>
+                {row.to}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+}
+
+export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr, currentHourIdx }: TimeTableProps) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-left text-sm">
+      {/* Shared column headers */}
+      <table className="w-full text-left text-sm mb-1">
         <thead>
           <tr className="border-b border-slate-100">
             <th className="pb-3 pr-6 font-semibold text-slate-500 text-xs uppercase tracking-wider">
@@ -22,20 +75,44 @@ export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTablePr
             </th>
           </tr>
         </thead>
-        <tbody>
-          {conversions.map((row, idx) => (
-            <tr
-              key={row.from}
-              className={`border-b border-slate-50 hover:bg-slate-50 transition-colors ${
-                idx % 2 === 0 ? '' : 'bg-slate-50/50'
-              }`}
-            >
-              <td className="py-2.5 pr-6 text-slate-700">{row.from}</td>
-              <td className="py-2.5 text-slate-900 font-medium">{row.to}</td>
-            </tr>
-          ))}
-        </tbody>
       </table>
+
+      {GROUPS.map(({ label, range: [start, end] }) => {
+        const groupRows = conversions
+          .map((row, idx) => ({ ...row, idx }))
+          .filter(({ idx }) => idx >= start && idx <= end);
+
+        const containsCurrent =
+          currentHourIdx !== undefined && currentHourIdx >= start && currentHourIdx <= end;
+
+        return (
+          <details key={label} open={containsCurrent} className="group mb-1">
+            <summary className="flex items-center justify-between cursor-pointer select-none px-1 py-2 rounded hover:bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-400 list-none [&::-webkit-details-marker]:hidden">
+              {label}
+              <svg
+                className="w-3.5 h-3.5 text-slate-400 transition-transform group-open:rotate-180"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </summary>
+            <RowGroup
+              rows={groupRows}
+              startIdx={start}
+              currentHourIdx={currentHourIdx}
+              fromZoneAbbr={fromZoneAbbr}
+              toZoneAbbr={toZoneAbbr}
+              open={containsCurrent}
+            />
+          </details>
+        );
+      })}
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router';
 import { Footer } from '../components/Footer';
 import { JsonLd } from '../components/JsonLd';
 import { SEO } from '../components/SEO';
@@ -169,8 +171,8 @@ function generateConversions(
 ): Array<{ from: string; to: string }> {
   if (!fromV3 || !toV3) return [];
   const diffMin = toV3.utc_offset_minutes - fromV3.utc_offset_minutes;
-  return Array.from({ length: 13 }, (_, i) => {
-    const sourceMin = (8 + i) * 60;
+  return Array.from({ length: 24 }, (_, i) => {
+    const sourceMin = i * 60;
     return {
       from: formatHour(sourceMin, sourceCode),
       to: formatHour(sourceMin + diffMin, targetCode),
@@ -348,6 +350,14 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
   const conversions = generateConversions(sourceCode, targetCode, fromZoneV3, toZoneV3);
 
+  const [currentHourIdx, setCurrentHourIdx] = useState<number | null>(null);
+  useEffect(() => {
+    if (!fromZoneV3) return;
+    const nowUTC = Date.now();
+    const localMin = Math.floor(nowUTC / 60000) + fromZoneV3.utc_offset_minutes;
+    setCurrentHourIdx(Math.floor(((localMin % 1440) + 1440) % 1440 / 60));
+  }, [fromZoneV3]);
+
   const breadcrumbSchema = buildBreadcrumbSchema(currentSlug, h1);
   const faqSchema = buildFaqSchema(
     sourceCode,
@@ -399,7 +409,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             </div>
           )}
           <h3 className="text-base font-semibold text-slate-700 mb-4">Compare Times</h3>
-          <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} />
+          <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} currentHourIdx={currentHourIdx ?? undefined} />
         </Section>
 
         {/* ── 3. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}
@@ -474,6 +484,15 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                   {pairData.meeting_overlap.note}
                 </p>
               )}
+
+              {/* Meeting Planner CTA */}
+              <Link
+                to="/meet"
+                onClick={() => window.scrollTo(0, 0)}
+                className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+              >
+                Try Meeting Planner for multi-city group scheduling →
+              </Link>
 
               {/* Common use cases */}
               {pairData.common_use_cases.length > 0 && (
