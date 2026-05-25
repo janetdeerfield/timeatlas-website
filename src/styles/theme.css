@@ -181,13 +181,27 @@
   }
 }
 
-/* Clock Seconds Gradient Animation - "Moving Time Trail" Effect */
-.clock-seconds {
-  background: linear-gradient(90deg, #080a0c, #6b7280, #d1d5db);
-  background-size: 200% 100%;
-  background-position: 0% 0%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-variant-numeric: tabular-nums;
+/* Clock seconds tick-in animation.
+ *
+ * Fires each time React remounts the seconds wrapper via key={second}.
+ * Uses opacity only — the browser compositor handles this entirely on the
+ * GPU without triggering layout recalculation or paint.
+ *
+ * will-change: opacity tells the browser to promote the span to its own
+ * compositing layer so the animation never touches the main thread.
+ *
+ * See decisions.md "Fading seconds on clock displays" for design context.
+ */
+@keyframes clock-tick-in {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.clock-seconds-tick {
+  will-change: opacity;
+  animation: clock-tick-in 0.3s ease-out forwards;
 }

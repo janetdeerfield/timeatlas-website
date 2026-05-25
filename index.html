@@ -59,20 +59,56 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!--
-      Google Analytics — loaded after the page has parsed.
-      `defer` on the external script means it executes after HTML parsing completes,
-      never blocking the critical rendering path. The inline init below is safe to
-      run immediately: it only queues commands into window.dataLayer; the gtag.js
-      library processes the queue when it loads.
+      Google Analytics — lazy-injected after user interaction or 3500ms post-load.
+
+      Strategy: initialise window.dataLayer and gtag() immediately so any
+      early gtag() calls from React components are queued. The actual gtag.js
+      network request is deferred until the first user interaction (scroll,
+      mousemove, touchstart, keydown) OR 3500ms after window.onload —
+      whichever comes first. This keeps gtag/js entirely out of the TBT
+      window, eliminating the forced-reflow penalty it causes during parse.
     -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-B310VMS98Q"></script>
     <script>
+      // Queue stub — safe to call before gtag.js loads.
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
       gtag('config', 'G-B310VMS98Q');
+
+      // Lazy injection: inject gtag.js only after interaction or 3500ms timeout.
+      (function () {
+        var loaded = false;
+        function loadGtag() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-B310VMS98Q';
+          s.async = true;
+          document.head.appendChild(s);
+        }
+        var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+        function onInteraction() {
+          loadGtag();
+          events.forEach(function (e) {
+            document.removeEventListener(e, onInteraction);
+          });
+        }
+        if (document.readyState === 'complete') {
+          events.forEach(function (e) {
+            document.addEventListener(e, onInteraction, { passive: true });
+          });
+          setTimeout(loadGtag, 3500);
+        } else {
+          window.addEventListener('load', function () {
+            events.forEach(function (e) {
+              document.addEventListener(e, onInteraction, { passive: true });
+            });
+            setTimeout(loadGtag, 3500);
+          });
+        }
+      })();
     </script>
   </body>
 </html>
