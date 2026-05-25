@@ -26,6 +26,10 @@ export default defineConfig({
     // monitoring tools (Sentry etc.) without being publicly referenced.
     sourcemap: 'hidden',
 
+    // pairs-data is ~345 kB (city-pair JSON). It's a legitimate large chunk,
+    // not a bundling problem — suppress the default 500 kB warning.
+    chunkSizeWarningLimit: 400,
+
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -34,6 +38,16 @@ export default defineConfig({
             id.includes('/node_modules/react/') ||
             id.includes('/node_modules/react-dom/') ||
             id.includes('/node_modules/scheduler/')
+          ) {
+            return 'vendor';
+          }
+          // react-helmet-async — stable SEO dep used only in App.tsx shell.
+          // Without this entry it lands in the index (app shell) chunk, adding
+          // ~10 kB to every page's critical-path parse. Moving it to vendor
+          // keeps the index chunk lean and lets it cache independently.
+          if (
+            id.includes('/node_modules/react-helmet-async/') ||
+            id.includes('/node_modules/react-fast-compare/')
           ) {
             return 'vendor';
           }
@@ -47,7 +61,7 @@ export default defineConfig({
           ) {
             return 'router';
           }
-          // pairs-data — the city-pair JSON (pairs.json + zonesV3) is ~380 kB of
+          // pairs-data — the city-pair JSON (pairs.json + zonesV3) is ~345 kB of
           // data that would otherwise sit in the main entry chunk. Splitting it out
           // lets Vite emit a <link rel="modulepreload"> for it, so V8 can
           // stream-compile the chunk in a background thread while the main entry
