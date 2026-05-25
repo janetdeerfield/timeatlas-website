@@ -68,7 +68,7 @@ export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTablePr
 
         return (
           <details key={label} className="group mb-1">
-            <summary className="flex items-center justify-between cursor-pointer select-none px-1 py-2 rounded hover:bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-400 list-none [&::-webkit-details-marker]:hidden">
+            <summary className="flex items-center justify-between cursor-pointer select-none px-1 py-2 rounded hover:bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-400 list-none [&::-webkit-details-marker]:hidden border-b border-slate-100">
               {label}
               <svg
                 className="w-3.5 h-3.5 text-slate-400 transition-transform group-open:rotate-180"
