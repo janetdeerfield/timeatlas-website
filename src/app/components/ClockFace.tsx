@@ -49,10 +49,7 @@ export function ClockFace({
     >
       {hour}:{minute}
       {second !== undefined && secondLeft !== null && secondRight !== null && (
-        // key={second} remounts this span each tick, restarting the CSS
-        // clock-tick-in animation. The animation is opacity-only (GPU
-        // composited) — no layout recalculation on each second update.
-        <span key={second} className="clock-seconds-tick" style={{ letterSpacing: '0' }}>
+        <span style={{ letterSpacing: '0' }}>
           {/* Seconds colon — medium */}
           <span style={{ color: '#475569' }}>:</span>
           {/* First seconds digit — medium */}

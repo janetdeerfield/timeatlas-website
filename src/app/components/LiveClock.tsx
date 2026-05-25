@@ -290,9 +290,7 @@ export default function LiveClock({
       >
         {hour}:{minute}
         {showSeconds && (
-          // key={second} remounts this span each tick, restarting the CSS
-          // clock-tick-in animation. opacity-only — GPU composited, no layout.
-          <span key={second} className="clock-seconds-tick" style={{ letterSpacing: '0' }}>
+          <span style={{ letterSpacing: '0' }}>
             <span
               style={{
                 color: '#475569', // TimeAtlas signature: second colon color
