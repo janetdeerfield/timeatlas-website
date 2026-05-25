@@ -400,11 +400,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             </div>
           )}
           <h3 className="text-base font-semibold text-slate-700 mb-4">Compare Times</h3>
-          <TimeTable
-            conversions={conversions}
-            fromZoneAbbr={sourceCode}
-            toZoneAbbr={targetCode}
-          />
+          <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} />
         </Section>
 
         {/* ── 3. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}

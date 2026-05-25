@@ -83,11 +83,7 @@ export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr }: TimeTablePr
                 />
               </svg>
             </summary>
-            <RowGroup
-              rows={groupRows}
-              fromZoneAbbr={fromZoneAbbr}
-              toZoneAbbr={toZoneAbbr}
-            />
+            <RowGroup rows={groupRows} fromZoneAbbr={fromZoneAbbr} toZoneAbbr={toZoneAbbr} />
           </details>
         );
       })}
