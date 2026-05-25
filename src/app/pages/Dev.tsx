@@ -4,6 +4,7 @@ import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
 import { getUserTimezone } from '../utils/time';
 import { formatUnixTime, parseUnixTime, copyToClipboard } from '../utils/format';
+import { ClockFace } from '../components/ClockFace';
 
 function getInitialDate() {
   const prerenderNow =
@@ -148,17 +149,12 @@ export function Dev() {
                     )}
                   </button>
                 </div>
-                <code
-                  className="text-2xl font-bold"
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 800,
-                    fontVariantNumeric: 'tabular-nums',
-                    color: '#080A0C',
-                  }}
-                >
-                  {currentUTC}
-                </code>
+                <ClockFace
+                  hour={currentUTC.split(':')[0] ?? '00'}
+                  minute={currentUTC.split(':')[1] ?? '00'}
+                  second={currentUTC.split(':')[2] ?? '00'}
+                  fontSize="1.5rem"
+                />
                 <p
                   className="text-sm mt-2"
                   style={{

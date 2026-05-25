@@ -7,6 +7,7 @@ import { formatTimeDifference, formatDayDifference } from '../utils/format';
 import { useTime } from '../hooks/useTime';
 import { ConversionGrid } from '../components/time';
 import { trackTimeConversion, trackToolUsage } from '../utils/analytics';
+import { ClockFace } from '../components/ClockFace';
 
 interface ConvertProps {
   use24Hour: boolean;
@@ -226,14 +227,14 @@ export function Convert({ use24Hour }: ConvertProps) {
               {fromCity.timezoneDisplay || `${fromCity.timezoneAbbrev} · ${fromCity.utcOffset}`}
             </p>
             <div className="mb-4">
-              <div
-                className="text-5xl font-bold tabular-nums mb-2"
-                style={{
-                  fontWeight: 800,
-                  color: '#080A0C',
-                }}
-              >
-                {fromTimeData.formattedTime}
+              <div className="mb-2">
+                <ClockFace
+                  hour={fromTimeData.hour}
+                  minute={fromTimeData.minute}
+                  second={fromTimeData.second}
+                  dayPeriod={use24Hour ? undefined : fromTimeData.dayPeriod}
+                  fontSize="3rem"
+                />
               </div>
               <div
                 className="text-lg"
@@ -268,14 +269,14 @@ export function Convert({ use24Hour }: ConvertProps) {
               {toCity.timezoneDisplay || `${toCity.timezoneAbbrev} · ${toCity.utcOffset}`}
             </p>
             <div className="mb-4">
-              <div
-                className="text-5xl font-bold tabular-nums mb-2"
-                style={{
-                  fontWeight: 800,
-                  color: '#080A0C',
-                }}
-              >
-                {toTimeData.formattedTime}
+              <div className="mb-2">
+                <ClockFace
+                  hour={toTimeData.hour}
+                  minute={toTimeData.minute}
+                  second={toTimeData.second}
+                  dayPeriod={use24Hour ? undefined : toTimeData.dayPeriod}
+                  fontSize="3rem"
+                />
               </div>
               <div
                 className="text-lg"

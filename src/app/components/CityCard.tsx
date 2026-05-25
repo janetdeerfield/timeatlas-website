@@ -1,6 +1,7 @@
 import { useTime } from '../hooks/useTime';
 import { getShortDateInTimezone } from '../utils/time';
 import { useState, useEffect } from 'react';
+import { ClockFace } from './ClockFace';
 
 interface CityCardProps {
   name: string;
@@ -68,15 +69,14 @@ export function CityCard({ name, timezone, utcOffset, country, use24Hour }: City
       </div>
 
       <div className="space-y-1">
-        <div
-          className="text-3xl font-bold tabular-nums whitespace-nowrap"
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: 800,
-            color: '#080A0C',
-          }}
-        >
-          {timeData.formattedTime}
+        <div className="whitespace-nowrap">
+          <ClockFace
+            hour={timeData.hour}
+            minute={timeData.minute}
+            second={timeData.second}
+            dayPeriod={use24Hour ? undefined : timeData.dayPeriod}
+            fontSize="1.875rem"
+          />
         </div>
         <div
           className="text-sm"

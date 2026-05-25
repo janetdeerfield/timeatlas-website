@@ -61,20 +61,32 @@ The hero clock on / uses a signature "fading seconds" visual treatment: the seco
 
 Design history: solid black seconds were distracting and visually competitive with the hours/minutes. Multiple alternatives were tested (smaller point size, solid gray, various opacity values). The current fade was the winner after iteration with #TeamTimeAtlas in March 2026.
 
-Where this applies (as of [date PR 2 ships]):
+Extended to all 00:00:00 clocks site-wide in May 2026 via the `<ClockFace>` component (`src/app/components/ClockFace.tsx`). Visual review confirmed the fade reads correctly at all four clock sizes (120px hero, 48px convert, 30px world tile, 24px dev UTC). No size threshold is needed — universal application works.
 
-- Hero clock on /
-- "Time Zone Converter" clock on /convert
-- "World Time" clocks on /world
-- "UTC Time" clock on /dev
-- City-pair page clocks
-- Any other 00:00:00 display added in the future
+**Canonical color values (ClockFace.tsx):**
+
+| Part | Color | Tailwind equiv |
+|---|---|---|
+| Hours + minutes | `#0f172a` | `slate-900` |
+| Seconds colon | `#475569` | `slate-600` |
+| Seconds first digit | `#475569` | `slate-600` |
+| Seconds second digit | `#94a3b8` | `slate-400` |
+| AM/PM period | `#6B7280` | `gray-500` |
+
+Where this applies:
+
+- Hero clock on / (LiveClock.tsx — inline, predates ClockFace)
+- "Time Zone Converter" clocks on /convert (ClockFace)
+- "World Time" city tiles on /world (ClockFace via CityCard)
+- "UTC Time" clock on /dev (ClockFace)
+- Any other 00:00:00 display added in the future — use `<ClockFace>`
 
 The 00:00 displays (no seconds) inherit Inter 800 + tabular-nums but do not need fading treatment — they have no seconds digits to de-emphasize.
 
 What to preserve in future refactors:
 
-- The opacity/styling values established for the seconds digits (see ClockDigits component or .clock-seconds class for canonical values)
+- The color values above — do not change without a design decision
+- `<ClockFace>` as the single source of truth for all new clocks
 - The visual hierarchy hours > minutes > seconds
 
 ## Brand color (May 2026 correction)
@@ -143,6 +155,20 @@ Removed in May 2026 once the Phase 1 library was stable and no longer being acti
 Why not keep it: the file lived in `src/app/pages/` alongside production pages, gated only by `import.meta.env.DEV`. The investigation report from 5/22 identified the gate as fragile — any future refactor of `routes.tsx` could accidentally expose it. The most likely root cause of the May 18–19 GSC noindex incident was a preview deployment of related infrastructure being crawled. Removing it eliminates this risk class entirely.
 
 If component preview becomes useful again: adopt Storybook or Ladle as a dedicated tool, separated from production source. Do not re-add isolated preview pages to `src/app/pages/`.
+
+## Advertising disclosure — pre-launch requirement (May 2026)
+
+The Advertising section was removed from Privacy.tsx in May 2026 — AdSense was never active and the disclosure was inaccurate.
+
+**Before enabling any ad network:** restore the Advertising section to Privacy.tsx with accurate language describing the specific network, cookies used, and opt-out mechanism. This must ship in the same deploy as the ad integration — not after.
+
+Draft holding language (to be replaced with actual network specifics when known):
+
+> **Advertising**
+>
+> TimeAtlas does not currently display advertisements. If advertising is introduced in the future, this policy will be updated to describe what data is collected and how it is used before any ads are served.
+
+When the integration is known, replace the above with specifics: network name, cookies set (e.g. DoubleClick), and the correct opt-out URL.
 
 ## Phase completion checklist (May 2026)
 
