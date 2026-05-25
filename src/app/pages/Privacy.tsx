@@ -127,53 +127,6 @@ export function Privacy() {
               lineHeight: 1.25,
             }}
           >
-            Advertising
-          </h2>
-
-          <p
-            style={{
-              color: '#475569',
-              fontSize: '16px',
-              lineHeight: '24px',
-              marginBottom: '16px',
-            }}
-          >
-            We may display ads through third-party networks such as Google AdSense. These providers
-            may use cookies to show relevant ads.
-          </p>
-
-          <p
-            style={{
-              color: '#475569',
-              fontSize: '16px',
-              lineHeight: '24px',
-              marginBottom: '16px',
-            }}
-          >
-            Google AdSense may use cookies, including the DoubleClick cookie, to serve ads based on
-            a user's prior visits to this and other websites. Users may opt out of personalized
-            advertising by visiting{' '}
-            <a
-              href="https://www.google.com/settings/ads"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#3B82F6', textDecoration: 'underline' }}
-            >
-              Google Ads Settings
-            </a>
-            .
-          </p>
-
-          <h2
-            style={{
-              color: '#0F172A',
-              fontSize: '32px',
-              fontWeight: 500,
-              marginTop: '48px',
-              marginBottom: '24px',
-              lineHeight: 1.25,
-            }}
-          >
             Analytics
           </h2>
 
