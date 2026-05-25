@@ -46,10 +46,14 @@ function RowGroup({
                   : `border-slate-50 hover:bg-slate-50 ${row.idx % 2 === 0 ? '' : 'bg-slate-50/50'}`
               }`}
             >
-              <td className={`py-2.5 pr-6 ${isCurrent ? 'text-blue-700 font-semibold' : 'text-slate-700'}`}>
+              <td
+                className={`py-2.5 pr-6 ${isCurrent ? 'text-blue-700 font-semibold' : 'text-slate-700'}`}
+              >
                 {row.from}
               </td>
-              <td className={`py-2.5 font-medium ${isCurrent ? 'text-blue-900' : 'text-slate-900'}`}>
+              <td
+                className={`py-2.5 font-medium ${isCurrent ? 'text-blue-900' : 'text-slate-900'}`}
+              >
                 {row.to}
               </td>
             </tr>
@@ -60,7 +64,12 @@ function RowGroup({
   );
 }
 
-export function TimeTable({ conversions, fromZoneAbbr, toZoneAbbr, currentHourIdx }: TimeTableProps) {
+export function TimeTable({
+  conversions,
+  fromZoneAbbr,
+  toZoneAbbr,
+  currentHourIdx,
+}: TimeTableProps) {
   return (
     <div className="overflow-x-auto">
       {/* Shared column headers */}

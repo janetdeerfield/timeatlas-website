@@ -355,7 +355,7 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
     if (!fromZoneV3) return;
     const nowUTC = Date.now();
     const localMin = Math.floor(nowUTC / 60000) + fromZoneV3.utc_offset_minutes;
-    setCurrentHourIdx(Math.floor(((localMin % 1440) + 1440) % 1440 / 60));
+    setCurrentHourIdx(Math.floor((((localMin % 1440) + 1440) % 1440) / 60));
   }, [fromZoneV3]);
 
   const breadcrumbSchema = buildBreadcrumbSchema(currentSlug, h1);
@@ -409,7 +409,12 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
             </div>
           )}
           <h3 className="text-base font-semibold text-slate-700 mb-4">Compare Times</h3>
-          <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} currentHourIdx={currentHourIdx ?? undefined} />
+          <TimeTable
+            conversions={conversions}
+            fromZoneAbbr={sourceCode}
+            toZoneAbbr={targetCode}
+            currentHourIdx={currentHourIdx ?? undefined}
+          />
         </Section>
 
         {/* ── 3. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}
