@@ -173,8 +173,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                       className="px-4 py-2.5 text-base font-medium transition-all"
                       style={{
                         color: isActive(item.path) ? '#2E45F0' : '#334155',
-                        backgroundColor:
-                          isActive(item.path) ? '#E7EDFF' : 'transparent',
+                        backgroundColor: isActive(item.path) ? '#E7EDFF' : 'transparent',
                         borderRadius: '8px',
                       }}
                     >
