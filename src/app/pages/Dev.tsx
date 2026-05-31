@@ -74,8 +74,8 @@ export function Dev() {
   return (
     <>
       <SEO
-        title="UTC, Unix Time & ISO 8601 Tools | TimeAtlas"
-        description="Developer-friendly UTC, Unix timestamp, and ISO 8601 time tools designed for precision and readability."
+        title="IANA Timezone API & Developer Tools | TimeAtlas"
+        description="Free developer tools for the IANA timezone database. Convert Unix timestamps, UTC, and ISO 8601 formats. Includes API-ready code examples in JavaScript and Python."
         path="/dev"
       />
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FEFEFE' }}>
@@ -103,6 +103,29 @@ export function Dev() {
               }}
             >
               Essential time formats for developers and APIs
+            </p>
+          </div>
+
+          {/* Intro */}
+          <div className="max-w-3xl mx-auto mb-10 text-center">
+            <p
+              className="text-base leading-relaxed"
+              style={{ color: '#475569' }}
+            >
+              This page provides essential developer tools built on the{' '}
+              <strong>IANA timezone database</strong> — the authoritative, globally maintained
+              registry of timezone identifiers used by every major operating system, programming
+              language runtime, and API. Whether you are building a scheduling API, parsing
+              timestamps from a third-party service, or debugging a timezone-related bug in
+              production, these utilities give you live, accurate reference values. Convert any{' '}
+              <strong>Unix timestamp</strong> to a human-readable date, inspect the current{' '}
+              <strong>UTC offset</strong> and <strong>ISO 8601</strong> string for your environment,
+              and copy your local IANA identifier — the exact string your API or database driver
+              needs — with one click. Code examples for JavaScript and Python are included so you can
+              drop correct timezone-aware logic directly into your codebase. All data is computed
+              client-side using the browser's native <code>Intl</code> API, meaning no external API
+              call is required and results are always in sync with the IANA database version shipped
+              with your runtime.
             </p>
           </div>
 

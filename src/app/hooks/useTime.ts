@@ -20,6 +20,8 @@ interface TimeData {
   isoString: string;
   unixTimestamp: number;
   utcString: string;
+  activeAbbr: string;
+  activeZoneName: string;
 }
 
 function getInitialNow(): Date {
@@ -32,12 +34,15 @@ function getInitialNow(): Date {
 }
 
 /**
- * Format a timezone offset like -300 minutes into "UTC-5"
+ * Format a timezone offset like -300 minutes into "UTC-5" or 330 into "UTC+5:30"
  */
 function formatUtcOffset(offsetMinutes: number): string {
-  const hours = offsetMinutes / 60;
-  const sign = hours >= 0 ? '+' : '-';
-  return `UTC${sign}${Math.abs(hours)}`;
+  const rounded = Math.round(offsetMinutes);
+  const sign = rounded >= 0 ? '+' : '-';
+  const absMin = Math.abs(rounded);
+  const h = Math.floor(absMin / 60);
+  const m = absMin % 60;
+  return m === 0 ? `UTC${sign}${h}` : `UTC${sign}${h}:${String(m).padStart(2, '0')}`;
 }
 
 /**
@@ -119,6 +124,15 @@ export function useTime({
     });
   }, [timeZone]);
 
+  const shortTzFormatter = useMemo(
+    () => new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'short', year: 'numeric' }),
+    [timeZone]
+  );
+  const longTzFormatter = useMemo(
+    () => new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'long', year: 'numeric' }),
+    [timeZone]
+  );
+
   const parts = timeFormatter.formatToParts(now);
   const getPart = (type: string) => parts.find((p) => p.type === type)?.value || '';
 
@@ -138,6 +152,11 @@ export function useTime({
   const unixTimestamp = Math.floor(now.getTime() / 1000);
   const utcString = now.toUTCString();
 
+  const activeAbbr =
+    shortTzFormatter.formatToParts(now).find((p) => p.type === 'timeZoneName')?.value ?? '';
+  const activeZoneName =
+    longTzFormatter.formatToParts(now).find((p) => p.type === 'timeZoneName')?.value ?? '';
+
   return {
     hour,
     minute,
@@ -151,5 +170,7 @@ export function useTime({
     isoString,
     unixTimestamp,
     utcString,
+    activeAbbr,
+    activeZoneName,
   };
 }

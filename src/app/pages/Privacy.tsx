@@ -1,8 +1,15 @@
-import { Link } from 'react-router';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 
 export function Privacy() {
   return (
+    <>
+      <SEO
+        title="Privacy Policy | TimeAtlas"
+        description="TimeAtlas privacy policy. Learn how we collect, use, and protect your data when you use our free time zone converter and scheduling tools."
+        path="/privacy"
+        robots="noindex,follow"
+      />
     <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -202,6 +209,155 @@ export function Privacy() {
               lineHeight: 1.25,
             }}
           >
+            Third-Party Advertising
+          </h2>
+
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '16px',
+              lineHeight: '24px',
+              marginBottom: '16px',
+            }}
+          >
+            TimeAtlas may display advertisements served by third-party networks, including Google
+            AdSense. These advertising partners may use cookies and similar tracking technologies to
+            serve ads based on your interests and prior visits to this or other websites.
+          </p>
+
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '16px',
+              lineHeight: '24px',
+              marginBottom: '32px',
+            }}
+          >
+            You can opt out of personalized advertising by visiting{' '}
+            <a
+              href="https://www.google.com/settings/ads"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#1B6BB3', textDecoration: 'underline' }}
+            >
+              Google Ads Settings
+            </a>{' '}
+            or the{' '}
+            <a
+              href="https://optout.networkadvertising.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#1B6BB3', textDecoration: 'underline' }}
+            >
+              NAI opt-out page
+            </a>
+            .
+          </p>
+
+          <h2
+            style={{
+              color: '#0F172A',
+              fontSize: '32px',
+              fontWeight: 500,
+              marginTop: '48px',
+              marginBottom: '24px',
+              lineHeight: 1.25,
+            }}
+          >
+            Data Retention
+          </h2>
+
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '16px',
+              lineHeight: '24px',
+              marginBottom: '32px',
+            }}
+          >
+            TimeAtlas does not store personal data on our servers beyond what is required for the
+            immediate delivery of the service. Anonymized analytics data may be retained for up to
+            26 months by third-party analytics providers, consistent with their own data retention
+            policies. No user accounts are created, and no personally identifiable information is
+            stored by TimeAtlas itself.
+          </p>
+
+          <h2
+            style={{
+              color: '#0F172A',
+              fontSize: '32px',
+              fontWeight: 500,
+              marginTop: '48px',
+              marginBottom: '24px',
+              lineHeight: 1.25,
+            }}
+          >
+            Your Rights
+          </h2>
+
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '16px',
+              lineHeight: '24px',
+              marginBottom: '16px',
+            }}
+          >
+            Depending on your location, you may have rights under applicable data protection law,
+            including the right to access, correct, or request deletion of any personal data held
+            about you. Since TimeAtlas does not collect personal data directly, most such requests
+            would be directed to the relevant third-party services (e.g., Google Analytics).
+          </p>
+
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '16px',
+              lineHeight: '24px',
+              marginBottom: '32px',
+            }}
+          >
+            If you are located in the European Economic Area (EEA) or the United Kingdom, you also
+            have the right to lodge a complaint with your local supervisory authority.
+          </p>
+
+          <h2
+            style={{
+              color: '#0F172A',
+              fontSize: '32px',
+              fontWeight: 500,
+              marginTop: '48px',
+              marginBottom: '24px',
+              lineHeight: 1.25,
+            }}
+          >
+            Updates to This Policy
+          </h2>
+
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '16px',
+              lineHeight: '24px',
+              marginBottom: '32px',
+            }}
+          >
+            We may update this Privacy Policy from time to time to reflect changes in our practices
+            or applicable law. When we do, we will revise the "Last updated" date below. We encourage
+            you to review this page periodically to stay informed about how we protect your
+            information.
+          </p>
+
+          <h2
+            style={{
+              color: '#0F172A',
+              fontSize: '32px',
+              fontWeight: 500,
+              marginTop: '48px',
+              marginBottom: '24px',
+              lineHeight: 1.25,
+            }}
+          >
             Contact
           </h2>
 
@@ -215,10 +371,10 @@ export function Privacy() {
           >
             If you have questions about this policy, please contact us at:{' '}
             <a
-              href="mailto:contact@timeatlas.co"
-              style={{ color: '#3B82F6', textDecoration: 'underline' }}
+              href="mailto:hello@timeatlas.co"
+              style={{ color: '#1B6BB3', textDecoration: 'underline' }}
             >
-              contact@timeatlas.co
+              hello@timeatlas.co
             </a>
           </p>
 
@@ -239,5 +395,6 @@ export function Privacy() {
       {/* Footer */}
       <Footer />
     </div>
+    </>
   );
 }

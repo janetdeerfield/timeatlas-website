@@ -38,7 +38,7 @@ function buildPageTitle(
   toZone?: ZoneInfo
 ) {
   if (!fromZone || !toZone) return `${sourceCode} to ${targetCode} Time Converter | TimeAtlas`;
-  return `${fromZone.abbr} → ${toZone.abbr} Converter (${titleZoneName(fromZone)} to ${titleZoneName(toZone)} Time) | TimeAtlas`;
+  return `${fromZone.abbr} to ${toZone.abbr} Converter | TimeAtlas`;
 }
 
 function buildPageDescription(
@@ -370,11 +370,11 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
         <div className="mb-6 text-sm text-slate-600">
-          <a href="/" className="text-indigo-600 hover:text-indigo-700">
+          <a href="/" className="text-[#1B6BB3] hover:text-[#1a5fa0]">
             Home
           </a>
           <span className="mx-2">/</span>
-          <a href="/convert" className="text-indigo-600 hover:text-indigo-700">
+          <a href="/convert" className="text-[#1B6BB3] hover:text-[#1a5fa0]">
             Convert
           </a>
           <span className="mx-2">/</span>
@@ -420,7 +420,10 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Midnight (12:00 AM) in {fromZone.fullName} translates to{' '}
-                  {formatHour(toZoneV3.utc_offset_minutes - fromZoneV3.utc_offset_minutes, targetCode)}{' '}
+                  {formatHour(
+                    toZoneV3.utc_offset_minutes - fromZoneV3.utc_offset_minutes,
+                    targetCode
+                  )}{' '}
                   in {toZone.fullName}.
                 </p>
               </div>
@@ -466,22 +469,24 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
         {/* ── 5. BEST MEETING TIMES (data-driven, conditional) ────────────── */}
         {pairData && (
-          <Section title={
-            fromZone && toZone
-              ? `Best time to call ${toZone.city} from ${fromZone.city}`
-              : `Best Meeting Times: ${sourceCode} & ${targetCode}`
-          }>
+          <Section
+            title={
+              fromZone && toZone
+                ? `Best time to call ${toZone.city} from ${fromZone.city}`
+                : `Best Meeting Times: ${sourceCode} & ${targetCode}`
+            }
+          >
             <div className="space-y-4 ">
               {/* Context paragraph */}
               {fromZone && toZone && (
                 <p className="text-sm leading-relaxed text-slate-600">
-                  Planning a remote meeting or international call? The optimal business hours overlap between{' '}
-                  {fromZone.city} and {toZone.city} is{' '}
+                  Planning a remote meeting or international call? The optimal business hours
+                  overlap between {fromZone.city} and {toZone.city} is{' '}
                   {pairData.meeting_difficulty === 'easy'
                     ? 'strong, with significant shared business hours available.'
                     : pairData.meeting_difficulty === 'moderate'
-                    ? 'moderate, with a limited shared window to work with.'
-                    : 'challenging, with few shared business hours between the two zones.'}
+                      ? 'moderate, with a limited shared window to work with.'
+                      : 'challenging, with few shared business hours between the two zones.'}
                 </p>
               )}
 

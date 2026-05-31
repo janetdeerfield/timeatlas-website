@@ -7,54 +7,61 @@ interface TimeHeaderProps {
   use24Hour?: boolean;
 }
 
-/**
- * Above-the-fold header that prominently displays:
- * FROM_ZONE → TO_ZONE
- * FROM_TIME = TO_TIME (live, updates every second)
- *
- * This is the "sacred" instant-answer section — visible without scrolling.
- */
-export function TimeHeader({ fromZone, toZone, use24Hour = false }: TimeHeaderProps) {
-  const fromTime = useTime({
-    timeZone: fromZone.ianaTimezone,
+function dstLabel(offsetMinutes: number, standardUtcOffset: number): string {
+  const standardMinutes = standardUtcOffset * 60;
+  return offsetMinutes !== standardMinutes ? 'DST active' : 'Standard time';
+}
+
+function ZoneCard({
+  zone,
+  use24Hour,
+  highlight,
+}: {
+  zone: ZoneInfo;
+  use24Hour: boolean;
+  highlight: boolean;
+}) {
+  const time = useTime({
+    timeZone: zone.ianaTimezone,
     format: use24Hour ? '24h' : '12h',
     showSeconds: false,
   });
 
-  const toTime = useTime({
-    timeZone: toZone.ianaTimezone,
-    format: use24Hour ? '24h' : '12h',
-    showSeconds: false,
-  });
+  const dst = dstLabel(time.offsetMinutes, zone.utcOffset);
 
   return (
-    <div className="mb-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-indigo-50 via-white to-slate-50 p-6 sm:p-8 shadow-sm">
-      {/* Zone direction label */}
-      <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
+    <div className="flex-1 min-w-0">
+      <p
+        className={`text-3xl sm:text-4xl font-bold tabular-nums mb-2 ${highlight ? 'text-[#1B6BB3]' : 'text-slate-900'}`}
+        suppressHydrationWarning
+      >
+        {time.formattedTime}
+      </p>
+      <p className="text-sm font-medium text-slate-700 leading-snug" suppressHydrationWarning>
+        {time.activeZoneName} ({time.activeAbbr})
+      </p>
+      <p className="text-sm text-slate-500 mt-0.5" suppressHydrationWarning>
+        {time.formattedDate}
+      </p>
+      <p className="text-xs text-slate-400 mt-0.5" suppressHydrationWarning>
+        {time.utcOffset} ({dst})
+      </p>
+    </div>
+  );
+}
+
+export function TimeHeader({ fromZone, toZone, use24Hour = false }: TimeHeaderProps) {
+  return (
+    <div className="mb-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-6 sm:p-8 shadow-sm">
+      <p className="text-sm font-semibold text-[#1B6BB3] uppercase tracking-widest mb-5">
         {fromZone.abbr} → {toZone.abbr}
       </p>
 
-      {/* Live conversion answer */}
-      <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
-        <span
-          className="text-3xl sm:text-4xl font-bold text-slate-900 tabular-nums"
-          suppressHydrationWarning
-        >
-          {fromTime.formattedTime}
-        </span>
-        <span className="text-xl font-semibold text-slate-400">=</span>
-        <span
-          className="text-3xl sm:text-4xl font-bold text-indigo-600 tabular-nums"
-          suppressHydrationWarning
-        >
-          {toTime.formattedTime}
-        </span>
+      <div className="flex items-start gap-3 sm:gap-6">
+        <ZoneCard zone={fromZone} use24Hour={use24Hour} highlight={false} />
+        <span className="text-xl font-semibold text-slate-400 pt-2 shrink-0">=</span>
+        <ZoneCard zone={toZone} use24Hour={use24Hour} highlight={true} />
       </div>
-
-      {/* Subtitle */}
-      <p className="mt-3 text-sm text-slate-500">
-        Current time in {fromZone.city} converted to {toZone.city}
-      </p>
     </div>
   );
 }
