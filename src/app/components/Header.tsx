@@ -23,7 +23,11 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
     { path: '/world', label: 'World' },
     { path: '/meet', label: 'Meet' },
     { path: '/dev', label: 'Dev' },
+    { path: '/journal', label: 'Journal' },
   ];
+
+  const isActive = (path: string) =>
+    path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   return (
     <>
@@ -49,8 +53,8 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                   to={item.path}
                   className="px-4 py-2 text-base font-medium transition-all"
                   style={{
-                    color: location.pathname === item.path ? '#2E45F0' : '#334155',
-                    backgroundColor: location.pathname === item.path ? '#E7EDFF' : 'transparent',
+                    color: isActive(item.path) ? '#2E45F0' : '#334155',
+                    backgroundColor: isActive(item.path) ? '#E7EDFF' : 'transparent',
                     borderRadius: '999px',
                   }}
                   onMouseEnter={(e) => {
@@ -168,9 +172,9 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
                       to={item.path}
                       className="px-4 py-2.5 text-base font-medium transition-all"
                       style={{
-                        color: location.pathname === item.path ? '#2E45F0' : '#334155',
+                        color: isActive(item.path) ? '#2E45F0' : '#334155',
                         backgroundColor:
-                          location.pathname === item.path ? '#E7EDFF' : 'transparent',
+                          isActive(item.path) ? '#E7EDFF' : 'transparent',
                         borderRadius: '8px',
                       }}
                     >
