@@ -108,10 +108,7 @@ export function Dev() {
 
           {/* Intro */}
           <div className="max-w-3xl mx-auto mb-10 text-center">
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: '#475569' }}
-            >
+            <p className="text-base leading-relaxed" style={{ color: '#475569' }}>
               This page provides essential developer tools built on the{' '}
               <strong>IANA timezone database</strong> — the authoritative, globally maintained
               registry of timezone identifiers used by every major operating system, programming
@@ -121,11 +118,11 @@ export function Dev() {
               <strong>Unix timestamp</strong> to a human-readable date, inspect the current{' '}
               <strong>UTC offset</strong> and <strong>ISO 8601</strong> string for your environment,
               and copy your local IANA identifier — the exact string your API or database driver
-              needs — with one click. Code examples for JavaScript and Python are included so you can
-              drop correct timezone-aware logic directly into your codebase. All data is computed
-              client-side using the browser's native <code>Intl</code> API, meaning no external API
-              call is required and results are always in sync with the IANA database version shipped
-              with your runtime.
+              needs — with one click. Code examples for JavaScript and Python are included so you
+              can drop correct timezone-aware logic directly into your codebase. All data is
+              computed client-side using the browser's native <code>Intl</code> API, meaning no
+              external API call is required and results are always in sync with the IANA database
+              version shipped with your runtime.
             </p>
           </div>
 
