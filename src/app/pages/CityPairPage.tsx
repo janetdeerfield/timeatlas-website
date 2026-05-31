@@ -403,7 +403,44 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
           <TimeTable conversions={conversions} fromZoneAbbr={sourceCode} toZoneAbbr={targetCode} />
         </Section>
 
-        {/* ── 3. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}
+        {/* ── 3. FAQ ──────────────────────────────────────────────────────── */}
+        {fromZone && toZone && fromZoneV3 && toZoneV3 && (
+          <Section title={`Frequently Asked Questions: ${sourceCode} to ${targetCode}`}>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-base font-semibold text-slate-900 mb-1">
+                  What is the time difference between {fromZone.fullName} and {toZone.fullName}?
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{timeDiffText}.</p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-slate-900 mb-1">
+                  What time is midnight in {sourceCode} in {targetCode}?
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Midnight (12:00 AM) in {fromZone.fullName} translates to{' '}
+                  {formatHour(toZoneV3.utc_offset_minutes - fromZoneV3.utc_offset_minutes, targetCode)}{' '}
+                  in {toZone.fullName}.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-semibold text-slate-900 mb-1">
+                  When do business hours overlap between {sourceCode} and {targetCode}?
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {pairData.meeting_difficulty === 'hard'
+                    ? `Standard 9–5 business hours do not overlap between ${fromZone.fullName} and ${toZone.fullName}. The closest scheduling window is ${pairData.meeting_overlap.start_source}–${pairData.meeting_overlap.end_source} ${sourceCode} (${pairData.meeting_overlap.start_target}–${pairData.meeting_overlap.end_target} ${targetCode}).`
+                    : `The business hours overlap window is ${pairData.meeting_overlap.start_source}–${pairData.meeting_overlap.end_source} ${sourceCode} (${pairData.meeting_overlap.start_target}–${pairData.meeting_overlap.end_target} ${targetCode}). ${pairData.meeting_difficulty === 'easy' ? 'There is a strong overlap with plenty of shared working hours.' : 'The shared window is limited; aim for the earlier part of this range when possible.'}`}
+                  {pairData.meeting_overlap.note && ` ${pairData.meeting_overlap.note}`}
+                </p>
+              </div>
+            </div>
+          </Section>
+        )}
+
+        {/* ── 4. COMMON TIME CONVERSIONS (ConversionGrid — V3-Lite <a> tags preserved) */}
         <Section title="Common Time Conversions">
           <ConversionGrid />
         </Section>
@@ -429,8 +466,34 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
 
         {/* ── 5. BEST MEETING TIMES (data-driven, conditional) ────────────── */}
         {pairData && (
-          <Section title={`Best Meeting Times: ${sourceCode} & ${targetCode}`}>
+          <Section title={
+            fromZone && toZone
+              ? `Best time to call ${toZone.city} from ${fromZone.city}`
+              : `Best Meeting Times: ${sourceCode} & ${targetCode}`
+          }>
             <div className="space-y-4 ">
+              {/* Context paragraph */}
+              {fromZone && toZone && (
+                <p className="text-sm leading-relaxed text-slate-600">
+                  Planning a remote meeting or international call? The optimal business hours overlap between{' '}
+                  {fromZone.city} and {toZone.city} is{' '}
+                  {pairData.meeting_difficulty === 'easy'
+                    ? 'strong, with significant shared business hours available.'
+                    : pairData.meeting_difficulty === 'moderate'
+                    ? 'moderate, with a limited shared window to work with.'
+                    : 'challenging, with few shared business hours between the two zones.'}
+                </p>
+              )}
+
+              {/* Meeting Planner CTA */}
+              <Link
+                to="/meet"
+                onClick={() => window.scrollTo(0, 0)}
+                className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+              >
+                Try Meeting Planner for multi-city group scheduling →
+              </Link>
+
               {/* Difficulty */}
               <div className="flex items-center gap-3">
                 <span className="text-sm font-semibold text-slate-700">Scheduling difficulty:</span>
@@ -475,15 +538,6 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                   {pairData.meeting_overlap.note}
                 </p>
               )}
-
-              {/* Meeting Planner CTA */}
-              <Link
-                to="/meet"
-                onClick={() => window.scrollTo(0, 0)}
-                className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors"
-              >
-                Try Meeting Planner for multi-city group scheduling →
-              </Link>
 
               {/* Common use cases */}
               {pairData.common_use_cases.length > 0 && (
