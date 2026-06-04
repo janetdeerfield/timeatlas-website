@@ -140,8 +140,8 @@ This prevents stale preview deploys from being indexed and prevents preview-mode
 
 ## Logo + Wordmark updated (May 2026)
 
-The new logo is a precision clock face set at 10:10:12, with subtle latitude/longitude lines — evoking observatories and worldwide coordination. 
-The new wordmark, “TimeAtlas” set in  Aptos Slab Bold. The new tagline is “A time observatory for the internet”.
+The new logo is a precision clock face set at 10:10:12, with subtle latitude/longitude lines — evoking observatories and worldwide coordination.
+The new wordmark, “TimeAtlas” set in Aptos Slab Bold. The new tagline is “A time observatory for the internet”.
 
 ## Font directory case normalization (May 2026)
 
