@@ -138,6 +138,11 @@ After merging a preview branch:
 
 This prevents stale preview deploys from being indexed and prevents preview-mode noindex logic from accidentally persisting in main.
 
+## Logo + Wordmark updated (May 2026)
+
+The new logo is a precision clock face set at 10:10:12, with subtle latitude/longitude lines — evoking observatories and worldwide coordination. 
+The new wordmark, “TimeAtlas” set in  Aptos Slab Bold. The new tagline is “A time observatory for the internet”.
+
 ## Font directory case normalization (May 2026)
 
 The fonts directory was originally created as `public/Fonts/` (uppercase F) and was renamed to `public/fonts/` at the OS level during the typography work. This rename was invisible on macOS's case-insensitive filesystem but would have caused production 404s on case-sensitive Linux servers — clock digits would have silently fallen back to system fonts, losing the brand-critical foot-on-1.
