@@ -58,12 +58,19 @@ function KeyTakeaways({ items }: { items: string[] }) {
 
 function ArticleHero({ src, alt }: { src?: string; alt: string }) {
   if (!src) return <ArticleHeroSVG />;
+
+  // Derive 2x path from 1x src (e.g. hero-dst.webp -> hero-dst-2x.webp)
+  const src2x = src.replace(/(\.webp)$/, '-2x$1');
+
   return (
     <div className="mb-10 text-center">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
+        srcSet={`${src} 1200w, ${src2x} 2400w`}
+        sizes="(max-width: 640px) 100vw, 1200px"
         alt={alt}
+        width={1200}
+        height={646}
         className="max-w-full h-auto rounded-lg mx-auto"
         loading="eager"
       />

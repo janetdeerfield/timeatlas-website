@@ -1,51 +1,7 @@
-/**
- * Article loading utility for TimeAtlas Journal.
- * Articles are stored as Markdown files in src/articles/ with YAML frontmatter.
- * At build time, Vite's import.meta.glob collects all .md files and their metadata.
- * At runtime, marked + highlight.js render the Markdown to HTML.
- *
- * The FAQ frontmatter field is parsed and passed to the Article page component,
- * which injects it as FAQPage JSON-LD schema — no server required.
- */
-
-import { marked } from 'marked';
+import { Marked, marked } from 'marked';
 import hljs from 'highlight.js';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
-export interface ArticleFrontmatter {
-  title: string;
-  slug: string;
-  description: string;
-  publishedAt: string;      // ISO 8601 date string, e.g. "2026-06-04"
-  category: string;
-  tags: string[];
-  keyTakeaways: string[];
-  faq: Array<{ question: string; answer: string }>;
-  /** Optional path to a hero image, e.g. "/images/journal/hero-dst.web" */
-  heroImage?: string;
-}
-
-export interface Article extends ArticleFrontmatter {
-  /** Rendered HTML — safe to use with dangerouslySetInnerHTML */
-  contentHtml: string;
-  /** Headings extracted from the markdown for TOC generation */
-  headings: ArticleHeading[];
-  /** Word count of the article body */
-  wordCount: number;
-}
-
-export interface ArticleHeading {
-  id: string;
-  text: string;
-  level: 2 | 3 | 4;
-}
-
-export interface ArticleMeta extends ArticleFrontmatter {
-  wordCount: number;
-}
-
-// ─── marked configuration (runs client-side, called once at module init) ───────
+// ─── Slugify ─────────────────────────────────────────────────────────────────
 
 function slugify(text: string): string {
   return text
@@ -56,27 +12,45 @@ function slugify(text: string): string {
 }
 
 function buildHeadingId(text: string): string {
-  // Strip markdown syntax from heading text before slugifying
   return slugify(text.replace(/[#*`]/g, ''));
 }
 
-marked.use({
+// ─── Marked configuration ──────────────────────────────────────────────────────
+
+const renderer = new marked.Renderer();
+
+// Custom image renderer: injects srcset, width, height, and sizes for all article images.
+// Convention: image paths ending in .webp get a -2x variant at double the resolution.
+renderer.image = ({ href, title, text }) => {
+  const src1x = href ?? '';
+  const src2x = src1x.replace(/(\.webp)$/, '-2x$1');
+  const titleAttr = title ? ` title="${title}"` : '';
+  return `<figure><img src="${src1x}" srcset="${src1x} 1200w, ${src2x} 2400w" sizes="(max-width: 640px) 100vw, 1200px" width="1200" height="646" alt="${text}"${titleAttr} loading="lazy" />${title ? `<figcaption>${title}</figcaption>` : ''}</figure>`;
+};
+
+const markedInstance = new Marked({
+  renderer,
+  gfm: true,
+  breaks: false,
+});
+
+markedInstance.use({
   renderer: {
-    // Override heading renderer to inject id attributes for deep-linking and TOC
+    // Inject id attributes on headings for deep-linking and TOC
     heading({ text, depth }) {
       const id = buildHeadingId(text);
       return `<h${depth} id="${id}">${text}</h${depth}>\n`;
     },
-    // Override code renderer to apply highlight.js syntax highlighting
+    // Apply highlight.js syntax highlighting to code blocks
     code({ text, lang }) {
       const language = lang && hljs.getLanguage(lang) ? lang : 'plaintext';
       const highlighted = hljs.highlight(text, { language }).value;
       return `<pre><code class="hljs language-${language}">${highlighted}</code></pre>\n`;
     },
   },
-  gfm: true,
-  breaks: false,
 });
+
+export { markedInstance as marked };
 
 // ─── Markdown processing helpers ─────────────────────────────────────────────
 
@@ -165,20 +139,52 @@ function extractHeadings(html: string): ArticleHeading[] {
   return headings;
 }
 
-// ─── Public API ────────────────────────────────────────────────────────────────
+// ─── Type definitions ─────────────────────────────────────────────────────────
+
+export interface ArticleFrontmatter {
+  title: string;
+  slug: string;
+  description: string;
+  publishedAt: string;
+  category: string;
+  tags: string[];
+  keyTakeaways: string[];
+  faq: Array<{ question: string; answer: string }>;
+  /** Optional path to a hero image, e.g. "/images/journal/hero-dst.webp" */
+  heroImage?: string;
+}
+
+export interface Article extends ArticleFrontmatter {
+  /** Rendered HTML — safe to use with dangerouslySetInnerHTML */
+  contentHtml: string;
+  /** Headings extracted from the markdown for TOC generation */
+  headings: ArticleHeading[];
+  /** Word count of the article body */
+  wordCount: number;
+}
+
+export interface ArticleMeta extends ArticleFrontmatter {
+  wordCount: number;
+}
+
+export interface ArticleHeading {
+  id: string;
+  text: string;
+  level: 2 | 3 | 4;
+}
+
+// ─── Public API ───────────────────────────────────────────────────────────────
 
 /**
  * Get all articles' metadata (no content), sorted newest-first.
  * Uses Vite's import.meta.glob to collect all .md files at build time.
  */
 export function getAllArticles(): ArticleMeta[] {
-  // Vite replaces this glob at build time with an object mapping paths to modules.
-  // Each module has .default (raw string) and .attributes (frontmatter from VitePress frontmatter).
   const modules = import.meta.glob<string>('/src/articles/*.md', { query: '?raw', import: 'default', eager: true });
 
   const articles: ArticleMeta[] = [];
 
-  for (const [path, raw] of Object.entries(modules)) {
+  for (const [, raw] of Object.entries(modules)) {
     const { frontmatter } = splitFrontmatter(raw);
     const fm = parseFrontmatter(frontmatter);
     if (!fm.slug || !fm.title) continue;
@@ -192,6 +198,7 @@ export function getAllArticles(): ArticleMeta[] {
       tags: Array.isArray(fm.tags) ? fm.tags : [],
       keyTakeaways: Array.isArray(fm.keyTakeaways) ? fm.keyTakeaways : [],
       faq: Array.isArray(fm.faq) ? fm.faq : [],
+      heroImage: fm.heroImage,
       wordCount: countWords(raw),
     });
   }
@@ -208,12 +215,12 @@ export function getAllArticles(): ArticleMeta[] {
 export function getArticle(slug: string): Article | null {
   const modules = import.meta.glob<string>('/src/articles/*.md', { query: '?raw', import: 'default', eager: true });
 
-  for (const [path, raw] of Object.entries(modules)) {
+  for (const [, raw] of Object.entries(modules)) {
     const { frontmatter, body } = splitFrontmatter(raw);
     const fm = parseFrontmatter(frontmatter);
     if (fm.slug !== slug) continue;
 
-    const contentHtml = marked.parse(body) as string;
+    const contentHtml = markedInstance.parse(body) as string;
     const headings = extractHeadings(contentHtml);
     const wordCount = countWords(body);
 
@@ -226,6 +233,7 @@ export function getArticle(slug: string): Article | null {
       tags: Array.isArray(fm.tags) ? fm.tags : [],
       keyTakeaways: Array.isArray(fm.keyTakeaways) ? fm.keyTakeaways : [],
       faq: Array.isArray(fm.faq) ? fm.faq : [],
+      heroImage: fm.heroImage,
       contentHtml,
       headings,
       wordCount,
