@@ -2,6 +2,9 @@
 @import './tailwind.css';
 @import './theme.css';
 
+/* highlight.js — Tokyo Night Dark theme for code blocks */
+@import 'highlight.js/styles/tokyo-night-dark.css';
+
 /* Sticky Footer Layout */
 html,
 body {

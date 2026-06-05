@@ -13,6 +13,7 @@ import {
 } from 'react-router';
 import { createRouteObjects } from './app/routes';
 import { ALL_PAIRS, pairSlug } from './app/data/pairsV3';
+import { ARTICLES, articlePath } from './lib/articleRegistry';
 
 const coreRoutes = [
   '/',
@@ -20,6 +21,7 @@ const coreRoutes = [
   '/world',
   '/meet',
   '/dev',
+  '/journal',
   '/about',
   '/privacy',
   '/terms',
@@ -28,6 +30,9 @@ const coreRoutes = [
 
 export const prerenderRoutes = [
   ...coreRoutes,
+  // Static article pages — one prerendered HTML file per article
+  ...ARTICLES.map((slug) => articlePath(slug)),
+  // Dynamic city-pair pages
   ...ALL_PAIRS.map((pair) => `/${pairSlug(pair.source_code, pair.target_code)}`),
 ];
 

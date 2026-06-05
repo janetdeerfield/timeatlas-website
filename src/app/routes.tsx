@@ -17,6 +17,7 @@ const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About
 const Privacy = lazy(() => import('./pages/Privacy').then((m) => ({ default: m.Privacy })));
 const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms })));
 const Journal = lazy(() => import('./pages/Journal').then((m) => ({ default: m.Journal })));
+const ArticlePage = lazy(() => import('./pages/ArticlePage').then((m) => ({ default: m.ArticlePage })));
 const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
 const CityPairPage = lazy(() =>
   import('./pages/CityPairPage').then((m) => ({ default: m.CityPairPage }))
@@ -55,6 +56,10 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
       {
         path: 'journal/*',
         element: <Journal />,
+      },
+      {
+        path: 'journal/:slug',
+        element: <ArticlePage />,
       },
       {
         path: 'about',
