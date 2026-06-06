@@ -10,7 +10,7 @@ const sitemapPath = resolve(repoRoot, 'public/sitemap.xml');
 
 // Dynamically import the article registry from src/lib/
 // This is a Node.js ESM script so we use the .js extension directly.
-const { ARTICLES, articlePath } = await import(resolve(repoRoot, 'src/lib/articleRegistry.js'));
+const { ARTICLES, articlePath } = await import(resolve(repoRoot, 'src/lib/articleRegistry.ts'));
 
 const { pairs } = JSON.parse(readFileSync(pairsPath, 'utf8'));
 
