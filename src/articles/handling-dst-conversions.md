@@ -1,30 +1,31 @@
 ---
 title: "Handling Time Zone Conversions: The Developer's Guide to DST"
-slug: "handling-dst-conversions"
-description: "A technical guide to storing, converting, and rendering times across DST boundaries using native browser APIs and IANA timezone identifiers."
-publishedAt: "2026-06-05"
-category: "developer"
-tags: ["DST", "IANA", "Intl API", "Unix timestamps", "Python zoneinfo"]
+slug: 'handling-dst-conversions'
+description: 'A technical guide to storing, converting, and rendering times across DST boundaries using native browser APIs and IANA timezone identifiers.'
+publishedAt: '2026-06-05'
+category: 'developer'
+tags: ['DST', 'IANA', 'Intl API', 'Unix timestamps', 'Python zoneinfo']
 keyTakeaways:
-  - "Store time in UTC always: Convert to local time only at the display layer to avoid DST-related data corruption."
-  - "Use IANA time zone IDs: Replace fixed offsets with named zones (e.g., America/New_York) to let the runtime apply rules dynamically."
-  - "Handle ambiguous times explicitly: Fall-back transitions create duplicate local times; your code must resolve these with a clear policy."
+  - 'Store time in UTC always: Convert to local time only at the display layer to avoid DST-related data corruption.'
+  - 'Use IANA time zone IDs: Replace fixed offsets with named zones (e.g., America/New_York) to let the runtime apply rules dynamically.'
+  - 'Handle ambiguous times explicitly: Fall-back transitions create duplicate local times; your code must resolve these with a clear policy.'
 faq:
-  - question: "What is the safest way to store times in a database?"
-    answer: "Store all times as UTC (or Unix integers) in your database and convert to local time only when displaying to users. This prevents DST-related drift and double-counting during transitions."
-  - question: "Why should I avoid hardcoded UTC offsets?"
-    answer: "UTC offsets change with DST and political decisions. Using IANA timezone identifiers (like America/Chicago) applies the correct historical and current rules automatically for any point in time."
-  - question: "How do I detect a non-existent time in Python?"
-    answer: "Convert the local datetime to UTC and back. If the result does not match the original input, the time falls inside a spring-forward gap and does not exist."
-heroImage: "/images/journal/hero-dst.web"
+  - question: 'What is the safest way to store times in a database?'
+    answer: 'Store all times as UTC (or Unix integers) in your database and convert to local time only when displaying to users. This prevents DST-related drift and double-counting during transitions.'
+  - question: 'Why should I avoid hardcoded UTC offsets?'
+    answer: 'UTC offsets change with DST and political decisions. Using IANA timezone identifiers (like America/Chicago) applies the correct historical and current rules automatically for any point in time.'
+  - question: 'How do I detect a non-existent time in Python?'
+    answer: 'Convert the local datetime to UTC and back. If the result does not match the original input, the time falls inside a spring-forward gap and does not exist.'
+heroImage: '/images/journal/hero-dst.web'
 ---
 
 # Handling Time Zone Conversions: The Developer's Guide to DST
 
 **Key Takeaways:**
-* **Store time in UTC always:** Convert to local time only at the display layer to avoid DST-related data corruption.
-* **Use IANA time zone IDs:** Replace fixed offsets with named zones (e.g., `America/New_York`) to let the runtime apply rules dynamically.
-* **Handle ambiguous times explicitly:** Fall-back transitions create duplicate local times; your code must resolve these with a clear policy.
+
+- **Store time in UTC always:** Convert to local time only at the display layer to avoid DST-related data corruption.
+- **Use IANA time zone IDs:** Replace fixed offsets with named zones (e.g., `America/New_York`) to let the runtime apply rules dynamically.
+- **Handle ambiguous times explicitly:** Fall-back transitions create duplicate local times; your code must resolve these with a clear policy.
 
 ---
 
@@ -50,12 +51,15 @@ const formatters = new Map();
 
 export function getFormatter(timeZone) {
   if (!formatters.has(timeZone)) {
-    formatters.set(timeZone, new Intl.DateTimeFormat("en-US", {
+    formatters.set(
       timeZone,
-      hour: "numeric",
-      minute: "2-digit",
-      timeZoneName: "short"
-    }));
+      new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        hour: 'numeric',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      })
+    );
   }
   return formatters.get(timeZone);
 }
@@ -67,9 +71,9 @@ DST transitions create ambiguous or skipped local times that safe code must hand
 
 ![The DST Data Corruption Engine: spring-forward gaps and fall-back ambiguity visualized](/images/journal/dst-corruption.web)
 
-* **Non-existent times (spring forward):** Decide whether to round up to the next valid time or throw an error. Never silently accept an invalid local time.
-* **Ambiguous times (fall back):** Specify which occurrence you mean. Java's `ZonedDateTime` lets you use `withEarlierOffsetAtOverlap()` or `withLaterOffsetAtOverlap()` to be explicit.
-* **User input validation:** If your application accepts local time from users, validate it against the zone rules before storing. A user entering 2:30 AM on a spring-forward night is giving you an impossible time.
+- **Non-existent times (spring forward):** Decide whether to round up to the next valid time or throw an error. Never silently accept an invalid local time.
+- **Ambiguous times (fall back):** Specify which occurrence you mean. Java's `ZonedDateTime` lets you use `withEarlierOffsetAtOverlap()` or `withLaterOffsetAtOverlap()` to be explicit.
+- **User input validation:** If your application accepts local time from users, validate it against the zone rules before storing. A user entering 2:30 AM on a spring-forward night is giving you an impossible time.
 
 ### Avoiding Common DST Mistakes
 
@@ -80,7 +84,7 @@ The most frequent errors developers make when attempting programmatic daylight s
 3. Assuming DST transitions always happen at 2:00 AM (they do not in all regions).
 4. Forgetting that server time zone settings affect database query results.
 
-*Pro Tip:* Write a small utility function that accepts a local time string and a zone ID, then returns whether that time is ambiguous, non-existent, or valid. Run it at the boundary of any user input path.
+_Pro Tip:_ Write a small utility function that accepts a local time string and a zone ID, then returns whether that time is ambiguous, non-existent, or valid. Run it at the boundary of any user input path.
 
 ## 4. Unix Timestamps: The Underlying Integer
 

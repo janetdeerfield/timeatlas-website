@@ -180,7 +180,11 @@ export interface ArticleHeading {
  * Uses Vite's import.meta.glob to collect all .md files at build time.
  */
 export function getAllArticles(): ArticleMeta[] {
-  const modules = import.meta.glob<string>('/src/articles/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob<string>('/src/articles/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  });
 
   const articles: ArticleMeta[] = [];
 
@@ -213,7 +217,11 @@ export function getAllArticles(): ArticleMeta[] {
  * Returns null if the slug does not match any article.
  */
 export function getArticle(slug: string): Article | null {
-  const modules = import.meta.glob<string>('/src/articles/*.md', { query: '?raw', import: 'default', eager: true });
+  const modules = import.meta.glob<string>('/src/articles/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  });
 
   for (const [, raw] of Object.entries(modules)) {
     const { frontmatter, body } = splitFrontmatter(raw);

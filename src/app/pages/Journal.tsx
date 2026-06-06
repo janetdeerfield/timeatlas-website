@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
 import { Footer } from '../components/Footer';
 import { SEO } from '../components/SEO';
-import { getAllArticles, formatDate } from '../lib/articles';
-import { ARTICLES, articlePath, type ArticleSlug } from '../lib/articleRegistry';
+import { getAllArticles, formatDate } from '../../lib/articles';
+import { ARTICLES, articlePath, type ArticleSlug } from '../../lib/articleRegistry';
 
 // ─── Category badge colors ─────────────────────────────────────────────────────
 
@@ -56,9 +56,7 @@ function ArticleCard({
       <h2 className="text-lg font-semibold text-slate-900 group-hover:text-slate-700 mb-2 leading-snug">
         {title}
       </h2>
-      <p className="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">
-        {description}
-      </p>
+      <p className="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">{description}</p>
       <div className="flex items-center justify-between">
         <div className="flex flex-wrap gap-1.5">
           {tags.slice(0, 3).map((tag) => (
@@ -92,7 +90,6 @@ export function Journal() {
       />
       <div className="min-h-screen flex flex-col bg-white">
         <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
-
           {/* Page header */}
           <header className="mb-14">
             <p className="text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">
@@ -102,8 +99,8 @@ export function Journal() {
               Guides &amp; Deep-Dives
             </h1>
             <p className="text-base text-slate-500 max-w-2xl leading-relaxed">
-              Technical documentation, time zone workflows, and data-driven observations
-              from the TimeAtlas engineering and editorial team.
+              Technical documentation, time zone workflows, and data-driven observations from the
+              TimeAtlas engineering and editorial team.
             </p>
           </header>
 

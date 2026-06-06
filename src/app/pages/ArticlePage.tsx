@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { JsonLd } from '../components/JsonLd';
 import { SEO } from '../components/SEO';
-import { getArticle, formatDate, type Article, type ArticleHeading } from '../lib/articles';
+import { getArticle, formatDate, type Article, type ArticleHeading } from '../../lib/articles';
 import { ChevronRight } from 'lucide-react';
 
 // ─── Table of Contents ─────────────────────────────────────────────────────────
@@ -11,7 +11,10 @@ import { ChevronRight } from 'lucide-react';
 function TableOfContents({ headings }: { headings: ArticleHeading[] }) {
   if (headings.length < 3) return null;
   return (
-    <nav aria-label="Table of contents" className="mb-8 border border-slate-200 rounded-lg p-5 bg-slate-50">
+    <nav
+      aria-label="Table of contents"
+      className="mb-8 border border-slate-200 rounded-lg p-5 bg-slate-50"
+    >
       <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
         Contents
       </p>
@@ -36,7 +39,10 @@ function TableOfContents({ headings }: { headings: ArticleHeading[] }) {
 function KeyTakeaways({ items }: { items: string[] }) {
   if (!items?.length) return null;
   return (
-    <aside aria-label="Key takeaways" className="mb-8 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg p-5">
+    <aside
+      aria-label="Key takeaways"
+      className="mb-8 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg p-5"
+    >
       <p className="text-xs font-semibold text-amber-700 uppercase tracking-widest mb-3">
         Key Takeaways
       </p>
@@ -93,8 +99,24 @@ function ArticleHeroSVG() {
           className="mx-auto mb-6"
         >
           {/* Observatory crosshairs / time zone meridian lines */}
-          <line x1="120" y1="4" x2="120" y2="76" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="4 4" />
-          <line x1="4" y1="40" x2="236" y2="40" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="4 4" />
+          <line
+            x1="120"
+            y1="4"
+            x2="120"
+            y2="76"
+            stroke="#CBD5E1"
+            strokeWidth="1"
+            strokeDasharray="4 4"
+          />
+          <line
+            x1="4"
+            y1="40"
+            x2="236"
+            y2="40"
+            stroke="#CBD5E1"
+            strokeWidth="1"
+            strokeDasharray="4 4"
+          />
           {/* Outer circle */}
           <circle cx="120" cy="40" r="34" stroke="#CBD5E1" strokeWidth="1.5" fill="none" />
           {/* Inner circle */}
@@ -111,10 +133,20 @@ function ArticleHeroSVG() {
             const y1 = 40 - 33 * Math.cos(rad);
             const x2 = 120 + 28 * Math.sin(rad);
             const y2 = 40 - 28 * Math.cos(rad);
-            return <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#E2E8F0" strokeWidth="0.75" />;
+            return (
+              <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#E2E8F0" strokeWidth="0.75" />
+            );
           })}
           {/* UTC label */}
-          <text x="120" y="44" textAnchor="middle" dominantBaseline="middle" fontSize="8" fill="#94A3B8" fontFamily="monospace">
+          <text
+            x="120"
+            y="44"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fontSize="8"
+            fill="#94A3B8"
+            fontFamily="monospace"
+          >
             UTC
           </text>
           {/* Corner coordinate marks */}
@@ -167,7 +199,10 @@ function FaqSection({ faq }: { faq: Array<{ question: string; answer: string }> 
   if (!faq?.length) return null;
 
   return (
-    <section aria-label="Frequently asked questions" className="mt-12 border-t border-slate-200 pt-8">
+    <section
+      aria-label="Frequently asked questions"
+      className="mt-12 border-t border-slate-200 pt-8"
+    >
       <h2 className="text-xl font-semibold text-slate-900 mb-5">Frequently Asked Questions</h2>
       <div className="space-y-3">
         {faq.map((item, i) => (
@@ -233,8 +268,7 @@ function ArticleSchema({ article }: { article: Article }) {
 
   return (
     <>
-      <JsonLd data={faqSchema} />
-      <JsonLd data={articleSchema} />
+      <JsonLd schemas={[faqSchema, articleSchema]} />
     </>
   );
 }
@@ -247,16 +281,27 @@ export function ArticlePage() {
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
-    if (!slug) { setNotFound(true); return; }
+    if (!slug) {
+      setNotFound(true);
+      return;
+    }
     const found = getArticle(slug);
-    if (!found) { setNotFound(true); return; }
+    if (!found) {
+      setNotFound(true);
+      return;
+    }
     setArticle(found);
   }, [slug]);
 
   if (notFound) {
     return (
       <>
-        <SEO title="Article Not Found | TimeAtlas" description="This article does not exist." path="/journal" robots="noindex" />
+        <SEO
+          title="Article Not Found | TimeAtlas"
+          description="This article does not exist."
+          path="/journal"
+          robots="noindex"
+        />
         <div className="min-h-screen flex flex-col bg-white">
           <main className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
             <p className="text-sm text-slate-400 uppercase tracking-widest mb-2">404</p>
@@ -291,13 +336,20 @@ export function ArticlePage() {
 
       <div className="min-h-screen flex flex-col bg-white">
         <div className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-1.5 text-xs text-slate-400">
-              <li><Link to="/" className="hover:text-slate-600 transition-colors">Home</Link></li>
+              <li>
+                <Link to="/" className="hover:text-slate-600 transition-colors">
+                  Home
+                </Link>
+              </li>
               <li aria-hidden="true">/</li>
-              <li><Link to="/journal" className="hover:text-slate-600 transition-colors">Journal</Link></li>
+              <li>
+                <Link to="/journal" className="hover:text-slate-600 transition-colors">
+                  Journal
+                </Link>
+              </li>
               <li aria-hidden="true">/</li>
               <li className="text-slate-600 truncate max-w-[200px]">{article.title}</li>
             </ol>
@@ -313,7 +365,9 @@ export function ArticlePage() {
               {formatDate(article.publishedAt)}
             </time>
             <span className="text-slate-300">·</span>
-            <span className="text-xs text-slate-400">{article.wordCount.toLocaleString()} words</span>
+            <span className="text-xs text-slate-400">
+              {article.wordCount.toLocaleString()} words
+            </span>
           </div>
 
           {/* Title */}
