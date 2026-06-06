@@ -16,7 +16,7 @@ faq:
     answer: 'UTC offsets change with DST and political decisions. Using IANA timezone identifiers (like America/Chicago) applies the correct historical and current rules automatically for any point in time.'
   - question: 'How do I detect a non-existent time in Python?'
     answer: 'Convert the local datetime to UTC and back. If the result does not match the original input, the time falls inside a spring-forward gap and does not exist.'
-heroImage: '/images/journal/hero-dst.web'
+heroImage: '/images/journal/hero-dst.webp'
 ---
 
 # Handling Time Zone Conversions: The Developer's Guide to DST
@@ -41,7 +41,7 @@ When building the TimeAtlas meeting planner, we evaluated the standard JavaScrip
 
 Our testing revealed that modern browser environments now natively support the IANA database via the `Intl.DateTimeFormat` API. By abandoning external libraries and relying exclusively on the native `Intl` API, TimeAtlas achieved a desktop load time of 0.47s and an interactivity delay of 0.00ms.
 
-![Legacy time libraries vs. native APIs: bundle size, performance, and IANA support comparison](/images/journal/legacy-vs-native.web)
+![Legacy time libraries vs. native APIs: bundle size, performance, and IANA support comparison](/images/journal/legacy-vs-native.webp)
 
 Here is the native caching pattern we utilize to prevent rendering bottlenecks during multi-city conversions:
 
@@ -69,7 +69,7 @@ export function getFormatter(timeZone) {
 
 DST transitions create ambiguous or skipped local times that safe code must handle explicitly.
 
-![The DST Data Corruption Engine: spring-forward gaps and fall-back ambiguity visualized](/images/journal/dst-corruption.web)
+![The DST Data Corruption Engine: spring-forward gaps and fall-back ambiguity visualized](/images/journal/dst-corruption.webp)
 
 - **Non-existent times (spring forward):** Decide whether to round up to the next valid time or throw an error. Never silently accept an invalid local time.
 - **Ambiguous times (fall back):** Specify which occurrence you mean. Java's `ZonedDateTime` lets you use `withEarlierOffsetAtOverlap()` or `withLaterOffsetAtOverlap()` to be explicit.
@@ -102,7 +102,7 @@ For years, handling UTC offsets and ambiguous daylight saving transitions requir
 
 By strictly utilizing native language APIs and integer-based UTC state, we reduced parsing time to an unmeasurable 0.00ms.
 
-![Python zoneinfo: replacing pytz with native IANA parsing in Python 3.9+](/images/journal/python-zoneinfo.web)
+![Python zoneinfo: replacing pytz with native IANA parsing in Python 3.9+](/images/journal/python-zoneinfo.webp)
 
 **Python (3.9+): The `zoneinfo` Module** Python developers must abandon `pytz`. The native `zoneinfo` module directly parses the system's IANA database.
 
