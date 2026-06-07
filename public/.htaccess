@@ -140,24 +140,18 @@ Redirect 301 /utc-to-pt /utc-to-pst
 # ==========================================
 RewriteBase /
 
-# 1. Trailing-slash → canonical 301.
-#    ^(.+)/$ requires at least one character before the slash, so root / is never matched.
-#    The %{DOCUMENT_ROOT}/$1.html check ensures we only redirect paths that actually have
-#    a prerendered page — unknown slugs fall through to the SPA fallback unchanged.
-#    Covers /convert/, /world/, /est-to-pst/, every city-pair variant, etc.
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+)/$ /$1 [R=301,L]
+# 1. Unconditional Trailing-Slash Canonicalization (Fixes GSC Errors)
+# If a URL has a trailing slash, strip it and 301 redirect immediately.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# 2. Serve prerendered .html directly for no-slash URLs.
-#    !-d is intentionally absent: the prerender previously created slug/ directories
-#    alongside slug.html; dropping !-d prevents mod_dir from blocking this rule on any
-#    server that still has those directories present from an older deploy.
+# 2. Serve prerendered .html directly for no-slash URLs
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.*?)$ $1.html [L]
 
-# 3. No prerendered .html exists → fallback to index.html (React Router handles routing)
+# 3. SPA Fallback (React Router handles the rest)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /index.html [L]
+
