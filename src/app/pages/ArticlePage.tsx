@@ -80,6 +80,7 @@ function ArticleHero({ src, alt }: { src?: string; alt: string }) {
         className="max-w-full h-auto rounded-lg mx-auto"
         loading="eager"
       />
+      <p className="mt-2 text-xs text-slate-400 italic">Image created using Google NotebookLM</p>
     </div>
   );
 }
@@ -404,8 +405,20 @@ export function ArticlePage() {
             </div>
           )}
 
+          {/* Copyright notice */}
+          <div className="mt-10 pt-6 border-t border-slate-100 text-xs text-slate-400 leading-relaxed">
+            <p>
+              All original articles, data, and conceptual content on this site are &copy; 2026{' '}
+              <strong className="text-slate-500">TimeAtlas</strong>. All rights reserved. Visual
+              graphics are created using a hybrid workflow: underlying data and concepts originate
+              from <strong className="text-slate-500">TimeAtlas</strong>, base visual layouts are
+              generated via Google NotebookLM, and final artistic modifications are made by human
+              editors using Adobe Photoshop.
+            </p>
+          </div>
+
           {/* Back link */}
-          <div className="mt-10 pt-6 border-t border-slate-100">
+          <div className="mt-6">
             <Link
               to="/journal"
               className="text-sm text-slate-500 hover:text-slate-800 transition-colors"
