@@ -10,12 +10,12 @@ keyTakeaways:
   - 'Use IANA time zone IDs: Replace fixed offsets with named zones (e.g., America/New_York) to let the runtime apply rules dynamically.'
   - 'Handle ambiguous times explicitly: Fall-back transitions create duplicate local times; your code must resolve these with a clear policy.'
 faq:
-  - question: "What is the safest way to store times in a database?"
-    answer: "Store all times as UTC (or Unix integers) in your database and convert to local time only when displaying to users. This prevents DST-related drift and double-counting during transitions."
-  - question: "Why should I avoid hardcoded UTC offsets?"
-    answer: "UTC offsets change with DST and political decisions. Using IANA timezone identifiers (like America/Chicago) applies the correct historical and current rules automatically for any point in time."
-  - question: "How do I detect a non-existent time in Python?"
-    answer: "Convert the local datetime to UTC and back. If the result does not match the original input, the time falls inside a spring-forward gap and does not exist."
+  - question: 'What is the safest way to store times in a database?'
+    answer: 'Store all times as UTC (or Unix integers) in your database and convert to local time only when displaying to users. This prevents DST-related drift and double-counting during transitions.'
+  - question: 'Why should I avoid hardcoded UTC offsets?'
+    answer: 'UTC offsets change with DST and political decisions. Using IANA timezone identifiers (like America/Chicago) applies the correct historical and current rules automatically for any point in time.'
+  - question: 'How do I detect a non-existent time in Python?'
+    answer: 'Convert the local datetime to UTC and back. If the result does not match the original input, the time falls inside a spring-forward gap and does not exist.'
 heroImage: '/images/journal/hero-dst.webp'
 ---
 
