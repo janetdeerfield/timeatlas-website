@@ -94,10 +94,13 @@ In a globally distributed network, absence is a feature, not a bug. If a team me
 ## FAQ
 
 ### What is the best way to schedule a meeting between PST, EST, and GMT?
+
 Use a visual multi-timezone meeting scheduler to find the narrow afternoon overlap. Typically, 8:00 AM PST aligns with 11:00 AM EST and 4:00 PM GMT, offering the cleanest synchronous window for this specific triad.
 
 ### How do I handle half-hour time zones like IST?
+
 Avoid manual math. India Standard Time (UTC+5:30) and other fractional zones require a programmatic tool to accurately calculate the offset against shifting Daylight Saving regions. Always use a tool backed by the IANA timezone database.
 
 ### Why did my recurring global meeting time change?
+
 Geopolitical regions enter and exit Daylight Saving Time on different dates. If your recurring meeting spans the US and Europe, the meeting time will "drift" by an hour for several weeks in March and October.

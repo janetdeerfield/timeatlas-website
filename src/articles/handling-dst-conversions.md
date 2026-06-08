@@ -119,10 +119,13 @@ Temporal data corruption is entirely preventable. The rules of engagement are bi
 ## FAQ
 
 ### What is the safest way to store times in a database?
+
 Store all times as UTC (or Unix integers) in your database and convert to local time only when displaying to users. This prevents DST-related drift and double-counting during transitions.
 
 ### Why should I avoid hardcoded UTC offsets?
+
 UTC offsets change with DST and political decisions. Using IANA timezone identifiers (like America/Chicago) applies the correct historical and current rules automatically for any point in time.
 
 ### How do I detect a non-existent time in Python?
+
 Convert the local datetime to UTC and back. If the result does not match the original input, the time falls inside a spring-forward gap and does not exist.
