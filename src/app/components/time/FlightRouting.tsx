@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '../ui/accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import type { FlightData } from '../../data/pairsV3';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
