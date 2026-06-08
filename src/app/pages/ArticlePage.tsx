@@ -222,7 +222,13 @@ function ArticleBody({ html }: { html: string }) {
     <>
       {parts.map((part, i) => {
         if (part.kind === 'html') {
-          return <div key={i} className={PROSE_CLASSES} dangerouslySetInnerHTML={{ __html: part.content }} />;
+          return (
+            <div
+              key={i}
+              className={PROSE_CLASSES}
+              dangerouslySetInnerHTML={{ __html: part.content }}
+            />
+          );
         }
         const Component = EMBED_COMPONENTS[part.name];
         if (!Component) return null;

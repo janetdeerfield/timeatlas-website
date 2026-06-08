@@ -297,11 +297,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US domestic business — financial services on the East Coast coordinate with logistics, agriculture, and energy sectors centered in Chicago, Dallas, and Houston.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["finance", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "JFK ↔ ORD",
         "average_flight_time_minutes": 165,
@@ -324,11 +320,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US domestic business — East Coast finance and media work with Mountain West energy, tech, and outdoor industry companies.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "energy sector"],
       "flight_route": {
         "primary_route": "JFK ↔ DEN",
         "average_flight_time_minutes": 240,
@@ -351,11 +343,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US domestic pair with the widest contiguous time gap. Federal agencies in Washington DC and businesses in the lower 48 coordinating with Alaskan operations, particularly oil, gas, and fisheries.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ],
+      "common_use_cases": ["finance", "business meetings", "oil and gas"],
       "flight_route": {
         "primary_route": "JFK ↔ ANC",
         "average_flight_time_minutes": 480,
@@ -378,12 +366,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "East Coast to Hawaii — federal government, military, tourism, and Pacific trade. The 5-hour gap means Hawaii starts the workday when the East Coast is at lunch.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism",
-        "military coordination"
-      ],
+      "common_use_cases": ["finance", "business meetings", "tourism", "military coordination"],
       "flight_route": {
         "primary_route": "JFK ↔ HNL",
         "average_flight_time_minutes": 600,
@@ -434,10 +417,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "New York to London — US East Coast finance, media, and legal firms working with UK counterparts. Morning New York can catch afternoon London.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "JFK ↔ LHR",
         "average_flight_time_minutes": 420,
@@ -460,11 +440,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Reverse of the JST↔EST pair — US East Coast coordinating with Japan across a 14.0-hour gap.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing supply chains"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing supply chains"],
       "flight_route": {
         "primary_route": "JFK ↔ NRT",
         "average_flight_time_minutes": 840,
@@ -487,11 +463,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US domestic business — Midwestern logistics and energy companies frequently coordinate with East Coast finance and media.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["finance", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "ORD ↔ JFK",
         "average_flight_time_minutes": 165,
@@ -514,11 +486,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US Central to Mountain — tight 1-hour gap means near-full workday overlap. Common for energy, agriculture, and logistics spanning the Great Plains and Rocky Mountains.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "energy sector"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "energy sector"]
     },
     {
       "source_code": "CST",
@@ -557,11 +525,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Central US to Alaska — 3-hour gap. Oil and gas supply chain, federal agencies, and remote logistics.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "oil and gas"]
     },
     {
       "source_code": "CST",
@@ -578,12 +542,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Central to Hawaii — 4-hour gap. Military (INDOPACOM), tourism, and Pacific trade facilitation.",
-      "common_use_cases": [
-        "business meetings",
-        "tourism",
-        "logistics",
-        "military coordination"
-      ]
+      "common_use_cases": ["business meetings", "tourism", "logistics", "military coordination"]
     },
     {
       "source_code": "CST",
@@ -628,11 +587,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Chicago futures markets to London — commodity and derivatives coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["finance", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "ORD ↔ LHR",
         "average_flight_time_minutes": 480,
@@ -655,11 +610,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Chicago to continental Europe — CME traders coordinating with European counterparts, and US multinationals with European headquarters.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "logistics"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "logistics"],
       "flight_route": {
         "primary_route": "ORD ↔ FRA",
         "average_flight_time_minutes": 510,
@@ -704,11 +655,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to Japan — automotive and manufacturing supply chain coordination.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["manufacturing supply chains", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "ORD ↔ NRT",
         "average_flight_time_minutes": 780,
@@ -731,11 +678,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Mountain West companies in energy, mining, and outdoor recreation coordinating with East Coast capital and media.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "energy sector"],
       "flight_route": {
         "primary_route": "DEN ↔ JFK",
         "average_flight_time_minutes": 240,
@@ -758,11 +701,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Mountain to Central — energy companies (Denver, Salt Lake City) coordinating with Chicago commodity markets. 1-hour gap creates minimal friction.",
-      "common_use_cases": [
-        "logistics",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["logistics", "business meetings", "energy sector"]
     },
     {
       "source_code": "MST",
@@ -801,11 +740,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Mountain to Alaska — 2-hour gap. Energy sector (Colorado oil services to Prudhoe Bay), federal land management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "oil and gas"]
     },
     {
       "source_code": "MST",
@@ -822,12 +757,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Mountain to Hawaii — 3-hour gap. Tourism, military, and Pacific trade.",
-      "common_use_cases": [
-        "business meetings",
-        "tourism",
-        "energy sector",
-        "military coordination"
-      ]
+      "common_use_cases": ["business meetings", "tourism", "energy sector", "military coordination"]
     },
     {
       "source_code": "MST",
@@ -872,11 +802,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Mountain West to London — energy sector, and tech companies with UK operations.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "energy sector"],
       "flight_route": {
         "primary_route": "DEN ↔ LHR",
         "average_flight_time_minutes": 540,
@@ -899,11 +825,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Mountain West to Europe — energy sector and some tech companies.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "energy sector"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "energy sector"],
       "flight_route": {
         "primary_route": "DEN ↔ FRA",
         "average_flight_time_minutes": 540,
@@ -948,11 +870,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Mountain West to Japan — energy and tech companies.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["manufacturing supply chains", "business meetings", "energy sector"]
     },
     {
       "source_code": "PST",
@@ -1063,11 +981,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Reverse of the UTC↔PST pair — US West Coast coordinating with global technical reference across a 8.0-hour gap.",
-      "common_use_cases": [
-        "API timestamps",
-        "software development",
-        "tech coordination"
-      ],
+      "common_use_cases": ["API timestamps", "software development", "tech coordination"],
       "flight_route": {
         "primary_route": "LAX ↔ LHR",
         "average_flight_time_minutes": 600,
@@ -1146,11 +1060,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "West Coast to India — Silicon Valley product companies with Bangalore or Hyderabad engineering teams. West Coast morning window reaches India evening.",
-      "common_use_cases": [
-        "BPO operations",
-        "software development",
-        "tech coordination"
-      ],
+      "common_use_cases": ["BPO operations", "software development", "tech coordination"],
       "flight_route": {
         "primary_route": "LAX ↔ BOM",
         "average_flight_time_minutes": 900,
@@ -1201,11 +1111,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Alaska operations (oil pipeline, fisheries, military) coordinating with East Coast federal agencies and supply chains.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ],
+      "common_use_cases": ["finance", "business meetings", "oil and gas"],
       "flight_route": {
         "primary_route": "ANC ↔ JFK",
         "average_flight_time_minutes": 480,
@@ -1228,11 +1134,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Alaska operations to Central US — fishery exports, oil services, and federal program management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "oil and gas"]
     },
     {
       "source_code": "AKST",
@@ -1249,11 +1151,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Alaska to Mountain — resource extraction and federal program coordination.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "oil and gas"]
     },
     {
       "source_code": "AKST",
@@ -1292,12 +1190,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Alaska to Hawaii — 1-hour gap; both are remote US territories with Pacific focus. Military (Alaska Command, INDOPACOM), fisheries, and inter-island logistics.",
-      "common_use_cases": [
-        "business meetings",
-        "tourism",
-        "oil and gas",
-        "military coordination"
-      ]
+      "common_use_cases": ["business meetings", "tourism", "oil and gas", "military coordination"]
     },
     {
       "source_code": "AKST",
@@ -1336,11 +1229,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to London — same sectors, opposite direction.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["finance", "business meetings", "oil and gas"]
     },
     {
       "source_code": "AKST",
@@ -1357,11 +1246,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to Europe — same sectors.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "oil and gas"]
     },
     {
       "source_code": "AKST",
@@ -1400,11 +1285,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to Japan — same sectors, reverse.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing supply chains",
-        "oil and gas"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing supply chains", "oil and gas"],
       "flight_route": {
         "primary_route": "ANC ↔ NRT",
         "average_flight_time_minutes": 540,
@@ -1427,12 +1308,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Hawaii to East Coast — tourism operators, military Pacific Command, and Asian-Pacific trade facilitation. Hawaii's late afternoon catches East Coast early morning.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings",
-        "military coordination"
-      ],
+      "common_use_cases": ["finance", "tourism", "business meetings", "military coordination"],
       "flight_route": {
         "primary_route": "HNL ↔ JFK",
         "average_flight_time_minutes": 600,
@@ -1455,12 +1331,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hawaii to Central US — late Hawaii afternoon meets early CST morning. Tourism operators and military coordination.",
-      "common_use_cases": [
-        "tourism",
-        "logistics",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "logistics", "business meetings", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -1477,12 +1348,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hawaii to Mountain — INDOPACOM coordination with NORTHCOM (Colorado Springs), tourism supply chain.",
-      "common_use_cases": [
-        "tourism",
-        "energy sector",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "energy sector", "business meetings", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -1527,12 +1393,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hawaii to Alaska — tourism, military Pacific operations, and fishery coordination.",
-      "common_use_cases": [
-        "tourism",
-        "oil and gas",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "oil and gas", "business meetings", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -1571,12 +1432,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to London — same wide gap. Async collaboration is the norm.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["finance", "tourism", "business meetings", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -1593,12 +1449,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to Europe — same wide gap, rare live coordination.",
-      "common_use_cases": [
-        "tourism",
-        "manufacturing",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "manufacturing", "business meetings", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -1693,11 +1544,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "One of the most-queried developer pairs — UTC server time versus Pacific business hours. Silicon Valley and Seattle engineering teams deal with this daily.",
-      "common_use_cases": [
-        "API timestamps",
-        "software development",
-        "tech coordination"
-      ],
+      "common_use_cases": ["API timestamps", "software development", "tech coordination"],
       "flight_route": {
         "primary_route": "LHR ↔ LAX",
         "average_flight_time_minutes": 600,
@@ -1764,12 +1611,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "UTC and GMT are effectively the same offset (0h), but different categories — UTC is the scientific standard, GMT is a civil zone. The conversion is trivial, but the conceptual distinction matters for precision applications like aviation, finance, and navigation.",
-      "common_use_cases": [
-        "finance",
-        "API timestamps",
-        "software development",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "API timestamps", "software development", "business meetings"]
     },
     {
       "source_code": "UTC",
@@ -1808,11 +1650,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "UTC to India — high-volume pair for tech teams working across US/EU systems (UTC) with India-based operations. Half-hour offset creates complexity.",
-      "common_use_cases": [
-        "BPO operations",
-        "API timestamps",
-        "software development"
-      ],
+      "common_use_cases": ["BPO operations", "API timestamps", "software development"],
       "flight_route": {
         "primary_route": "LHR ↔ BOM",
         "average_flight_time_minutes": 540,
@@ -1863,10 +1701,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "London to New York — the most iconic transatlantic business corridor. UK banking, investment management, and media coordinating with US counterparts.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "LHR ↔ JFK",
         "average_flight_time_minutes": 420,
@@ -1889,11 +1724,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "London to Chicago — UK financial markets coordinating with CME (Chicago Mercantile Exchange), the world's largest derivatives exchange.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["finance", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "LHR ↔ ORD",
         "average_flight_time_minutes": 480,
@@ -1916,11 +1747,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "London to Mountain — less common; primarily for UK energy companies with North American operations in Calgary or Denver.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "energy sector"],
       "flight_route": {
         "primary_route": "LHR ↔ DEN",
         "average_flight_time_minutes": 540,
@@ -1971,11 +1798,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "London to Alaska — primarily military (UK Arctic operations, NORAD coordination), maritime, and satellite operations.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["finance", "business meetings", "oil and gas"]
     },
     {
       "source_code": "GMT",
@@ -1992,12 +1815,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "London to Hawaii — extremely wide gap (10-11 hours). Military, oceanographic research, and inter-governmental coordination. Rarely requires live calls.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism",
-        "military coordination"
-      ]
+      "common_use_cases": ["finance", "business meetings", "tourism", "military coordination"]
     },
     {
       "source_code": "GMT",
@@ -2014,12 +1832,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "GMT to UTC — same as above, reverse direction. Developers converting between civil UK time references and the technical standard.",
-      "common_use_cases": [
-        "finance",
-        "software development",
-        "business meetings",
-        "API timestamps"
-      ]
+      "common_use_cases": ["finance", "software development", "business meetings", "API timestamps"]
     },
     {
       "source_code": "GMT",
@@ -2036,11 +1849,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "London to continental Europe — the intra-European business pair. Despite Britain's 2021 exit from the EU, the London-Frankfurt-Amsterdam-Paris corridor remains the world's densest financial and trade relationship. GMT and CET are synchronized (both on EU DST rules), so the 1-hour gap is constant.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "GMT",
@@ -2085,11 +1894,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "London to Tokyo — financial pair: LSE and TSE coordinate on Asian equity coverage and cross-listed securities. The 9-hour gap (8 when UK observes BST) means virtually no business-hour overlap.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing supply chains"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing supply chains"],
       "flight_route": {
         "primary_route": "LHR ↔ NRT",
         "average_flight_time_minutes": 660,
@@ -2112,11 +1917,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe to US East Coast — the reverse of the classic transatlantic pair. European corporations (DAX, CAC, AMS) with US offices, hedge funds, and institutional clients.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ JFK",
         "average_flight_time_minutes": 480,
@@ -2139,11 +1940,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe to US Central — European companies with Chicago-based commodity and derivatives operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "logistics"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "logistics"],
       "flight_route": {
         "primary_route": "FRA ↔ ORD",
         "average_flight_time_minutes": 510,
@@ -2166,11 +1963,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to Mountain West — less common; primarily for European mining and energy companies with North American operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "energy sector"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "energy sector"],
       "flight_route": {
         "primary_route": "FRA ↔ DEN",
         "average_flight_time_minutes": 540,
@@ -2221,11 +2014,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to Alaska — primarily military (NATO coordination) and satellite/remote sensing operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "oil and gas"]
     },
     {
       "source_code": "CET",
@@ -2242,12 +2031,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to Hawaii — very wide gap. Military (EUCOM/INDOPACOM coordination), oceanographic, and diplomatic.",
-      "common_use_cases": [
-        "tourism",
-        "business meetings",
-        "manufacturing",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "business meetings", "manufacturing", "military coordination"]
     },
     {
       "source_code": "CET",
@@ -2286,11 +2070,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Continental Europe to London — same corridor, reverse direction. European corporate offices in Frankfurt, Paris, Amsterdam coordinating with London.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "CET",
@@ -2307,11 +2087,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to Japan — European companies with Japanese partnerships in automotive (German-Japanese engineering), electronics, and finance. TSE closes before European markets open; coordination is mostly async.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "manufacturing supply chains"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "manufacturing supply chains"],
       "flight_route": {
         "primary_route": "FRA ↔ NRT",
         "average_flight_time_minutes": 720,
@@ -2406,11 +2182,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "India to US West Coast — Indian tech companies coordinating with Silicon Valley clients.",
-      "common_use_cases": [
-        "BPO operations",
-        "software development",
-        "tech coordination"
-      ],
+      "common_use_cases": ["BPO operations", "software development", "tech coordination"],
       "flight_route": {
         "primary_route": "BOM ↔ LAX",
         "average_flight_time_minutes": 900,
@@ -2477,11 +2249,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "India to UTC — engineers in Bangalore, Hyderabad, Pune converting between local time and UTC for international system interfaces.",
-      "common_use_cases": [
-        "BPO operations",
-        "API timestamps",
-        "software development"
-      ],
+      "common_use_cases": ["BPO operations", "API timestamps", "software development"],
       "flight_route": {
         "primary_route": "BOM ↔ LHR",
         "average_flight_time_minutes": 540,
@@ -2560,11 +2328,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Tokyo to US East Coast — Japanese financial institutions and tech companies coordinating with New York. The 14-hour gap means Tokyo is in late evening when New York opens for business.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ JFK",
         "average_flight_time_minutes": 840,
@@ -2587,11 +2351,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to US Central — automotive supply chain (Toyota, Honda operations in Tennessee/Kentucky/Indiana call Japan); Chicago commodity coordination.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "logistics",
-        "business meetings"
-      ],
+      "common_use_cases": ["manufacturing supply chains", "logistics", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ ORD",
         "average_flight_time_minutes": 780,
@@ -2614,11 +2374,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Mountain West — manufacturing and tech coordination.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "energy sector",
-        "business meetings"
-      ]
+      "common_use_cases": ["manufacturing supply chains", "energy sector", "business meetings"]
     },
     {
       "source_code": "JST",
@@ -2663,11 +2419,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Alaska — Alaska Airlines Japan routes, fisheries, and maritime coordination. Anchorage's role as a North Pacific refueling hub creates ongoing logistics coordination.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "oil and gas",
-        "business meetings"
-      ],
+      "common_use_cases": ["manufacturing supply chains", "oil and gas", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ ANC",
         "average_flight_time_minutes": 540,
@@ -2746,11 +2498,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Tokyo to London — same pair, reverse direction. Japanese institutions typically communicate with London counterparts via async or very early Tokyo morning.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ LHR",
         "average_flight_time_minutes": 660,
@@ -2773,11 +2521,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Europe — Japanese corporations with European subsidiaries or clients.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "manufacturing",
-        "business meetings"
-      ],
+      "common_use_cases": ["manufacturing supply chains", "manufacturing", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ FRA",
         "average_flight_time_minutes": 720,
@@ -2828,10 +2572,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia to US East Coast — ASX opens while New York is in the previous afternoon. Australian financial institutions, tech companies, and media coordinating with US counterparts. Opposite-hemisphere DST means the gap shifts four times per year.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SYD ↔ JFK",
         "average_flight_time_minutes": 1260,
@@ -2854,11 +2595,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to eastern Australia — manufacturing supply chain (automotive parts, industrial), financial coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["finance", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "ORD ↔ SYD",
         "average_flight_time_minutes": 1200,
@@ -2881,11 +2618,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia to US Central — mining and resources companies coordinating with Chicago commodity markets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ],
+      "common_use_cases": ["finance", "business meetings", "logistics"],
       "flight_route": {
         "primary_route": "SYD ↔ ORD",
         "average_flight_time_minutes": 1200,
@@ -2908,11 +2641,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to eastern Australia — energy and mining coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "energy sector"]
     },
     {
       "source_code": "AEDT",
@@ -2929,11 +2658,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia to Mountain West — mining sector, energy analytics.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "energy sector"]
     },
     {
       "source_code": "PST",
@@ -3006,11 +2731,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to eastern Australia — remote, primarily maritime and satellite operations. Very wide gap.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ],
+      "common_use_cases": ["finance", "business meetings", "oil and gas"],
       "flight_route": {
         "primary_route": "ANC ↔ SYD",
         "average_flight_time_minutes": 1080,
@@ -3033,11 +2754,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia to Alaska — same sectors.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ],
+      "common_use_cases": ["finance", "business meetings", "oil and gas"],
       "flight_route": {
         "primary_route": "SYD ↔ ANC",
         "average_flight_time_minutes": 1080,
@@ -3060,10 +2777,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "London to eastern Australia — UK companies with Australian operations; ASX-listed companies with London listings; fintech.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "LHR ↔ SYD",
         "average_flight_time_minutes": 1260,
@@ -3086,10 +2800,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia to London — opposite-hemisphere inverted pair. ASX morning is London previous late afternoon.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SYD ↔ LHR",
         "average_flight_time_minutes": 1260,
@@ -3112,11 +2823,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to eastern Australia — EU-Australia trade and investment; European mining and energy companies with Australian assets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ SYD",
         "average_flight_time_minutes": 1260,
@@ -3139,11 +2846,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia and continental Europe sit 10 hours apart in standard periods, but their inverted DST schedules—Australia springs forward in October, Europe in March—cause the offset to shift between 9 and 11 hours across the year. Sydney-based teams working with Frankfurt or Berlin typically rely on late-afternoon AEDT windows (which land before 9:00 CET) or asynchronous handoffs for investment banking, fund management, and global operations coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "SYD ↔ FRA",
         "average_flight_time_minutes": 1260,
@@ -3166,11 +2869,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to New Zealand — NZ's remoteness makes this a challenging pair. Financial services, tech, and export coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "JFK ↔ AKL",
         "average_flight_time_minutes": 1380,
@@ -3193,11 +2892,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to US East Coast — export-led businesses (agriculture, wine, tourism), tech startups coordinating with US investors.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ JFK",
         "average_flight_time_minutes": 1380,
@@ -3220,11 +2915,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to New Zealand — a 18.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "logistics"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "logistics"]
     },
     {
       "source_code": "NZST",
@@ -3241,11 +2932,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to US Central — a 18.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "logistics"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "logistics"]
     },
     {
       "source_code": "MST",
@@ -3262,11 +2949,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to New Zealand — a 19.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "energy sector"]
     },
     {
       "source_code": "NZST",
@@ -3283,11 +2966,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to US Mountain — a 19.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "energy sector"]
     },
     {
       "source_code": "PST",
@@ -3360,11 +3039,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to New Zealand — a 21.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "oil and gas"]
     },
     {
       "source_code": "NZST",
@@ -3381,11 +3056,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to Alaska — a 21.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "oil and gas"]
     },
     {
       "source_code": "GMT",
@@ -3402,11 +3073,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "UK/Ireland to New Zealand — a 12.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "LHR ↔ AKL",
         "average_flight_time_minutes": 1380,
@@ -3429,11 +3096,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to UK/Ireland — a 12.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ LHR",
         "average_flight_time_minutes": 1380,
@@ -3456,11 +3119,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "continental Europe to New Zealand — a 11.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing"]
     },
     {
       "source_code": "NZST",
@@ -3477,11 +3136,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to continental Europe — a 11.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing"]
     },
     {
       "source_code": "EST",
@@ -3498,11 +3153,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to New Zealand during NZ summer — same pair, NZ one hour further ahead.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism"
-      ],
+      "common_use_cases": ["finance", "business meetings", "tourism"],
       "flight_route": {
         "primary_route": "JFK ↔ AKL",
         "average_flight_time_minutes": 1380,
@@ -3525,11 +3176,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to US East Coast — NZ in peak summer season; tourism and export coordination.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "tourism", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ JFK",
         "average_flight_time_minutes": 1380,
@@ -3552,11 +3199,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to New Zealand (summer) — a 19.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "tourism",
-        "logistics"
-      ]
+      "common_use_cases": ["business meetings", "tourism", "logistics"]
     },
     {
       "source_code": "NZDT",
@@ -3573,11 +3216,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to US Central — a 19.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "logistics",
-        "business meetings"
-      ]
+      "common_use_cases": ["tourism", "logistics", "business meetings"]
     },
     {
       "source_code": "MST",
@@ -3594,11 +3233,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to New Zealand (summer) — a 20.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "tourism",
-        "energy sector"
-      ]
+      "common_use_cases": ["business meetings", "tourism", "energy sector"]
     },
     {
       "source_code": "NZDT",
@@ -3615,11 +3250,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to US Mountain — a 20.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "energy sector",
-        "business meetings"
-      ]
+      "common_use_cases": ["tourism", "energy sector", "business meetings"]
     },
     {
       "source_code": "PST",
@@ -3692,11 +3323,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to New Zealand (summer) — a 22.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "tourism",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "tourism", "oil and gas"]
     },
     {
       "source_code": "NZDT",
@@ -3713,11 +3340,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to Alaska — a 22.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "oil and gas",
-        "business meetings"
-      ]
+      "common_use_cases": ["tourism", "oil and gas", "business meetings"]
     },
     {
       "source_code": "GMT",
@@ -3734,11 +3357,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "London to New Zealand summer — inverted pair. Commonwealth business ties, financial services.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism"
-      ],
+      "common_use_cases": ["finance", "business meetings", "tourism"],
       "flight_route": {
         "primary_route": "LHR ↔ AKL",
         "average_flight_time_minutes": 1380,
@@ -3761,11 +3380,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to London — same, reverse.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "tourism", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ LHR",
         "average_flight_time_minutes": 1380,
@@ -3788,11 +3403,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to New Zealand summer — inverted DST pair. EU springs forward while NZ falls back.",
-      "common_use_cases": [
-        "tourism",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["tourism", "business meetings", "manufacturing"]
     },
     {
       "source_code": "NZDT",
@@ -3809,11 +3420,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to Europe — reverse inverted pair.",
-      "common_use_cases": [
-        "tourism",
-        "manufacturing",
-        "business meetings"
-      ]
+      "common_use_cases": ["tourism", "manufacturing", "business meetings"]
     },
     {
       "source_code": "AEDT",
@@ -3830,11 +3437,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Eastern Australia to Japan — 2-hour gap (AEDT UTC+11, JST UTC+9). Same trade corridor as AEST↔JST.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing supply chains"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing supply chains"],
       "flight_route": {
         "primary_route": "SYD ↔ NRT",
         "average_flight_time_minutes": 600,
@@ -3857,11 +3460,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to eastern Australia — same corridor.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ SYD",
         "average_flight_time_minutes": 600,
@@ -3884,10 +3483,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Eastern Australia to Singapore — 3-hour gap (AEDT UTC+11, SGT UTC+8). AUS-Singapore financial and trade pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SYD ↔ SIN",
         "average_flight_time_minutes": 480,
@@ -3910,10 +3506,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to eastern Australia — reverse.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SIN ↔ SYD",
         "average_flight_time_minutes": 480,
@@ -3936,11 +3529,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Eastern Australia to Hong Kong — 3-hour gap (AEDT UTC+11, HKT UTC+8).",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "SYD ↔ HKG",
         "average_flight_time_minutes": 420,
@@ -3963,11 +3552,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong and eastern Australia maintain a stable 3-hour gap during AEDT season (October to April), narrowing to 2 hours when Sydney reverts to AEST—one of the more workable cross-regional offsets in the APAC corridor. Hong Kong-based financial institutions, property investors, and trading firms use the full working-day overlap to coordinate with Sydney counterparts on real estate investment, equity listings, and commodity flows.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ SYD",
         "average_flight_time_minutes": 420,
@@ -3990,11 +3575,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Eastern Australia to Korea — 2-hour gap (AEDT UTC+11, KST UTC+9).",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "KST",
@@ -4011,11 +3592,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Korea to eastern Australia — same pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "AEDT",
@@ -4088,12 +3665,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Eastern Australia to Hawaii — same, reverse.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism",
-        "military coordination"
-      ],
+      "common_use_cases": ["finance", "business meetings", "tourism", "military coordination"],
       "flight_route": {
         "primary_route": "SYD ↔ HNL",
         "average_flight_time_minutes": 660,
@@ -4116,12 +3688,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to eastern Australia — INDOPACOM Pacific coordination, maritime, and aviation (Qantas transpacific routing).",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings",
-        "military coordination"
-      ],
+      "common_use_cases": ["finance", "tourism", "business meetings", "military coordination"],
       "flight_route": {
         "primary_route": "HNL ↔ SYD",
         "average_flight_time_minutes": 660,
@@ -4200,11 +3767,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand to Japan — 3-hour gap (NZST UTC+12, JST UTC+9). Japan is NZ's second-largest export market.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing supply chains"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing supply chains"]
     },
     {
       "source_code": "JST",
@@ -4221,11 +3784,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to New Zealand — dairy, tourism, and trade.",
-      "common_use_cases": [
-        "agriculture export",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["agriculture export", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "NZST",
@@ -4242,11 +3801,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand to Singapore — 4-hour gap. Already covered.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ SIN",
         "average_flight_time_minutes": 600,
@@ -4269,11 +3824,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to New Zealand — reverse pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "SIN ↔ AKL",
         "average_flight_time_minutes": 600,
@@ -4296,12 +3847,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand to Hong Kong — 4-hour gap (NZST UTC+12, HKT UTC+8). Financial and trade pair.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["agriculture export", "finance", "business meetings", "trade"]
     },
     {
       "source_code": "HKT",
@@ -4318,12 +3864,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to New Zealand — same.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "agriculture export", "trade"]
     },
     {
       "source_code": "NZST",
@@ -4340,11 +3881,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand to Korea — 3-hour gap (NZST UTC+12, KST UTC+9). Trade and dairy export coordination.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "AKL ↔ ICN",
         "average_flight_time_minutes": 630,
@@ -4367,11 +3904,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Korea to New Zealand — same pair.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "ICN ↔ AKL",
         "average_flight_time_minutes": 630,
@@ -4550,11 +4083,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand (summer) to Japan — a 4.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["tourism", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "JST",
@@ -4571,11 +4100,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to New Zealand (summer) — a 4.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "tourism",
-        "business meetings"
-      ]
+      "common_use_cases": ["manufacturing supply chains", "tourism", "business meetings"]
     },
     {
       "source_code": "NZDT",
@@ -4592,11 +4117,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "New Zealand (summer) to Singapore — a 5.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "tourism", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ SIN",
         "average_flight_time_minutes": 600,
@@ -4619,11 +4140,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Singapore to New Zealand (summer) — a 5.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism"
-      ],
+      "common_use_cases": ["finance", "business meetings", "tourism"],
       "flight_route": {
         "primary_route": "SIN ↔ AKL",
         "average_flight_time_minutes": 600,
@@ -4646,12 +4163,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "New Zealand (summer) to Hong Kong — a 5.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "tourism", "business meetings", "trade"]
     },
     {
       "source_code": "HKT",
@@ -4668,12 +4180,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Hong Kong to New Zealand (summer) — a 5.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "tourism", "business meetings", "trade"]
     },
     {
       "source_code": "NZDT",
@@ -4690,11 +4197,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand (summer) to South Korea — a 4.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "manufacturing",
-        "business meetings"
-      ],
+      "common_use_cases": ["tourism", "manufacturing", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ ICN",
         "average_flight_time_minutes": 630,
@@ -4717,11 +4220,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "South Korea to New Zealand (summer) — a 4.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["tourism", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "ICN ↔ AKL",
         "average_flight_time_minutes": 630,
@@ -4800,11 +4299,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand (summer) to Hawaii — a 23.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "business meetings", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -4821,11 +4316,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to New Zealand (summer) — a 23.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "business meetings", "military coordination"]
     },
     {
       "source_code": "NZDT",
@@ -4898,11 +4389,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Queensland to US East Coast — ASX-listed resource companies coordinating with US investors; remote tech teams.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "BNE ↔ JFK",
         "average_flight_time_minutes": 1200,
@@ -4925,11 +4412,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Queensland — IT and business process outsourcing, mining industry coordination (Australian resources with New York capital markets), and remote work teams. Brisbane's position as a fixed UTC+10 zone (no DST) simplifies scheduling versus Sydney.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "JFK ↔ BNE",
         "average_flight_time_minutes": 1200,
@@ -4952,11 +4435,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Queensland to US Central — a 16.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "resources sector"]
     },
     {
       "source_code": "CST",
@@ -4973,11 +4452,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to Queensland — a 16.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "resources sector"]
     },
     {
       "source_code": "AEST",
@@ -4994,11 +4469,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Queensland to US Mountain — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "resources sector"]
     },
     {
       "source_code": "MST",
@@ -5015,11 +4486,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to Queensland — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "resources sector"]
     },
     {
       "source_code": "AEST",
@@ -5092,11 +4559,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Queensland to Alaska — a 19.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "oil and gas",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "oil and gas", "resources sector"]
     },
     {
       "source_code": "AKST",
@@ -5113,11 +4576,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to Queensland — a 19.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "resources sector",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["resources sector", "business meetings", "oil and gas"]
     },
     {
       "source_code": "AEST",
@@ -5234,11 +4693,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Queensland to UK/Ireland — a 10.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "BNE ↔ LHR",
         "average_flight_time_minutes": 1260,
@@ -5261,11 +4716,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "UK/Ireland to Queensland — a 10.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "LHR ↔ BNE",
         "average_flight_time_minutes": 1260,
@@ -5288,11 +4739,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Queensland to continental Europe — a 9.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "CET",
@@ -5309,11 +4756,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "continental Europe to Queensland — a 9.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "AEST",
@@ -5374,11 +4817,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to Japan — 1-hour gap (AEST UTC+10, JST UTC+9). Major trade pair: Japan is a key export market for Australian resources.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing supply chains",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing supply chains", "resources sector"]
     },
     {
       "source_code": "JST",
@@ -5395,11 +4834,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to Queensland — same pair. Iron ore, LNG, and coal exports from Queensland to Japan.",
-      "common_use_cases": [
-        "resources sector",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["resources sector", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "AEST",
@@ -5416,11 +4851,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to eastern Australia — a 1.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "BNE ↔ SYD",
         "average_flight_time_minutes": 90,
@@ -5443,11 +4874,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "eastern Australia to Queensland — a 1.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "SYD ↔ BNE",
         "average_flight_time_minutes": 90,
@@ -5470,10 +4897,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to Adelaide — same half-hour pair.",
-      "common_use_cases": [
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "resources sector"]
     },
     {
       "source_code": "ACST",
@@ -5490,10 +4914,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Adelaide to Queensland — 0.5-hour gap (ACST UTC+9:30, AEST UTC+10). Unique domestic Australian half-hour difference.",
-      "common_use_cases": [
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "resources sector"]
     },
     {
       "source_code": "AEST",
@@ -5510,11 +4931,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to New Zealand — similar to AEDT↔NZST but both fixed zones (AEST no DST, NZST observes). Trans-Tasman corridor.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["agriculture export", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "BNE ↔ AKL",
         "average_flight_time_minutes": 195,
@@ -5537,11 +4954,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand to Queensland — trans-Tasman coordination.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["agriculture export", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "AKL ↔ BNE",
         "average_flight_time_minutes": 195,
@@ -5564,11 +4977,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Western Australia to US East Coast — mining companies, energy, and resources coordination with US investors.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "PER ↔ JFK",
         "average_flight_time_minutes": 1200,
@@ -5591,11 +5000,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Western Australia — Perth's mining industry and ASX-listed resource companies coordinating with New York capital markets. The 13-hour gap (standard) is genuinely difficult.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "JFK ↔ PER",
         "average_flight_time_minutes": 1200,
@@ -5618,11 +5023,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Western Australia to US Central — a 14.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "mining and resources"]
     },
     {
       "source_code": "CST",
@@ -5639,11 +5040,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to Western Australia — a 14.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "mining and resources"]
     },
     {
       "source_code": "AWST",
@@ -5660,11 +5057,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Western Australia to US Mountain — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "mining and resources"]
     },
     {
       "source_code": "MST",
@@ -5681,11 +5074,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to Western Australia — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "mining and resources"]
     },
     {
       "source_code": "AWST",
@@ -5758,11 +5147,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Western Australia to Alaska — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "oil and gas",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "oil and gas", "mining and resources"]
     },
     {
       "source_code": "AKST",
@@ -5779,11 +5164,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to Western Australia — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "oil and gas",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "oil and gas", "mining and resources"]
     },
     {
       "source_code": "AWST",
@@ -5900,11 +5281,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Western Australia to UK/Ireland — a 8.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "PER ↔ LHR",
         "average_flight_time_minutes": 1020,
@@ -5927,11 +5304,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "UK/Ireland to Western Australia — a 8.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "LHR ↔ PER",
         "average_flight_time_minutes": 1020,
@@ -5954,11 +5327,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Western Australia to Europe — resources companies coordinating with European capital markets.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "mining and resources"]
     },
     {
       "source_code": "CET",
@@ -5975,11 +5344,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe to Western Australia — European mining and energy companies with WA operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "mining and resources"]
     },
     {
       "source_code": "AWST",
@@ -6082,11 +5447,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Perth to eastern Australia — ASX crosses both zones; WA mining companies frequently list on the eastern exchange.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "PER ↔ SYD",
         "average_flight_time_minutes": 300,
@@ -6109,11 +5470,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Eastern Australia to Perth — 3-hour gap (AEDT UTC+11 vs AWST UTC+8). Cross-Australia business. Adelaide and Perth are both on the same landmass but 2,700 km apart.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "SYD ↔ PER",
         "average_flight_time_minutes": 300,
@@ -6136,11 +5493,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Perth to Adelaide — domestic Australian pair.",
-      "common_use_cases": [
-        "business meetings",
-        "resources sector",
-        "mining and resources"
-      ],
+      "common_use_cases": ["business meetings", "resources sector", "mining and resources"],
       "flight_route": {
         "primary_route": "PER ↔ ADL",
         "average_flight_time_minutes": 195,
@@ -6163,11 +5516,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Adelaide to Perth — 1-hour gap (ACST UTC+9:30, AWST UTC+8). Domestic Australia east-west pair.",
-      "common_use_cases": [
-        "business meetings",
-        "resources sector",
-        "mining and resources"
-      ],
+      "common_use_cases": ["business meetings", "resources sector", "mining and resources"],
       "flight_route": {
         "primary_route": "ADL ↔ PER",
         "average_flight_time_minutes": 195,
@@ -6190,11 +5539,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Perth to New Zealand — same pair.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "mining and resources"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "mining and resources"]
     },
     {
       "source_code": "NZST",
@@ -6211,11 +5556,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "New Zealand to Western Australia — 4-hour gap (NZST UTC+12, AWST UTC+8). Trans-Tasman extended to WA.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "mining and resources"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "mining and resources"]
     },
     {
       "source_code": "ACST",
@@ -6232,11 +5573,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Central Australia (Adelaide) to US East Coast — 14.5-hour gap. Mining, energy, and tech coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "ADL ↔ JFK",
         "average_flight_time_minutes": 1260,
@@ -6259,11 +5596,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Adelaide — primarily resources sector. BHP's dual-listed status connects Adelaide with global capital.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "JFK ↔ ADL",
         "average_flight_time_minutes": 1260,
@@ -6286,11 +5619,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "central Australia to US Central — a 15.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "resources sector"]
     },
     {
       "source_code": "CST",
@@ -6307,11 +5636,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to central Australia — a 15.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "logistics",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "logistics", "resources sector"]
     },
     {
       "source_code": "ACST",
@@ -6328,11 +5653,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "central Australia to US Mountain — a 16.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "resources sector"]
     },
     {
       "source_code": "MST",
@@ -6349,11 +5670,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to central Australia — a 16.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "energy sector",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "energy sector", "resources sector"]
     },
     {
       "source_code": "ACST",
@@ -6426,11 +5743,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "central Australia to Alaska — a 18.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "oil and gas",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "oil and gas", "resources sector"]
     },
     {
       "source_code": "AKST",
@@ -6447,11 +5760,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to central Australia — a 18.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "resources sector",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["resources sector", "business meetings", "oil and gas"]
     },
     {
       "source_code": "ACST",
@@ -6568,11 +5877,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "central Australia to UK/Ireland — a 9.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "ADL ↔ LHR",
         "average_flight_time_minutes": 1260,
@@ -6595,11 +5900,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "UK/Ireland to central Australia — a 9.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "LHR ↔ ADL",
         "average_flight_time_minutes": 1260,
@@ -6622,11 +5923,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Adelaide to Europe — European mining and energy companies with SA operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "CET",
@@ -6643,11 +5940,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Europe to Adelaide — same sector.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "ACST",
@@ -6708,11 +6001,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Adelaide to Japan — 0.5-hour gap (ACST UTC+9:30, JST UTC+9). Resources trade and manufacturing supply chain.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing supply chains",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing supply chains", "resources sector"]
     },
     {
       "source_code": "JST",
@@ -6729,11 +6018,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to Adelaide — tight intra-APAC pair. Adelaide-Japan automotive and resources links.",
-      "common_use_cases": [
-        "resources sector",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["resources sector", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "ACST",
@@ -6750,11 +6035,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Adelaide to eastern states — 1.5-hour gap (ACST UTC+9:30, AEDT UTC+11). Domestic Australian long-haul.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "ADL ↔ SYD",
         "average_flight_time_minutes": 150,
@@ -6777,11 +6058,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Eastern states to Adelaide — ASX coordination, resource extraction, and inter-state business.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "SYD ↔ ADL",
         "average_flight_time_minutes": 150,
@@ -6804,11 +6081,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Adelaide to New Zealand — 2.5-hour gap (ACST UTC+9:30, NZST UTC+12).",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "resources sector"]
     },
     {
       "source_code": "NZST",
@@ -6825,11 +6098,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Auckland and Adelaide maintain a consistent 2.5-hour gap that holds steady across DST transitions, as both New Zealand and South Australia follow aligned Southern Hemisphere summer schedules. This pairing is most active in trans-Tasman trade logistics, agricultural export coordination, and airline operations connecting the two southern-hemisphere cities, with a comfortable same-business-day overlap for most scheduling purposes.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "resources sector"]
     },
     {
       "source_code": "ACST",
@@ -6846,11 +6115,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Adelaide to Singapore — 1.5-hour gap. Singapore as a gateway for SA resources and trade.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector"]
     },
     {
       "source_code": "SGT",
@@ -6867,11 +6132,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to Adelaide — same pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector"]
     },
     {
       "source_code": "ACST",
@@ -6888,12 +6149,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "central Australia to Hong Kong — a 1.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector", "trade"]
     },
     {
       "source_code": "HKT",
@@ -6910,12 +6166,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to central Australia — a 1.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector", "trade"]
     },
     {
       "source_code": "ACST",
@@ -6932,11 +6183,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "central Australia to South Korea — a 0.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "KST",
@@ -6953,11 +6200,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "South Korea to central Australia — a 0.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "BRT",
@@ -6974,10 +6217,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Brazil to US East Coast — Brazilian financial institutions, tech companies, and exporters coordinating with New York.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "GRU ↔ JFK",
         "average_flight_time_minutes": 720,
@@ -7000,10 +6240,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US East Coast to Brazil — major economic pair. NYSE and B3 (São Paulo stock exchange) are closely linked; US-Brazil trade, investment banking, and tech coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "JFK ↔ GRU",
         "average_flight_time_minutes": 720,
@@ -7082,11 +6319,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Brazil to Europe — Brazilian companies with European listings and operations.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "GRU ↔ FRA",
         "average_flight_time_minutes": 660,
@@ -7109,11 +6342,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Continental Europe to Brazil — major trade and investment corridor. European multinationals with Brazilian operations (Volkswagen, AB InBev, Total).",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ GRU",
         "average_flight_time_minutes": 660,
@@ -7136,10 +6365,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Brazil to London — same pair, reverse.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "GRU ↔ LHR",
         "average_flight_time_minutes": 660,
@@ -7162,10 +6388,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "London to Brazil — UK-Brazil financial and trade pair. London is a major center for Brazilian bond issuance.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "LHR ↔ GRU",
         "average_flight_time_minutes": 660,
@@ -7188,12 +6411,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Brazil to India — same BRICS corridor.",
-      "common_use_cases": [
-        "finance",
-        "software development",
-        "business meetings",
-        "BPO operations"
-      ]
+      "common_use_cases": ["finance", "software development", "business meetings", "BPO operations"]
     },
     {
       "source_code": "IST",
@@ -7210,12 +6428,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "India to Brazil — BRICS countries; growing tech and trade coordination.",
-      "common_use_cases": [
-        "BPO operations",
-        "finance",
-        "software development",
-        "business meetings"
-      ]
+      "common_use_cases": ["BPO operations", "finance", "software development", "business meetings"]
     },
     {
       "source_code": "BRT",
@@ -7232,11 +6445,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Brazil to Japan — a 12.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing supply chains"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing supply chains"]
     },
     {
       "source_code": "JST",
@@ -7253,11 +6462,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Brazil — a 12.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "ART",
@@ -7274,11 +6479,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Argentina to US East Coast — reverse. Argentine exporters and financial institutions coordinating with US investors.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "EZE ↔ JFK",
         "average_flight_time_minutes": 780,
@@ -7301,11 +6502,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US East Coast to Argentina — financial and trade pair. Buenos Aires is the most important South American capital market.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "JFK ↔ EZE",
         "average_flight_time_minutes": 780,
@@ -7384,11 +6581,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Argentina to Europe — same pair, reverse.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "trade"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "trade"],
       "flight_route": {
         "primary_route": "EZE ↔ FRA",
         "average_flight_time_minutes": 720,
@@ -7411,11 +6604,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Continental Europe to Argentina — major trade pair. Italy and Spain have large Argentine diaspora communities and strong business ties.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "trade"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "trade"],
       "flight_route": {
         "primary_route": "FRA ↔ EZE",
         "average_flight_time_minutes": 720,
@@ -7438,11 +6627,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Argentina to UK/Ireland — a 3.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "EZE ↔ LHR",
         "average_flight_time_minutes": 720,
@@ -7465,11 +6650,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "UK/Ireland to Argentina — a 3.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "LHR ↔ EZE",
         "average_flight_time_minutes": 720,
@@ -7492,12 +6673,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Argentina to India — a 8.5-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "BPO operations",
-        "software development",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["BPO operations", "software development", "business meetings", "trade"]
     },
     {
       "source_code": "IST",
@@ -7514,12 +6690,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "India to Argentina — a 8.5-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "BPO operations",
-        "software development",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["BPO operations", "software development", "business meetings", "trade"]
     },
     {
       "source_code": "ART",
@@ -7536,11 +6707,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Argentina to Japan — a 12.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing supply chains",
-        "trade"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing supply chains", "trade"]
     },
     {
       "source_code": "JST",
@@ -7557,11 +6724,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Argentina — a 12.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["manufacturing supply chains", "business meetings", "trade"]
     },
     {
       "source_code": "CLT",
@@ -7578,11 +6741,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Chile to US East Coast — Chilean exporters, mining companies, and financial institutions coordinating with New York.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining"],
       "flight_route": {
         "primary_route": "SCL ↔ JFK",
         "average_flight_time_minutes": 780,
@@ -7605,11 +6764,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US East Coast to Chile — copper, lithium, and mining investment corridor. Santiago Stock Exchange linked to global capital markets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining"],
       "flight_route": {
         "primary_route": "JFK ↔ SCL",
         "average_flight_time_minutes": 780,
@@ -7688,11 +6843,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Chile to Europe — same pair, reverse.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "mining"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "mining"],
       "flight_route": {
         "primary_route": "SCL ↔ FRA",
         "average_flight_time_minutes": 720,
@@ -7715,11 +6866,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe to Chile — European mining companies with Chilean operations; growing lithium supply chain for EV batteries.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "mining"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "mining"],
       "flight_route": {
         "primary_route": "FRA ↔ SCL",
         "average_flight_time_minutes": 720,
@@ -7742,11 +6889,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Chile to UK/Ireland — a 4.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining"],
       "flight_route": {
         "primary_route": "SCL ↔ LHR",
         "average_flight_time_minutes": 720,
@@ -7769,11 +6912,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "UK/Ireland to Chile — a 4.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining"],
       "flight_route": {
         "primary_route": "LHR ↔ SCL",
         "average_flight_time_minutes": 720,
@@ -7796,12 +6935,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Chile to India — a 9.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "BPO operations",
-        "software development",
-        "business meetings",
-        "mining"
-      ]
+      "common_use_cases": ["BPO operations", "software development", "business meetings", "mining"]
     },
     {
       "source_code": "IST",
@@ -7818,12 +6952,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "India to Chile — a 9.5-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "BPO operations",
-        "software development",
-        "business meetings",
-        "mining"
-      ]
+      "common_use_cases": ["BPO operations", "software development", "business meetings", "mining"]
     },
     {
       "source_code": "CLT",
@@ -7840,11 +6969,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Chile to Japan — a 13.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing supply chains",
-        "mining"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing supply chains", "mining"]
     },
     {
       "source_code": "JST",
@@ -7861,11 +6986,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Chile — a 13.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "business meetings",
-        "mining"
-      ]
+      "common_use_cases": ["manufacturing supply chains", "business meetings", "mining"]
     },
     {
       "source_code": "COT",
@@ -7882,11 +7003,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Colombia to US East Coast — same zero-gap pair. Colombian exporters (coffee, flowers, software services) coordinate with US clients.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "BOG ↔ JFK",
         "average_flight_time_minutes": 480,
@@ -7909,11 +7026,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "US East Coast to Colombia — same UTC-5; zero time difference makes this one of the easiest US-LatAm pairs. Bogotá is increasingly a tech hub with growing US coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "JFK ↔ BOG",
         "average_flight_time_minutes": 480,
@@ -7992,11 +7105,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Colombia to Europe — same, reverse.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "BOG ↔ FRA",
         "average_flight_time_minutes": 660,
@@ -8019,11 +7128,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe to Colombia — trade and investment; European companies with Colombian operations.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ BOG",
         "average_flight_time_minutes": 660,
@@ -8046,11 +7151,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Colombia to UK/Ireland — a 5.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "BOG ↔ LHR",
         "average_flight_time_minutes": 660,
@@ -8073,11 +7174,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "UK/Ireland to Colombia — a 5.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "LHR ↔ BOG",
         "average_flight_time_minutes": 660,
@@ -8144,11 +7241,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Colombia to Japan — a 14.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "manufacturing supply chains"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "manufacturing supply chains"]
     },
     {
       "source_code": "JST",
@@ -8165,11 +7258,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Japan to Colombia — a 14.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["agriculture export", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "BRT",
@@ -8186,11 +7275,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Brazil to Argentina — intra-South American pair; both UTC-3 year-round, so no time difference (trivial scheduling). Major trade corridor via Mercosur.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "GRU ↔ EZE",
         "average_flight_time_minutes": 165,
@@ -8213,11 +7298,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Argentina to Brazil — same trivial pair. Extensive cross-border trade and investment.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "EZE ↔ GRU",
         "average_flight_time_minutes": 165,
@@ -8240,11 +7321,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Brazil to Chile — intra-South American pair. 1-hour difference (BRT UTC-3, CLT UTC-4). LATAM Airlines hubs in both cities.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining"],
       "flight_route": {
         "primary_route": "GRU ↔ SCL",
         "average_flight_time_minutes": 240,
@@ -8267,11 +7344,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Chile to Brazil — same pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining"],
       "flight_route": {
         "primary_route": "SCL ↔ GRU",
         "average_flight_time_minutes": 240,
@@ -8294,11 +7367,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Brazil to Colombia — 2-hour gap (BRT UTC-3, COT UTC-5). Intra-South American pair; Mercosur/Andean Community coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "GRU ↔ BOG",
         "average_flight_time_minutes": 360,
@@ -8321,11 +7390,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Colombia to Brazil — same pair.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "BOG ↔ GRU",
         "average_flight_time_minutes": 360,
@@ -8348,11 +7413,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Argentina to Chile — adjacent South American countries; 1-hour gap in standard time (both UTC-3 when CLST active). Andean border corridor.",
-      "common_use_cases": [
-        "business meetings",
-        "mining",
-        "trade"
-      ],
+      "common_use_cases": ["business meetings", "mining", "trade"],
       "flight_route": {
         "primary_route": "EZE ↔ SCL",
         "average_flight_time_minutes": 165,
@@ -8375,11 +7436,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Chile to Argentina — same pair.",
-      "common_use_cases": [
-        "business meetings",
-        "trade",
-        "mining"
-      ],
+      "common_use_cases": ["business meetings", "trade", "mining"],
       "flight_route": {
         "primary_route": "SCL ↔ EZE",
         "average_flight_time_minutes": 165,
@@ -8402,11 +7459,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Argentina to Colombia — 2-hour gap. South American business.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "trade"]
     },
     {
       "source_code": "COT",
@@ -8423,11 +7476,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Colombia to Argentina — reverse.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "trade"]
     },
     {
       "source_code": "CLT",
@@ -8444,11 +7493,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Chile to Colombia — 1-hour gap (CLT UTC-4, COT UTC-5). Andean community coordination.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "mining"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "mining"]
     },
     {
       "source_code": "COT",
@@ -8465,11 +7510,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Colombia and Chile are co-founders of the Pacific Alliance trade bloc, and this pairing sees heavy use between the Bogotá and Santiago financial centers for cross-border investment, commodity trading, and logistics coordination. The offset shifts between 1 and 2 hours depending on Chile's Southern Hemisphere DST cycle (CLST, UTC−3), while Colombia remains fixed at UTC−5 year-round, a variation worth tracking for recurring meeting series.",
-      "common_use_cases": [
-        "agriculture export",
-        "business meetings",
-        "mining"
-      ]
+      "common_use_cases": ["agriculture export", "business meetings", "mining"]
     },
     {
       "source_code": "GST",
@@ -8486,10 +7527,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Gulf to US East Coast — UAE institutions coordinating with New York capital markets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "DXB ↔ JFK",
         "average_flight_time_minutes": 840,
@@ -8512,10 +7550,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Gulf region (Dubai/Abu Dhabi) — major financial pair. Wall Street and UAE sovereign wealth funds coordinate on energy, real estate, and investment.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "JFK ↔ DXB",
         "average_flight_time_minutes": 840,
@@ -8594,11 +7629,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Dubai and continental Europe maintain a 3-hour gap in winter (CET) and 2 hours during European summer (CEST), as GST carries no DST adjustment. The UAE is among the top export destinations for German industrial equipment and engineering services, while European financial institutions—particularly in Frankfurt and Amsterdam—maintain significant UAE operations for sovereign, retail, and Islamic banking services.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "DXB ↔ FRA",
         "average_flight_time_minutes": 360,
@@ -8621,11 +7652,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Continental Europe to Gulf — major trade corridor. European energy companies, construction firms, and financial institutions with extensive UAE operations.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ DXB",
         "average_flight_time_minutes": 360,
@@ -8648,10 +7675,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Gulf to London — same corridor.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "DXB ↔ LHR",
         "average_flight_time_minutes": 420,
@@ -8674,10 +7698,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "London to Gulf — major financial pair. London is the primary Western financial center for GCC sovereign funds. Gulf banks have extensive London presence.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "LHR ↔ DXB",
         "average_flight_time_minutes": 420,
@@ -8756,11 +7777,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Gulf to Japan — same energy and trade corridor.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing supply chains"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing supply chains"]
     },
     {
       "source_code": "JST",
@@ -8777,11 +7794,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Japan to Gulf — Japanese energy companies (major LNG buyers from the Gulf), trading houses, and automotive coordination.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings"]
     },
     {
       "source_code": "GST",
@@ -8798,10 +7811,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Gulf to Singapore — GCC investment in ASEAN and Singapore's role as a hub for Gulf trade.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "DXB ↔ SIN",
         "average_flight_time_minutes": 420,
@@ -8824,10 +7834,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to Gulf — Singapore is the primary ASEAN hub for Gulf investment. 4-hour gap (SGT UTC+8, GST UTC+4).",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SIN ↔ DXB",
         "average_flight_time_minutes": 420,
@@ -8850,11 +7857,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Dubai and Hong Kong sit exactly 4 hours apart with a perfectly stable, year-round offset—neither GST nor HKT observes DST—making this a highly predictable corridor for two cities that share the role of connecting Western capital to Asian markets. UAE sovereign wealth funds, family offices, and asset managers with dual presences use this pairing for treasury management, FX operations, and cross-listing coordination on Hong Kong's equity markets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade"]
     },
     {
       "source_code": "HKT",
@@ -8871,11 +7874,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to Gulf — financial corridor. HK and UAE both serve as gateway markets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade"]
     },
     {
       "source_code": "GST",
@@ -8892,11 +7891,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Gulf to Korea — GCC energy exports to South Korea; Korean engineering services.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "KST",
@@ -8913,11 +7908,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Korea to Gulf — South Korea's construction and engineering companies have extensive Gulf operations. Korean-Gulf trade in energy and manufacturing.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "GST",
@@ -8934,10 +7925,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Gulf to Brazil — same pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "business meetings"]
     },
     {
       "source_code": "BRT",
@@ -8954,10 +7942,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "São Paulo and Dubai are 7 hours apart year-round—neither BRT nor GST observes DST—and their economic relationship is anchored by the Gulf's structural dependence on Brazilian agricultural exports: Brazil supplies over 40% of UAE poultry imports and is a leading source of beef, soybeans, and sugar. Mubadala and other UAE sovereign funds have also made substantial infrastructure and agribusiness investments in Brazil, generating steady high-value scheduling demand across this corridor.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "business meetings"]
     },
     {
       "source_code": "GST",
@@ -8974,11 +7959,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Gulf to Argentina — same.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade"]
     },
     {
       "source_code": "ART",
@@ -8995,11 +7976,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Argentina to Gulf — trade and investment.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade"]
     },
     {
       "source_code": "GST",
@@ -9016,11 +7993,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Gulf region to Queensland — a 6.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector"]
     },
     {
       "source_code": "AEST",
@@ -9037,11 +8010,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Queensland to Gulf region — a 6.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector"]
     },
     {
       "source_code": "GST",
@@ -9058,10 +8027,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Gulf region to eastern Australia — a 7.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "DXB ↔ SYD",
         "average_flight_time_minutes": 840,
@@ -9084,10 +8050,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "eastern Australia to Gulf region — a 7.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SYD ↔ DXB",
         "average_flight_time_minutes": 840,
@@ -9110,11 +8073,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Gulf region to New Zealand — a 8.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "agriculture export"
-      ],
+      "common_use_cases": ["finance", "business meetings", "agriculture export"],
       "flight_route": {
         "primary_route": "DXB ↔ AKL",
         "average_flight_time_minutes": 1080,
@@ -9137,11 +8096,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "New Zealand to Gulf region — a 8.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "agriculture export",
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["agriculture export", "finance", "business meetings"],
       "flight_route": {
         "primary_route": "AKL ↔ DXB",
         "average_flight_time_minutes": 1080,
@@ -9164,11 +8119,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Gulf region to Western Australia — a 4.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "DXB ↔ PER",
         "average_flight_time_minutes": 600,
@@ -9191,11 +8142,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Western Australia to Gulf region — a 4.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "PER ↔ DXB",
         "average_flight_time_minutes": 600,
@@ -9218,10 +8165,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to US East Coast — financial services, tech, and regional headquarters for US multinationals in ASEAN.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SIN ↔ JFK",
         "average_flight_time_minutes": 1020,
@@ -9244,10 +8188,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Singapore — US-Singapore business corridor. Singapore is SE Asia's financial hub. The 13-hour gap (EST winter) creates a challenging but workable early-morning NYC / late-afternoon Singapore window.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "JFK ↔ SIN",
         "average_flight_time_minutes": 1020,
@@ -9270,11 +8211,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to US Central — a 14.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ]
+      "common_use_cases": ["finance", "business meetings", "logistics"]
     },
     {
       "source_code": "CST",
@@ -9291,11 +8228,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to Singapore — a 14.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics"
-      ]
+      "common_use_cases": ["finance", "business meetings", "logistics"]
     },
     {
       "source_code": "SGT",
@@ -9312,11 +8245,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to US Mountain — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "energy sector"]
     },
     {
       "source_code": "MST",
@@ -9333,11 +8262,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to Singapore — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector"
-      ]
+      "common_use_cases": ["finance", "business meetings", "energy sector"]
     },
     {
       "source_code": "SGT",
@@ -9410,11 +8335,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to Alaska — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["finance", "business meetings", "oil and gas"]
     },
     {
       "source_code": "AKST",
@@ -9431,11 +8352,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to Singapore — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas"
-      ]
+      "common_use_cases": ["finance", "business meetings", "oil and gas"]
     },
     {
       "source_code": "SGT",
@@ -9452,12 +8369,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to Hawaii — a 18.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "tourism",
-        "military coordination"
-      ]
+      "common_use_cases": ["finance", "business meetings", "tourism", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -9474,12 +8386,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to Singapore — a 18.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["finance", "tourism", "business meetings", "military coordination"]
     },
     {
       "source_code": "SGT",
@@ -9552,10 +8459,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to London — MAS (Monetary Authority of Singapore) and UK FCA coordination; global banking.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "SIN ↔ LHR",
         "average_flight_time_minutes": 780,
@@ -9578,10 +8482,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "London to Singapore — UK financial institutions with Singapore operations; major shipping corridor.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "business meetings"],
       "flight_route": {
         "primary_route": "LHR ↔ SIN",
         "average_flight_time_minutes": 780,
@@ -9604,11 +8505,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Singapore to Europe — ASEAN regional HQs of European companies coordinating with head offices.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "SIN ↔ FRA",
         "average_flight_time_minutes": 720,
@@ -9631,11 +8528,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe to Singapore — European multinationals with ASEAN operations; shipping and trade finance.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ SIN",
         "average_flight_time_minutes": 720,
@@ -9714,11 +8607,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to Japan — same intra-Asian pair. Singapore Airlines operates the world's longest non-stop routes, connecting Singapore to JST destinations.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing supply chains"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing supply chains"],
       "flight_route": {
         "primary_route": "SIN ↔ NRT",
         "average_flight_time_minutes": 420,
@@ -9741,11 +8630,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to Singapore — active intra-Asian business pair. 1-hour difference (JST ahead of SGT) makes scheduling trivial.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings"
-      ],
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ SIN",
         "average_flight_time_minutes": 420,
@@ -9768,11 +8653,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to Queensland — same corridor.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "SIN ↔ BNE",
         "average_flight_time_minutes": 480,
@@ -9795,11 +8676,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to Singapore — 2-hour gap (AEST UTC+10, SGT UTC+8). Major trade and investment corridor. Singapore is Australia's largest trading partner in ASEAN.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector"
-      ],
+      "common_use_cases": ["finance", "business meetings", "resources sector"],
       "flight_route": {
         "primary_route": "BNE ↔ SIN",
         "average_flight_time_minutes": 480,
@@ -9822,11 +8699,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to Perth — 0-hour gap (both UTC+8). Singapore is a major trade and financial hub for WA resource exports.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "SIN ↔ PER",
         "average_flight_time_minutes": 420,
@@ -9849,11 +8722,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Perth to Singapore — same zero-gap pair. Singapore Airlines connects Perth to Singapore as a gateway.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "mining and resources"
-      ],
+      "common_use_cases": ["finance", "business meetings", "mining and resources"],
       "flight_route": {
         "primary_route": "PER ↔ SIN",
         "average_flight_time_minutes": 420,
@@ -9876,10 +8745,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Singapore to Brazil — a 11.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "business meetings"]
     },
     {
       "source_code": "BRT",
@@ -9896,10 +8762,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Brazil to Singapore — a 11.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings"
-      ]
+      "common_use_cases": ["finance", "business meetings"]
     },
     {
       "source_code": "HKT",
@@ -9916,11 +8779,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to US East Coast — investment banking, private equity, and asset management coordination.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ JFK",
         "average_flight_time_minutes": 960,
@@ -9943,11 +8802,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Hong Kong — NYSE and HKEX do not overlap in trading hours (13-hour gap) but US institutional investors and asset managers closely track Hong Kong markets.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "JFK ↔ HKG",
         "average_flight_time_minutes": 960,
@@ -9970,12 +8825,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to US Central — a 14.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "logistics", "trade"]
     },
     {
       "source_code": "CST",
@@ -9992,12 +8842,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to Hong Kong — a 14.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "logistics",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "logistics", "trade"]
     },
     {
       "source_code": "HKT",
@@ -10014,12 +8859,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to US Mountain — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "energy sector", "trade"]
     },
     {
       "source_code": "MST",
@@ -10036,12 +8876,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to Hong Kong — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "energy sector",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "energy sector", "trade"]
     },
     {
       "source_code": "HKT",
@@ -10058,12 +8893,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong and Los Angeles sit 16 hours apart in US winter (15 during PDT)—a gap wide enough that the standard Hong Kong business day ends before the LA workday begins. Despite the difficulty, this is a high-volume operational pair: it drives APAC-to-Americas trading desk handoffs in global investment banks, supply-chain coordination for trans-Pacific cargo (Hong Kong is a major feeder port for the San Pedro Bay complex), and scheduling for US-listed companies managing Hong Kong investor relations.",
-      "common_use_cases": [
-        "finance",
-        "software development",
-        "tech coordination",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "software development", "tech coordination", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ LAX",
         "average_flight_time_minutes": 840,
@@ -10086,12 +8916,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "West Coast to Hong Kong — US tech companies with HK regional offices, and China-related investment.",
-      "common_use_cases": [
-        "finance",
-        "software development",
-        "tech coordination",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "software development", "tech coordination", "trade"],
       "flight_route": {
         "primary_route": "LAX ↔ HKG",
         "average_flight_time_minutes": 840,
@@ -10114,12 +8939,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to Alaska — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "oil and gas", "trade"]
     },
     {
       "source_code": "AKST",
@@ -10136,12 +8956,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to Hong Kong — a 17.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "oil and gas",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "oil and gas", "trade"]
     },
     {
       "source_code": "HKT",
@@ -10158,12 +8973,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to Hawaii — a 18.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "trade",
-        "military coordination"
-      ]
+      "common_use_cases": ["finance", "tourism", "trade", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -10180,12 +8990,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to Hong Kong — a 18.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "tourism",
-        "trade",
-        "military coordination"
-      ]
+      "common_use_cases": ["finance", "tourism", "trade", "military coordination"]
     },
     {
       "source_code": "HKT",
@@ -10202,12 +9007,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to global technical reference — a 8.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "API timestamps",
-        "software development",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "API timestamps", "software development", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ LHR",
         "average_flight_time_minutes": 720,
@@ -10230,12 +9030,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "global technical reference to Hong Kong — a 8.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "API timestamps",
-        "software development",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "API timestamps", "software development", "trade"],
       "flight_route": {
         "primary_route": "LHR ↔ HKG",
         "average_flight_time_minutes": 720,
@@ -10258,11 +9053,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to UK/Ireland — a 8.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ LHR",
         "average_flight_time_minutes": 720,
@@ -10285,11 +9076,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "UK/Ireland to Hong Kong — a 8.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "LHR ↔ HKG",
         "average_flight_time_minutes": 720,
@@ -10312,12 +9099,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Hong Kong and continental Europe are 7 hours apart in CET winter and 6 during CEST summer—a window where Hong Kong's close of business aligns with the Frankfurt and Paris morning open, enabling end-of-day calls before European markets begin. This pairing is heavily used by European banks and asset managers with Hong Kong operations, European luxury brands coordinating retail and logistics across Greater China, and pan-European manufacturers managing supply chains that route through the port.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ FRA",
         "average_flight_time_minutes": 660,
@@ -10340,12 +9122,7 @@
       },
       "meeting_difficulty": "moderate",
       "notable_pairing": "Continental Europe and Hong Kong are separated by 7 hours in CET winter and 6 during European summer—a gap where the European morning overlaps with Hong Kong's late afternoon trading session. European headquarters teams in finance, manufacturing, and luxury retail use this window to align with Greater China operations before Hong Kong's close of business, making it one of the most-used EMEA-to-APAC scheduling corridors for global firms.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing", "trade"],
       "flight_route": {
         "primary_route": "FRA ↔ HKG",
         "average_flight_time_minutes": 660,
@@ -10368,12 +9145,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to India — investment and trade coordination.",
-      "common_use_cases": [
-        "finance",
-        "software development",
-        "BPO operations",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "software development", "BPO operations", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ BOM",
         "average_flight_time_minutes": 300,
@@ -10396,12 +9168,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "India to Hong Kong — India-HK financial flows, trade finance, and tech services.",
-      "common_use_cases": [
-        "BPO operations",
-        "finance",
-        "software development",
-        "trade"
-      ],
+      "common_use_cases": ["BPO operations", "finance", "software development", "trade"],
       "flight_route": {
         "primary_route": "BOM ↔ HKG",
         "average_flight_time_minutes": 300,
@@ -10424,12 +9191,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to Japan — same tight intra-Asian pair.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ NRT",
         "average_flight_time_minutes": 300,
@@ -10452,12 +9214,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to Hong Kong — close intra-Asian pair (1-hour gap). Major trade and investment relationship.",
-      "common_use_cases": [
-        "finance",
-        "manufacturing supply chains",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "manufacturing supply chains", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "NRT ↔ HKG",
         "average_flight_time_minutes": 300,
@@ -10480,12 +9237,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to Queensland — same pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector", "trade"]
     },
     {
       "source_code": "AEST",
@@ -10502,12 +9254,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to Hong Kong — 2-hour gap (both similar region). ASX and HKEX cross-listings; resources trade.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "resources sector",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "resources sector", "trade"]
     },
     {
       "source_code": "HKT",
@@ -10524,12 +9271,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to Perth — same UTC+8. Resources financing and trade.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade",
-        "mining and resources"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade", "mining and resources"]
     },
     {
       "source_code": "AWST",
@@ -10546,12 +9288,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Perth to Hong Kong — same pair.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade",
-        "mining and resources"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade", "mining and resources"]
     },
     {
       "source_code": "HKT",
@@ -10568,11 +9305,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hong Kong to Brazil — a 11.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade"]
     },
     {
       "source_code": "BRT",
@@ -10589,11 +9322,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Brazil to Hong Kong — a 11.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ]
+      "common_use_cases": ["finance", "business meetings", "trade"]
     },
     {
       "source_code": "KST",
@@ -10610,11 +9339,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Korea to US East Coast — Korean conglomerates coordinating with US partners and investors.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "ICN ↔ JFK",
         "average_flight_time_minutes": 900,
@@ -10637,11 +9362,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US East Coast to Korea — US-Korea tech and manufacturing corridor. Samsung, LG, Hyundai have major US operations; Korean tech companies track NASDAQ closely.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "JFK ↔ ICN",
         "average_flight_time_minutes": 900,
@@ -10664,11 +9385,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "South Korea to US Central — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "logistics"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "logistics"]
     },
     {
       "source_code": "CST",
@@ -10685,11 +9402,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Central to South Korea — a 15.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "logistics"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "logistics"]
     },
     {
       "source_code": "KST",
@@ -10706,11 +9419,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "South Korea to US Mountain — a 16.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "energy sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "energy sector"]
     },
     {
       "source_code": "MST",
@@ -10727,11 +9436,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "US Mountain to South Korea — a 16.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "energy sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "energy sector"]
     },
     {
       "source_code": "KST",
@@ -10804,11 +9509,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "South Korea to Alaska — a 18.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "oil and gas"]
     },
     {
       "source_code": "AKST",
@@ -10825,11 +9526,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Alaska to South Korea — a 18.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "oil and gas"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "oil and gas"]
     },
     {
       "source_code": "KST",
@@ -10846,12 +9543,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "South Korea to Hawaii — a 19.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "business meetings",
-        "manufacturing",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "business meetings", "manufacturing", "military coordination"]
     },
     {
       "source_code": "HST",
@@ -10868,12 +9560,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Hawaii to South Korea — a 19.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "tourism",
-        "manufacturing",
-        "business meetings",
-        "military coordination"
-      ]
+      "common_use_cases": ["tourism", "manufacturing", "business meetings", "military coordination"]
     },
     {
       "source_code": "KST",
@@ -10946,11 +9633,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "South Korea to UK/Ireland — a 9.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "ICN ↔ LHR",
         "average_flight_time_minutes": 660,
@@ -10973,11 +9656,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "UK/Ireland to South Korea — a 9.0-hour gap with seasonal variation due to daylight saving. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "LHR ↔ ICN",
         "average_flight_time_minutes": 660,
@@ -11000,10 +9679,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Korea to Europe — Korean companies with European operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "ICN ↔ FRA",
         "average_flight_time_minutes": 660,
@@ -11026,10 +9702,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Continental Europe to Korea — European automakers (Volkswagen, BMW) with Korean supplier coordination; Renault-Samsung.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "FRA ↔ ICN",
         "average_flight_time_minutes": 660,
@@ -11108,11 +9781,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Korea to Japan — same zero-gap pair. Korean tourists are Japan's largest foreign visitor group; tech supply chains tightly linked.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "manufacturing supply chains"
-      ],
+      "common_use_cases": ["business meetings", "manufacturing", "manufacturing supply chains"],
       "flight_route": {
         "primary_route": "ICN ↔ NRT",
         "average_flight_time_minutes": 120,
@@ -11135,11 +9804,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Japan to Korea — the highest-volume bilateral pair in northeast Asia. Geographically adjacent with strong trade, tourism, and cultural ties. 0-hour gap (both UTC+9) makes scheduling trivial.",
-      "common_use_cases": [
-        "manufacturing supply chains",
-        "manufacturing",
-        "business meetings"
-      ],
+      "common_use_cases": ["manufacturing supply chains", "manufacturing", "business meetings"],
       "flight_route": {
         "primary_route": "NRT ↔ ICN",
         "average_flight_time_minutes": 120,
@@ -11162,11 +9827,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Korea to Queensland — same.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "AEST",
@@ -11183,11 +9844,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Queensland to Korea — 1-hour gap (AEST UTC+10, KST UTC+9). Resources and manufacturing trade.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "resources sector"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "resources sector"]
     },
     {
       "source_code": "KST",
@@ -11204,11 +9861,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Seoul and Perth are separated by just one hour year-round—a fixed gap with no DST adjustment on either side—underpinning one of the most operationally significant bilateral resource corridors in the Asia-Pacific region. South Korea's steel industry (led by POSCO) and energy sector depend heavily on Western Australian iron ore, LNG, and coal, generating daily scheduling traffic between Korean procurement teams and Pilbara-based mining and port operations.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "mining and resources"]
     },
     {
       "source_code": "AWST",
@@ -11225,11 +9878,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Perth to Korea — same resources corridor.",
-      "common_use_cases": [
-        "business meetings",
-        "manufacturing",
-        "mining and resources"
-      ]
+      "common_use_cases": ["business meetings", "manufacturing", "mining and resources"]
     },
     {
       "source_code": "KST",
@@ -11246,11 +9895,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "South Korea to Brazil — a 12.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "BRT",
@@ -11267,11 +9912,7 @@
       },
       "meeting_difficulty": "hard",
       "notable_pairing": "Brazil to South Korea — a 12.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ]
+      "common_use_cases": ["finance", "business meetings", "manufacturing"]
     },
     {
       "source_code": "SGT",
@@ -11288,11 +9929,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore to Hong Kong — same UTC+8. Zero time difference; Hong Kong and Singapore are competitive financial centers with extensive cross-investment.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "SIN ↔ HKG",
         "average_flight_time_minutes": 210,
@@ -11315,11 +9952,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to Singapore — same zero-difference pair, reverse. HKEX and SGX are closely linked.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ SIN",
         "average_flight_time_minutes": 210,
@@ -11342,11 +9975,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Singapore and Seoul sit just one hour apart year-round—neither SGT nor KST observes DST—making this among the most friction-free scheduling pairs in Northeast-to-Southeast Asia. Major Korean conglomerates including Samsung, LG, and Hyundai maintain regional headquarters or significant operations in Singapore, and the corridor supports semiconductor supply-chain coordination, financial services, and the high-volume Singapore–Incheon air route, one of Asia's busiest.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "SIN ↔ ICN",
         "average_flight_time_minutes": 360,
@@ -11369,11 +9998,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Korea to Singapore — 1-hour gap. Active trade, investment, and tech corridor between Seoul and Singapore.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing"],
       "flight_route": {
         "primary_route": "ICN ↔ SIN",
         "average_flight_time_minutes": 360,
@@ -11396,12 +10021,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "Hong Kong to South Korea — a 1.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing", "trade"],
       "flight_route": {
         "primary_route": "HKG ↔ ICN",
         "average_flight_time_minutes": 180,
@@ -11424,12 +10044,7 @@
       },
       "meeting_difficulty": "easy",
       "notable_pairing": "South Korea to Hong Kong — a 1.0-hour gap with constant offset year-round. Coordination typically centers on trade, investment, and remote team management.",
-      "common_use_cases": [
-        "finance",
-        "business meetings",
-        "manufacturing",
-        "trade"
-      ],
+      "common_use_cases": ["finance", "business meetings", "manufacturing", "trade"],
       "flight_route": {
         "primary_route": "ICN ↔ HKG",
         "average_flight_time_minutes": 180,

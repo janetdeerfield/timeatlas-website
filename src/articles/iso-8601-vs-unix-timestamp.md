@@ -1,5 +1,5 @@
 ---
-title: "ISO 8601 vs. Unix Timestamp: The Architecture of API Time Handling"
+title: 'ISO 8601 vs. Unix Timestamp: The Architecture of API Time Handling'
 slug: 'iso-8601-vs-unix-timestamp'
 description: 'A technical guide to the two canonical time formats in distributed systems: when to use ISO 8601 for transmission and Unix integers for computation, and how to normalize at the API boundary.'
 publishedAt: '2026-06-08'
@@ -33,7 +33,7 @@ The interactive parser below demonstrates both formats in real time. Paste any I
 
 APIs require a standardized syntax to transmit time data across independent systems that may run on different operating systems, languages, and timezone configurations. The ISO 8601 format — `YYYY-MM-DDTHH:mm:ss.sssZ` — provides this strict structural hierarchy. It eliminates the fatal ambiguity of regional date formats: whether `04/05/2026` represents April 5th or May 4th depends entirely on the locale of the reader, and that ambiguity is unacceptable in an API contract.
 
-![ISO 8601 string anatomy: each field labeled from year through UTC offset](/images/journal/iso-8601-anatomy.webp "The ISO 8601 field hierarchy — YYYY, MM, DD, T separator, HH, mm, ss, and the Z offset designator")
+![ISO 8601 string anatomy: each field labeled from year through UTC offset](/images/journal/iso-8601-anatomy.webp 'The ISO 8601 field hierarchy — YYYY, MM, DD, T separator, HH, mm, ss, and the Z offset designator')
 
 When architecting the TimeAtlas meeting planner payload, we mandate ISO 8601 strings for all REST API responses. However, developers must rigorously enforce what we call the **"Zulu" standard**.
 
@@ -60,7 +60,7 @@ Because Unix timestamps are absolute integers, they are completely immune to geo
 
 ```javascript
 // Duration arithmetic on Unix integers — zero parser cost
-const eventTime = 1749384240;      // Unix seconds
+const eventTime = 1749384240; // Unix seconds
 const oneDayLater = eventTime + 86400; // Exactly 24 hours, no DST ambiguity
 
 // Equivalent ISO string arithmetic — fragile and expensive
@@ -68,7 +68,7 @@ const d = new Date('2026-06-08T12:24:00Z');
 d.setDate(d.getDate() + 1); // Silently breaks across DST boundaries
 ```
 
-![The milliseconds-vs-seconds precision mismatch: JavaScript Date.now() produces 13 digits, backend Unix epoch expects 10](/images/journal/unix-precision-mismatch.webp "The precision mismatch failure mode — 13-digit millisecond client value stored in a 10-digit seconds column produces a date in the year 54,000 AD")
+![The milliseconds-vs-seconds precision mismatch: JavaScript Date.now() produces 13 digits, backend Unix epoch expects 10](/images/journal/unix-precision-mismatch.webp 'The precision mismatch failure mode — 13-digit millisecond client value stored in a 10-digit seconds column produces a date in the year 54,000 AD')
 
 ### The Precision Mismatch
 
@@ -102,13 +102,13 @@ function toApiIso(date = new Date()) {
 fetch('/api/schedule', {
   method: 'POST',
   body: JSON.stringify({
-    unix: toApiTimestamp(),    // Store as integer in DB
-    iso:  toApiIso(),          // Transmit in response payloads
+    unix: toApiTimestamp(), // Store as integer in DB
+    iso: toApiIso(), // Transmit in response payloads
   }),
 });
 ```
 
-![TimeAtlas API boundary normalization: the Math.floor(Date.now() divided by 1000) pattern at the client-server interface](/images/journal/api-boundary-normalization.webp "The normalization layer — every client-side Unix value is divided, floored, and validated before crossing the API boundary")
+![TimeAtlas API boundary normalization: the Math.floor(Date.now() divided by 1000) pattern at the client-server interface](/images/journal/api-boundary-normalization.webp 'The normalization layer — every client-side Unix value is divided, floored, and validated before crossing the API boundary')
 
 ### The Three-Layer Standard
 
@@ -122,8 +122,8 @@ The TimeAtlas temporal architecture enforces a clean separation across three dis
 
 ```javascript
 // The complete three-layer pattern
-const unix = Math.floor(Date.now() / 1000);      // Layer 1: store this integer
-const iso  = new Date(unix * 1000).toISOString(); // Layer 2: transmit this string
+const unix = Math.floor(Date.now() / 1000); // Layer 1: store this integer
+const iso = new Date(unix * 1000).toISOString(); // Layer 2: transmit this string
 
 // Layer 3: render only — never stored, never transmitted
 const local = new Intl.DateTimeFormat(undefined, {
