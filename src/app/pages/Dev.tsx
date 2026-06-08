@@ -422,10 +422,7 @@ export function Dev() {
             className="bg-white rounded-xl shadow-sm p-6 mb-6"
             style={{ border: '1px solid #E6E9EE' }}
           >
-            <h2
-              className="text-xl font-semibold mb-4"
-              style={{ color: '#080A0C' }}
-            >
+            <h2 className="text-xl font-semibold mb-4" style={{ color: '#080A0C' }}>
               ISO 8601 Parser
             </h2>
             <IsoConverter />

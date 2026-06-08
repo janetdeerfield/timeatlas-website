@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react';
 import { CopyButton } from './CopyButton';
 
 // Strict ISO 8601 anatomy: YYYY-MM-DDTHH:MM[:SS[.fff]](Z|±HH:MM)
-const ISO_RE =
-  /^(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?)(Z|[+-]\d{2}:\d{2})$/;
+const ISO_RE = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?)(Z|[+-]\d{2}:\d{2})$/;
 
 const PART_META = {
-  year:   { label: 'Year',   bg: '#EEF2FF', color: '#1c469c' },
-  sep1:   { label: '',       bg: 'transparent', color: 'var(--text-secondary)' },
-  month:  { label: 'Month',  bg: '#F0FDF4', color: '#166534' },
-  sep2:   { label: '',       bg: 'transparent', color: 'var(--text-secondary)' },
-  day:    { label: 'Day',    bg: '#FFF7ED', color: '#9a3412' },
-  sep3:   { label: '',       bg: 'transparent', color: 'var(--text-secondary)' },
-  time:   { label: 'Time',   bg: '#F0F9FF', color: '#075985' },
+  year: { label: 'Year', bg: '#EEF2FF', color: '#1c469c' },
+  sep1: { label: '', bg: 'transparent', color: 'var(--text-secondary)' },
+  month: { label: 'Month', bg: '#F0FDF4', color: '#166534' },
+  sep2: { label: '', bg: 'transparent', color: 'var(--text-secondary)' },
+  day: { label: 'Day', bg: '#FFF7ED', color: '#9a3412' },
+  sep3: { label: '', bg: 'transparent', color: 'var(--text-secondary)' },
+  time: { label: 'Time', bg: '#F0F9FF', color: '#075985' },
   offset: { label: 'Offset', bg: '#FDF4FF', color: '#7e22ce' },
 } as const;
 
@@ -71,7 +70,10 @@ function ResultRow({
       style={{ backgroundColor: 'var(--bg-base)', border: '1px solid var(--border-subtle)' }}
     >
       <div className="min-w-0 flex-1">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: 'var(--text-secondary)' }}>
+        <p
+          className="text-xs font-semibold uppercase tracking-widest mb-1"
+          style={{ color: 'var(--text-secondary)' }}
+        >
           {label}
         </p>
         <p
@@ -96,13 +98,13 @@ function ResultRow({
 
 function AnatomyDisplay({ anatomy }: { anatomy: Anatomy }) {
   const parts: { key: PartKey; text: string }[] = [
-    { key: 'year',   text: anatomy.year },
-    { key: 'sep1',   text: '-' },
-    { key: 'month',  text: anatomy.month },
-    { key: 'sep2',   text: '-' },
-    { key: 'day',    text: anatomy.day },
-    { key: 'sep3',   text: 'T' },
-    { key: 'time',   text: anatomy.time },
+    { key: 'year', text: anatomy.year },
+    { key: 'sep1', text: '-' },
+    { key: 'month', text: anatomy.month },
+    { key: 'sep2', text: '-' },
+    { key: 'day', text: anatomy.day },
+    { key: 'sep3', text: 'T' },
+    { key: 'time', text: anatomy.time },
     { key: 'offset', text: anatomy.offset },
   ];
 
@@ -141,15 +143,18 @@ function AnatomyDisplay({ anatomy }: { anatomy: Anatomy }) {
           <div
             key={key}
             className="flex flex-col items-center gap-1 p-3 rounded-lg"
-            style={{ backgroundColor: PART_META[key].bg, border: `1px solid ${PART_META[key].color}22` }}
+            style={{
+              backgroundColor: PART_META[key].bg,
+              border: `1px solid ${PART_META[key].color}22`,
+            }}
           >
-            <span
-              className="text-sm font-bold font-mono"
-              style={{ color: PART_META[key].color }}
-            >
+            <span className="text-sm font-bold font-mono" style={{ color: PART_META[key].color }}>
               {anatomy[key]}
             </span>
-            <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: PART_META[key].color, opacity: 0.7 }}>
+            <span
+              className="text-xs font-semibold uppercase tracking-wider"
+              style={{ color: PART_META[key].color, opacity: 0.7 }}
+            >
               {PART_META[key].label}
             </span>
           </div>
@@ -205,14 +210,13 @@ export function IsoConverter() {
               'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", monospace',
             backgroundColor: 'var(--bg-base)',
             color: 'var(--text-primary)',
-            border: isError
-              ? '1.5px solid #ef4444'
-              : `1.5px solid var(--border-medium)`,
+            border: isError ? '1.5px solid #ef4444' : `1.5px solid var(--border-medium)`,
             // accent-dev focus ring applied via inline :focus workaround via CSS var
           }}
           onFocus={(e) => {
             e.currentTarget.style.borderColor = 'var(--accent-dev)';
-            e.currentTarget.style.boxShadow = '0 0 0 3px color-mix(in srgb, var(--accent-dev) 15%, transparent)';
+            e.currentTarget.style.boxShadow =
+              '0 0 0 3px color-mix(in srgb, var(--accent-dev) 15%, transparent)';
           }}
           onBlur={(e) => {
             e.currentTarget.style.borderColor = isError ? '#ef4444' : 'var(--border-medium)';
@@ -221,7 +225,8 @@ export function IsoConverter() {
         />
         {isError && (
           <p className="mt-2 text-sm font-medium" style={{ color: '#ef4444' }}>
-            Not a valid ISO 8601 string. Expected format: <code>YYYY-MM-DDTHH:MM:SSZ</code> or with a UTC offset like <code>+05:30</code>.
+            Not a valid ISO 8601 string. Expected format: <code>YYYY-MM-DDTHH:MM:SSZ</code> or with
+            a UTC offset like <code>+05:30</code>.
           </p>
         )}
       </div>
@@ -230,26 +235,16 @@ export function IsoConverter() {
       {parsed && (
         <>
           <div className="space-y-3">
-            <ResultRow
-              label="Unix Timestamp (seconds)"
-              value={String(parsed.unixSeconds)}
-              mono
-            />
-            {localTime && (
-              <ResultRow
-                label="Local Browser Time"
-                value={localTime}
-              />
-            )}
-            <ResultRow
-              label="Normalized UTC String"
-              value={parsed.utcString}
-              mono
-            />
+            <ResultRow label="Unix Timestamp (seconds)" value={String(parsed.unixSeconds)} mono />
+            {localTime && <ResultRow label="Local Browser Time" value={localTime} />}
+            <ResultRow label="Normalized UTC String" value={parsed.utcString} mono />
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-secondary)' }}>
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               String Anatomy
             </p>
             <AnatomyDisplay anatomy={parsed.anatomy} />

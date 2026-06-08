@@ -3,8 +3,15 @@ import { useEffect, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { JsonLd } from '../components/JsonLd';
 import { SEO } from '../components/SEO';
+import { IsoConverter } from '../components/IsoConverter';
 import { getArticle, formatDate, type Article, type ArticleHeading } from '../../lib/articles';
 import { ChevronRight } from 'lucide-react';
+
+// ─── Embeddable React components keyed by data-embed name ─────────────────────
+
+const EMBED_COMPONENTS: Record<string, React.FC> = {
+  IsoConverter,
+};
 
 // ─── Table of Contents ─────────────────────────────────────────────────────────
 
@@ -163,32 +170,69 @@ function ArticleHeroSVG() {
 
 // ─── Article body prose styles ─────────────────────────────────────────────────
 
-/** Renders the article HTML with scoped prose typography.
- *  highlight.js styles are imported globally in main.tsx.
+const PROSE_CLASSES = `prose prose-slate max-w-none
+  prose-headings:font-semibold prose-headings:text-slate-900
+  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+  prose-h3:text-lg prose-h3:mt-7 prose-h3:mb-3
+  prose-h4:text-base prose-h4:mt-5 prose-h4:mb-2
+  prose-p:text-slate-700 prose-p:leading-relaxed
+  prose-a:text-slate-600 prose-a:underline hover:prose-a:text-slate-900
+  prose-code:text-slate-800 prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
+  prose-pre:bg-[#1e1e2e] prose-pre:rounded-lg prose-pre:p-6 prose-pre:overflow-x-auto
+  prose-pre:border prose-pre:border-slate-700
+  prose-ul:space-y-1.5
+  prose-li:text-slate-700
+  prose-li:marker:text-slate-400
+  prose-strong:text-slate-900 prose-strong:font-semibold
+  prose-em:text-slate-600
+  prose-hr:border-slate-200 prose-hr:my-8
+  prose-figure:my-16
+  prose-figcaption:text-center prose-figcaption:text-xs prose-figcaption:text-slate-400 prose-figcaption:italic prose-figcaption:mt-3
+  prose-img:rounded-lg prose-img:shadow-sm
+  prose-img:border prose-img:border-slate-200
+  [&_pre]:mt-10 [&_pre]:mb-10
+  [&_figure]:mt-16 [&_figure]:mb-16
+  [&_figcaption]:text-center [&_figcaption]:text-xs [&_figcaption]:text-slate-400 [&_figcaption]:italic [&_figcaption]:mt-3`;
+
+/** Renders article HTML with prose typography.
+ *  Splits on <div data-embed="ComponentName"></div> sentinels to inject
+ *  live React components mid-article. highlight.js imported globally.
  */
 function ArticleBody({ html }: { html: string }) {
+  // Parse component-embed sentinels
+  const sentinelRe = /<div\s+data-embed="([^"]+)"\s*><\/div>/g;
+  type Part = { kind: 'html'; content: string } | { kind: 'component'; name: string };
+  const parts: Part[] = [];
+  let cursor = 0;
+  let m: RegExpExecArray | null;
+
+  while ((m = sentinelRe.exec(html)) !== null) {
+    if (m.index > cursor) parts.push({ kind: 'html', content: html.slice(cursor, m.index) });
+    parts.push({ kind: 'component', name: m[1] });
+    cursor = m.index + m[0].length;
+  }
+  if (cursor < html.length) parts.push({ kind: 'html', content: html.slice(cursor) });
+
+  // No embeds — fast path
+  if (parts.length === 0) {
+    return <div className={PROSE_CLASSES} dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+
   return (
-    <div
-      className="prose prose-slate max-w-none
-        prose-headings:font-semibold prose-headings:text-slate-900
-        prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-        prose-h3:text-lg prose-h3:mt-7 prose-h3:mb-3
-        prose-h4:text-base prose-h4:mt-5 prose-h4:mb-2
-        prose-p:text-slate-700 prose-p:leading-relaxed
-        prose-a:text-slate-600 prose-a:underline hover:prose-a:text-slate-900
-        prose-code:text-slate-800 prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
-        prose-pre:bg-[#1e1e2e] prose-pre:rounded-lg prose-pre:p-5 prose-pre:overflow-x-auto
-        prose-pre:border prose-pre:border-slate-700
-        prose-ul:space-y-1.5
-        prose-li:text-slate-700
-        prose-li:marker:text-slate-400
-        prose-strong:text-slate-900 prose-strong:font-semibold
-        prose-em:text-slate-600
-        prose-hr:border-slate-200 prose-hr:my-8
-        prose-img:rounded-lg prose-img:shadow-sm
-        prose-img:border prose-img:border-slate-200"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <>
+      {parts.map((part, i) => {
+        if (part.kind === 'html') {
+          return <div key={i} className={PROSE_CLASSES} dangerouslySetInnerHTML={{ __html: part.content }} />;
+        }
+        const Component = EMBED_COMPONENTS[part.name];
+        if (!Component) return null;
+        return (
+          <div key={i} className="my-10">
+            <Component />
+          </div>
+        );
+      })}
+    </>
   );
 }
 
