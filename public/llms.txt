@@ -34,6 +34,11 @@ Direct converters exist for 460+ directional zone pairs at https://timeatlas.co/
 
 The full list of pages is in the sitemap: https://timeatlas.co/sitemap.xml
 
+## News
+
+[TimeAtlas Dispatch — Time News](https://timeatlas.co/news)
+> DST legislation tracker for all 50 US states, IANA tzdb release notes, atomic timekeeping research, and time-standards news.
+
 ## Guides & Articles
 
 [Journal](https://timeatlas.co/journal)

@@ -25,6 +25,7 @@ const canonicalPairs = pairs.filter(
 // pages actually change.
 const STATIC_PAGES_LASTMOD = '2026-06-07'; // V3 schema patch / FAQ update
 const PAIR_PAGES_LASTMOD = '2026-06-07'; // bump when pair-page template or data changes
+const NEWS_PAGE_LASTMOD = '2026-06-10'; // bump when Dispatch items or DST tracker data change
 
 // Articles carry their real dates in frontmatter: updatedAt if present,
 // otherwise publishedAt.
@@ -53,6 +54,7 @@ const staticUrls = [
   { loc: 'https://timeatlas.co/world', lastmod: STATIC_PAGES_LASTMOD },
   { loc: 'https://timeatlas.co/meet', lastmod: STATIC_PAGES_LASTMOD },
   { loc: 'https://timeatlas.co/dev', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/news', lastmod: NEWS_PAGE_LASTMOD },
   { loc: 'https://timeatlas.co/journal', lastmod: journalLastmod },
   { loc: 'https://timeatlas.co/about', lastmod: STATIC_PAGES_LASTMOD },
   { loc: 'https://timeatlas.co/privacy', lastmod: STATIC_PAGES_LASTMOD },

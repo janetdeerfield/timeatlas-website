@@ -23,6 +23,7 @@ export function Header({ use24Hour, onToggleFormat }: HeaderProps) {
     { path: '/world', label: 'World' },
     { path: '/meet', label: 'Meet' },
     { path: '/dev', label: 'Dev' },
+    { path: '/news', label: 'News' },
     { path: '/journal', label: 'Journal' },
   ];
 
