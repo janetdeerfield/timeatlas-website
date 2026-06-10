@@ -30,12 +30,12 @@ This offset is the foundational rule of US coast-to-coast scheduling. It applies
 The following table outlines the most common conversion points across standard waking and working hours.
 
 | Eastern Time (New York, Miami) | Pacific Time (Los Angeles, Seattle) |
-|-------------------------------|-------------------------------------|
-| 9:00 AM EST | 6:00 AM PST |
-| 12:00 PM EST (Noon) | 9:00 AM PST |
-| 3:00 PM EST | 12:00 PM PST (Noon) |
-| 5:00 PM EST | 2:00 PM PST |
-| 8:00 PM EST | 5:00 PM PST |
+| ------------------------------ | ----------------------------------- |
+| 9:00 AM EST                    | 6:00 AM PST                         |
+| 12:00 PM EST (Noon)            | 9:00 AM PST                         |
+| 3:00 PM EST                    | 12:00 PM PST (Noon)                 |
+| 5:00 PM EST                    | 2:00 PM PST                         |
+| 8:00 PM EST                    | 5:00 PM PST                         |
 
 For any time not listed, the rule is identical: subtract 3 hours. For the reverse conversion (PST to EST), add 3 hours.
 

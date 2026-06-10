@@ -7,303 +7,353 @@
   },
   "regions": [
     {
-      "id": "AL", "name": "Alabama",
+      "id": "AL",
+      "name": "Alabama",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "AK", "name": "Alaska",
+      "id": "AK",
+      "name": "Alaska",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "Remote regions already exempt."
     },
     {
-      "id": "AZ", "name": "Arizona",
+      "id": "AZ",
+      "name": "Arizona",
       "status": "permanent_standard",
       "legislation": "ARS § 1-242",
       "notes": "Permanent MST since 1968. Navajo Nation observes DST.",
       "since": "1968"
     },
     {
-      "id": "AR", "name": "Arkansas",
+      "id": "AR",
+      "name": "Arkansas",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "CA", "name": "California",
+      "id": "CA",
+      "name": "California",
       "status": "pending_federal",
       "legislation": "Prop 7 (2018)",
       "notes": "Voters approved permanent DST; requires federal authorization."
     },
     {
-      "id": "CO", "name": "Colorado",
+      "id": "CO",
+      "name": "Colorado",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "CT", "name": "Connecticut",
+      "id": "CT",
+      "name": "Connecticut",
       "status": "pending_federal",
       "legislation": "SB 192 (2023)",
       "notes": "Passed conditional on Northeast compact."
     },
     {
-      "id": "DE", "name": "Delaware",
+      "id": "DE",
+      "name": "Delaware",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "FL", "name": "Florida",
+      "id": "FL",
+      "name": "Florida",
       "status": "pending_federal",
       "legislation": "Sunshine Protection Act (State, 2018)",
       "notes": "Awaiting federal Uniform Time Act amendment."
     },
     {
-      "id": "GA", "name": "Georgia",
+      "id": "GA",
+      "name": "Georgia",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "HI", "name": "Hawaii",
+      "id": "HI",
+      "name": "Hawaii",
       "status": "permanent_standard",
       "legislation": "HRS § 1-30",
       "notes": "Permanent HST. Never observed DST.",
       "since": "1967"
     },
     {
-      "id": "ID", "name": "Idaho",
+      "id": "ID",
+      "name": "Idaho",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "IL", "name": "Illinois",
+      "id": "IL",
+      "name": "Illinois",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "IN", "name": "Indiana",
+      "id": "IN",
+      "name": "Indiana",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "Statewide DST compliance since 2006."
     },
     {
-      "id": "IA", "name": "Iowa",
+      "id": "IA",
+      "name": "Iowa",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "KS", "name": "Kansas",
+      "id": "KS",
+      "name": "Kansas",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "KY", "name": "Kentucky",
+      "id": "KY",
+      "name": "Kentucky",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "LA", "name": "Louisiana",
+      "id": "LA",
+      "name": "Louisiana",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "ME", "name": "Maine",
+      "id": "ME",
+      "name": "Maine",
       "status": "pending_federal",
       "legislation": "LD 1503 (2019)",
       "notes": "Conditional on Northeast compact."
     },
     {
-      "id": "MD", "name": "Maryland",
+      "id": "MD",
+      "name": "Maryland",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "MA", "name": "Massachusetts",
+      "id": "MA",
+      "name": "Massachusetts",
       "status": "pending_federal",
       "legislation": "Commission Report (2017)",
       "notes": "Study recommends Atlantic Time Zone with permanent standard."
     },
     {
-      "id": "MI", "name": "Michigan",
+      "id": "MI",
+      "name": "Michigan",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "MN", "name": "Minnesota",
+      "id": "MN",
+      "name": "Minnesota",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "MS", "name": "Mississippi",
+      "id": "MS",
+      "name": "Mississippi",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "MO", "name": "Missouri",
+      "id": "MO",
+      "name": "Missouri",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "MT", "name": "Montana",
+      "id": "MT",
+      "name": "Montana",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "NE", "name": "Nebraska",
+      "id": "NE",
+      "name": "Nebraska",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "NV", "name": "Nevada",
+      "id": "NV",
+      "name": "Nevada",
       "status": "pending_federal",
       "legislation": "AB 186 (2019)",
       "notes": "Passed permanent DST pending federal action."
     },
     {
-      "id": "NH", "name": "New Hampshire",
+      "id": "NH",
+      "name": "New Hampshire",
       "status": "pending_federal",
       "legislation": "HB 1422 (2022)",
       "notes": "Conditional on New England compact."
     },
     {
-      "id": "NJ", "name": "New Jersey",
+      "id": "NJ",
+      "name": "New Jersey",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "NM", "name": "New Mexico",
+      "id": "NM",
+      "name": "New Mexico",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "NY", "name": "New York",
+      "id": "NY",
+      "name": "New York",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "NC", "name": "North Carolina",
+      "id": "NC",
+      "name": "North Carolina",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "ND", "name": "North Dakota",
+      "id": "ND",
+      "name": "North Dakota",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "OH", "name": "Ohio",
+      "id": "OH",
+      "name": "Ohio",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "OK", "name": "Oklahoma",
+      "id": "OK",
+      "name": "Oklahoma",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "OR", "name": "Oregon",
+      "id": "OR",
+      "name": "Oregon",
       "status": "pending_federal",
       "legislation": "SB 320 (2019)",
       "notes": "Permanent PDT pending federal authorization."
     },
     {
-      "id": "PA", "name": "Pennsylvania",
+      "id": "PA",
+      "name": "Pennsylvania",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "RI", "name": "Rhode Island",
+      "id": "RI",
+      "name": "Rhode Island",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "SC", "name": "South Carolina",
+      "id": "SC",
+      "name": "South Carolina",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "SD", "name": "South Dakota",
+      "id": "SD",
+      "name": "South Dakota",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "TN", "name": "Tennessee",
+      "id": "TN",
+      "name": "Tennessee",
       "status": "pending_federal",
       "legislation": "HB 196 (2021)",
       "notes": "Permanent CDT pending federal action."
     },
     {
-      "id": "TX", "name": "Texas",
+      "id": "TX",
+      "name": "Texas",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "UT", "name": "Utah",
+      "id": "UT",
+      "name": "Utah",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "VT", "name": "Vermont",
+      "id": "VT",
+      "name": "Vermont",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "VA", "name": "Virginia",
+      "id": "VA",
+      "name": "Virginia",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "WA", "name": "Washington",
+      "id": "WA",
+      "name": "Washington",
       "status": "pending_federal",
       "legislation": "SB 5139 (2019)",
       "notes": "Permanent PDT pending federal authorization."
     },
     {
-      "id": "WV", "name": "West Virginia",
+      "id": "WV",
+      "name": "West Virginia",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "WI", "name": "Wisconsin",
+      "id": "WI",
+      "name": "Wisconsin",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."
     },
     {
-      "id": "WY", "name": "Wyoming",
+      "id": "WY",
+      "name": "Wyoming",
       "status": "biannual_shift",
       "legislation": null,
       "notes": "No active legislation."

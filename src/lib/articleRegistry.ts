@@ -9,7 +9,11 @@
  * The build pipeline handles the rest automatically.
  */
 
-export const ARTICLES = ['iso-8601-vs-unix-timestamp', 'handling-dst-conversions', 'est-to-pst'] as const;
+export const ARTICLES = [
+  'iso-8601-vs-unix-timestamp',
+  'handling-dst-conversions',
+  'est-to-pst',
+] as const;
 
 export type ArticleSlug = (typeof ARTICLES)[number];
 
