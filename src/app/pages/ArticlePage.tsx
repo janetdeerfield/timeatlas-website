@@ -192,7 +192,12 @@ const PROSE_CLASSES = `prose prose-slate max-w-none
   prose-img:border prose-img:border-slate-200
   [&_pre]:mt-10 [&_pre]:mb-10
   [&_figure]:mt-16 [&_figure]:mb-16
-  [&_figcaption]:text-center [&_figcaption]:text-xs [&_figcaption]:text-slate-400 [&_figcaption]:italic [&_figcaption]:mt-3`;
+  [&_figcaption]:text-center [&_figcaption]:text-xs [&_figcaption]:text-slate-400 [&_figcaption]:italic [&_figcaption]:mt-3
+  [&_table]:w-full [&_table]:border-collapse [&_table]:text-sm [&_table]:my-8 [&_table]:rounded-lg [&_table]:overflow-hidden
+  [&_thead]:bg-slate-50
+  [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:font-semibold [&_th]:text-slate-700 [&_th]:border [&_th]:border-slate-200
+  [&_td]:px-4 [&_td]:py-2.5 [&_td]:text-slate-600 [&_td]:border [&_td]:border-slate-200
+  [&_tbody_tr:nth-child(even)_td]:bg-slate-50/60`;
 
 /** Renders article HTML with prose typography.
  *  Splits on <div data-embed="ComponentName"></div> sentinels to inject
