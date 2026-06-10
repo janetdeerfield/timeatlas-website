@@ -54,7 +54,10 @@ jobs:
           grep -q 'data-prerendered="true"' dist/index.html || { echo "index.html not prerendered"; exit 1; }
           grep -q 'noindex' dist/404.html || { echo "404.html missing noindex"; exit 1; }
           ! grep -q 'noindex' dist/privacy.html || { echo "privacy.html is noindexed"; exit 1; }
-          grep -c '<loc>' dist/sitemap.xml
+          echo "--- sitemap sanity ---"
+          loc_count=$(grep -c '<loc>' dist/sitemap.xml)
+          echo "sitemap URLs: $loc_count"
+          [ "$loc_count" -ge 470 ] || { echo "sitemap has too few URLs ($loc_count < 470)"; exit 1; }
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3

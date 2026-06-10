@@ -24,16 +24,17 @@
 </IfModule>
 
 # ==========================================
-# LAYER 1: HTTPS + HOST CANONICALIZATION
+# LAYER 1: HOST + HTTPS CANONICALIZATION
 # ==========================================
 RewriteEngine On
+
+# www → apex first (redirects straight to https, so http://www takes one hop)
+RewriteCond %{HTTP_HOST} ^www\.timeatlas\.co$ [NC]
+RewriteRule ^(.*)$ https://timeatlas.co/$1 [L,R=301]
+
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# www → apex (canonical host is timeatlas.co)
-RewriteCond %{HTTP_HOST} ^www\.timeatlas\.co$ [NC]
-RewriteRule ^(.*)$ https://timeatlas.co/$1 [L,R=301]
 
 # ==========================================
 # LAYER 2: LEGACY REDIRECT MAP (301s)
