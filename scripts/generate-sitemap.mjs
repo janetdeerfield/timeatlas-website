@@ -41,7 +41,11 @@ const articleUrls = [...ARTICLES].map((slug) => ({
 }));
 
 // The journal index changes whenever its newest article does.
-const journalLastmod = articleUrls.map((a) => a.lastmod).sort().at(-1) ?? STATIC_PAGES_LASTMOD;
+const journalLastmod =
+  articleUrls
+    .map((a) => a.lastmod)
+    .sort()
+    .at(-1) ?? STATIC_PAGES_LASTMOD;
 
 const staticUrls = [
   { loc: 'https://timeatlas.co/', lastmod: STATIC_PAGES_LASTMOD },
