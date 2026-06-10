@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router';
-import { useEffect, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { JsonLd } from '../components/JsonLd';
 import { SEO } from '../components/SEO';
@@ -278,21 +278,11 @@ function ArticleSchema({ article }: { article: Article }) {
 
 export function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
-  const [article, setArticle] = useState<Article | null>(null);
-  const [notFound, setNotFound] = useState(false);
-
-  useEffect(() => {
-    if (!slug) {
-      setNotFound(true);
-      return;
-    }
-    const found = getArticle(slug);
-    if (!found) {
-      setNotFound(true);
-      return;
-    }
-    setArticle(found);
-  }, [slug]);
+  // getArticle is synchronous (eager import.meta.glob), so resolve it during
+  // render. Loading it in useEffect meant SSR/prerender — where effects never
+  // run — emitted an empty spinner shell with no title, meta, or article body.
+  const article = useMemo(() => (slug ? getArticle(slug) : null), [slug]);
+  const notFound = !article;
 
   if (notFound) {
     return (
@@ -300,8 +290,8 @@ export function ArticlePage() {
         <SEO
           title="Article Not Found | TimeAtlas"
           description="This article does not exist."
-          path="/journal"
-          robots="noindex"
+          path={slug ? `/journal/${slug}` : '/journal'}
+          robots="noindex,nofollow"
         />
         <div className="min-h-screen flex flex-col bg-white">
           <main className="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
@@ -314,14 +304,6 @@ export function ArticlePage() {
           <Footer />
         </div>
       </>
-    );
-  }
-
-  if (!article) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="w-6 h-6 border-2 border-slate-300 border-t-slate-600 rounded-full animate-spin" />
-      </div>
     );
   }
 

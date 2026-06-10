@@ -9,7 +9,7 @@
  * The build pipeline handles the rest automatically.
  */
 
-export const ARTICLES = ['handling-dst-conversions'] as const;
+export const ARTICLES = ['handling-dst-conversions', 'b2b-scheduling-blueprint'] as const;
 
 export type ArticleSlug = (typeof ARTICLES)[number];
 
