@@ -1,9 +1,20 @@
 name: Deploy to Hostinger
 
+# Push to main: build + verify only (a green run means the build is deployable).
+# Actual FTP upload happens ONLY when triggered manually from the Actions tab
+# (Run workflow button) — this preserves the visual-check-before-going-live
+# workflow while making one-click deploys possible.
+#
+# History note: every automated deploy from runs #1–#21 failed in ~5s because
+# the FTP step referenced SamKirkland/FTP-Deploy-Action@v4.3 — a tag that does
+# not exist — and used v3-era input names (ftp-server etc.). The step below is
+# pinned to a real tag and uses the v4 input names.
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 env:
   FORCE_COLOR: 1
@@ -58,3 +69,19 @@ jobs:
           loc_count=$(grep -c '<loc>' dist/sitemap.xml)
           echo "sitemap URLs: $loc_count"
           [ "$loc_count" -ge 470 ] || { echo "sitemap has too few URLs ($loc_count < 470)"; exit 1; }
+
+      # Runs only on manual "Run workflow" dispatch — never on push.
+      # Requires repository secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
+      # Create a dedicated FTP account in Hostinger hPanel (Files → FTP
+      # Accounts) whose directory is public_html, so server-dir can stay ./
+      - name: Deploy to Hostinger via FTP
+        if: github.event_name == 'workflow_dispatch'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: dist/
+          server-dir: ./
+          log-level: standard
