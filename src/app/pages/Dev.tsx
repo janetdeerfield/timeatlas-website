@@ -5,6 +5,7 @@ import { SEO } from '../components/SEO';
 import { getUserTimezone } from '../utils/time';
 import { formatUnixTime, parseUnixTime, copyToClipboard } from '../utils/format';
 import { ClockFace } from '../components/ClockFace';
+import { IsoConverter } from '../components/IsoConverter';
 
 function getInitialDate() {
   const prerenderNow =
@@ -414,6 +415,17 @@ export function Dev() {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* ISO 8601 Converter */}
+          <div
+            className="bg-white rounded-xl shadow-sm p-6 mb-6"
+            style={{ border: '1px solid #E6E9EE' }}
+          >
+            <h2 className="text-xl font-semibold mb-4" style={{ color: '#080A0C' }}>
+              ISO 8601 Parser
+            </h2>
+            <IsoConverter />
           </div>
 
           {/* Code Examples */}

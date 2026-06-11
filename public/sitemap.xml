@@ -33,7 +33,7 @@
 
   <url>
     <loc>https://timeatlas.co/journal</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-09</lastmod>
   </url>
 
   <url>
@@ -52,8 +52,18 @@
   </url>
 
   <url>
+    <loc>https://timeatlas.co/journal/iso-8601-vs-unix-timestamp</loc>
+    <lastmod>2026-06-08</lastmod>
+  </url>
+
+  <url>
     <loc>https://timeatlas.co/journal/handling-dst-conversions</loc>
     <lastmod>2026-06-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://timeatlas.co/journal/est-to-pst</loc>
+    <lastmod>2026-06-09</lastmod>
   </url>
 
   <url>

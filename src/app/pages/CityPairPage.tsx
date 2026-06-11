@@ -12,6 +12,7 @@ import {
   type DstScheduleZone,
   InternalLinkBlock,
   type InternalLinkBlockLink,
+  FlightRouting,
 } from '../components/time';
 import { getZoneInfo, type ZoneInfo } from '../data/zones';
 import { getZoneV3, zoneSlugPart, CURRENT_YEAR, type ZoneV3 } from '../data/zonesV3';
@@ -650,6 +651,13 @@ export function CityPairPage({ pair, use24Hour = false }: CityPairPageProps) {
                 </p>
               )}
             </div>
+          </Section>
+        )}
+
+        {/* ── 8b. FLIGHT ROUTING (phase 8 enrichment, conditional) ────────── */}
+        {pairData?.flight_data && (
+          <Section title="Flight Routing">
+            <FlightRouting flight_data={pairData.flight_data} />
           </Section>
         )}
 
