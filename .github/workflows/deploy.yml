@@ -58,13 +58,3 @@ jobs:
           loc_count=$(grep -c '<loc>' dist/sitemap.xml)
           echo "sitemap URLs: $loc_count"
           [ "$loc_count" -ge 470 ] || { echo "sitemap has too few URLs ($loc_count < 470)"; exit 1; }
-
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
-          git-depth: 0
-          log-level: detailed
