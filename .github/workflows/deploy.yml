@@ -60,7 +60,7 @@ jobs:
           [ "$loc_count" -ge 470 ] || { echo "sitemap has too few URLs ($loc_count < 470)"; exit 1; }
 
       - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
