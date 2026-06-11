@@ -18,28 +18,52 @@ const canonicalPairs = pairs.filter(
   (p) => typeof p.source_code === 'string' && typeof p.target_code === 'string'
 );
 
-const today = new Date().toISOString().slice(0, 10);
+// lastmod must reflect when page CONTENT meaningfully changed — not the build
+// date. Stamping the build date on every URL each deploy (the previous
+// behavior) churns 460+ lastmods per release and teaches crawlers to distrust
+// the field entirely. Bump these constants manually when the corresponding
+// pages actually change.
+const STATIC_PAGES_LASTMOD = '2026-06-07'; // V3 schema patch / FAQ update
+const PAIR_PAGES_LASTMOD = '2026-06-07'; // bump when pair-page template or data changes
+const NEWS_PAGE_LASTMOD = '2026-06-10'; // bump when Dispatch items or DST tracker data change
+
+// Articles carry their real dates in frontmatter: updatedAt if present,
+// otherwise publishedAt.
+function articleLastmod(slug) {
+  const md = readFileSync(resolve(repoRoot, `src/articles/${slug}.md`), 'utf8');
+  const frontmatter = md.split('---')[1] ?? '';
+  const date = (key) => frontmatter.match(new RegExp(`^${key}:\\s*'?([0-9-]+)'?`, 'm'))?.[1];
+  return date('updatedAt') ?? date('publishedAt') ?? STATIC_PAGES_LASTMOD;
+}
+
+const articleUrls = [...ARTICLES].map((slug) => ({
+  loc: `https://timeatlas.co${articlePath(slug)}`,
+  lastmod: articleLastmod(slug),
+}));
+
+// The journal index changes whenever its newest article does.
+const journalLastmod =
+  articleUrls
+    .map((a) => a.lastmod)
+    .sort()
+    .at(-1) ?? STATIC_PAGES_LASTMOD;
 
 const staticUrls = [
-  { loc: 'https://timeatlas.co/', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/convert', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/world', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/meet', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/dev', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/journal', lastmod: today },
-  { loc: 'https://timeatlas.co/about', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/privacy', lastmod: '2026-04-10' },
-  { loc: 'https://timeatlas.co/terms', lastmod: '2026-04-10' },
+  { loc: 'https://timeatlas.co/', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/convert', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/world', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/meet', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/dev', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/news', lastmod: NEWS_PAGE_LASTMOD },
+  { loc: 'https://timeatlas.co/journal', lastmod: journalLastmod },
+  { loc: 'https://timeatlas.co/about', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/privacy', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/terms', lastmod: STATIC_PAGES_LASTMOD },
 ];
 
 const pairUrls = canonicalPairs.map((p) => ({
   loc: `https://timeatlas.co/${p.source_code.toLowerCase()}-to-${p.target_code.toLowerCase()}`,
-  lastmod: today,
-}));
-
-const articleUrls = [...ARTICLES].map((slug) => ({
-  loc: `https://timeatlas.co${articlePath(slug)}`,
-  lastmod: today,
+  lastmod: PAIR_PAGES_LASTMOD,
 }));
 
 const allUrls = [...staticUrls, ...articleUrls, ...pairUrls];

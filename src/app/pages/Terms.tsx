@@ -8,7 +8,6 @@ export function Terms() {
         title="Terms of Service | TimeAtlas"
         description="TimeAtlas terms of service. Read the conditions governing your use of our free time zone converter, meeting planner, and scheduling tools."
         path="/terms"
-        robots="noindex,follow"
       />
       <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
         {/* Content */}

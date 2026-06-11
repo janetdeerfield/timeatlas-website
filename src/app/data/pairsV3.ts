@@ -28,6 +28,14 @@ export interface FlightRoute {
   note?: string;
 }
 
+/** Phase 8 — enriched flight data for the FlightRouting component */
+export interface FlightData {
+  has_direct: boolean;
+  estimated_duration_hours: number;
+  common_hubs?: string[];
+  travel_tip?: string;
+}
+
 export interface PairV3 {
   source_code: string;
   target_code: string;
@@ -38,6 +46,7 @@ export interface PairV3 {
   meeting_difficulty: MeetingDifficulty;
   notable_pairing: string;
   flight_route?: FlightRoute;
+  flight_data?: FlightData;
   common_use_cases: string[];
 }
 

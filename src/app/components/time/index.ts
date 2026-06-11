@@ -38,4 +38,5 @@ export {
   useClientOnly,
   type ClientOnlyTimeProps,
 } from './ClientOnlyTime';
+export { FlightRouting, type FlightRoutingProps } from './FlightRouting';
 export { joinClasses } from './utils';

@@ -13,6 +13,7 @@ const Convert = lazy(() => import('./pages/Convert').then((m) => ({ default: m.C
 const World = lazy(() => import('./pages/World').then((m) => ({ default: m.World })));
 const Meet = lazy(() => import('./pages/Meet').then((m) => ({ default: m.Meet })));
 const Dev = lazy(() => import('./pages/Dev').then((m) => ({ default: m.Dev })));
+const News = lazy(() => import('./pages/News').then((m) => ({ default: m.News })));
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
 const Privacy = lazy(() => import('./pages/Privacy').then((m) => ({ default: m.Privacy })));
 const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms })));
@@ -54,6 +55,10 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
       {
         path: 'dev',
         element: <Dev />,
+      },
+      {
+        path: 'news',
+        element: <News />,
       },
       {
         path: 'journal/*',

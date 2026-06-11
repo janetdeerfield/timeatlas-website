@@ -74,11 +74,18 @@ function parseFrontmatter(yaml: string): Partial<ArticleFrontmatter> {
   const lines = yaml.split('\n');
   let i = 0;
 
+  function parseScalar(raw: string): string {
+    const s = raw.trim();
+    if (s.startsWith('"') || s.startsWith("'")) return s.slice(1, -1);
+    return s;
+  }
+
   function parseValue(line: string): string | string[] {
     const s = line.trim();
     // Inline array: [item1, item2, ...]
     if (s.startsWith('[')) {
-      const inner = s.replace(/^\[|\]$/g, '');
+      const inner = s.replace(/^\[|\]$/g, '').trim();
+      if (!inner) return [];
       return inner.split(',').map((v) => v.trim().replace(/^["']|["']$/g, ''));
     }
     // Quoted string
@@ -92,17 +99,37 @@ function parseFrontmatter(yaml: string): Partial<ArticleFrontmatter> {
 
   while (i < lines.length) {
     const line = lines[i];
+    const trimmed = line.trim();
+
+    // faq nested object item: "  - question: ..."
+    if (trimmed.startsWith('- question:') && Array.isArray(result['faq'])) {
+      const question = parseScalar(trimmed.slice(trimmed.indexOf(':') + 1));
+      let answer = '';
+      if (i + 1 < lines.length) {
+        const nextTrimmed = lines[i + 1].trim();
+        if (nextTrimmed.startsWith('answer:')) {
+          answer = parseScalar(nextTrimmed.slice(nextTrimmed.indexOf(':') + 1));
+          i++;
+        }
+      }
+      (result['faq'] as Array<{ question: string; answer: string }>).push({ question, answer });
+    }
     // Array line (no colon, indented under previous key)
-    if (!line.includes(':') && line.trim().startsWith('-')) {
+    else if (!line.includes(':') && trimmed.startsWith('-')) {
       const arrKey = Object.keys(result).at(-1);
       if (Array.isArray(result[arrKey!])) {
-        (result[arrKey!] as string[]).push(line.trim().replace(/^-\s*/, ''));
+        (result[arrKey!] as string[]).push(trimmed.replace(/^-\s*/, ''));
       }
     } else if (line.includes(':')) {
       const colonIdx = line.indexOf(':');
       const key = line.slice(0, colonIdx).trim();
-      const val = parseValue(line.slice(colonIdx + 1));
-      result[key] = val;
+      const rawVal = line.slice(colonIdx + 1).trim();
+      // faq with no inline value initialises as an empty array
+      if (key === 'faq' && (!rawVal || rawVal === '[]')) {
+        result[key] = [];
+      } else {
+        result[key] = parseValue(line.slice(colonIdx + 1));
+      }
     }
     i++;
   }
