@@ -57,6 +57,7 @@ const staticUrls = [
   { loc: 'https://timeatlas.co/news', lastmod: NEWS_PAGE_LASTMOD },
   { loc: 'https://timeatlas.co/journal', lastmod: journalLastmod },
   { loc: 'https://timeatlas.co/about', lastmod: STATIC_PAGES_LASTMOD },
+  { loc: 'https://timeatlas.co/contact', lastmod: '2026-06-11' },
   { loc: 'https://timeatlas.co/privacy', lastmod: STATIC_PAGES_LASTMOD },
   { loc: 'https://timeatlas.co/terms', lastmod: STATIC_PAGES_LASTMOD },
 ];
