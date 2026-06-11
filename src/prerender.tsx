@@ -21,6 +21,7 @@ const coreRoutes = [
   '/world',
   '/meet',
   '/dev',
+  '/news',
   '/journal',
   '/about',
   '/privacy',

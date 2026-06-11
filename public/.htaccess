@@ -24,9 +24,14 @@
 </IfModule>
 
 # ==========================================
-# LAYER 1: HTTPS ENFORCEMENT
+# LAYER 1: HOST + HTTPS CANONICALIZATION
 # ==========================================
 RewriteEngine On
+
+# www → apex first (redirects straight to https, so http://www takes one hop)
+RewriteCond %{HTTP_HOST} ^www\.timeatlas\.co$ [NC]
+RewriteRule ^(.*)$ https://timeatlas.co/$1 [L,R=301]
+
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -150,8 +155,15 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.*?)$ $1.html [L]
 
-# 3. SPA Fallback (React Router handles the rest)
+# 3. Real 404 for unknown URLs.
+# Every valid route is prerendered to a flat .html file, so anything that
+# reaches this point is genuinely unknown. The old /index.html fallback
+# returned the prerendered HOMEPAGE with HTTP 200 (homepage canonical +
+# index,follow) for every bad URL — an infinite soft-404 generator that
+# polluted crawl budget. Serve the prerendered 404 page with a true 404
+# status instead.
+ErrorDocument 404 /404.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /index.html [L]
+RewriteRule ^ - [R=404,L]
 

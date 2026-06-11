@@ -13,6 +13,7 @@ export const ARTICLES = [
   'iso-8601-vs-unix-timestamp',
   'handling-dst-conversions',
   'est-to-pst',
+  'b2b-scheduling-blueprint',
 ] as const;
 
 export type ArticleSlug = (typeof ARTICLES)[number];

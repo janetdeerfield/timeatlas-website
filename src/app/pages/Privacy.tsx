@@ -8,7 +8,6 @@ export function Privacy() {
         title="Privacy Policy | TimeAtlas"
         description="TimeAtlas privacy policy. Learn how we collect, use, and protect your data when you use our free time zone converter and scheduling tools."
         path="/privacy"
-        robots="noindex,follow"
       />
       <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
         {/* Content */}

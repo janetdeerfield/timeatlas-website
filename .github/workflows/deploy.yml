@@ -39,6 +39,26 @@ jobs:
           echo "--- file count in dist/ ---"
           find dist/ -type f | wc -l
 
+          echo "--- critical files ---"
+          for f in index.html 404.html convert.html world.html meet.html dev.html news.html \
+                   journal.html about.html privacy.html terms.html est-to-pst.html \
+                   journal/handling-dst-conversions.html journal/b2b-scheduling-blueprint.html \
+                   sitemap.xml robots.txt llms.txt .htaccess; do
+            if [ ! -f "dist/$f" ]; then
+              echo "MISSING: dist/$f"
+              exit 1
+            fi
+          done
+
+          echo "--- prerender sanity ---"
+          grep -q 'data-prerendered="true"' dist/index.html || { echo "index.html not prerendered"; exit 1; }
+          grep -q 'noindex' dist/404.html || { echo "404.html missing noindex"; exit 1; }
+          ! grep -q 'noindex' dist/privacy.html || { echo "privacy.html is noindexed"; exit 1; }
+          echo "--- sitemap sanity ---"
+          loc_count=$(grep -c '<loc>' dist/sitemap.xml)
+          echo "sitemap URLs: $loc_count"
+          [ "$loc_count" -ge 470 ] || { echo "sitemap has too few URLs ($loc_count < 470)"; exit 1; }
+
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3
         with:

@@ -4,7 +4,7 @@ Detailed guide for developers setting up and working with TimeAtlas.
 
 ## Prerequisites
 
-- **Node.js**: 20.0 or higher
+- **Node.js**: 22.18 or higher (build scripts import `.ts` modules via Node's built-in type stripping)
 - **npm**: 10.0 or higher (or pnpm 9+, yarn 4+)
 - **Git**: 2.40 or higher
 - **VS Code** (recommended): Latest version with extensions:
