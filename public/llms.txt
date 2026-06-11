@@ -53,5 +53,6 @@ The full list of pages is in the sitemap: https://timeatlas.co/sitemap.xml
 ## About
 
 [About TimeAtlas](https://timeatlas.co/about)
+[Contact](https://timeatlas.co/contact)
 [Privacy Policy](https://timeatlas.co/privacy)
 [Terms of Service](https://timeatlas.co/terms)

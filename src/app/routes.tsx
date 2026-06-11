@@ -15,6 +15,7 @@ const Meet = lazy(() => import('./pages/Meet').then((m) => ({ default: m.Meet })
 const Dev = lazy(() => import('./pages/Dev').then((m) => ({ default: m.Dev })));
 const News = lazy(() => import('./pages/News').then((m) => ({ default: m.News })));
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
+const Contact = lazy(() => import('./pages/Contact').then((m) => ({ default: m.Contact })));
 const Privacy = lazy(() => import('./pages/Privacy').then((m) => ({ default: m.Privacy })));
 const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms })));
 const Journal = lazy(() => import('./pages/Journal').then((m) => ({ default: m.Journal })));
@@ -71,6 +72,10 @@ export const createRouteObjects = (config: RouteConfig): RouteObject[] => [
       {
         path: 'about',
         element: <About />,
+      },
+      {
+        path: 'contact',
+        element: <Contact />,
       },
       {
         path: 'privacy',

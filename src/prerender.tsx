@@ -24,6 +24,7 @@ const coreRoutes = [
   '/news',
   '/journal',
   '/about',
+  '/contact',
   '/privacy',
   '/terms',
   '/404',

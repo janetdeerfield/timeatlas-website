@@ -52,7 +52,7 @@ jobs:
 
           echo "--- critical files ---"
           for f in index.html 404.html convert.html world.html meet.html dev.html news.html \
-                   journal.html about.html privacy.html terms.html est-to-pst.html \
+                   journal.html about.html contact.html privacy.html terms.html est-to-pst.html \
                    journal/handling-dst-conversions.html journal/b2b-scheduling-blueprint.html \
                    sitemap.xml robots.txt llms.txt .htaccess; do
             if [ ! -f "dist/$f" ]; then
